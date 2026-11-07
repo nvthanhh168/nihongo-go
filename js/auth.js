@@ -1,0 +1,1014 @@
+// ============================================================================
+// MODULE AUTH & CLOUD-READY LOCAL DATABASE: HỆ THỐNG TÀI KHOẢN HỌC VIÊN
+// Quản lý Đăng Nhập, Đăng Ký, Avatar Nhật Bản, Lộ trình 25 Bài Minna N5,
+// Phân tách dữ liệu cá nhân theo từng tài khoản & Tự động lưu tiến độ
+// ============================================================================
+
+const AVATAR_LIST = [
+  { id: 'shiba', name: 'Shiba Inu', emoji: '🐕', title: 'Tân Binh Đáng Yêu', color: '#FFE8CC' },
+  { id: 'ninja', name: 'Ninja Phản Xạ', emoji: '🥷', title: 'Cao Thủ Đoán Từ', color: '#E6FCF5' },
+  { id: 'samurai', name: 'Samurai N5', emoji: '🥋', title: 'Chiến Binh Kỷ Luật', color: '#FFF3BF' },
+  { id: 'miko', name: 'Miko Đền Thần', emoji: '🌸', title: 'Nữ Vu May Mắn', color: '#FFF0F6' },
+  { id: 'tanuki', name: 'Tanuki Tinh Nghịch', emoji: '🦝', title: 'Thần Biến Hóa', color: '#F3F0FF' },
+  { id: 'sensei', name: 'Học Giả Tokyo', emoji: '👩‍🏫', title: 'Học Trò Cưng Tanaka', color: '#E7F5FF' }
+];
+
+const MINNA_LESSONS_N5 = [
+  { id: 1, title: 'Bài 1', desc: 'Chào hỏi, Đại từ nhân xưng & Giới thiệu bản thân', targetWords: 15 },
+  { id: 2, title: 'Bài 2', desc: 'Đồ vật xung quanh (これ, それ, あれ & この, その, あの)', targetWords: 14 },
+  { id: 3, title: 'Bài 3', desc: 'Địa điểm & Nơi chốn (ここ, そこ, あそこ & どこ)', targetWords: 16 },
+  { id: 4, title: 'Bài 4', desc: 'Thời gian, Giờ giấc & Hoạt động hàng ngày (～ます)', targetWords: 18 },
+  { id: 5, title: 'Bài 5', desc: 'Đi lại, Phương tiện & Ngày tháng (いきます, きます, かえります)', targetWords: 16 },
+  { id: 6, title: 'Bài 6', desc: 'Ăn uống & Hành động tác động lên đối tượng (Trợ từ を)', targetWords: 18 },
+  { id: 7, title: 'Bài 7', desc: 'Công cụ, Phương tiện & Tặng/Nhận quà (Trợ từ で, あげます)', targetWords: 15 },
+  { id: 8, title: 'Bài 8', desc: 'Tính từ đuôi い & Tính từ đuôi な trong miêu tả', targetWords: 20 },
+  { id: 9, title: 'Bài 9', desc: 'Sở thích, Năng lực & Lí do (すき, じょうず, わかります, から)', targetWords: 16 },
+  { id: 10, title: 'Bài 10', desc: 'Tồn tại của người & vật (います, あります, Trợ từ に)', targetWords: 16 },
+  { id: 11, title: 'Bài 11', desc: 'Số lượng, Lượng từ & Thời lượng (1 cái, 2 cái, 1 người...)', targetWords: 18 },
+  { id: 12, title: 'Bài 12', desc: 'So sánh hơn & So sánh nhất trong tiếng Nhật (より, どちら)', targetWords: 15 },
+  { id: 13, title: 'Bài 13', desc: 'Bày tỏ mong muốn & Đi đâu làm gì (たいです, にいきます)', targetWords: 15 },
+  { id: 14, title: 'Bài 14', desc: 'Thể て của Động từ & Câu yêu cầu lịch sự (～てください)', targetWords: 18 },
+  { id: 15, title: 'Bài 15', desc: 'Xin phép (～てもいいですか) & Cấm đoán (～てはいけません)', targetWords: 16 },
+  { id: 16, title: 'Bài 16', desc: 'Chuỗi hành động liên tiếp & Đặc điểm người/vật (V-て, V-て...)', targetWords: 16 },
+  { id: 17, title: 'Bài 17', desc: 'Thể ない của Động từ & Khuyên không nên làm (～ないでください)', targetWords: 16 },
+  { id: 18, title: 'Bài 18', desc: 'Thể từ điển (Jishokei) & Bày tỏ khả năng (～ことができます)', targetWords: 17 },
+  { id: 19, title: 'Bài 19', desc: 'Thể た của Động từ & Diễn tả kinh nghiệm (～たことがあります)', targetWords: 16 },
+  { id: 20, title: 'Bài 20', desc: 'Thể thông thường (Futsuukei) trong giao tiếp thân mật', targetWords: 18 },
+  { id: 21, title: 'Bài 21', desc: 'Bày tỏ ý kiến & Phỏng đoán (～とおもいます, ～といいました)', targetWords: 16 },
+  { id: 22, title: 'Bài 22', desc: 'Mệnh đề bổ nghĩa cho danh từ trong tiếng Nhật N5', targetWords: 15 },
+  { id: 23, title: 'Bài 23', desc: 'Cấu trúc điều kiện thời gian (～とき, ～と khi làm gì)', targetWords: 16 },
+  { id: 24, title: 'Bài 24', desc: 'Cho và nhận hành động giúp đỡ (くれます, もらいます, あげます)', targetWords: 15 },
+  { id: 25, title: 'Bài 25', desc: 'Cấu trúc giả định điều kiện tổng kết N5 (～たら, ～ても)', targetWords: 20 }
+];
+
+class JapaneseAuthModule {
+  constructor() {
+    this.dbKey = 'nihongo_users_db';
+    this.sessionKey = 'nihongo_current_user';
+    this.selectedAvatar = 'shiba';
+    this.currentTab = 'login'; // 'login' | 'register'
+    this.currentUser = null;
+
+    this.initDatabase();
+    this.loadSession();
+    this.setupListeners();
+  }
+
+  // --------------------------------------------------------------------------
+  // KHỞI TẠO CƠ SỞ DỮ LIỆU LOCAL
+  // --------------------------------------------------------------------------
+  initDatabase() {
+    try {
+      const existing = localStorage.getItem(this.dbKey);
+      if (!existing) {
+        // Tạo tài khoản mẫu Demo để học viên có thể trải nghiệm ngay
+        const demoUser = {
+          username: 'sakura_n5',
+          email: 'sakura@nihongo.jp',
+          displayName: 'Sakura Chan 🌸',
+          passwordHash: this.hashPassword('123456'),
+          avatar: 'miko',
+          createdAt: new Date().toISOString(),
+          lastLoginAt: new Date().toISOString(),
+          profile: {
+            currentJLPTLevel: 'N5',
+            unlockedLesson: 1, // Mặc định Level 1 (xong Level 1 mới mở khóa Level 2)
+            completedLessons: {},
+            learnedWords: ['n5_001', 'n5_002', 'n5_003', 'n5_004', 'n5_005', 'n5_006', 'n5_007', 'n5_008', 'n5_009', 'n5_010'],
+            wrongWords: [],
+            exp: 340,
+            level: 3,
+            coins: 85,
+            streak: 3,
+            lastActiveDate: new Date().toISOString().slice(0, 10),
+            badges: ['tan_binh_nhap_mon', 'hoc_tro_shiba']
+          }
+        };
+
+        const initialDB = {
+          'sakura_n5': demoUser
+        };
+        localStorage.setItem(this.dbKey, JSON.stringify(initialDB));
+      }
+    } catch (e) {
+      console.warn('[Auth] Không thể khởi tạo database:', e);
+    }
+  }
+
+  // --------------------------------------------------------------------------
+  // HÀM HỖ TRỢ TRUY XUẤT DATABASE
+  // --------------------------------------------------------------------------
+  getUsersDB() {
+    try {
+      const data = localStorage.getItem(this.dbKey);
+      return data ? JSON.parse(data) : {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  saveUsersDB(db) {
+    try {
+      localStorage.setItem(this.dbKey, JSON.stringify(db));
+    } catch (e) {
+      console.error('[Auth] Lỗi lưu database:', e);
+    }
+  }
+
+  // Mã hóa mật khẩu nhẹ nhàng (Base64 + Salt) cho môi trường local
+  hashPassword(pwd) {
+    const salt = 'nihongo_go_secret_salt_';
+    return btoa(unescape(encodeURIComponent(salt + pwd)));
+  }
+
+  verifyPassword(pwd, hashed) {
+    return this.hashPassword(pwd) === hashed;
+  }
+
+  // --------------------------------------------------------------------------
+  // PHIÊN ĐĂNG NHẬP (SESSION MANAGEMENT)
+  // --------------------------------------------------------------------------
+  loadSession() {
+    try {
+      const currentUsername = localStorage.getItem(this.sessionKey);
+      if (currentUsername) {
+        const db = this.getUsersDB();
+        if (db[currentUsername]) {
+          this.currentUser = db[currentUsername];
+          this.syncUserToProgressModule();
+        } else {
+          this.currentUser = null;
+          localStorage.removeItem(this.sessionKey);
+        }
+      }
+    } catch (e) {
+      this.currentUser = null;
+    }
+
+    this.renderHeaderAuthUI();
+  }
+
+  isLoggedIn() {
+    return this.currentUser !== null;
+  }
+
+  getCurrentUser() {
+    return this.currentUser;
+  }
+
+  // Đồng bộ tiến độ từ tài khoản sang ProgressModule & Flashcard
+  syncUserToProgressModule() {
+    if (!this.currentUser || !this.currentUser.profile) return;
+
+    const p = this.currentUser.profile;
+
+    if (window.progressModule) {
+      window.progressModule.exp = p.exp || 0;
+      window.progressModule.level = p.level || 1;
+      window.progressModule.coins = p.coins !== undefined ? p.coins : 50;
+      window.progressModule.streak = p.streak || 1;
+      window.progressModule.lastActiveDate = p.lastActiveDate || '';
+      window.progressModule.userTitle = window.progressModule.getTitleForLevel(window.progressModule.level);
+      window.progressModule.saveProfile();
+    }
+
+    if (Array.isArray(p.learnedWords)) {
+      localStorage.setItem('jlpt_n5_mastered_words', JSON.stringify(p.learnedWords));
+      localStorage.setItem('jlpt_n5_mastered', JSON.stringify(p.learnedWords));
+      if (window.flashcardModule) {
+        window.flashcardModule.loadSavedProgress();
+        window.flashcardModule.updateHeaderMasteryStats();
+      }
+    }
+
+    if (window.app) {
+      window.app.loadUserData();
+      window.app.updateUserStatsUI();
+    }
+  }
+
+  // Tự động lưu tiến độ hiện tại từ ProgressModule và Game vào tài khoản
+  autoSaveProgress() {
+    if (!this.isLoggedIn()) return;
+
+    try {
+      const db = this.getUsersDB();
+      const user = db[this.currentUser.username];
+      if (!user) return;
+
+      const masteredList = Array.from(window.flashcardModule?.masteredIds || []);
+      const mistakesList = window.guessGame?.mistakesList || [];
+
+      user.profile.exp = window.progressModule?.exp || user.profile.exp;
+      user.profile.level = window.progressModule?.level || user.profile.level;
+      user.profile.coins = window.progressModule?.coins || user.profile.coins;
+      user.profile.streak = window.progressModule?.streak || user.profile.streak;
+      user.profile.lastActiveDate = window.progressModule?.lastActiveDate || user.profile.lastActiveDate;
+      user.profile.learnedWords = masteredList;
+      user.profile.wrongWords = mistakesList;
+
+      this.saveUsersDB(db);
+      this.currentUser = user;
+      this.renderHeaderAuthUI();
+      console.log(`[Auth] Đã tự động sao lưu tiến độ cho học viên: ${user.displayName}`);
+    } catch (e) {
+      console.warn('[Auth] Lỗi autoSaveProgress:', e);
+    }
+  }
+
+  // --------------------------------------------------------------------------
+  // ĐĂNG KÝ TÀI KHOẢN MỚI
+  // --------------------------------------------------------------------------
+  register(formData) {
+    const { displayName, username, email, password, confirmPassword, avatar } = formData;
+
+    const errorBox = document.getElementById('auth-error-message');
+    const setError = (msg) => {
+      if (errorBox) {
+        errorBox.classList.remove('hidden');
+        errorBox.innerHTML = `<strong>👩‍🏫 Cô Tanaka nhắc nhở:</strong> ${msg}`;
+      }
+    };
+
+    // 1. Kiểm tra tính hợp lệ
+    const cleanName = (displayName || '').trim();
+    const cleanUser = (username || '').trim().toLowerCase();
+    const cleanEmail = (email || '').trim().toLowerCase();
+    const cleanPwd = (password || '').trim();
+
+    if (!cleanName) {
+      setError('Cái em này! Chưa nhập tên hiển thị thì lấy danh tính đâu mà ghi danh vào lớp N5?!');
+      return false;
+    }
+
+    if (!cleanUser || cleanUser.length < 3) {
+      setError('Tên đăng nhập quá ngắn! Em phải đặt tối thiểu 3 ký tự trở lên nghe chưa!');
+      return false;
+    }
+
+    if (!/^[a-zA-Z0-9_]+$/.test(cleanUser)) {
+      setError('Tên đăng nhập chỉ được chứa chữ cái không dấu, chữ số và dấu gạch dưới (_)!');
+      return false;
+    }
+
+    if (!cleanPwd || cleanPwd.length < 6) {
+      setError('Mật khẩu hời hợt thế à? Tối thiểu 6 ký tự để bảo vệ thành quả cày cuốc N5 chứ!');
+      return false;
+    }
+
+    if (cleanPwd !== (confirmPassword || '').trim()) {
+      setError('Hai lần nhập mật khẩu không khớp nhau! Em nhìn thật kỹ từng ký tự rồi gõ lại xem!');
+      return false;
+    }
+
+    const db = this.getUsersDB();
+    if (db[cleanUser]) {
+      setError(`Tên đăng nhập 「<strong>${cleanUser}</strong>」 đã có học viên khác sử dụng rồi! Em chọn tên khác ngay!`);
+      return false;
+    }
+
+    // 2. Tạo tài khoản mới với hồ sơ N5 ban đầu
+    const newUser = {
+      username: cleanUser,
+      email: cleanEmail || `${cleanUser}@nihongo.local`,
+      displayName: cleanName,
+      passwordHash: this.hashPassword(cleanPwd),
+      avatar: avatar || this.selectedAvatar || 'shiba',
+      createdAt: new Date().toISOString(),
+      lastLoginAt: new Date().toISOString(),
+      profile: {
+        currentJLPTLevel: 'N5',
+        unlockedLesson: 1, // Mặc định Bài 1
+        completedLessons: {},
+        learnedWords: [],
+        wrongWords: [],
+        exp: 0,
+        level: 1,
+        coins: 50, // Quà tân thủ 50 coins
+        streak: 1,
+        lastActiveDate: new Date().toISOString().slice(0, 10),
+        badges: ['tan_binh_nhap_mon']
+      }
+    };
+
+    db[cleanUser] = newUser;
+    this.saveUsersDB(db);
+
+    // 3. Đăng nhập ngay
+    this.currentUser = newUser;
+    localStorage.setItem(this.sessionKey, cleanUser);
+
+    this.syncUserToProgressModule();
+    this.renderHeaderAuthUI();
+    this.closeAuthModal();
+
+    if (window.soundSystem) window.soundSystem.playVictory();
+    if (window.mascot) {
+      window.mascot.setMood(
+        'celebrate',
+        `🎉 Hoan hô! Chào mừng tân binh ${cleanName} đã gia nhập Nihongo Go! Bắt đầu từ Bài 1 nhé! 🌸`,
+        5000
+      );
+    }
+
+    return true;
+  }
+
+  // --------------------------------------------------------------------------
+  // ĐĂNG NHẬP
+  // --------------------------------------------------------------------------
+  login(formData) {
+    const { usernameOrEmail, password, remember } = formData;
+
+    const errorBox = document.getElementById('auth-error-message');
+    const setError = (msg) => {
+      if (errorBox) {
+        errorBox.classList.remove('hidden');
+        errorBox.innerHTML = `<strong>👩‍🏫 Cô Tanaka nhắc nhở:</strong> ${msg}`;
+      }
+    };
+
+    const cleanInput = (usernameOrEmail || '').trim().toLowerCase();
+    const cleanPwd = (password || '').trim();
+
+    if (!cleanInput) {
+      setError('Chưa điền tên đăng nhập hoặc email mà đã bấm đăng nhập rồi à em?');
+      return false;
+    }
+
+    if (!cleanPwd) {
+      setError('Em quên nhập mật khẩu rồi! Điền đầy đủ vào xem nào!');
+      return false;
+    }
+
+    const db = this.getUsersDB();
+    let foundUser = null;
+
+    // Tìm theo username hoặc email
+    for (const key in db) {
+      const u = db[key];
+      if (u.username.toLowerCase() === cleanInput || (u.email && u.email.toLowerCase() === cleanInput)) {
+        foundUser = u;
+        break;
+      }
+    }
+
+    if (!foundUser) {
+      setError(`Không tìm thấy tài khoản 「<strong>${cleanInput}</strong>」 trong danh sách học viên! Hãy kiểm tra lại hoặc bấm tab Đăng Ký!`);
+      return false;
+    }
+
+    if (!this.verifyPassword(cleanPwd, foundUser.passwordHash)) {
+      setError('Sai mật khẩu rồi! Đứng thẳng lưng nhớ lại xem mình đã đặt mật khẩu gì nào!');
+      return false;
+    }
+
+    // Đăng nhập thành công
+    foundUser.lastLoginAt = new Date().toISOString();
+    db[foundUser.username] = foundUser;
+    this.saveUsersDB(db);
+
+    this.currentUser = foundUser;
+    localStorage.setItem(this.sessionKey, foundUser.username);
+
+    this.syncUserToProgressModule();
+    this.renderHeaderAuthUI();
+    this.closeAuthModal();
+
+    if (window.soundSystem) window.soundSystem.playCorrect();
+    if (window.mascot) {
+      window.mascot.setMood(
+        'happy',
+        `🌸 Chào mừng học viên ${foundUser.displayName} quay trở lại! Bạn đang ở Bài ${foundUser.profile?.unlockedLesson || 1}/25! 💪`,
+        4500
+      );
+    }
+
+    return true;
+  }
+
+  // --------------------------------------------------------------------------
+  // ĐĂNG XUẤT
+  // --------------------------------------------------------------------------
+  logout() {
+    if (!this.isLoggedIn()) return;
+
+    const confirmLogout = confirm(`Học viên ${this.currentUser.displayName} có chắc chắn muốn đăng xuất không?`);
+    if (!confirmLogout) return;
+
+    // Lưu lại tiến độ lần cuối
+    this.autoSaveProgress();
+
+    this.currentUser = null;
+    localStorage.removeItem(this.sessionKey);
+
+    // Chuyển về chế độ Khách (Guest) mặc định
+    if (window.progressModule) {
+      window.progressModule.loadProfile();
+    }
+
+    this.renderHeaderAuthUI();
+
+    if (window.soundSystem) window.soundSystem.playPop();
+    if (window.mascot) {
+      window.mascot.say('Đã đăng xuất tài khoản. Hẹn gặp lại bạn ở buổi học tiếp theo nhé! 👋🌸', 4000);
+    }
+  }
+
+  // --------------------------------------------------------------------------
+  // TIỆN ÍCH: ĐĂNG NHẬP NHANH TÀI KHOẢN TRẢI NGHIỆM (DEMO 1-CLICK)
+  // --------------------------------------------------------------------------
+  quickDemoLogin() {
+    this.login({
+      usernameOrEmail: 'sakura_n5',
+      password: '123456',
+      remember: true
+    });
+  }
+
+  // Quên mật khẩu / Khôi phục
+  forgotPassword(usernameOrEmail) {
+    const input = prompt('Nhập tên đăng nhập hoặc email cần khôi phục mật khẩu:', usernameOrEmail || '');
+    if (!input) return;
+
+    const db = this.getUsersDB();
+    const clean = input.trim().toLowerCase();
+    let found = null;
+
+    for (const k in db) {
+      if (db[k].username.toLowerCase() === clean || (db[k].email && db[k].email.toLowerCase() === clean)) {
+        found = db[k];
+        break;
+      }
+    }
+
+    if (!found) {
+      alert(`Không tìm thấy tài khoản "${input}" trong hệ thống!`);
+      return;
+    }
+
+    const newPwd = prompt(`Học viên: ${found.displayName} (${found.username})\nNhập mật khẩu mới bạn muốn đặt:`, '123456');
+    if (!newPwd || newPwd.trim().length < 6) {
+      alert('Mật khẩu mới phải có tối thiểu 6 ký tự!');
+      return;
+    }
+
+    found.passwordHash = this.hashPassword(newPwd.trim());
+    db[found.username] = found;
+    this.saveUsersDB(db);
+
+    alert(`✅ Đổi mật khẩu thành công!\nMật khẩu mới của bạn là: "${newPwd.trim()}". Hãy đăng nhập ngay!`);
+  }
+
+  // --------------------------------------------------------------------------
+  // HOÀN THÀNH BÀI HỌC & MỞ KHÓA BÀI TIẾP THEO (1 ĐẾN 25)
+  // --------------------------------------------------------------------------
+  completeLesson(lessonNumber, lessonStats = {}) {
+    let unlocked = 1;
+    let completedLessons = {};
+
+    if (this.isLoggedIn()) {
+      const p = this.currentUser.profile;
+      if (!p.completedLessons) p.completedLessons = {};
+
+      p.completedLessons[lessonNumber] = {
+        completed: true,
+        stars: lessonStats.stars || 3,
+        vocabDone: true,
+        gameScore: lessonStats.gameScore || 90,
+        pronunScore: lessonStats.pronunScore || 85,
+        completedAt: new Date().toISOString()
+      };
+
+      // Mở khóa bài tiếp theo nếu bài vừa hoàn thành là bài cao nhất
+      if (lessonNumber === p.unlockedLesson && lessonNumber < 25) {
+        p.unlockedLesson = lessonNumber + 1;
+      }
+      unlocked = p.unlockedLesson;
+      completedLessons = p.completedLessons;
+
+      this.autoSaveProgress();
+      this.renderHeaderAuthUI();
+    } else {
+      // Chế độ khách (Lưu vào localStorage để không gián đoạn trải nghiệm)
+      try {
+        unlocked = parseInt(localStorage.getItem('nihongo_guest_unlocked') || '1', 10);
+        completedLessons = JSON.parse(localStorage.getItem('nihongo_guest_completed') || '{}');
+      } catch (e) {
+        unlocked = 1;
+        completedLessons = {};
+      }
+
+      completedLessons[lessonNumber] = {
+        completed: true,
+        stars: lessonStats.stars || 3,
+        vocabDone: true,
+        gameScore: lessonStats.gameScore || 90,
+        pronunScore: lessonStats.pronunScore || 85,
+        completedAt: new Date().toISOString()
+      };
+
+      if (lessonNumber === unlocked && lessonNumber < 25) {
+        unlocked = lessonNumber + 1;
+      }
+
+      try {
+        localStorage.setItem('nihongo_guest_unlocked', unlocked.toString());
+        localStorage.setItem('nihongo_guest_completed', JSON.stringify(completedLessons));
+      } catch (e) {}
+    }
+
+    // Thưởng EXP & Coins
+    if (window.progressModule) {
+      window.progressModule.addExp(50);
+      window.progressModule.addCoins(10);
+    }
+
+    if (window.soundSystem) window.soundSystem.playVictory();
+    if (window.mascot) {
+      window.mascot.setMood(
+        'celebrate',
+        `🎖️ XUẤT SẮC! Em đã vượt qua Bài ${lessonNumber} và mở khóa BÀI ${unlocked}/25! Nhận ngay +50 EXP & +10 Coins! 🏆🌸`,
+        5000
+      );
+    }
+
+    // Đồng bộ lại giao diện Roadmap nếu đang mở
+    if (window.roadmapModule && typeof window.roadmapModule.render === 'function') {
+      window.roadmapModule.render();
+    }
+
+    return { unlocked, completedLessons };
+  }
+
+  getUnlockedLesson() {
+    if (this.isLoggedIn()) {
+      return this.currentUser?.profile?.unlockedLesson || 1;
+    }
+    try {
+      return parseInt(localStorage.getItem('nihongo_guest_unlocked') || '1', 10);
+    } catch (e) {
+      return 1;
+    }
+  }
+
+  getCompletedLessons() {
+    if (this.isLoggedIn()) {
+      return this.currentUser?.profile?.completedLessons || {};
+    }
+    try {
+      return JSON.parse(localStorage.getItem('nihongo_guest_completed') || '{}');
+    } catch (e) {
+      return {};
+    }
+  }
+
+  // Kiểm tra quyền truy cập bài học
+  checkLessonAccess(lessonNumber) {
+    if (lessonNumber === 1) return true;
+
+    const unlocked = this.getUnlockedLesson();
+    if (lessonNumber > unlocked) {
+      alert(`🔒 Bài ${lessonNumber} đang bị khóa!\nEm cần hoàn thành Bài ${unlocked} trước khi học tiếp nhé! 👩‍🏫`);
+      return false;
+    }
+
+    return true;
+  }
+
+  // --------------------------------------------------------------------------
+  // MODAL LỘ TRÌNH 25 BÀI HỌC MINNA NO NIHONGO N5
+  // --------------------------------------------------------------------------
+  openLessonSelector() {
+    let modal = document.getElementById('lesson-selector-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'lesson-selector-modal';
+      modal.className = 'modal-overlay';
+      modal.onclick = (e) => {
+        if (e.target === modal) this.closeLessonSelector();
+      };
+      document.body.appendChild(modal);
+    }
+
+    modal.classList.remove('hidden');
+    modal.classList.add('active');
+    modal.style.display = 'flex';
+
+    this.renderLessonSelectorContent();
+    if (window.soundSystem) window.soundSystem.playPop();
+  }
+
+  closeLessonSelector() {
+    const modal = document.getElementById('lesson-selector-modal');
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('active');
+      modal.style.display = 'none';
+    }
+  }
+
+  renderLessonSelectorContent() {
+    const modal = document.getElementById('lesson-selector-modal');
+    if (!modal) return;
+
+    const unlocked = this.isLoggedIn() ? (this.currentUser.profile?.unlockedLesson || 1) : 1;
+    const completedObj = this.isLoggedIn() ? (this.currentUser.profile?.completedLessons || {}) : {};
+
+    modal.innerHTML = `
+      <div class="modal-card lesson-modal-card">
+        
+        <div class="modal-header lesson-modal-header">
+          <div class="lesson-header-title">
+            <span class="lesson-header-icon">🗺️</span>
+            <div>
+              <h3>LỘ TRÌNH 25 BÀI MINNA NO NIHONGO N5</h3>
+              <p class="lesson-header-sub">
+                ${this.isLoggedIn() 
+                  ? `Học viên: <strong>${this.currentUser.displayName}</strong> • Đang học Bài ${unlocked}/25`
+                  : 'Chế độ Khách (Mở sẵn Bài 1) • Đăng nhập để lưu tiến độ và mở khóa cả 25 bài!'}
+              </p>
+            </div>
+          </div>
+          <button class="modal-close-btn" onclick="window.authModule.closeLessonSelector()">✕</button>
+        </div>
+
+        <div class="modal-body lesson-modal-body">
+          <div class="lessons-grid-container">
+            ${MINNA_LESSONS_N5.map(l => {
+              const isUnlocked = l.id <= unlocked;
+              const isCompleted = completedObj[l.id]?.completed;
+              const stars = completedObj[l.id]?.stars || 0;
+              const starStr = '⭐'.repeat(stars) || '';
+
+              let statusClass = 'locked';
+              if (isCompleted) statusClass = 'completed';
+              else if (isUnlocked) statusClass = 'active';
+
+              return `
+                <div class="lesson-card-item ${statusClass}" onclick="window.authModule.selectLessonFromModal(${l.id})">
+                  <div class="lesson-item-top">
+                    <span class="lesson-number-badge">Bài ${l.id}</span>
+                    <span class="lesson-status-icon">
+                      ${isCompleted ? '✅' : isUnlocked ? '📖' : '🔒'}
+                    </span>
+                  </div>
+                  <div class="lesson-item-title">${l.desc}</div>
+                  <div class="lesson-item-meta">
+                    <span>${starStr}</span>
+                    <small>${l.targetWords} từ vựng N5</small>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+
+        <div class="modal-footer lesson-modal-footer">
+          <button class="btn btn-secondary" onclick="window.authModule.closeLessonSelector()">
+            Đóng bảng bài học
+          </button>
+        </div>
+
+      </div>
+    `;
+  }
+
+  selectLessonFromModal(lessonId) {
+    if (!this.checkLessonAccess(lessonId)) return;
+
+    this.closeLessonSelector();
+
+    // Nạp từ vựng trọng tâm của bài đó vào Flashcard và Game
+    const lesson = window.LESSONS_DATA ? window.LESSONS_DATA.getLesson('N5', lessonId) : null;
+    const lessonVocab = (lesson && lesson.vocab && lesson.vocab.length > 0) 
+      ? lesson.vocab 
+      : (window.JLPT_DATA?.n5 || []);
+
+    if (window.flashcardModule && typeof window.flashcardModule.init === 'function') {
+      window.flashcardModule.init(lessonVocab);
+    }
+
+    if (window.guessGame && typeof window.guessGame.start === 'function') {
+      window.guessGame.start(lessonVocab);
+    }
+
+    if (window.app) {
+      window.app.switchTab('flashcard');
+    }
+
+    if (window.soundSystem) window.soundSystem.playCorrect();
+    if (window.mascot) {
+      const topicName = lesson ? lesson.topicVi : MINNA_LESSONS_N5[lessonId - 1].desc;
+      window.mascot.say(`Đã kích hoạt Bài ${lessonId}: ${topicName}! Có ${lessonVocab.length} từ vựng trọng tâm cần chinh phục! 🌸`, 4000);
+    }
+  }
+
+  // --------------------------------------------------------------------------
+  // MODAL ĐĂNG NHẬP & ĐĂNG KÝ PHONG CÁCH ANIME NHẬT BẢN
+  // --------------------------------------------------------------------------
+  openAuthModal(tab = 'login', customNotice = '') {
+    this.currentTab = tab;
+
+    let modal = document.getElementById('user-auth-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'user-auth-modal';
+      modal.className = 'modal-overlay';
+      modal.onclick = (e) => {
+        if (e.target === modal) this.closeAuthModal();
+      };
+      document.body.appendChild(modal);
+    }
+
+    modal.classList.remove('hidden');
+    modal.classList.add('active');
+    modal.style.display = 'flex';
+
+    this.renderAuthModalContent(customNotice);
+
+    if (window.soundSystem) window.soundSystem.playPop();
+  }
+
+  closeAuthModal() {
+    const modal = document.getElementById('user-auth-modal');
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('active');
+      modal.style.display = 'none';
+    }
+  }
+
+  switchAuthTab(tab) {
+    this.currentTab = tab;
+    this.renderAuthModalContent();
+    if (window.soundSystem) window.soundSystem.playPop();
+  }
+
+  selectRegisterAvatar(avatarId) {
+    this.selectedAvatar = avatarId;
+    document.querySelectorAll('.avatar-pick-card').forEach(card => {
+      card.classList.toggle('active', card.getAttribute('data-avatar-id') === avatarId);
+    });
+    if (window.soundSystem) window.soundSystem.playPop();
+  }
+
+  renderAuthModalContent(customNotice = '') {
+    const modal = document.getElementById('user-auth-modal');
+    if (!modal) return;
+
+    modal.innerHTML = `
+      <div class="modal-card anime-auth-card">
+        
+        <!-- HEADER MODAL PHONG CÁCH NHẬT BẢN -->
+        <div class="auth-card-hero">
+          <div class="hero-sakura-deco">🌸 ⛩️ 🌸</div>
+          <h3>CỔNG HỌC VIÊN NIHONGO GO!</h3>
+          <p>Lưu trữ đám mây • Đồng bộ 25 Bài Minna • Vinh danh Bảng vàng N5</p>
+          <button class="modal-close-btn auth-hero-close" onclick="window.authModule.closeAuthModal()">✕</button>
+        </div>
+
+        <!-- THANH CHUYỂN TAB (ĐĂNG NHẬP / ĐĂNG KÝ) -->
+        <div class="auth-tabs-nav">
+          <button class="auth-tab-btn ${this.currentTab === 'login' ? 'active' : ''}" onclick="window.authModule.switchAuthTab('login')">
+            🔑 Đăng Nhập
+          </button>
+          <button class="auth-tab-btn ${this.currentTab === 'register' ? 'active' : ''}" onclick="window.authModule.switchAuthTab('register')">
+            ✨ Đăng Ký Tài Khoản Mới
+          </button>
+        </div>
+
+        <!-- NỘI DUNG MODAL BODY -->
+        <div class="modal-body auth-modal-body">
+          
+          <!-- Thông báo tùy biến (nếu có, ví dụ: nhắc đăng nhập để sang Bài 2) -->
+          ${customNotice ? `
+            <div class="auth-notice-banner">
+              ${customNotice}
+            </div>
+          ` : ''}
+
+          <!-- Hộp thông báo lỗi phong cách Cô Tanaka -->
+          <div id="auth-error-message" class="auth-error-box hidden"></div>
+
+          ${this.currentTab === 'login' ? this.renderLoginFormHTML() : this.renderRegisterFormHTML()}
+
+        </div>
+
+      </div>
+    `;
+  }
+
+  // HTML FORM ĐĂNG NHẬP
+  renderLoginFormHTML() {
+    return `
+      <form class="auth-form" onsubmit="event.preventDefault(); window.authModule.handleLoginSubmit(this);">
+        
+        <div class="auth-field-group">
+          <label>Tên đăng nhập hoặc Email:</label>
+          <div class="auth-input-wrapper">
+            <span class="input-icon">👤</span>
+            <input type="text" name="usernameOrEmail" class="auth-input" placeholder="Ví dụ: sakura_n5 hoặc email..." required autofocus>
+          </div>
+        </div>
+
+        <div class="auth-field-group">
+          <label>Mật khẩu:</label>
+          <div class="auth-input-wrapper">
+            <span class="input-icon">🔒</span>
+            <input type="password" name="password" class="auth-input" placeholder="Nhập mật khẩu của em..." required>
+          </div>
+        </div>
+
+        <div class="auth-options-row">
+          <label class="remember-label">
+            <input type="checkbox" name="remember" checked> Ghi nhớ đăng nhập
+          </label>
+          <button type="button" class="btn-forgot-pwd" onclick="window.authModule.forgotPassword()">
+            Quên mật khẩu?
+          </button>
+        </div>
+
+        <div class="auth-submit-row">
+          <button type="submit" class="btn btn-primary btn-auth-submit">
+            🌸 Đăng Nhập Vào Lớp Học
+          </button>
+        </div>
+
+        <div class="auth-demo-divider">
+          <span>hoặc trải nghiệm nhanh không cần tạo tài khoản</span>
+        </div>
+
+        <div class="auth-quick-actions">
+          <button type="button" class="btn btn-secondary btn-demo-quick" onclick="window.authModule.quickDemoLogin()">
+            🚀 Dùng ngay Tài khoản Mẫu (Sakura Chan • Đã mở Bài 3)
+          </button>
+        </div>
+
+      </form>
+    `;
+  }
+
+  // HTML FORM ĐĂNG KÝ
+  renderRegisterFormHTML() {
+    return `
+      <form class="auth-form" onsubmit="event.preventDefault(); window.authModule.handleRegisterSubmit(this);">
+        
+        <div class="auth-field-group">
+          <label>Tên hiển thị (Tên thật hoặc biệt danh trong lớp):</label>
+          <div class="auth-input-wrapper">
+            <span class="input-icon">📛</span>
+            <input type="text" name="displayName" class="auth-input" placeholder="Ví dụ: Minh Đức, Sakura, Kenji..." required>
+          </div>
+        </div>
+
+        <div class="auth-fields-split">
+          <div class="auth-field-group">
+            <label>Tên đăng nhập:</label>
+            <div class="auth-input-wrapper">
+              <span class="input-icon">👤</span>
+              <input type="text" name="username" class="auth-input" placeholder="duc_n5, sakura..." required>
+            </div>
+          </div>
+          <div class="auth-field-group">
+            <label>Email (tùy chọn):</label>
+            <div class="auth-input-wrapper">
+              <span class="input-icon">✉️</span>
+              <input type="email" name="email" class="auth-input" placeholder="email@gmail.com">
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-fields-split">
+          <div class="auth-field-group">
+            <label>Mật khẩu (≥ 6 ký tự):</label>
+            <div class="auth-input-wrapper">
+              <span class="input-icon">🔒</span>
+              <input type="password" name="password" class="auth-input" placeholder="Tối thiểu 6 ký tự" required>
+            </div>
+          </div>
+          <div class="auth-field-group">
+            <label>Xác nhận mật khẩu:</label>
+            <div class="auth-input-wrapper">
+              <span class="input-icon">🔑</span>
+              <input type="password" name="confirmPassword" class="auth-input" placeholder="Nhập lại mật khẩu" required>
+            </div>
+          </div>
+        </div>
+
+        <!-- BỘ CHỌN 6 AVATAR HOẠT HÌNH NHẬT BẢN -->
+        <div class="auth-avatar-selector-section">
+          <label class="avatar-pick-heading">Chọn Avatar Nhân Vật Đại Diện Của Em:</label>
+          <div class="avatar-picks-grid">
+            ${AVATAR_LIST.map(av => `
+              <div class="avatar-pick-card ${this.selectedAvatar === av.id ? 'active' : ''}" 
+                   data-avatar-id="${av.id}" 
+                   onclick="window.authModule.selectRegisterAvatar('${av.id}')">
+                <div class="avatar-pick-circle" style="background: ${av.color};">
+                  ${av.emoji}
+                </div>
+                <div class="avatar-pick-name">${av.name}</div>
+                <div class="avatar-pick-role">${av.title}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="auth-submit-row">
+          <button type="submit" class="btn btn-primary btn-auth-submit">
+            🎌 Hoàn Tất Đăng Ký & Bắt Đầu Học Bài 1
+          </button>
+        </div>
+
+      </form>
+    `;
+  }
+
+  handleLoginSubmit(form) {
+    const data = {
+      usernameOrEmail: form.usernameOrEmail.value,
+      password: form.password.value,
+      remember: form.remember.checked
+    };
+    this.login(data);
+  }
+
+  handleRegisterSubmit(form) {
+    const data = {
+      displayName: form.displayName.value,
+      username: form.username.value,
+      email: form.email?.value || '',
+      password: form.password.value,
+      confirmPassword: form.confirmPassword.value,
+      avatar: this.selectedAvatar
+    };
+    this.register(data);
+  }
+
+  // --------------------------------------------------------------------------
+  // RENDER GIAO DIỆN HEADER PROFILE (WIDGET GÓC PHẢI)
+  // --------------------------------------------------------------------------
+  renderHeaderAuthUI() {
+    let container = document.getElementById('auth-header-container');
+    if (!container) {
+      // Tự động tìm vị trí thích hợp trên thanh header
+      const hudBadges = document.querySelector('.user-hud-badges');
+      if (hudBadges) {
+        container = document.createElement('div');
+        container.id = 'auth-header-container';
+        container.className = 'auth-header-container';
+        hudBadges.appendChild(container);
+      } else {
+        return;
+      }
+    }
+
+    if (!this.isLoggedIn()) {
+      // Khi CHƯA ĐĂNG NHẬP: Nút nổi bật "🔑 Đăng Nhập / Đăng Ký"
+      container.innerHTML = `
+        <button class="btn-auth-trigger" onclick="window.authModule.openAuthModal('login')" title="Đăng nhập tài khoản để lưu lộ trình 25 bài học">
+          <span>🔑</span> Đăng Nhập / Đăng Ký
+        </button>
+      `;
+    } else {
+      // Khi ĐÃ ĐĂNG NHẬP: Avatar nhân vật, Tên học viên, Huy hiệu N5 Bài X/25 và Nút Đăng xuất
+      const user = this.currentUser;
+      const avatarObj = AVATAR_LIST.find(a => a.id === user.avatar) || AVATAR_LIST[0];
+      const unlockedLesson = user.profile?.unlockedLesson || 1;
+
+      container.innerHTML = `
+        <div class="user-profile-header-widget">
+          
+          <!-- Avatar nhân vật -->
+          <div class="user-header-avatar" style="background: ${avatarObj.color};" onclick="window.authModule.openLessonSelector()" title="Nhân vật: ${avatarObj.name} • Bấm để xem Lộ trình 25 bài">
+            <span>${avatarObj.emoji}</span>
+          </div>
+
+          <!-- Thông tin tên & cấp độ bài học -->
+          <div class="user-header-info" onclick="window.authModule.openLessonSelector()" title="Bấm xem Lộ trình 25 Bài Minna N5">
+            <span class="user-header-name">${user.displayName}</span>
+            <span class="user-header-badge">N5 • Bài ${unlockedLesson}/25 🏆</span>
+          </div>
+
+          <!-- Nút Đăng xuất -->
+          <button class="btn-header-logout" onclick="window.authModule.logout()" title="Đăng xuất khỏi tài khoản ${user.username}">
+            🚪
+          </button>
+
+        </div>
+      `;
+    }
+  }
+
+  setupListeners() {
+    // Tự động gọi render Header khi DOM sẵn sàng
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => this.renderHeaderAuthUI());
+    } else {
+      this.renderHeaderAuthUI();
+    }
+  }
+}
+
+// Khởi tạo instance toàn cục sẵn sàng sử dụng
+window.authModule = new JapaneseAuthModule();

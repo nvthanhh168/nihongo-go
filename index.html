@@ -1,0 +1,651 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nihongo Go! - Học Tiếng Nhật N5 & Game Đoán Từ Vựng</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+</head>
+<body>
+
+  <!-- ================= HEADER TRÊN CÙNG ================= -->
+  <header class="app-header">
+    <div class="header-inner">
+      <!-- HÃ ng 1: Brand Logo + Chá»n Level JLPT + NÃºt Ã‚m Thanh + Auth Header Profile -->
+      <div class="header-top-row">
+        <div class="brand-wrap">
+          <div class="brand-logo-icon">ðŸŒ¸</div>
+          <div class="brand-text">
+            <h1>NIHONGO GO! <span>æ—¥æœ¬èªž</span></h1>
+            <p>Há»c Tiáº¿ng Nháº­t N5 Chuáº©n Minna & AI Tanaka-Sensei</p>
+          </div>
+        </div>
+
+        <div class="header-actions-wrap">
+          <!-- Thanh chá»n cáº¥p Ä‘á»™ JLPT -->
+          <div class="level-selector-bar">
+            <button class="level-chip active" onclick="window.app.selectLevel('n5')">â˜… N5 (Trá»ng tÃ¢m)</button>
+            <button class="level-chip locked" onclick="window.app.selectLevel('n4')">N4 ðŸ”’</button>
+            <button class="level-chip locked" onclick="window.app.selectLevel('n3')">N3 ðŸ”’</button>
+            <button class="level-chip locked" onclick="window.app.selectLevel('n2')">N2 ðŸ”’</button>
+            <button class="level-chip locked" onclick="window.app.selectLevel('n1')">N1 ðŸ”’</button>
+          </div>
+
+          <!-- NÃºt báº­t táº¯t Ã¢m thanh -->
+          <button class="btn-sound-toggle" id="btn-sound-toggle" onclick="window.soundSystem.toggleSound()" title="Báº­t / Táº¯t Ã¢m thanh hiá»‡u á»©ng">
+            ðŸ”Š <span class="hide-mobile">Ã‚m thanh</span>
+          </button>
+
+          <!-- Khá»‘i ÄÄƒng Nháº­p / Há»“ SÆ¡ Há»c ViÃªn CÃ¡ NhÃ¢n -->
+          <div id="auth-header-container" class="auth-header-container"></div>
+        </div>
+      </div>
+
+      <!-- HÃ ng 2: Thanh Gamification HUD Ribbon Tráº£i DÃ i Äá»u -->
+      <div class="header-bottom-hud">
+        <div class="user-hud-badges">
+          <div class="hud-pill n5-mastery" id="hud-n5-mastery" title="Tiáº¿n Ä‘á»™ thuá»™c tá»« vá»±ng 25 BÃ i N5">
+            <span>ðŸŽ¯</span>
+            <span id="user-n5-mastery">0% (0/683)</span>
+          </div>
+          <div class="hud-pill streak" title="Chuá»—i ngÃ y há»c liÃªn tá»¥c">
+            <span>ðŸ”¥</span>
+            <span id="user-streak">1 ngÃ y</span>
+          </div>
+          <div class="hud-pill coins" title="Hoa Sakura thÆ°á»Ÿng tÃ­ch lÅ©y">
+            <span>ðŸŒ¸</span>
+            <span id="user-coins">50</span>
+          </div>
+          <div class="hud-pill exp" title="Äiá»ƒm kinh nghiá»‡m EXP">
+            <span>â­</span>
+            <span id="user-exp">0 EXP</span>
+          </div>
+          <div class="hud-pill level" title="Cáº¥p Ä‘á»™ há»c viÃªn">
+            <span id="user-level">Lv.1</span>
+            <span id="user-title" style="font-size: 11px; opacity: 0.85;">TÃ¢n Binh</span>
+          </div>
+          <button class="btn-profile-modal" id="btn-profile-modal" onclick="window.progressModule.openProfileModal()" title="Xem chi tiáº¿t há»“ sÆ¡ & sao lÆ°u tiáº¿n Ä‘á»™">
+            ðŸ“œ <span class="hide-mobile">Há»“ sÆ¡</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= THANH ĐIỀU HƯỚNG CHỌN CHẾ ĐỘ ================= -->
+  <nav class="main-nav-bar">
+    <div class="nav-bar-container">
+      <button class="nav-scroll-btn left" id="nav-btn-prev" onclick="window.app.scrollNav(-260)" aria-label="Cuá»™n trÃ¡i" title="Cuá»™n sang trÃ¡i">â€¹</button>
+      <div class="nav-tabs-wrap" id="nav-tabs-wrap">
+        <button class="nav-tab-btn active" data-tab="roadmap">
+          <span>ðŸ—ºï¸</span> Lá»™ TrÃ¬nh 25 BÃ i N5 â†’ N4
+          <span class="tab-badge" style="background:#FFE8CC; color:#D9480F;">Minna</span>
+        </button>
+        <button class="nav-tab-btn" data-tab="guess-game">
+          <span>ðŸŽ®</span> Game ÄoÃ¡n Tá»«
+          <span class="tab-badge">Hot</span>
+        </button>
+        <button class="nav-tab-btn" data-tab="speech-test">
+          <span>ðŸŽ¤</span> Test Äá»c PhÃ¡t Ã‚m
+          <span class="tab-badge" style="background:#E7F5FF; color:#1864AB;">AI Voice</span>
+        </button>
+        <button class="nav-tab-btn" data-tab="strict-sensei">
+          <span>ðŸ‘©â€ðŸ«</span> Lá»›p CÃ´ Tanaka
+          <span class="tab-badge" style="background:#FFF0F6; color:#D6336C;">Kháº£o bÃ i AI</span>
+        </button>
+        <button class="nav-tab-btn" data-tab="kana-practice">
+          <span>ðŸˆ¸</span> Báº£ng Chá»¯ CÃ¡i & Táº­p Viáº¿t
+          <span class="tab-badge" style="background:#E6FCF5; color:#0CA678;">Canvas</span>
+        </button>
+        <button class="nav-tab-btn" data-tab="grammar-scramble">
+          <span>ðŸ§©</span> Ngá»¯ PhÃ¡p & GhÃ©p CÃ¢u N5
+          <span class="tab-badge" style="background:#FFF9DB; color:#D9480F;">Game</span>
+        </button>
+        <button class="nav-tab-btn" data-tab="flashcard">
+          <span>ðŸŽ´</span> Flashcard 3D
+        </button>
+        <button class="nav-tab-btn" data-tab="memory-game">
+          <span>ðŸƒ</span> Láº­t Tháº» TrÃ­ Nhá»›
+        </button>
+        <button class="nav-tab-btn" data-tab="vocab-vault">
+          <span>ðŸ“–</span> Sá»• Tay Tá»« Vá»±ng N5
+        </button>
+        <button class="nav-tab-btn" data-tab="mock-test">
+          <span>ðŸŽ¯</span> Thi Thá»­ JLPT N5
+          <span class="tab-badge" style="background:#FFE3E3; color:#E03131;">Exam</span>
+        </button>
+      </div>
+      <button class="nav-scroll-btn right" id="nav-btn-next" onclick="window.app.scrollNav(260)" aria-label="Cuá»™n pháº£i" title="Cuá»™n sang pháº£i">â€º</button>
+      
+      <!-- NÃºt xem nhanh danh sÃ¡ch toÃ n bá»™ 10 Cháº¿ Ä‘á»™ (ráº¥t tiá»‡n trÃªn Mobile / iPad / Laptop) -->
+      <button class="nav-all-modes-btn" id="btn-open-modes-modal" onclick="window.app.openModesModal()" title="Xem táº¥t cáº£ 10 Cháº¿ Äá»™ Há»c">
+        <span>â˜°</span> <span class="hide-mobile">10 Cháº¿ Äá»™</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ================= BỐ CỤC CHÍNH (CONTAINER) ================= -->
+  <div class="app-container">
+    
+    <!-- Cột trái: Linh vật hoạt hình Shiba Sensei & Cô giáo khó tính -->
+    <aside class="mascot-sidebar">
+      <div id="mascot-container">
+        <!-- Mascot SVG, Character Switcher & Speech Bubble render bằng JavaScript -->
+      </div>
+      <div class="mascot-info">
+        <div class="mascot-name" id="mascot-name">Shiba Sensei (柴先生)</div>
+        <div class="mascot-role" id="mascot-role">Trợ lý học tiếng Nhật vui vẻ 🐕</div>
+      </div>
+    </aside>
+
+    <!-- Cột phải: Khu vực nội dung các Tabs -->
+    <main class="content-area">
+
+      <!-- ================= TAB: LỘ TRÌNH 25 BÀI MINNA N5 -> N4 ================= -->
+      <section class="app-tab-panel active" id="tab-roadmap">
+        <div id="roadmap-container">
+          <!-- Render dynamically bằng js/roadmap.js -->
+        </div>
+      </section>
+
+      <!-- ================= TAB 1: GAME ĐOÁN TỪ VỰNG ================= -->
+      <section class="app-tab-panel" id="tab-guess-game">
+        <div id="guess-game-container">
+          <!-- Game HUD và thẻ câu hỏi render bằng game-guess.js -->
+        </div>
+      </section>
+
+      <!-- ================= TAB 2: TEST PHÁT ÂM AI ================= -->
+      <section class="app-tab-panel" id="tab-speech-test">
+        <div class="speech-test-card" id="speech-test-card">
+
+          <!-- Thanh chọn 2 chế độ luyện đọc: Đọc Từ Vựng Đơn vs Đọc Cả Câu Ví Dụ N5 -->
+          <div class="speech-mode-selector-bar">
+            <button class="speech-mode-chip active" id="mode-btn-word" onclick="window.speechModule.setMode('word')">
+              🔤 Đọc Từ Vựng Đơn
+            </button>
+            <button class="speech-mode-chip" id="mode-btn-sentence" onclick="window.speechModule.setMode('sentence')">
+              📜 Đọc Cả Câu Ví Dụ N5
+            </button>
+          </div>
+
+          <div class="speech-header-nav">
+            <button class="btn btn-secondary btn-sm" onclick="window.speechModule.prevWord()">
+              ⬅️ Từ trước
+            </button>
+            <div class="speech-counter-wrap">
+              <span class="speech-badge-title" id="speech-word-counter">1 / 102</span>
+              <span class="speech-category-tag" id="speech-word-category">Chào hỏi</span>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="window.speechModule.nextWord()">
+              Từ kế tiếp ➡️
+            </button>
+          </div>
+
+          <div class="speech-main-display" id="speech-main-display">
+            <!-- Cột minh họa SVG -->
+            <div class="speech-visual-art" id="speech-target-visual">
+              <!-- SVG minh họa của từ -->
+            </div>
+
+            <!-- Cột nội dung từ vựng / câu -->
+            <div class="speech-text-detail" id="speech-text-detail">
+
+              <!-- Chữ Kanji lớn có Furigana trên đầu bằng thẻ <ruby> -->
+              <div class="speech-kanji-wrap" id="speech-target-kanji-wrap">
+                <ruby class="ruby-kanji-display" id="speech-ruby-display">
+                  <span id="speech-target-kanji">食べる</span>
+                  <rt id="speech-target-hiragana">たべる</rt>
+                </ruby>
+              </div>
+
+              <!-- Romaji & Hán Việt -->
+              <div class="speech-meta-row">
+                <span class="speech-romaji-text" id="speech-target-romaji">taberu</span>
+                <span class="badge-hanviet" id="speech-target-hanviet">【Hán Việt: THỰC】</span>
+              </div>
+
+              <!-- Trực quan hóa Pitch Accent Trọng Âm Cao - Thấp -->
+              <div class="speech-pitch-accent-block" id="speech-pitch-block">
+                <div class="pitch-badge-title" id="speech-target-pitch">Trọng âm: [2] (Nakadaka)</div>
+                <div class="pitch-visual-graph" id="speech-pitch-graph">
+                  <!-- Sơ đồ cao thấp biểu diễn trực quan -->
+                </div>
+              </div>
+
+              <!-- Ý nghĩa tiếng Việt -->
+              <div class="speech-meaning-sub">
+                Ý nghĩa: <strong id="speech-target-meaning">Ăn</strong>
+              </div>
+
+              <!-- Hộp hiển thị câu ví dụ N5 (Nổi bật khi ở chế độ Đọc Cả Câu Ví Dụ) -->
+              <div class="speech-sentence-box" id="speech-sentence-box">
+                <div class="sentence-box-label">📜 Câu ví dụ N5 chuẩn:</div>
+                <div class="sentence-ja" id="speech-sentence-ja">ごはんをたべます。</div>
+                <div class="sentence-hira" id="speech-sentence-hira">Cách đọc: ごはんをたべます</div>
+                <div class="sentence-romaji" id="speech-sentence-romaji">Gohan o tabemasu.</div>
+                <div class="sentence-vi" id="speech-sentence-vi">Dịch nghĩa: Tôi ăn cơm.</div>
+              </div>
+
+              <!-- Hộp cảnh báo lỗi hay gặp -->
+              <div class="speech-mistake-box" id="speech-target-mistake"></div>
+            </div>
+          </div>
+
+          <!-- Nút loa phát âm mẫu chuẩn và đọc chậm -->
+          <div class="speech-audio-actions">
+            <button class="btn btn-secondary speech-voice-btn" onclick="window.speechModule.playTargetAudio(1.0)">
+              🔊 Nghe mẫu chuẩn (1.0x)
+            </button>
+            <button class="btn btn-secondary speech-voice-btn" onclick="window.speechModule.playTargetAudio(0.6)">
+              🐢 Nghe đọc chậm (0.6x)
+            </button>
+          </div>
+
+          <!-- Khu vực Micro thu âm & Test phát âm trực quan -->
+          <div class="mic-action-zone">
+            <div class="mic-button-wrapper">
+              <button class="btn-mic-main" id="speech-mic-btn" onclick="window.speechModule.toggleListening()" title="Bấm để bắt đầu thu âm">
+                🎙️
+              </button>
+              <div class="mic-pulse-ring" id="speech-mic-pulse"></div>
+            </div>
+
+            <!-- Sóng âm thanh trực quan nhấp nhô khi người học phát âm -->
+            <div class="speech-waveform-bars" id="speech-waveform-bars">
+              <span class="waveform-bar bar-1"></span>
+              <span class="waveform-bar bar-2"></span>
+              <span class="waveform-bar bar-3"></span>
+              <span class="waveform-bar bar-4"></span>
+              <span class="waveform-bar bar-5"></span>
+              <span class="waveform-bar bar-6"></span>
+              <span class="waveform-bar bar-7"></span>
+              <span class="waveform-bar bar-8"></span>
+            </div>
+
+            <p class="mic-instruction-text" id="speech-mic-status">
+              Bấm biểu tượng Micro và phát âm to từ tiếng Nhật trên
+            </p>
+          </div>
+
+          <!-- Khung hiển thị kết quả chấm điểm chi tiết -->
+          <div class="speech-result-box hidden" id="speech-result-box">
+            <!-- Kết quả nhận diện & Chấm điểm chính xác % -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TAB: LỚP HỌC CÙNG CÔ GIÁO KHÓ TÍNH (TAKAGI-SENSEI AI) ================= -->
+      <section class="app-tab-panel" id="tab-strict-sensei">
+        <div class="sensei-classroom-card">
+
+          <!-- Header Cô giáo Tanaka -->
+          <div class="sensei-classroom-header">
+            <div class="sensei-header-profile">
+              <div class="sensei-profile-avatar">
+                <svg viewBox="0 0 100 100" class="sensei-svg-avatar">
+                  <circle cx="50" cy="24" r="14" fill="#1A202C" />
+                  <line x1="36" y1="22" x2="64" y2="20" stroke="#FA5252" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M 28 85 L 72 85 L 76 100 L 24 100 Z" fill="#1864AB" />
+                  <polygon points="40,70 50,85 60,70" fill="#FFFFFF" />
+                  <polygon points="48,82 52,82 50,96" fill="#E03131" />
+                  <ellipse cx="50" cy="52" rx="22" ry="24" fill="#FFE3E3" />
+                  <path d="M 28 46 Q 50 30 72 46 Q 66 32 50 32 Q 34 32 28 46 Z" fill="#1A202C" />
+                  <rect x="33" y="46" width="14" height="10" rx="3" fill="#E7F5FF" opacity="0.6" stroke="#C92A2A" stroke-width="2" />
+                  <rect x="53" y="46" width="14" height="10" rx="3" fill="#E7F5FF" opacity="0.6" stroke="#C92A2A" stroke-width="2" />
+                  <line x1="47" y1="51" x2="53" y2="51" stroke="#C92A2A" stroke-width="2" />
+                  <circle cx="40" cy="51" r="2.5" fill="#1864AB" />
+                  <circle cx="60" cy="51" r="2.5" fill="#1864AB" />
+                  <line x1="46" y1="66" x2="54" y2="66" stroke="#212529" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="sensei-header-name">Cô giáo Tanaka (高木先生) 👩‍🏫</h3>
+                <p class="sensei-header-desc">Kibishii Sensei • Giáo viên cầu toàn tại Tokyo • Chuyên gia mổ xẻ lỗi sai N5</p>
+              </div>
+            </div>
+
+            <div class="sensei-header-actions">
+              <button class="btn btn-secondary btn-sm" onclick="window.senseiAI.openConfigModal()">
+                ⚙️ Cấu hình API/Endpoint
+              </button>
+            </div>
+          </div>
+
+          <!-- Thanh chọn 3 chế độ khảo bài của Cô Tanaka -->
+          <div class="sensei-mode-tab-bar">
+            <button class="sensei-mode-btn active" id="btn-mode-sentence" onclick="window.senseiAI.setPracticeMode('sentence')">
+              ✍️ Tự Đặt Câu N5
+            </button>
+            <button class="sensei-mode-btn" id="btn-mode-translate" onclick="window.senseiAI.setPracticeMode('translate')">
+              🎯 Thử Thách Dịch Việt ➔ Nhật
+            </button>
+            <button class="sensei-mode-btn" id="btn-mode-chat" onclick="window.senseiAI.setPracticeMode('chat')">
+              💬 Hỏi Đáp & Mắng Yêu
+            </button>
+          </div>
+
+          <!-- KHUNG CHẾ ĐỘ 1: TỰ ĐẶT CÂU N5 -->
+          <div class="sensei-practice-panel" id="panel-practice-sentence" style="display: block;">
+            <div class="practice-box-header">
+              <div class="practice-prompt-label">Từ vựng mục tiêu cần đặt câu:</div>
+              <div class="sentence-word-badge" id="sentence-target-badge">
+                <strong>食べる</strong> <span>(たべる - Ăn)</span>
+              </div>
+              <button class="btn btn-secondary btn-sm" onclick="window.senseiAI.pickRandomWordForSentence()">
+                🎲 Đổi từ khác
+              </button>
+            </div>
+            <div class="practice-input-container">
+              <textarea 
+                id="sentence-user-input" 
+                class="practice-textarea" 
+                rows="2" 
+                placeholder="Nhập câu tiếng Nhật của em có chứa từ trên (hoặc bấm Micro bên dưới để nói)..."
+              ></textarea>
+              <div class="practice-btn-row">
+                <button class="btn btn-secondary" onclick="window.speechModule.toggleListening()" title="Nói câu tiếng Nhật vào Micro">
+                  🎙️ Nói vào Micro
+                </button>
+                <button class="btn btn-primary" onclick="window.senseiAI.submitStudentSentence()">
+                  Nộp bài cho cô Tanaka chấm 📝
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- KHUNG CHẾ ĐỘ 2: THỬ THÁCH DỊCH VIỆT ➔ NHẬT N5 -->
+          <div class="sensei-practice-panel" id="panel-practice-translate" style="display: none;">
+            <div class="translate-challenge-card">
+              <div class="challenge-label-row">
+                <span class="challenge-badge">🎯 Đề bài khảo bài:</span>
+                <button class="btn btn-secondary btn-sm" onclick="window.senseiAI.pickRandomTranslationChallenge()">
+                  🔄 Đổi đề bài khác
+                </button>
+              </div>
+              <h3 class="translate-prompt-text" id="translate-prompt-text">
+                Tôi ăn cơm cùng với gia đình ở nhà.
+              </h3>
+              <p class="translate-prompt-notes" id="translate-prompt-notes">
+                💡 Gợi ý của cô: Chú ý trợ từ chỉ địa điểm hành động và trợ từ chỉ người cùng thực hiện.
+              </p>
+            </div>
+            <div class="practice-input-container">
+              <textarea 
+                id="translate-user-input" 
+                class="practice-textarea" 
+                rows="2" 
+                placeholder="Nhập bản dịch tiếng Nhật của em vào đây (hoặc bấm Micro để đọc)..."
+              ></textarea>
+              <div class="practice-btn-row">
+                <button class="btn btn-secondary" onclick="window.speechModule.toggleListening()" title="Đọc bản dịch tiếng Nhật vào Micro">
+                  🎙️ Đọc vào Micro
+                </button>
+                <button class="btn btn-primary" onclick="window.senseiAI.submitStudentTranslation()">
+                  Nộp bài khảo bài cho Cô 📝
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- KHUNG HIỂN THỊ KẾT QUẢ CHẤM ĐIỂM CỦA CÔ TAKAGI (RANK S/A/B/C/F) -->
+          <div id="sensei-evaluation-box" class="sensei-evaluation-box hidden">
+            <!-- Render kết quả mổ xẻ lỗi và câu chuẩn của người Tokyo -->
+          </div>
+
+          <!-- KHUNG CHẾ ĐỘ 3: CHAT VÀ HỎI ĐÁP TỰ DO -->
+          <div class="sensei-practice-panel" id="panel-practice-chat" style="display: none;">
+            <div class="sensei-quick-prompts">
+              <span class="quick-prompt-label">Gợi ý nhanh:</span>
+              <button class="quick-chip" onclick="window.senseiAI.sendChatMessage('Cô mắng em một câu thật nghiêm khắc để em có động lực cày N5 đi cô!')">
+                🔥 Mắng em một câu đi cô!
+              </button>
+              <button class="quick-chip" onclick="window.senseiAI.sendChatMessage('Cô ơi, phân biệt giúp em khi nào dùng trợ từ は và khi nào dùng trợ từ が trong N5 với!')">
+                ❓ Phân biệt は vs が
+              </button>
+              <button class="quick-chip" onclick="window.senseiAI.sendChatMessage('Cô kiểm tra xem câu này có sai trợ từ hay ngữ pháp không: わたしはパンをたべます。')">
+                📝 Kiểm tra ngữ pháp
+              </button>
+            </div>
+
+            <div class="sensei-chat-box" id="sensei-chat-messages">
+              <div class="chat-bubble-row sensei-bubble">
+                <div class="sensei-bubble-avatar">
+                  <span style="font-size: 26px;">👩‍🏫</span>
+                </div>
+                <div class="chat-bubble-content sensei-text">
+                  <div class="sensei-bubble-header">
+                    <strong>Tanaka-sensei (高木先生)</strong>
+                  </div>
+                  <div>
+                    Đến giờ học rồi đấy, đứng thẳng lưng lên nào! 
+                    <br><br>
+                    Tôi là Cô giáo Tanaka (Kibishii Sensei). Ở lớp của tôi, không có chỗ cho sự hời hợt hay đọc bừa! Dù là một dấu trường âm hay nhầm trợ từ は và が là tôi bắt chép phạt ngay!
+                    <br><br>
+                    Em có thắc mắc gì hoặc cần tôi mổ xẻ bài tập nào? Viết hoặc nói vào micro ngay xem nào!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sensei-chat-input-bar">
+              <input 
+                type="text" 
+                id="sensei-input-field" 
+                class="sensei-text-input" 
+                placeholder="Nhập câu tiếng Nhật hoặc câu hỏi cần cô Tanaka giải đáp..." 
+                onkeydown="if(event.key === 'Enter') { window.senseiAI.sendChatMessage(this.value); this.value = ''; }"
+              >
+              <button class="btn btn-secondary btn-icon" onclick="window.speechModule.toggleListening()" title="Nói vào micro">
+                🎙️
+              </button>
+              <button class="btn btn-primary" onclick="const input = document.getElementById('sensei-input-field'); window.senseiAI.sendChatMessage(input.value); input.value = '';">
+                Gửi cô ✉️
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= TAB 3: FLASHCARD 3D ================= -->
+      <section class="app-tab-panel" id="tab-flashcard">
+        <div id="flashcard-container">
+          <!-- Flashcard 3D render bằng flashcard.js -->
+        </div>
+      </section>
+
+      <!-- ================= TAB 4: LẬT THẺ TRÍ NHỚ ================= -->
+      <section class="app-tab-panel" id="tab-memory-game">
+        <div id="memory-game-container">
+          <!-- Memory game render bằng game-memory.js -->
+        </div>
+      </section>
+
+      <!-- ================= TAB 5: SỔ TAY TỪ VỰNG N5 ================= -->
+      <section class="app-tab-panel" id="tab-vocab-vault">
+        <div class="vocab-vault-header">
+          <div class="search-input-wrap">
+            <input 
+              type="text" 
+              id="vault-search-input"
+              class="search-input" 
+              placeholder="🔍 Tìm kiếm tức thời (tiếng Việt không dấu/có dấu: inu, chó, taberu, ăn, 食べる, THỰC...)" 
+              oninput="window.app.onSearchInput(this.value)"
+            >
+            <button class="search-clear-btn" onclick="window.app.clearSearch()" title="Xóa ô tìm kiếm">✕</button>
+          </div>
+          <div class="vault-filter-toolbar">
+            <div class="vault-category-chips" id="vault-category-chips">
+              <!-- Render bộ lọc chủ đề -->
+            </div>
+            <div class="vault-status-chips" id="vault-status-chips">
+              <button class="vault-status-btn active" data-status="all" onclick="window.app.setVaultStatus('all')">Tất cả</button>
+              <button class="vault-status-btn" data-status="unmastered" onclick="window.app.setVaultStatus('unmastered')">⚠️ Chưa thuộc</button>
+              <button class="vault-status-btn" data-status="mastered" onclick="window.app.setVaultStatus('mastered')">✅ Đã thuộc</button>
+              <button class="vault-status-btn" data-status="mistake" onclick="window.app.setVaultStatus('mistake')">📕 Từ hay sai</button>
+            </div>
+          </div>
+          <div class="vault-summary-bar">
+            <span id="vault-result-counter">Đang tải danh sách từ vựng...</span>
+          </div>
+        </div>
+        <div class="vocab-rows-list" id="vocab-list-items">
+          <!-- Danh sách từ vựng N5 render bằng app.js -->
+        </div>
+      </section>
+
+      <!-- ================= TAB 6: BẢNG CHỮ CÁI & TẬP VIẾT KANA / KANJI ================= -->
+      <section class="app-tab-panel" id="tab-kana-practice">
+        <div id="kana-practice-container">
+          <!-- Render dynamically bằng js/kana.js -->
+        </div>
+      </section>
+
+      <!-- ================= TAB 7: NGỮ PHÁP & GHÉP CÂU N5 ================= -->
+      <section class="app-tab-panel" id="tab-grammar-scramble">
+        <div id="grammar-scramble-container">
+          <!-- Render dynamically bằng js/grammar.js -->
+        </div>
+      </section>
+
+      <!-- ================= TAB 8: THI THỬ JLPT N5 ================= -->
+      <section class="app-tab-panel" id="tab-mock-test">
+        <div id="mock-test-container">
+          <!-- Render dynamically bằng js/mock-test.js -->
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  
+  <!-- ================= MODAL CHá»ŒN NHANH 10 CHáº¾ Äá»˜ Há»ŒC (MOBILE / IPAD / PC) ================= -->
+  <div id="all-modes-modal" class="modes-modal-backdrop" style="display:none;" onclick="if(event.target===this)window.app.closeModesModal()">
+    <div class="modes-modal-card">
+      <div class="modes-modal-header">
+        <div class="modes-modal-title">
+          <span style="font-size: 28px;">ðŸŒ¸</span>
+          <div>
+            <h3>Táº¥t Cáº£ 10 Cháº¿ Äá»™ Há»c Tiáº¿ng Nháº­t N5</h3>
+            <p>Há»c theo lá»™ trÃ¬nh Minna no Nihongo & AI Tanaka-Sensei</p>
+          </div>
+        </div>
+        <button class="modes-modal-close" onclick="window.app.closeModesModal()">âœ•</button>
+      </div>
+      <div class="modes-modal-body">
+        <div class="modes-modal-grid">
+          <div class="mode-select-card" onclick="window.app.switchTab('roadmap'); window.app.closeModesModal();">
+            <div class="mode-icon-circle" style="background:#FFF4E6; color:#D9480F;">ðŸ—ºï¸</div>
+            <div class="mode-info">
+              <h4>Lá»™ TrÃ¬nh 25 BÃ i N5 â†’ N4</h4>
+              <p>5 cháº·ng Ä‘Æ°á»ng, má»Ÿ khÃ³a 25 level, hoÃ n thÃ nh 3 nhiá»‡m vá»¥ má»—i bÃ i</p>
+            </div>
+            <span class="mode-badge-pill" style="background:#FFE8CC; color:#D9480F;">Minna 25 BÃ i</span>
+          </div>
+
+          <div class="mode-select-card" onclick="window.app.switchTab('guess-game'); window.app.closeModesModal();">
+            <div class="mode-icon-circle" style="background:#FFE3E3; color:#E03131;">ðŸŽ®</div>
+            <div class="mode-info">
+              <h4>Game ÄoÃ¡n Tá»« Vá»±ng</h4>
+              <p>Tráº¯c nghiá»‡m nhÃ¬n hÃ¬nh, nghe voice, Ä‘á»‘ chá»¯ cÃ³ tÃ­nh giá» & chuá»—i combo</p>
+            </div>
+            <span class="mode-badge-pill" style="background:#FFE3E3; color:#E03131;">Hot Game</span>
+          </div>
+
+          <div class="mode-select-card" onclick="window.app.switchTab('speech-test'); window.app.closeModesModal();">
+            <div class="mode-icon-circle" style="background:#E7F5FF; color:#1864AB;">ðŸŽ¤</div>
+            <div class="mode-info">
+              <h4>Test Äá»c PhÃ¡t Ã‚m AI</h4>
+              <p>Luyá»‡n phÃ¡t Ã¢m qua Micro, Tanaka-sensei cháº¥m Ä‘iá»ƒm & soi chi tiáº¿t</p>
+            </div>
+            <span class="mode-badge-pill" style="background:#E7F5FF; color:#1864AB;">AI Voice</span>
+          </div>
+
+          <div class="mode-select-card" onclick="window.app.switchTab('strict-sensei'); window.app.closeModesModal();">
+            <div class="mode-icon-circle" style="background:#FFF0F6; color:#D6336C;">ðŸ‘©â€ðŸ«</div>
+            <div class="mode-info">
+              <h4>Lá»›p CÃ´ Tanaka (Chat Dojo)</h4>
+              <p>Kháº£o bÃ i ngá»¯ phÃ¡p 1-on-1 thÃ­ch á»©ng chÃ­nh xÃ¡c theo Level hiá»‡n táº¡i</p>
+            </div>
+            <span class="mode-badge-pill" style="background:#FFF0F6; color:#D6336C;">Sensei AI</span>
+          </div>
+
+          <div class="mode-select-card" onclick="window.app.switchTab('kana-practice'); window.app.closeModesModal();">
+            <div class="mode-icon-circle" style="background:#E6FCF5; color:#0CA678;">ðŸˆ¸</div>
+            <div class="mode-info">
+              <h4>Báº£ng Chá»¯ CÃ¡i & Táº­p Viáº¿t</h4>
+              <p>Báº£ng Ã¢m Hiragana, Katakana & Báº£ng Canvas cáº£m á»©ng luyá»‡n viáº¿t nÃ©t</p>
+            </div>
+            <span class="mode-badge-pill" style="background:#E6FCF5; color:#0CA678;">Canvas Váº½</span>
+          </div>
+
+          <div class="mode-select-card" onclick="window.app.switchTab('grammar-scramble'); window.app.closeModesModal();">
+            <div class="mode-icon-circle" style="background:#FFF9DB; color:#F59F00;">ðŸ§©</div>
+            <div class="mode-info">
+              <h4>Ngá»¯ PhÃ¡p & GhÃ©p CÃ¢u N5</h4>
+              <p>22 máº«u ngá»¯ phÃ¡p trá»ng tÃ¢m kÃ¨m Game xáº¿p tá»« thÃ nh cÃ¢u hoÃ n chá»‰nh</p>
+            </div>
+            <span class="mode-badge-pill" style="background:#FFF9DB; color:#D9480F;">22 Ngá»¯ PhÃ¡p</span>
+          </div>
+
+          <div class="mode-select-card" onclick="window.app.switchTab('flashcard'); window.app.closeModesModal();">
+            <div class="mode-icon-circle" style="background:#F3F0FF; color:#7048E8;">ðŸŽ´</div>
+            <div class="mode-info">
+              <h4>Flashcard 3D</h4>
+              <p>Láº­t tháº» 3 chiá»u, hÃ¬nh áº£nh minh há»a SVG, nghe phÃ¡t Ã¢m chuáº©n báº£n xá»©</p>
+            </div>
+            <span class="mode-badge-pill" style="background:#F3F0FF; color:#7048E8;">Láº­t Tháº» 3D</span>
+          </div>
+
+          <div class="mode-select-card" onclick="window.app.switchTab('memory-game'); window.app.closeModesModal();">
+            <div class="mode-icon-circle" style="background:#EBFBEE; color:#2B8A3E;">ðŸƒ</div>
+            <div class="mode-info">
+              <h4>Láº­t Tháº» TrÃ­ Nhá»›</h4>
+              <p>TÃ¬m cáº·p tháº» Kanji - Hiragana - NghÄ©a tÆ°Æ¡ng á»©ng rÃ¨n luyá»‡n pháº£n xáº¡</p>
+            </div>
+            <span class="mode-badge-pill" style="background:#EBFBEE; color:#2B8A3E;">Memory Match</span>
+          </div>
+
+          <div class="mode-select-card" onclick="window.app.switchTab('vocab-vault'); window.app.closeModesModal();">
+            <div class="mode-icon-circle" style="background:#E7F5FF; color:#1971C2;">ðŸ“–</div>
+            <div class="mode-info">
+              <h4>Sá»• Tay Tá»« Vá»±ng N5</h4>
+              <p>Tra cá»©u trá»n bá»™ 683 tá»« vá»±ng cá»§a cáº£ 25 bÃ i, bá»™ lá»c chá»§ Ä‘á» thÃ´ng minh</p>
+            </div>
+            <span class="mode-badge-pill" style="background:#E7F5FF; color:#1971C2;">683 Tá»« Vá»±ng</span>
+          </div>
+
+          <div class="mode-select-card" onclick="window.app.switchTab('mock-test'); window.app.closeModesModal();">
+            <div class="mode-icon-circle" style="background:#FFE3E3; color:#C92A2A;">ðŸŽ¯</div>
+            <div class="mode-info">
+              <h4>Thi Thá»­ JLPT N5</h4>
+              <p>PhÃ²ng thi chuáº©n cÃ³ Ä‘á»“ng há»“ báº¥m giá», cáº¥p Chá»©ng Chá»‰ cÃ³ Triá»‡n Äá» Hanko</p>
+            </div>
+            <span class="mode-badge-pill" style="background:#FFE3E3; color:#C92A2A;">Thi Thá»­ Chuáº©n</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="js/data.js"></script>
+  <script src="js/lessons-data.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/mascot.js"></script>
+  <script src="js/ai-sensei.js"></script>
+  <script src="js/kana.js"></script>
+  <script src="js/grammar.js"></script>
+  <script src="js/mock-test.js"></script>
+  <script src="js/flashcard.js"></script>
+  <script src="js/game-guess.js"></script>
+  <script src="js/game-memory.js"></script>
+  <script src="js/speech-test.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/roadmap.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+# Git Ignore for Nihongo Go!
+# Large PDFs and reference materials (over GitHub 50MB recommended limit)
+*.pdf
+VIDEOS KAIWA/
+De^` thi N5_2017/
+File luye?^n vie^'t kanji N5-N1/
+Ti li?u t?ng h?p thm/
+Tài liệu tổng hợp thêm/
+
+# System / OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and temp files
+*.log
+*.tmp
+.system_generated/
+scratch/
+
+# Local Environment
+.env
+.env.local
+*thi N5*
