@@ -59,6 +59,15 @@ const ROADMAP_REGIONS = [
     desc: 'Lý do & Thắc mắc (～んです), Động từ Thể Khả năng, Hành động song song (～ながら), Tự động từ trạng thái & Chuẩn bị sẵn sàng (V-てあります)',
     themeColor: '#D6336C',
     bgGradient: 'linear-gradient(135deg, #FFF0F6 0%, #FFDEEB 100%)'
+  },
+  {
+    id: 7,
+    name: 'Chặng 7: Vượt Vũ Môn N4 - Xứ Sở Biển Seto & Hoa Anh Đào (瀬戸内・広島)',
+    icon: '🌸',
+    range: [31, 35],
+    desc: 'Thể Ý chí (～よう), Lời khuyên & Phỏng đoán (～たほうがいい, ～でしょう), Thể Mệnh lệnh & Cấm chỉ (命令形・禁止形), Làm theo hướng dẫn (～とおりに) & Thể Điều kiện (～ば)',
+    themeColor: '#4C6EF5',
+    bgGradient: 'linear-gradient(135deg, #EDF2FF 0%, #DBE4FF 100%)'
   }
 ];
 

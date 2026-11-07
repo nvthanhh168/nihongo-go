@@ -43,7 +43,12 @@ const MINNA_LESSONS_N5 = [
   { id: 27, title: 'Bài 27 (N4)', desc: 'Động từ Thể Khả năng (可能形 - Kanoukei) & Năng lực', targetWords: 33 },
   { id: 28, title: 'Bài 28 (N4)', desc: 'Hành động song song (～ながら) & Nhiều lý do (～し、～し)', targetWords: 40 },
   { id: 29, title: 'Bài 29 (N4)', desc: 'Tự động từ & Diễn tả trạng thái kết quả (V-ています)', targetWords: 39 },
-  { id: 30, title: 'Bài 30 (N4)', desc: 'Trạng thái có chủ đích (～てあります) & Chuẩn bị trước (～ておきます)', targetWords: 39 }
+  { id: 30, title: 'Bài 30 (N4)', desc: 'Trạng thái có chủ đích (～てあります) & Chuẩn bị trước (～ておきます)', targetWords: 39 },
+  { id: 31, title: 'Bài 31 (N4)', desc: 'Thể Ý chí & Kế hoạch tương lai (～よう, ～つもり, ～予定)', targetWords: 28 },
+  { id: 32, title: 'Bài 32 (N4)', desc: 'Lời khuyên & Phỏng đoán (～たほうがいい, ～でしょう, ～かもしれない)', targetWords: 50 },
+  { id: 33, title: 'Bài 33 (N4)', desc: 'Thể Mệnh lệnh, Cấm chỉ & Ý nghĩa biển báo (命令形・禁止形)', targetWords: 36 },
+  { id: 34, title: 'Bài 34 (N4)', desc: 'Làm theo hướng dẫn & Thứ tự hành động (～とおりに, ～あとで)', targetWords: 34 },
+  { id: 35, title: 'Bài 35 (N4)', desc: 'Thể Điều kiện Giả định (条件形 ～ば, ～なら, ～ば～ほど)', targetWords: 34 }
 ];
 
 class JapaneseAuthModule {
@@ -485,8 +490,8 @@ class JapaneseAuthModule {
         completedAt: new Date().toISOString()
       };
 
-      // Mở khóa bài tiếp theo nếu bài vừa hoàn thành là bài cao nhất (cho phép đến Bài 30 nếu đã đăng nhập)
-      if (lessonNumber === p.unlockedLesson && lessonNumber < 30) {
+      // Mở khóa bài tiếp theo nếu bài vừa hoàn thành là bài cao nhất (cho phép đến Bài 35 nếu đã đăng nhập)
+      if (lessonNumber === p.unlockedLesson && lessonNumber < 35) {
         p.unlockedLesson = lessonNumber + 1;
       }
       unlocked = p.unlockedLesson;
