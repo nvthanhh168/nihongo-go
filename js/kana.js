@@ -462,8 +462,8 @@ class JapaneseKanaModule {
         </div>
 
         <div class="kana-action-footer">
-          <button class="btn btn-primary btn-sm" onclick="window.kanaModule.loadCharToCanvas('${displayChar}')">
-            ✍️ Đưa vào Bảng tập viết ngay
+          <button class="btn-load-canvas-orange" onclick="window.kanaModule.loadCharToCanvas('${displayChar}')">
+            ⚡ Đưa vào Bảng tập viết ngay
           </button>
         </div>
       </div>
@@ -473,14 +473,14 @@ class JapaneseKanaModule {
   loadCharToCanvas(char) {
     this.writingTarget = char;
     this.writingType = 'kana';
-    this.updateCanvasGuide();
+    this.renderKanjiBar();
     this.clearCanvas();
     if (window.soundSystem) window.soundSystem.playPop();
 
-    // Cuộn mượt đến bảng tập viết nếu trên mobile
+    // Cuộn mượt đến bảng tập viết nếu trên mobile / iPad
     const canvasSec = document.querySelector('.kana-canvas-section');
-    if (canvasSec && window.innerWidth < 900) {
-      canvasSec.scrollIntoView({ behavior: 'smooth' });
+    if (canvasSec && window.innerWidth < 992) {
+      canvasSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
@@ -532,11 +532,15 @@ class JapaneseKanaModule {
     this.writingTarget = k.kanji;
     this.writingType = 'kanji';
     this.renderKanjiBar();
-    this.updateCanvasGuide();
     this.clearCanvas();
 
     if (window.soundSystem) {
       window.soundSystem.speak(k.hira.split('/')[0].trim(), 1.0);
+    }
+
+    const canvasSec = document.querySelector('.kana-canvas-section');
+    if (canvasSec && window.innerWidth < 992) {
+      canvasSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
@@ -559,46 +563,58 @@ class JapaneseKanaModule {
     const w = this.canvas.width;
     const h = this.canvas.height;
 
-    // Nền trắng giấy tập viết
+    // Nền trắng giấy tập viết chuẩn Nhật Bản
     this.ctx.fillStyle = '#FFFFFF';
     this.ctx.fillRect(0, 0, w, h);
 
-    if (!this.showGrid) return;
+    if (this.showGrid) {
+      this.ctx.save();
+      // Khung viền ngoài
+      this.ctx.strokeStyle = '#FFC9C9';
+      this.ctx.lineWidth = 3;
+      this.ctx.strokeRect(10, 10, w - 20, h - 20);
 
-    // Khung viền ngoài
-    this.ctx.save();
-    this.ctx.strokeStyle = '#FFC9C9';
-    this.ctx.lineWidth = 3;
-    this.ctx.strokeRect(10, 10, w - 20, h - 20);
+      // Đường kẻ chữ thập trung tâm (Nét đứt chuẩn Nhật Bản Genkouyoushi)
+      this.ctx.strokeStyle = '#FFA8A8';
+      this.ctx.lineWidth = 1.5;
+      this.ctx.setLineDash([6, 6]);
 
-    // Đường kẻ chữ thập trung tâm (Nét đứt chuẩn Nhật Bản)
-    this.ctx.strokeStyle = '#FFA8A8';
-    this.ctx.lineWidth = 1.5;
-    this.ctx.setLineDash([6, 6]);
+      // Trục dọc trung tâm
+      this.ctx.beginPath();
+      this.ctx.moveTo(w / 2, 10);
+      this.ctx.lineTo(w / 2, h - 10);
+      this.ctx.stroke();
 
-    // Trục dọc
-    this.ctx.beginPath();
-    this.ctx.moveTo(w / 2, 10);
-    this.ctx.lineTo(w / 2, h - 10);
-    this.ctx.stroke();
+      // Trục ngang trung tâm
+      this.ctx.beginPath();
+      this.ctx.moveTo(10, h / 2);
+      this.ctx.lineTo(w - 10, h / 2);
+      this.ctx.stroke();
 
-    // Trục ngang
-    this.ctx.beginPath();
-    this.ctx.moveTo(10, h / 2);
-    this.ctx.lineTo(w - 10, h / 2);
-    this.ctx.stroke();
+      // Hai đường chéo góc mờ
+      this.ctx.strokeStyle = '#FFE3E3';
+      this.ctx.setLineDash([4, 8]);
+      this.ctx.beginPath();
+      this.ctx.moveTo(10, 10);
+      this.ctx.lineTo(w - 10, h - 10);
+      this.ctx.moveTo(w - 10, 10);
+      this.ctx.lineTo(10, h - 10);
+      this.ctx.stroke();
 
-    // Hai đường chéo góc mờ
-    this.ctx.strokeStyle = '#FFE3E3';
-    this.ctx.setLineDash([4, 8]);
-    this.ctx.beginPath();
-    this.ctx.moveTo(10, 10);
-    this.ctx.lineTo(w - 10, h - 10);
-    this.ctx.moveTo(w - 10, 10);
-    this.ctx.lineTo(10, h - 10);
-    this.ctx.stroke();
+      this.ctx.restore();
+    }
 
-    this.ctx.restore();
+    // VẼ CHỮ MẪU MỜ ĐÚNG CHÍNH TÂM LƯỚI Ô VUÔNG CHUẨN NHẬT BẢN
+    if (this.showGhost && this.writingTarget) {
+      this.ctx.save();
+      this.ctx.fillStyle = 'rgba(0, 0, 0, 0.12)';
+      const fontSize = Math.round(w * 0.65);
+      this.ctx.font = `900 ${fontSize}px "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif`;
+      this.ctx.textAlign = 'center';
+      this.ctx.textBaseline = 'middle';
+      this.ctx.fillText(this.writingTarget, w / 2, h / 2);
+      this.ctx.restore();
+    }
   }
 
   updateCanvasGuide() {
@@ -620,7 +636,7 @@ class JapaneseKanaModule {
     this.showGhost = !this.showGhost;
     const btn = document.getElementById('btn-toggle-ghost');
     if (btn) btn.classList.toggle('active', this.showGhost);
-    this.updateCanvasGuide();
+    this.redrawAll();
   }
 
   setBrushColor(color, btn) {
@@ -763,10 +779,10 @@ class JapaneseKanaModule {
     gctx.fillRect(0, 0, w, h);
 
     gctx.fillStyle = '#000000';
-    gctx.font = `900 ${w * 0.65}px "Noto Sans JP", "Yu Gothic", "Meiryo", sans-serif`;
+    gctx.font = `900 ${Math.round(w * 0.65)}px "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif`;
     gctx.textAlign = 'center';
     gctx.textBaseline = 'middle';
-    gctx.fillText(this.writingTarget, w / 2, h / 2 + 10);
+    gctx.fillText(this.writingTarget, w / 2, h / 2);
 
     const ghostImgData = gctx.getImageData(0, 0, w, h).data;
     const userImgData = this.ctx.getImageData(0, 0, w, h).data;

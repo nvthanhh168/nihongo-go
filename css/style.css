@@ -1794,8 +1794,6 @@ body {
   gap: 10px;
   margin-top: 16px;
 }
-  margin-top: 14px;
-}
 
 /* ==========================================================================
    MODULE 3: 3D FLASHCARDS
@@ -9373,4 +9371,585 @@ body {
 
 .cert-body {
   padding: 18px 0;
+}
+
+
+/* ============================================================================
+   BỘ NGUYÊN GIAO DIỆN TẬP VIẾT & BẢNG CHỮ KANA (HOÀN HẢO PC + MOBILE + IPAD)
+   Khắc phục triệt để tràn viền, lệch tâm chữ mẫu và tối ưu hiển thị di động
+   ============================================================================ */
+
+/* 1. KHUNG CHÍNH TAB KANA */
+.kana-layout-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+  width: 100%;
+}
+
+.kana-chart-section {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 22px 24px;
+  border: 1.5px solid #E9ECEF;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.kana-chart-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.alphabet-toggle-bar {
+  display: flex;
+  gap: 8px;
+  background: #F1F3F5;
+  padding: 4px;
+  border-radius: 16px;
+}
+
+.btn-alphabet-tab {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #495057;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-alphabet-tab.active {
+  background: #FFFFFF;
+  color: #E03131;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.kana-subcat-bar {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.kana-subcat-chip {
+  background: #FFFFFF;
+  border: 1.5px solid #DEE2E6;
+  color: #495057;
+  padding: 7px 14px;
+  border-radius: 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.kana-subcat-chip.active {
+  background: #E03131;
+  border-color: #E03131;
+  color: #FFFFFF;
+  box-shadow: 0 3px 10px rgba(224, 49, 49, 0.3);
+}
+
+/* Lưới 5 cột Kana */
+.kana-grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 6px;
+  margin-bottom: 18px;
+}
+
+.kana-grid-container::-webkit-scrollbar {
+  width: 6px;
+}
+.kana-grid-container::-webkit-scrollbar-thumb {
+  background: #CED4DA;
+  border-radius: 4px;
+}
+
+.kana-cell {
+  background: #FFFFFF;
+  border: 1.5px solid #E9ECEF;
+  border-radius: 14px;
+  padding: 12px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.kana-cell:hover:not(.empty-cell) {
+  border-color: #FF6B6B;
+  background: #FFF5F5;
+  transform: translateY(-2px);
+}
+
+.kana-cell.active-cell {
+  background: #FFF0F6;
+  border-color: #F06595;
+  box-shadow: 0 0 0 3px rgba(240, 101, 149, 0.2);
+}
+
+.kana-cell.empty-cell {
+  background: transparent;
+  border: none;
+  cursor: default;
+}
+
+.kana-char-main {
+  font-size: 26px;
+  font-weight: 900;
+  color: #212529;
+  line-height: 1.1;
+}
+
+.kana-cell.active-cell .kana-char-main {
+  color: #D6336C;
+}
+
+.kana-romaji-sub {
+  font-size: 12px;
+  font-weight: 700;
+  color: #868E96;
+  margin-top: 3px;
+}
+
+/* 2. KHUNG CHI TIẾT CHỮ CÁI ĐƯỢC CHỌN (KANA DETAIL CARD) */
+.kana-detail-card {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 250px;
+  margin-top: 14px;
+  padding: 20px 22px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 2px solid #FFE3E3;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.kana-detail-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.kana-hero-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.kana-hero-char {
+  font-size: 54px;
+  font-weight: 900;
+  color: #E03131;
+  line-height: 1;
+}
+
+.kana-hero-meta {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.romaji-large {
+  font-size: 22px;
+  font-weight: 900;
+  color: #212529;
+}
+
+.alt-char {
+  font-size: 13.5px;
+  color: #495057;
+}
+
+.btn-voice-round {
+  background: #E7F5FF;
+  border: 1.5px solid #74C0FC;
+  color: #1971C2;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-voice-round:hover {
+  background: #D0EBFF;
+  transform: translateY(-1px);
+}
+
+.kana-mnemonic-box {
+  background: #FFF9DB;
+  border-left: 5px solid #FCC419;
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+
+.mnemonic-title {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #D9480F;
+  margin-bottom: 4px;
+}
+
+.mnemonic-desc {
+  font-size: 13.5px;
+  color: #495057;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.kana-sample-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: #F8F9FA;
+  border: 1.5px solid #E9ECEF;
+  padding: 10px 16px;
+  border-radius: 14px;
+}
+
+.sample-label {
+  color: #868E96;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sample-word {
+  color: #212529;
+  font-size: 14.5px;
+  font-weight: 800;
+  flex: 1;
+}
+
+.btn-mini-voice {
+  background: #FFFFFF;
+  border: 1.5px solid #CED4DA;
+  border-radius: 12px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-mini-voice:hover {
+  background: #E7F5FF;
+  border-color: #74C0FC;
+  color: #1971C2;
+}
+
+.kana-action-footer {
+  margin-top: 6px;
+}
+
+/* NÚT MÀU CAM "⚡ ĐƯA VÀO BẢNG TẬP VIẾT NGAY" THEO YÊU CẦU */
+.btn-load-canvas-orange {
+  width: 100%;
+  background: linear-gradient(135deg, #FF922B 0%, #F76707 100%);
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 800;
+  padding: 13px 20px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(247, 103, 7, 0.35);
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-load-canvas-orange:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(247, 103, 7, 0.45);
+  background: linear-gradient(135deg, #FFA94D 0%, #F76707 100%);
+}
+
+/* 3. BẢNG TẬP VIẾT CANVAS SHODO */
+.kana-canvas-section {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 22px 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  border: 1.5px solid #E9ECEF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.canvas-board-container {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border: 3px solid #FFE3E3;
+  overflow: hidden;
+  touch-action: none;
+}
+
+#kana-draw-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: crosshair;
+}
+
+/* Ẩn overlay guide DOM vì chữ mẫu đã được vẽ trực tiếp chính tâm Canvas */
+.canvas-overlay-guide {
+  display: none !important;
+}
+
+.canvas-toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: #F8F9FA;
+  padding: 10px 14px;
+  border-radius: 16px;
+  border: 1px solid #E9ECEF;
+  box-sizing: border-box;
+}
+
+.canvas-submit-row {
+  width: 100%;
+}
+
+.btn-sensei-grade {
+  width: 100%;
+  background: linear-gradient(135deg, #E03131 0%, #C92A2A 100%);
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 800;
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(201, 42, 42, 0.35);
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-sensei-grade:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 42, 42, 0.45);
+}
+
+/* 4. KHUNG KẾT QUẢ CHẤM NÉT CỦA CÔ TANAKA */
+.sensei-handwriting-critique {
+  width: 100%;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 2.5px solid #FFC9C9;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: modalPop 0.35s ease;
+}
+
+.sensei-handwriting-critique.hidden {
+  display: none !important;
+}
+
+.critique-words {
+  font-size: 14.5px;
+  color: #212529;
+  line-height: 1.6;
+  margin: 0 0 10px 0;
+  white-space: normal;
+}
+
+.critique-action-box {
+  background: #FFF9DB;
+  border-left: 5px solid #FCC419;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  color: #D9480F;
+  line-height: 1.5;
+}
+
+/* ============================================================================
+   TỐI ƯU TOÀN DIỆN CHO DI ĐỘNG (RESPONSIVE PC / IPAD / MOBILE 100%)
+   ============================================================================ */
+
+@media (max-width: 992px) {
+  .app-container {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 8px auto !important;
+    padding: 0 10px !important;
+    gap: 14px !important;
+  }
+
+  .mascot-sidebar {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 10px !important;
+  }
+
+  .content-area {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .kana-layout-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 0 6px !important;
+  }
+
+  /* Mascot Sidebar trên điện thoại: gọn gàng, không che khuất bài học */
+  .mascot-sidebar {
+    padding: 10px 14px !important;
+    border-radius: 16px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .mascot-sidebar #mascot-container {
+    max-height: 120px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+
+  .mascot-sidebar svg {
+    max-height: 90px !important;
+    width: auto !important;
+  }
+
+  .mascot-info {
+    margin-top: 4px !important;
+  }
+
+  .mascot-name {
+    font-size: 13.5px !important;
+  }
+
+  .mascot-role {
+    font-size: 11.5px !important;
+  }
+
+  /* Canvas vừa vặn mọi màn hình điện thoại */
+  .canvas-board-container {
+    width: 310px !important;
+    height: 310px !important;
+  }
+
+  .canvas-toolbar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  .tool-group {
+    justify-content: center !important;
+  }
+
+  /* Modals Lộ Trình và Thi Vượt Nhanh cuộn mượt không bị mất thông tin */
+  .modal-overlay {
+    padding: 10px !important;
+  }
+
+  .modal-card,
+  .lesson-mission-modal-card,
+  .fast-pass-quiz-card {
+    width: 98% !important;
+    max-height: 88vh !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 18px 14px !important;
+    border-radius: 18px !important;
+  }
+
+  .mission-step-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+
+  .step-action-col {
+    width: 100% !important;
+  }
+
+  .btn-step-action {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Flashcard controls trên mobile */
+  .flashcard-controls-top {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .flashcard-lesson-selector-wrap {
+    width: 100% !important;
+  }
+
+  .flashcard-select {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .flashcard-scene {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 380px !important;
+  }
 }
