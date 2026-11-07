@@ -308,23 +308,45 @@ class JapaneseProgressModule {
 
           </div>
 
-          <!-- KHỐI 3: SAO LƯU & KHÔI PHỤC TIẾN ĐỘ (.JSON) -->
+          <!-- KHỐI 3: ĐỒNG BỘ ĐÁM MÂY ĐA THIẾT BỊ (REALTIME CLOUD SYNC) -->
+          <div class="profile-backup-section" style="margin-bottom: 16px; border: 1.5px solid #69DB7C; background: #F8FFF9;">
+            <div class="backup-section-header">
+              <span class="backup-icon">☁️</span>
+              <div>
+                <h5>ĐỒNG BỘ ĐÁM MÂY ĐA THIẾT BỊ (REALTIME CLOUD SYNC)</h5>
+                <p>Tự động bảo lưu tài khoản và tiến độ học tập giữa Điện thoại, iPad và Máy tính</p>
+              </div>
+            </div>
+
+            <div style="font-size: 12.5px; color: #2B8A3E; margin: 8px 0 12px; display: flex; flex-direction: column; gap: 4px;">
+              <div>• Tài khoản liên kết: <strong>${window.authModule?.currentUser?.displayName || 'Chế độ Khách'}</strong> (${window.authModule?.currentUser?.username || 'Chưa đăng nhập'})</div>
+              <div>• Trạng thái: <span style="font-weight: 700; color: #2B8A3E;">🟢 Đã kết nối Đám Mây (Đăng nhập bất kỳ đâu bằng tài khoản & mật khẩu)</span></div>
+            </div>
+
+            <div class="backup-buttons-row">
+              <button class="btn btn-primary" style="background: linear-gradient(135deg, #40C057, #2F9E44);" onclick="window.progressModule.triggerManualCloudSync(event)">
+                🔄 Đồng Bộ Đám Mây Ngay
+              </button>
+            </div>
+          </div>
+
+          <!-- KHỐI 4: SAO LƯU & KHÔI PHỤC TIẾN ĐỘ (.JSON DỰ PHÒNG) -->
           <div class="profile-backup-section">
             <div class="backup-section-header">
               <span class="backup-icon">💾</span>
               <div>
-                <h5>SAO LƯU & KHÔI PHỤC TIẾN ĐỘ HỌC TẬP</h5>
-                <p>Xuất file dự phòng để không bao giờ bị mất điểm EXP, cấp độ và từ vựng đã học</p>
+                <h5>SAO LƯU DỰ PHÒNG THỦ CÔNG (.JSON)</h5>
+                <p>Xuất file dự phòng về máy cá nhân nếu muốn lưu trữ offline hoàn toàn</p>
               </div>
             </div>
 
             <div class="backup-buttons-row">
-              <button class="btn btn-primary btn-backup" onclick="window.progressModule.exportBackupJSON()">
-                📥 Xuất dữ liệu học tập (.json)
+              <button class="btn btn-secondary btn-backup" onclick="window.progressModule.exportBackupJSON()">
+                📥 Xuất file (.json)
               </button>
               
               <label class="btn btn-secondary btn-restore" title="Chọn file JSON để khôi phục tiến độ">
-                📤 Khôi phục dữ liệu (.json)
+                📤 Khôi phục (.json)
                 <input type="file" id="backup-file-input" accept=".json" style="display: none;" onchange="window.progressModule.importBackupJSON(event)">
               </label>
             </div>
@@ -340,6 +362,36 @@ class JapaneseProgressModule {
 
       </div>
     `;
+  }
+
+  // --------------------------------------------------------------------------
+  // TÍNH NĂNG: KÍCH HOẠT ĐỒNG BỘ ĐÁM MÂY THỜI GIAN THỰC
+  // --------------------------------------------------------------------------
+  async triggerManualCloudSync(e) {
+    const btn = e ? e.currentTarget : null;
+    const oldText = btn ? btn.innerHTML : '';
+    if (btn) {
+      btn.disabled = true;
+      btn.innerHTML = '🔄 Đang đồng bộ Đám Mây...';
+    }
+    try {
+      if (window.authModule) {
+        const res = await window.authModule.forceFullCloudSync();
+        if (res.success) {
+          alert('✅ ' + res.message);
+          this.renderModalContent();
+        } else {
+          alert('⚠️ ' + res.message);
+        }
+      }
+    } catch (err) {
+      alert('⚠️ Lỗi kết nối đám mây: ' + err.message);
+    } finally {
+      if (btn) {
+        btn.disabled = false;
+        btn.innerHTML = oldText || '🔄 Đồng Bộ Đám Mây Ngay';
+      }
+    }
   }
 
   // --------------------------------------------------------------------------

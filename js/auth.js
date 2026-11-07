@@ -73,10 +73,17 @@ class JapaneseAuthModule {
     this.selectedAvatar = 'shiba';
     this.currentTab = 'login'; // 'login' | 'register'
     this.currentUser = null;
+    this.cloudSyncDebounceTimer = null;
+
+    // Cấu hình Cloud Sync Endpoint (Tự động thích ứng giữa Localhost và Vercel)
+    this.apiEndpoint = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+      ? 'https://nihongo-go-rho.vercel.app/api/sync'
+      : '/api/sync';
 
     this.initDatabase();
     this.loadSession();
     this.setupListeners();
+    this.initCloudSync();
   }
 
   // --------------------------------------------------------------------------
@@ -147,7 +154,169 @@ class JapaneseAuthModule {
   }
 
   verifyPassword(pwd, hashed) {
+    if (!hashed) return false;
     return this.hashPassword(pwd) === hashed;
+  }
+
+  // --------------------------------------------------------------------------
+  // HỆ THỐNG ĐỒNG BỘ ĐÁM MÂY (CLOUD SYNC ENGINE)
+  // Đảm bảo đăng nhập và bảo lưu học bạ trên mọi thiết bị (PC, Phone, iPad)
+  // --------------------------------------------------------------------------
+  // Đọc danh sách users từ Cloud Sync Serverless API
+  async fetchCloudUsers() {
+    try {
+      const res = await fetch(this.apiEndpoint, {
+        method: 'GET',
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.users) {
+          return { success: true, users: data.users };
+        }
+      }
+    } catch (e) {
+      console.warn('[CloudSync] Lỗi fetchCloudUsers:', e.message);
+    }
+    return { success: false, users: {} };
+  }
+
+  // Lấy dữ liệu 1 học viên từ Cloud
+  async fetchUserFromCloud(usernameOrEmail) {
+    if (!usernameOrEmail) return null;
+    const clean = usernameOrEmail.trim().toLowerCase();
+
+    try {
+      const res = await fetch(`${this.apiEndpoint}?username=${encodeURIComponent(clean)}`);
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.user) return data.user;
+      }
+    } catch (e) {}
+
+    // Fallback: Tìm trong danh sách toàn bộ users
+    const { users } = await this.fetchCloudUsers();
+    for (const key in users) {
+      const u = users[key];
+      if (u && (u.username?.toLowerCase() === clean || (u.email && u.email.toLowerCase() === clean))) {
+        return u;
+      }
+    }
+
+    return null;
+  }
+
+  // Lưu học viên lên Cloud qua Serverless API
+  async saveUserToCloud(user) {
+    if (!user || !user.username) return false;
+
+    try {
+      const res = await fetch(this.apiEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ user })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        return !!data.success;
+      }
+    } catch (e) {
+      console.warn('[CloudSync] Lỗi saveUserToCloud:', e.message);
+    }
+    return false;
+  }
+
+  // Tự động khởi tạo kết nối và kéo tài khoản từ Đám Mây khi mở trang
+  initCloudSync() {
+    setTimeout(async () => {
+      try {
+        console.log('[CloudSync] 🔄 Đang kiểm tra đồng bộ tài khoản từ Đám Mây...');
+        const { success, users } = await this.fetchCloudUsers();
+        if (success && users) {
+          const db = this.getUsersDB();
+          let changed = false;
+
+          for (const key in users) {
+            const cloudU = users[key];
+            if (!cloudU || !cloudU.username) continue;
+
+            if (!db[key]) {
+              db[key] = cloudU;
+              changed = true;
+            } else {
+              // Cập nhật tiến độ nếu Đám Mây cao hơn
+              const localU = db[key];
+              const cP = cloudU.profile || {};
+              const lP = localU.profile || {};
+              if ((cP.unlockedLesson || 1) > (lP.unlockedLesson || 1) || (cP.exp || 0) > (lP.exp || 0)) {
+                localU.profile = {
+                  ...lP,
+                  ...cP,
+                  unlockedLesson: Math.max(lP.unlockedLesson || 1, cP.unlockedLesson || 1),
+                  exp: Math.max(lP.exp || 0, cP.exp || 0),
+                  coins: Math.max(lP.coins || 0, cP.coins || 0),
+                  streak: Math.max(lP.streak || 1, cP.streak || 1)
+                };
+                db[key] = localU;
+                changed = true;
+              }
+            }
+          }
+
+          if (changed) {
+            this.saveUsersDB(db);
+            console.log('[CloudSync] ✅ Đã đồng bộ tài khoản từ Đám Mây thành công!');
+          }
+
+          // Cập nhật session hiện tại nếu có tiến độ mới hơn
+          if (this.currentUser && db[this.currentUser.username]) {
+            this.currentUser = db[this.currentUser.username];
+            this.syncUserToProgressModule();
+            this.renderHeaderAuthUI();
+          }
+        }
+      } catch (e) {
+        console.warn('[CloudSync] Khởi tạo tự động gặp lỗi:', e);
+      }
+    }, 1500);
+  }
+
+  // Nút cưỡng bức đồng bộ 2 chiều (Dành cho Profile Modal)
+  async forceFullCloudSync() {
+    try {
+      if (this.currentUser) {
+        await this.saveUserToCloud(this.currentUser);
+      }
+      const { success, users } = await this.fetchCloudUsers();
+      if (success && users) {
+        const db = this.getUsersDB();
+        for (const k in users) {
+          if (!db[k]) {
+            db[k] = users[k];
+          } else {
+            const cP = users[k].profile || {};
+            const lP = db[k].profile || {};
+            db[k].profile = {
+              ...lP,
+              unlockedLesson: Math.max(lP.unlockedLesson || 1, cP.unlockedLesson || 1),
+              exp: Math.max(lP.exp || 0, cP.exp || 0),
+              coins: Math.max(lP.coins || 0, cP.coins || 0),
+              streak: Math.max(lP.streak || 1, cP.streak || 1)
+            };
+          }
+        }
+        this.saveUsersDB(db);
+        if (this.currentUser && db[this.currentUser.username]) {
+          this.currentUser = db[this.currentUser.username];
+          this.syncUserToProgressModule();
+          this.renderHeaderAuthUI();
+        }
+        return { success: true, message: 'Đồng bộ Đám Mây thành công! Mọi học bạ đã được cập nhật.' };
+      }
+    } catch (e) {
+      return { success: false, message: e.message };
+    }
+    return { success: false, message: 'Không thể kết nối đến máy chủ Đám Mây' };
   }
 
   // --------------------------------------------------------------------------
@@ -235,7 +404,18 @@ class JapaneseAuthModule {
       this.saveUsersDB(db);
       this.currentUser = user;
       this.renderHeaderAuthUI();
-      console.log(`[Auth] Đã tự động sao lưu tiến độ cho học viên: ${user.displayName}`);
+
+      // Tự động lưu lên Cloud (Debounce 2 giây để gom các thao tác liên tiếp)
+      clearTimeout(this.cloudSyncDebounceTimer);
+      this.cloudSyncDebounceTimer = setTimeout(() => {
+        if (this.currentUser) {
+          this.saveUserToCloud(this.currentUser).then(ok => {
+            if (ok) console.log(`[CloudSync] ☁️ Đã đồng bộ tiến độ học viên ${user.displayName} lên Đám Mây!`);
+          }).catch(e => console.warn('[CloudSync] Lỗi autoSave:', e));
+        }
+      }, 2000);
+
+      console.log(`[Auth] Đã lưu tiến độ cho học viên: ${user.displayName}`);
     } catch (e) {
       console.warn('[Auth] Lỗi autoSaveProgress:', e);
     }
@@ -244,14 +424,26 @@ class JapaneseAuthModule {
   // --------------------------------------------------------------------------
   // ĐĂNG KÝ TÀI KHOẢN MỚI
   // --------------------------------------------------------------------------
-  register(formData) {
+  async register(formData) {
     const { displayName, username, email, password, confirmPassword, avatar } = formData;
 
     const errorBox = document.getElementById('auth-error-message');
     const setError = (msg) => {
       if (errorBox) {
         errorBox.classList.remove('hidden');
+        errorBox.style.background = '#FFF5F5';
+        errorBox.style.borderColor = '#FF8787';
+        errorBox.style.color = '#C92A2A';
         errorBox.innerHTML = `<strong>👩‍🏫 Cô Tanaka nhắc nhở:</strong> ${msg}`;
+      }
+    };
+    const setNotice = (msg) => {
+      if (errorBox) {
+        errorBox.classList.remove('hidden');
+        errorBox.style.background = '#EBFBEE';
+        errorBox.style.borderColor = '#69DB7C';
+        errorBox.style.color = '#2B8A3E';
+        errorBox.innerHTML = `<strong>🌸 Đám Mây:</strong> ${msg}`;
       }
     };
 
@@ -327,6 +519,12 @@ class JapaneseAuthModule {
     this.renderHeaderAuthUI();
     this.closeAuthModal();
 
+    // 4. Đồng bộ lên Cloud ngay để đăng nhập được trên mọi thiết bị
+    setNotice('☁️ Đang lưu tài khoản lên Đám Mây...');
+    this.saveUserToCloud(newUser).then(ok => {
+      if (ok) console.log(`[CloudSync] ☁️ Đã sao lưu tài khoản tân binh ${cleanUser} lên Cloud!`);
+    });
+
     if (window.soundSystem) window.soundSystem.playVictory();
     if (window.mascot) {
       window.mascot.setMood(
@@ -340,16 +538,28 @@ class JapaneseAuthModule {
   }
 
   // --------------------------------------------------------------------------
-  // ĐĂNG NHẬP
+  // ĐĂNG NHẬP (HỖ TRỢ ĐA THIẾT BỊ QUA CLOUD SYNC)
   // --------------------------------------------------------------------------
-  login(formData) {
+  async login(formData) {
     const { usernameOrEmail, password, remember } = formData;
 
     const errorBox = document.getElementById('auth-error-message');
     const setError = (msg) => {
       if (errorBox) {
         errorBox.classList.remove('hidden');
+        errorBox.style.background = '#FFF5F5';
+        errorBox.style.borderColor = '#FF8787';
+        errorBox.style.color = '#C92A2A';
         errorBox.innerHTML = `<strong>👩‍🏫 Cô Tanaka nhắc nhở:</strong> ${msg}`;
+      }
+    };
+    const setNotice = (msg) => {
+      if (errorBox) {
+        errorBox.classList.remove('hidden');
+        errorBox.style.background = '#EBFBEE';
+        errorBox.style.borderColor = '#69DB7C';
+        errorBox.style.color = '#2B8A3E';
+        errorBox.innerHTML = `<strong>🌸 Đám Mây:</strong> ${msg}`;
       }
     };
 
@@ -366,29 +576,62 @@ class JapaneseAuthModule {
       return false;
     }
 
-    const db = this.getUsersDB();
+    let db = this.getUsersDB();
     let foundUser = null;
 
-    // Tìm theo username hoặc email
+    // 1. Tìm trong bộ nhớ Local trước (0ms)
     for (const key in db) {
       const u = db[key];
-      if (u.username.toLowerCase() === cleanInput || (u.email && u.email.toLowerCase() === cleanInput)) {
+      if (u && (u.username.toLowerCase() === cleanInput || (u.email && u.email.toLowerCase() === cleanInput))) {
         foundUser = u;
         break;
       }
     }
 
+    // 2. Nếu không thấy ở Local, tìm trên Đám Mây (Cloud Sync)
     if (!foundUser) {
-      setError(`Không tìm thấy tài khoản 「<strong>${cleanInput}</strong>」 trong danh sách học viên! Hãy kiểm tra lại hoặc bấm tab Đăng Ký!`);
+      setNotice('🔍 Đang kiểm tra tài khoản trên Đám Mây thời gian thực...');
+      try {
+        const cloudUser = await this.fetchUserFromCloud(cleanInput);
+        if (cloudUser && cloudUser.username) {
+          foundUser = cloudUser;
+          // Lưu vào local cache
+          db[foundUser.username] = foundUser;
+          this.saveUsersDB(db);
+        }
+      } catch (e) {
+        console.warn('[CloudSync] Lỗi tìm tài khoản Cloud:', e);
+      }
+    }
+
+    if (!foundUser) {
+      setError(`Không tìm thấy tài khoản 「<strong>${cleanInput}</strong>」 trong hệ thống! Em kiểm tra lại hoặc bấm tab Đăng Ký nhé!`);
       return false;
     }
 
-    if (!this.verifyPassword(cleanPwd, foundUser.passwordHash)) {
-      setError('Sai mật khẩu rồi! Đứng thẳng lưng nhớ lại xem mình đã đặt mật khẩu gì nào!');
+    // 3. Xác thực mật khẩu
+    let isCorrect = this.verifyPassword(cleanPwd, foundUser.passwordHash);
+
+    if (!isCorrect) {
+      // Có thể tài khoản trên máy này có mật khẩu cũ, thử tải lại thông tin mới nhất từ Cloud
+      setNotice('🔍 Đang kiểm tra mật khẩu từ Đám Mây...');
+      try {
+        const freshCloud = await this.fetchUserFromCloud(cleanInput);
+        if (freshCloud && freshCloud.passwordHash && this.verifyPassword(cleanPwd, freshCloud.passwordHash)) {
+          foundUser = freshCloud;
+          db[foundUser.username] = foundUser;
+          this.saveUsersDB(db);
+          isCorrect = true;
+        }
+      } catch (e) {}
+    }
+
+    if (!isCorrect) {
+      setError('Sai mật khẩu rồi! Đứng thẳng lưng nhớ lại xem mình đã đặt mật khẩu gì nào! Hoặc bấm "Quên mật khẩu?" bên dưới.');
       return false;
     }
 
-    // Đăng nhập thành công
+    // 4. Đăng nhập thành công
     foundUser.lastLoginAt = new Date().toISOString();
     db[foundUser.username] = foundUser;
     this.saveUsersDB(db);
@@ -399,6 +642,9 @@ class JapaneseAuthModule {
     this.syncUserToProgressModule();
     this.renderHeaderAuthUI();
     this.closeAuthModal();
+
+    // Đồng bộ lại với Cloud
+    this.saveUserToCloud(foundUser);
 
     if (window.soundSystem) window.soundSystem.playCorrect();
     if (window.mascot) {
@@ -451,9 +697,9 @@ class JapaneseAuthModule {
     });
   }
 
-  // Quên mật khẩu / Khôi phục
-  forgotPassword(usernameOrEmail) {
-    const input = prompt('Nhập tên đăng nhập hoặc email cần khôi phục mật khẩu:', usernameOrEmail || '');
+  // Quên mật khẩu / Khôi phục & Đồng bộ lên Đám Mây
+  async forgotPassword(usernameOrEmail) {
+    const input = prompt('Nhập tên đăng nhập hoặc email cần khôi phục / đặt mật khẩu mới:', usernameOrEmail || '');
     if (!input) return;
 
     const db = this.getUsersDB();
@@ -465,6 +711,11 @@ class JapaneseAuthModule {
         found = db[k];
         break;
       }
+    }
+
+    if (!found) {
+      // Tìm trên Cloud
+      found = await this.fetchUserFromCloud(clean);
     }
 
     if (!found) {
@@ -482,7 +733,10 @@ class JapaneseAuthModule {
     db[found.username] = found;
     this.saveUsersDB(db);
 
-    alert(`✅ Đổi mật khẩu thành công!\nMật khẩu mới của bạn là: "${newPwd.trim()}". Hãy đăng nhập ngay!`);
+    // Đồng bộ ngay lên Đám Mây
+    await this.saveUserToCloud(found);
+
+    alert(`✅ Đổi mật khẩu thành công!\nMật khẩu mới của bạn là: "${newPwd.trim()}". Bạn có thể đăng nhập trên mọi thiết bị ngay bây giờ! 🌸`);
   }
 
   // --------------------------------------------------------------------------
@@ -1011,30 +1265,32 @@ class JapaneseAuthModule {
     }
 
     if (!this.isLoggedIn()) {
-      // Khi CHƯA ĐĂNG NHẬP: Nút nổi bật "🔑 Đăng Nhập / Đăng Ký"
+      // Khi CHƯA ĐĂNG NHẬP: Nút nổi bật "🔑 Đăng Nhập" (vừa vặn mọi màn hình điện thoại)
       container.innerHTML = `
-        <button class="btn-auth-trigger" onclick="window.authModule.openAuthModal('login')" title="Đăng nhập tài khoản để lưu lộ trình 25 bài học">
-          <span>🔑</span> Đăng Nhập / Đăng Ký
+        <button class="btn-auth-trigger" onclick="window.authModule.openAuthModal('login')" title="Đăng nhập tài khoản để lưu lộ trình bài học">
+          <span>🔑</span> Đăng Nhập
         </button>
       `;
     } else {
-      // Khi ĐÃ ĐĂNG NHẬP: Avatar nhân vật, Tên học viên, Huy hiệu N5 Bài X/25 và Nút Đăng xuất
+      // Khi ĐÃ ĐĂNG NHẬP: Avatar nhân vật, Tên học viên, Huy hiệu N5/N4 Bài X và Nút Đăng xuất
       const user = this.currentUser;
       const avatarObj = AVATAR_LIST.find(a => a.id === user.avatar) || AVATAR_LIST[0];
       const unlockedLesson = user.profile?.unlockedLesson || 1;
+      const currentLevel = user.profile?.currentJLPTLevel || (unlockedLesson > 25 ? 'N4' : 'N5');
+      const maxL = unlockedLesson > 25 ? 50 : 25;
 
       container.innerHTML = `
         <div class="user-profile-header-widget">
           
           <!-- Avatar nhân vật -->
-          <div class="user-header-avatar" style="background: ${avatarObj.color};" onclick="window.authModule.openLessonSelector()" title="Nhân vật: ${avatarObj.name} • Bấm để xem Lộ trình 25 bài">
+          <div class="user-header-avatar" style="background: ${avatarObj.color};" onclick="window.authModule.openLessonSelector()" title="Nhân vật: ${avatarObj.name} • Bấm để xem Lộ trình bài học">
             <span>${avatarObj.emoji}</span>
           </div>
 
           <!-- Thông tin tên & cấp độ bài học -->
-          <div class="user-header-info" onclick="window.authModule.openLessonSelector()" title="Bấm xem Lộ trình 25 Bài Minna N5">
-            <span class="user-header-name">${user.displayName}</span>
-            <span class="user-header-badge">N5 • Bài ${unlockedLesson}/25 🏆</span>
+          <div class="user-header-info" onclick="window.authModule.openLessonSelector()" title="Bấm xem Lộ trình bài học Minna">
+            <span class="user-header-name" title="${user.displayName}">${user.displayName}</span>
+            <span class="user-header-badge">${currentLevel} • Bài ${unlockedLesson}/${maxL} 🏆</span>
           </div>
 
           <!-- Nút Đăng xuất -->
