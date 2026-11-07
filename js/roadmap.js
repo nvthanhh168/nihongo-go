@@ -68,6 +68,15 @@ const ROADMAP_REGIONS = [
     desc: 'Thể Ý chí (～よう), Lời khuyên & Phỏng đoán (～たほうがいい, ～でしょう), Thể Mệnh lệnh & Cấm chỉ (命令形・禁止形), Làm theo hướng dẫn (～とおりに) & Thể Điều kiện (～ば)',
     themeColor: '#4C6EF5',
     bgGradient: 'linear-gradient(135deg, #EDF2FF 0%, #DBE4FF 100%)'
+  },
+  {
+    id: 8,
+    name: 'Chặng 8: Thâm Nhập Trung Cấp N4 - Cố Đô Kyoto & Cầu Akashi (京都・明石)',
+    icon: '🏯',
+    range: [36, 40],
+    desc: 'Mục đích & Tập quán (～ように), Thể Bị động (受身形), Danh từ hóa (～のは), Nguyên nhân cảm xúc (～て) & Mệnh đề nghi vấn lồng (～かどうか)',
+    themeColor: '#FD7E14',
+    bgGradient: 'linear-gradient(135deg, #FFF4E6 0%, #FFE8CC 100%)'
   }
 ];
 

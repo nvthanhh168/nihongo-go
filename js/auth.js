@@ -48,7 +48,12 @@ const MINNA_LESSONS_N5 = [
   { id: 32, title: 'Bài 32 (N4)', desc: 'Lời khuyên & Phỏng đoán (～たほうがいい, ～でしょう, ～かもしれない)', targetWords: 50 },
   { id: 33, title: 'Bài 33 (N4)', desc: 'Thể Mệnh lệnh, Cấm chỉ & Ý nghĩa biển báo (命令形・禁止形)', targetWords: 36 },
   { id: 34, title: 'Bài 34 (N4)', desc: 'Làm theo hướng dẫn & Thứ tự hành động (～とおりに, ～あとで)', targetWords: 34 },
-  { id: 35, title: 'Bài 35 (N4)', desc: 'Thể Điều kiện Giả định (条件形 ～ば, ～なら, ～ば～ほど)', targetWords: 34 }
+  { id: 35, title: 'Bài 35 (N4)', desc: 'Thể Điều kiện Giả định (条件形 ～ば, ～なら, ～ば～ほど)', targetWords: 34 },
+  { id: 36, title: 'Bài 36 (N4)', desc: 'Mục đích & Sự thay đổi năng lực/thói quen (～ように, ～ようになります)', targetWords: 45 },
+  { id: 37, title: 'Bài 37 (N4)', desc: 'Thể Bị động & Phát minh sáng chế (受身形 ～られます, Nによって)', targetWords: 40 },
+  { id: 38, title: 'Bài 38 (N4)', desc: 'Danh từ hóa mệnh đề với の (～のは, ～のが, ～のを忘れました)', targetWords: 44 },
+  { id: 39, title: 'Bài 39 (N4)', desc: 'Nguyên nhân dẫn đến Cảm xúc & Kết quả (～て, Nで, ～ので)', targetWords: 44 },
+  { id: 40, title: 'Bài 40 (N4)', desc: 'Câu hỏi lồng trong mệnh đề & Thử làm (～か, ～かどうか, ～てみます)', targetWords: 62 }
 ];
 
 class JapaneseAuthModule {
@@ -490,8 +495,8 @@ class JapaneseAuthModule {
         completedAt: new Date().toISOString()
       };
 
-      // Mở khóa bài tiếp theo nếu bài vừa hoàn thành là bài cao nhất (cho phép đến Bài 35 nếu đã đăng nhập)
-      if (lessonNumber === p.unlockedLesson && lessonNumber < 35) {
+      // Mở khóa bài tiếp theo nếu bài vừa hoàn thành là bài cao nhất (cho phép đến Bài 40 nếu đã đăng nhập)
+      if (lessonNumber === p.unlockedLesson && lessonNumber < 40) {
         p.unlockedLesson = lessonNumber + 1;
       }
       unlocked = p.unlockedLesson;
