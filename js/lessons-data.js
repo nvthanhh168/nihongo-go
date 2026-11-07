@@ -23458,6 +23458,3153 @@ const LESSON_45_DATA = {
 };
 
 
+
+const LESSON_46_DATA = {
+  "lessonNumber": 46,
+  "level": "N4",
+  "title": "Bài 46: Thời Điểm Hành Động & Sự Chắc Chắn (～ところだ / ～はずだ)",
+  "topicVi": "Diễn tả thời điểm hành động (sắp, đang, vừa mới xong) & Phán đoán chắc chắn",
+  "icon": "⏱️",
+  "grammarPoint": "1. V-るところだ (Sắp sửa), V-ているところだ (Đang trong lúc), V-たところだ (Vừa mới xong). 2. V-たばかりだ (Vừa mới làm theo cảm nhận). 3. Thể thông thường + はずです (Chắc chắn là, thảo nào).",
+  "kanjiList": [
+    {
+      "kanji": "焼",
+      "hanViet": "Thiêu",
+      "onyomi": "ショウ",
+      "kunyomi": "や・く",
+      "meaning": "Nướng, đốt thiêu",
+      "examples": [
+        "焼きます (やきます: nướng)",
+        "日焼け (ひやけ: cháy nắng)"
+      ]
+    },
+    {
+      "kanji": "渡",
+      "hanViet": "Độ",
+      "onyomi": "ト",
+      "kunyomi": "わた・る",
+      "meaning": "Vượt qua, trao đưa",
+      "examples": [
+        "渡します (わたします: trao cho)",
+        "渡る (わたる: băng qua đường)"
+      ]
+    },
+    {
+      "kanji": "留",
+      "hanViet": "Lưu",
+      "onyomi": "リュウ",
+      "kunyomi": "と・まる",
+      "meaning": "Giữ lại, ở lại",
+      "examples": [
+        "留守 (るす: vắng nhà)",
+        "留学 (りゅうがく: du học)"
+      ]
+    },
+    {
+      "kanji": "守",
+      "hanViet": "Thủ",
+      "onyomi": "シュ",
+      "kunyomi": "まも・る",
+      "meaning": "Bảo vệ, giữ gìn",
+      "examples": [
+        "留守 (るす: vắng nhà)",
+        "守る (まもる: tuân thủ, bảo vệ)"
+      ]
+    },
+    {
+      "kanji": "原",
+      "hanViet": "Nguyên",
+      "onyomi": "ゲン",
+      "kunyomi": "はら",
+      "meaning": "Nguồn gốc, cánh đồng",
+      "examples": [
+        "原因 (げんいん: nguyên nhân)",
+        "原料 (げんりょう: nguyên liệu)"
+      ]
+    },
+    {
+      "kanji": "因",
+      "hanViet": "Nhân",
+      "onyomi": "イン",
+      "kunyomi": "よ・る",
+      "meaning": "Nguyên cớ, bởi vì",
+      "examples": [
+        "原因 (げんいん: nguyên nhân)",
+        "要因 (よういん: yếu tố nguyên nhân)"
+      ]
+    },
+    {
+      "kanji": "射",
+      "hanViet": "Xạ",
+      "onyomi": "シャ",
+      "kunyomi": "い・る",
+      "meaning": "Bắn, tiêm chích",
+      "examples": [
+        "注射 (ちゅうしゃ: tiêm thuốc)",
+        "発射 (はっしゃ: phóng bắn)"
+      ]
+    },
+    {
+      "kanji": "具",
+      "hanViet": "Cụ",
+      "onyomi": "グ",
+      "kunyomi": "そな・える",
+      "meaning": "Dụng cụ, thực trạng",
+      "examples": [
+        "具合 (ぐあい: tình trạng)",
+        "家具 (かぐ: đồ nội thất)"
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "id": "n4_l46_01",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "焼きます",
+      "hanViet": "Thiêu",
+      "hiragana": "やきます",
+      "romaji": "yakimasu",
+      "meaning": "nướng (thịt, bánh...)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><path d=\"M25 65 Q50 80 75 65 Q60 55 50 60 Q40 55 25 65 Z\" fill=\"#D9480F\"/><path d=\"M40 50 Q45 35 50 45 Q55 30 60 48\" stroke=\"#FA5252\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"50\" cy=\"40\" r=\"6\" fill=\"#FFA94D\"/></svg>",
+      "example": {
+        "ja": "肉を焼いているところです。",
+        "hira": "にくをやいているところです。",
+        "vi": "Tôi đang trong lúc nướng thịt."
+      }
+    },
+    {
+      "id": "n4_l46_02",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "渡します",
+      "hanViet": "Độ",
+      "hiragana": "わたします",
+      "romaji": "watashimasu",
+      "meaning": "trao, đưa cho",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><rect x=\"35\" y=\"40\" width=\"30\" height=\"22\" rx=\"3\" fill=\"#339AF0\"/><path d=\"M25 55 L35 48 M75 55 L65 48\" stroke=\"#1C7ED6\" stroke-width=\"4\" stroke-linecap=\"round\"/></svg>",
+      "example": {
+        "ja": "先生にレポートを渡しました。",
+        "hira": "せんせいにレポートをわたしました。",
+        "vi": "Tôi đã trao bản báo cáo cho thầy giáo."
+      }
+    },
+    {
+      "id": "n4_l46_03",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "帰って来ます",
+      "hanViet": "Quy Lai",
+      "hiragana": "かえってきます",
+      "romaji": "kaettekimasu",
+      "meaning": "trở về, quay trở lại",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><path d=\"M30 65 L50 40 L70 65 Z\" fill=\"#20C997\"/><rect x=\"42\" y=\"52\" width=\"16\" height=\"20\" fill=\"#0CA678\"/><path d=\"M20 75 Q50 70 80 75\" stroke=\"#099268\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "父はたった今帰って来ました。",
+        "hira": "ちはたったいまかえってきました。",
+        "vi": "Bố tôi vừa mới trở về nhà tức thì."
+      }
+    },
+    {
+      "id": "n4_l46_04",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "出ます[バスが～]",
+      "hanViet": "Xuất",
+      "hiragana": "でます",
+      "romaji": "demasu",
+      "meaning": "xuất phát, chạy (xe buýt...)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF4E6\"/><rect x=\"25\" y=\"40\" width=\"50\" height=\"30\" rx=\"6\" fill=\"#FD7E14\"/><circle cx=\"38\" cy=\"72\" r=\"7\" fill=\"#495057\"/><circle cx=\"62\" cy=\"72\" r=\"7\" fill=\"#495057\"/><rect x=\"32\" y=\"46\" width=\"36\" height=\"12\" rx=\"2\" fill=\"#FFF\"/></svg>",
+      "example": {
+        "ja": "バスは今出たところです。",
+        "hira": "バスはいまでたところです。",
+        "vi": "Xe buýt vừa mới xuất phát xong."
+      }
+    },
+    {
+      "id": "n4_l46_05",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "留守",
+      "hanViet": "Lưu Thủ",
+      "hiragana": "るす",
+      "romaji": "rusu",
+      "meaning": "sự vắng nhà, đi vắng",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F1F3F5\"/><path d=\"M30 60 L50 35 L70 60\" fill=\"none\" stroke=\"#868E96\" stroke-width=\"4\"/><rect x=\"42\" y=\"52\" width=\"16\" height=\"24\" fill=\"#CED4DA\"/><circle cx=\"50\" cy=\"62\" r=\"3\" fill=\"#495057\"/></svg>",
+      "example": {
+        "ja": "友達の家に行きましたが、留守でした。",
+        "hira": "ともだちのいえにいきましたが、るすでした。",
+        "vi": "Tôi đã đến nhà bạn nhưng bạn ấy vắng nhà."
+      }
+    },
+    {
+      "id": "n4_l46_06",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "宅配便",
+      "hanViet": "Trạch Phối Tiện",
+      "hiragana": "たくはいびん",
+      "romaji": "takuhanbin",
+      "meaning": "dịch vụ giao hàng tận nhà, chuyển phát nhanh",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF9DB\"/><rect x=\"30\" y=\"35\" width=\"40\" height=\"35\" rx=\"4\" fill=\"#FAB005\"/><line x1=\"30\" y1=\"52\" x2=\"70\" y2=\"52\" stroke=\"#FFF\" stroke-width=\"3\"/><line x1=\"50\" y1=\"35\" x2=\"50\" y2=\"70\" stroke=\"#FFF\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "宅配便でプレゼントを送ります。",
+        "hira": "たくはいびんでプレゼントをおくります。",
+        "vi": "Tôi gửi quà bằng dịch vụ chuyển phát nhanh."
+      }
+    },
+    {
+      "id": "n4_l46_07",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "原因",
+      "hanViet": "Nguyên Nhân",
+      "hiragana": "げんいん",
+      "romaji": "gen'in",
+      "meaning": "nguyên nhân",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F8F9FA\"/><circle cx=\"50\" cy=\"40\" r=\"18\" fill=\"none\" stroke=\"#FA5252\" stroke-width=\"4\"/><text x=\"45\" y=\"47\" font-size=\"20\" font-weight=\"bold\" fill=\"#FA5252\">?</text><line x1=\"50\" y1=\"62\" x2=\"50\" y2=\"76\" stroke=\"#495057\" stroke-width=\"4\"/></svg>",
+      "example": {
+        "ja": "事故の原因を調べています。",
+        "hira": "じこのげんいんをしらべています。",
+        "vi": "Họ đang điều tra nguyên nhân vụ tai nạn."
+      }
+    },
+    {
+      "id": "n4_l46_08",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "注射",
+      "hanViet": "Chú Xạ",
+      "hiragana": "ちゅうしゃ",
+      "romaji": "chuusha",
+      "meaning": "tiêm thuốc",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><rect x=\"42\" y=\"30\" width=\"16\" height=\"36\" rx=\"3\" fill=\"#4DABF7\"/><line x1=\"50\" y1=\"66\" x2=\"50\" y2=\"80\" stroke=\"#1971C2\" stroke-width=\"3\"/><rect x=\"45\" y=\"20\" width=\"10\" height=\"10\" fill=\"#74C0FC\"/></svg>",
+      "example": {
+        "ja": "病院で痛い注射をされました。",
+        "hira": "びょういんでいたいちゅうしゃをされました。",
+        "vi": "Tôi đã bị tiêm một mũi rất đau ở bệnh viện."
+      }
+    },
+    {
+      "id": "n4_l46_09",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "食欲",
+      "hanViet": "Thực Dục",
+      "hiragana": "しょくよく",
+      "romaji": "shokuyoku",
+      "meaning": "sự thèm ăn, cảm giác ngon miệng",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF3BF\"/><path d=\"M30 65 Q50 75 70 65 Z\" fill=\"#E8590C\"/><line x1=\"38\" y1=\"35\" x2=\"38\" y2=\"55\" stroke=\"#F76707\" stroke-width=\"3\"/><line x1=\"62\" y1=\"35\" x2=\"62\" y2=\"55\" stroke=\"#F76707\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "風邪を引いて、食欲がありません。",
+        "hira": "かぜをひいて、しょくよくがありません。",
+        "vi": "Vì bị cảm nên tôi chẳng có cảm giác thèm ăn."
+      }
+    },
+    {
+      "id": "n4_l46_10",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "パンフレット",
+      "hanViet": "Tờ rơi",
+      "hiragana": "パンフレット",
+      "romaji": "panfuretto",
+      "meaning": "tờ rơi, tập sách mỏng giới thiệu",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#EBFBEE\"/><rect x=\"32\" y=\"30\" width=\"36\" height=\"44\" rx=\"3\" fill=\"#FFF\" stroke=\"#2B8A3E\" stroke-width=\"2\"/><line x1=\"38\" y1=\"42\" x2=\"62\" y2=\"42\" stroke=\"#40C057\" stroke-width=\"2\"/><line x1=\"38\" y1=\"52\" x2=\"58\" y2=\"52\" stroke=\"#8CE99A\" stroke-width=\"2\"/><line x1=\"38\" y1=\"62\" x2=\"52\" y2=\"62\" stroke=\"#8CE99A\" stroke-width=\"2\"/></svg>",
+      "example": {
+        "ja": "旅行のパンフレットをもらいました。",
+        "hira": "りょこうのパンフレットをもらいました。",
+        "vi": "Tôi đã nhận cuốn sách mỏng quảng cáo du lịch."
+      }
+    },
+    {
+      "id": "n4_l46_11",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "ステレオ",
+      "hanViet": "Dàn âm thanh",
+      "hiragana": "ステレオ",
+      "romaji": "sutereo",
+      "meaning": "dàn âm thanh nổi, máy nghe nhạc stereo",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F3F0FF\"/><rect x=\"25\" y=\"38\" width=\"50\" height=\"28\" rx=\"4\" fill=\"#495057\"/><circle cx=\"38\" cy=\"52\" r=\"8\" fill=\"#7950F2\"/><circle cx=\"62\" cy=\"52\" r=\"8\" fill=\"#7950F2\"/></svg>",
+      "example": {
+        "ja": "いいステレオで日本の音楽を聴きます。",
+        "hira": "いいステレオでにほんのおんがくをききます。",
+        "vi": "Tôi nghe nhạc Nhật bằng dàn âm thanh nổi xịn."
+      }
+    },
+    {
+      "id": "n4_l46_12",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "こちら",
+      "hanViet": "Phía này",
+      "hiragana": "こちら",
+      "romaji": "kochira",
+      "meaning": "phía này, bên tôi, chỗ chúng tôi",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><path d=\"M65 50 L35 50 M45 40 L35 50 L45 60\" stroke=\"#1971C2\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "example": {
+        "ja": "こちらへどうぞお入りください。",
+        "hira": "こちらへどうぞおいりください。",
+        "vi": "Xin mời anh/chị đi vào lối này ạ."
+      }
+    },
+    {
+      "id": "n4_l46_13",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "～の所",
+      "hanViet": "Sở",
+      "hiragana": "～のところ",
+      "romaji": "~ no tokoro",
+      "meaning": "khu vực quanh ~, chỗ quanh ~",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF4E6\"/><circle cx=\"50\" cy=\"45\" r=\"14\" fill=\"#FF922B\"/><path d=\"M50 25 C40 25 35 35 35 45 C35 60 50 75 50 75 C50 75 65 60 65 45 C65 35 60 25 50 25 Z\" fill=\"#F76707\"/></svg>",
+      "example": {
+        "ja": "駅の所で待っています。",
+        "hira": "えきのところでまっています。",
+        "vi": "Tôi đang đợi ở khu vực quanh nhà ga."
+      }
+    },
+    {
+      "id": "n4_l46_14",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "ちょうど",
+      "hanViet": "Đúng lúc",
+      "hiragana": "ちょうど",
+      "romaji": "choudo",
+      "meaning": "vừa đúng, chuẩn xác, đúng lúc",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><circle cx=\"50\" cy=\"50\" r=\"30\" fill=\"none\" stroke=\"#20C997\" stroke-width=\"4\"/><path d=\"M50 25 L50 50 L65 50\" stroke=\"#099268\" stroke-width=\"4\" stroke-linecap=\"round\"/></svg>",
+      "example": {
+        "ja": "今ちょうど12時です。",
+        "hira": "いまちょうどじゅうにじです。",
+        "vi": "Bây giờ vừa đúng 12 giờ trưa."
+      }
+    },
+    {
+      "id": "n4_l46_15",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "たったいま",
+      "hanViet": "Vừa mới",
+      "hiragana": "たったいま",
+      "romaji": "tattaima",
+      "meaning": "vừa mới tức thì, ban nãy (đi với quá khứ)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><text x=\"24\" y=\"60\" font-size=\"28\" font-weight=\"bold\" fill=\"#E03131\">NOW</text></svg>",
+      "example": {
+        "ja": "たった今着いたばかりです。",
+        "hira": "たったいまついたばかりです。",
+        "vi": "Tôi vừa mới đặt chân tới tức thì."
+      }
+    },
+    {
+      "id": "n4_l46_16",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "今いいですか",
+      "hanViet": "Kim",
+      "hiragana": "いまいいですか",
+      "romaji": "ima ii desu ka",
+      "meaning": "bây giờ bạn có rảnh/tiện nói chuyện không?",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F3F0FF\"/><path d=\"M30 40 Q50 25 70 40 Q50 65 30 40 Z\" fill=\"#845EF7\"/><circle cx=\"50\" cy=\"72\" r=\"5\" fill=\"#5F3DC4\"/></svg>",
+      "example": {
+        "ja": "田中先生、今いいですか。質問があります。",
+        "hira": "たなかせんせい、いまいいですか。しつもんがあります。",
+        "vi": "Cô Tanaka ơi, bây giờ cô có tiện không ạ? Em có câu hỏi muốn hỏi."
+      }
+    },
+    {
+      "id": "n4_l46_17",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "ガスサービスセンター",
+      "hanViet": "Trung tâm dịch vụ ga",
+      "hiragana": "ガスサービスセンター",
+      "romaji": "gasu saabisu sentaa",
+      "meaning": "trung tâm dịch vụ khách hàng dùng gas",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><path d=\"M50 28 Q40 45 40 55 C40 65 60 65 60 55 Q60 45 50 28 Z\" fill=\"#339AF0\"/><rect x=\"35\" y=\"65\" width=\"30\" height=\"15\" rx=\"3\" fill=\"#1C7ED6\"/></svg>",
+      "example": {
+        "ja": "ガスサービスセンターに電話しました。",
+        "hira": "ガスサービスセンターにでんわしました。",
+        "vi": "Tôi đã gọi điện đến trung tâm dịch vụ ga."
+      }
+    },
+    {
+      "id": "n4_l46_18",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "ガスレンジ",
+      "hanViet": "Bếp ga",
+      "hiragana": "ガスレンジ",
+      "romaji": "gasurenji",
+      "meaning": "bếp ga",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF4E6\"/><rect x=\"25\" y=\"45\" width=\"50\" height=\"30\" rx=\"4\" fill=\"#495057\"/><circle cx=\"40\" cy=\"56\" r=\"6\" fill=\"#FF922B\"/><circle cx=\"60\" cy=\"56\" r=\"6\" fill=\"#FF922B\"/><circle cx=\"50\" cy=\"68\" r=\"3\" fill=\"#CED4DA\"/></svg>",
+      "example": {
+        "ja": "新しいガスレンジを買いました。",
+        "hira": "あたらしいガスレンジをかいました。",
+        "vi": "Tôi đã mua một chiếc bếp ga mới."
+      }
+    },
+    {
+      "id": "n4_l46_19",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "具合",
+      "hanViet": "Cụ Hợp",
+      "hiragana": "ぐあい",
+      "romaji": "guai",
+      "meaning": "tình trạng, trạng thái (sức khỏe, máy móc)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><circle cx=\"50\" cy=\"45\" r=\"16\" fill=\"#FFA8A8\"/><path d=\"M42 42 Q50 36 58 42 M44 54 Q50 48 56 54\" stroke=\"#C92A2A\" stroke-width=\"2\" fill=\"none\"/></svg>",
+      "example": {
+        "ja": "体の具合が悪いです。",
+        "hira": "からだのぐあいがわるいです。",
+        "vi": "Tình trạng sức khỏe trong người tôi không tốt."
+      }
+    },
+    {
+      "id": "n4_l46_20",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "申し訳ありません",
+      "hanViet": "Thân Dịch",
+      "hiragana": "もうしわけありません",
+      "romaji": "moushiwake arimasen",
+      "meaning": "vô cùng xin lỗi (rất lịch sự, trang trọng)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F8F9FA\"/><circle cx=\"50\" cy=\"35\" r=\"12\" fill=\"#868E96\"/><path d=\"M35 70 C35 55 65 55 65 70 Z\" fill=\"#495057\"/><path d=\"M40 70 L50 82 L60 70\" fill=\"none\" stroke=\"#212529\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "遅れてしまい、大変申し訳ありません。",
+        "hira": "おくれてしまい、たいへんもうしわけありません。",
+        "vi": "Tôi đến muộn, xin thành thật nhận lỗi và vô cùng xin lỗi."
+      }
+    },
+    {
+      "id": "n4_l46_21",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "どちら様でしょうか",
+      "hanViet": "Dạng",
+      "hiragana": "どちらさまでしょうか",
+      "romaji": "dochirasama deshou ka",
+      "meaning": "vị nào đấy ạ? xin hỏi ai ở đầu dây thế ạ?",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><circle cx=\"50\" cy=\"40\" r=\"14\" fill=\"#74C0FC\"/><path d=\"M32 75 C32 60 68 60 68 75 Z\" fill=\"#339AF0\"/><text x=\"44\" y=\"47\" font-size=\"18\" fill=\"#FFF\" font-weight=\"bold\">?</text></svg>",
+      "example": {
+        "ja": "失礼ですが、どちら様でしょうか。",
+        "hira": "しつれいですが、どちらさまでしょうか。",
+        "vi": "Xin thất lễ, xin cho hỏi vị nào đang ở đầu dây đấy ạ?"
+      }
+    },
+    {
+      "id": "n4_l46_22",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "お待たせしました",
+      "hanViet": "Đãi",
+      "hiragana": "おまたせしました",
+      "romaji": "omataseshimashita",
+      "meaning": "xin lỗi vì đã để quý khách/bạn phải chờ lâu",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF9DB\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"none\" stroke=\"#F59F00\" stroke-width=\"4\"/><line x1=\"50\" y1=\"50\" x2=\"50\" y2=\"32\" stroke=\"#E67700\" stroke-width=\"3\"/><line x1=\"50\" y1=\"50\" x2=\"64\" y2=\"50\" stroke=\"#E67700\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "大変お待たせしました。コーヒーでございます。",
+        "hira": "たいへんおまたせしました。コーヒーでございます。",
+        "vi": "Đã để quý khách phải đợi lâu, cà phê của quý khách đây ạ."
+      }
+    },
+    {
+      "id": "n4_l46_23",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "向かいます",
+      "hanViet": "Hướng",
+      "hiragana": "むかいます",
+      "romaji": "mukaimasu",
+      "meaning": "hướng về, đi về phía",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><path d=\"M30 50 L65 50 M55 40 L65 50 L55 60\" stroke=\"#0CA678\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "example": {
+        "ja": "今からそちらへ向かいます。",
+        "hira": "いまからそちらへむかいます。",
+        "vi": "Bây giờ tôi sẽ xuất phát và đi về phía đằng đó."
+      }
+    },
+    {
+      "id": "n4_l46_24",
+      "lesson": 46,
+      "level": "N4",
+      "kanji": "ついています",
+      "hanViet": "May mắn",
+      "hiragana": "ついています",
+      "romaji": "tsuite imasu",
+      "meaning": "may mắn, gặp may",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF3BF\"/><path d=\"M50 25 L56 40 L72 40 L60 50 L64 65 L50 56 L36 65 L40 50 L28 40 L44 40 Z\" fill=\"#FAB005\"/></svg>",
+      "example": {
+        "ja": "今日は天気が良くて、ついています。",
+        "hira": "きょうはてんきがよくて、ついています。",
+        "vi": "Hôm nay thời tiết đẹp, thật là may mắn quá."
+      }
+    }
+  ]
+};
+
+const LESSON_47_DATA = {
+  "lessonNumber": 47,
+  "level": "N4",
+  "title": "Bài 47: Truyền Đạt Thông Tin & Suy Đoán Cảm Quan (～そうです / ～ようです)",
+  "topicVi": "Truyền đạt lại thông tin nghe được & Phán đoán qua các giác quan",
+  "icon": "👂",
+  "grammarPoint": "1. Thể thông thường + そうです (Nghe nói là - truyền ngôn). 2. Thể thông thường + ようです (Dường như là - phán đoán trực quan). 3. 声/音/におい/味がします (Có tiếng/âm thanh/mùi/vị cảm nhận được).",
+  "kanjiList": [
+    {
+      "kanji": "集",
+      "hanViet": "Tập",
+      "onyomi": "シュウ",
+      "kunyomi": "あつ・まる",
+      "meaning": "Tụ họp, tập trung",
+      "examples": [
+        "集まります (あつまります: tụ họp)",
+        "集中 (しゅうちゅう: tập trung)"
+      ]
+    },
+    {
+      "kanji": "別",
+      "hanViet": "Biệt",
+      "onyomi": "ベツ",
+      "kunyomi": "わか・れる",
+      "meaning": "Chia rẽ, đặc biệt",
+      "examples": [
+        "別れます (わかれます: chia tay)",
+        "特別 (とくべつ: đặc biệt)"
+      ]
+    },
+    {
+      "kanji": "長",
+      "hanViet": "Trường",
+      "onyomi": "チョウ",
+      "kunyomi": "なが・い",
+      "meaning": "Dài, đứng đầu",
+      "examples": [
+        "長生き (ながいき: sống thọ)",
+        "社長 (しゃちょう: giám đốc)"
+      ]
+    },
+    {
+      "kanji": "味",
+      "hanViet": "Vị",
+      "onyomi": "ミ",
+      "kunyomi": "あじ",
+      "meaning": "Hương vị, nếm mùi",
+      "examples": [
+        "味がします (あじがします: có vị)",
+        "意味 (いみ: ý nghĩa)"
+      ]
+    },
+    {
+      "kanji": "怖",
+      "hanViet": "Bố",
+      "onyomi": "フ",
+      "kunyomi": "こわ・い",
+      "meaning": "Sợ hãi, kinh sợ",
+      "examples": [
+        "怖い (こわい: sợ hãi)",
+        "恐怖 (きょうふ: nỗi sợ hãi)"
+      ]
+    },
+    {
+      "kanji": "表",
+      "hanViet": "Biểu",
+      "onyomi": "ヒョウ",
+      "kunyomi": "おもて / あらわ・す",
+      "meaning": "Biểu lộ, mặt ngoài",
+      "examples": [
+        "発表 (はっぴょう: phát biểu)",
+        "表情 (ひょうじょう: nét mặt)"
+      ]
+    },
+    {
+      "kanji": "実",
+      "hanViet": "Thực",
+      "onyomi": "ジツ",
+      "kunyomi": "み / みの・る",
+      "meaning": "Sự thật, quả thực",
+      "examples": [
+        "実験 (じっけん: thí nghiệm)",
+        "実は (じつは: thực ra là)"
+      ]
+    },
+    {
+      "kanji": "男",
+      "hanViet": "Nam",
+      "onyomi": "ダン / ナン",
+      "kunyomi": "おとこ",
+      "meaning": "Phái nam, đàn ông",
+      "examples": [
+        "男性 (だんせい: nam giới)",
+        "男の子 (おとこのこ: bé trai)"
+      ]
+    },
+    {
+      "kanji": "女",
+      "hanViet": "Nữ",
+      "onyomi": "ジョ",
+      "kunyomi": "おんな",
+      "meaning": "Phái nữ, phụ nữ",
+      "examples": [
+        "女性 (じょせい: nữ giới)",
+        "女の子 (おんなのこ: bé gái)"
+      ]
+    },
+    {
+      "kanji": "相",
+      "hanViet": "Tương",
+      "onyomi": "ソウ / ショウ",
+      "kunyomi": "あい",
+      "meaning": "Qua lại, đối diện",
+      "examples": [
+        "相手 (あいて: đối phương)",
+        "相談 (そうだん: bàn bạc, thảo luận)"
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "id": "n4_l47_01",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "集まります",
+      "hanViet": "Tập",
+      "hiragana": "あつまります",
+      "romaji": "atsumarimasu",
+      "meaning": "tập trung, tụ họp lại (người, đồ vật)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><circle cx=\"35\" cy=\"45\" r=\"9\" fill=\"#339AF0\"/><circle cx=\"65\" cy=\"45\" r=\"9\" fill=\"#339AF0\"/><circle cx=\"50\" cy=\"62\" r=\"11\" fill=\"#1C7ED6\"/></svg>",
+      "example": {
+        "ja": "広場に大勢の人が集まりました。",
+        "hira": "ひろばにおおぜいのひとがあつまりました。",
+        "vi": "Rất đông người đã tập trung lại tại quảng trường."
+      }
+    },
+    {
+      "id": "n4_l47_02",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "別れます",
+      "hanViet": "Biệt",
+      "hiragana": "わかれます",
+      "romaji": "wakaremasu",
+      "meaning": "chia tay, ly biệt, tách ra",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><circle cx=\"35\" cy=\"45\" r=\"9\" fill=\"#FA5252\"/><circle cx=\"65\" cy=\"45\" r=\"9\" fill=\"#FA5252\"/><line x1=\"50\" y1=\"30\" x2=\"50\" y2=\"70\" stroke=\"#868E96\" stroke-dasharray=\"4\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "駅で友達と別れました。",
+        "hira": "えきでともだちとわかれました。",
+        "vi": "Tôi đã chia tay tạm biệt người bạn tại nhà ga."
+      }
+    },
+    {
+      "id": "n4_l47_03",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "長生きします",
+      "hanViet": "Trường Sinh",
+      "hiragana": "ながいきします",
+      "romaji": "nagaikishimasu",
+      "meaning": "sống lâu, thọ",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><path d=\"M50 25 C30 25 30 65 50 80 C70 65 70 25 50 25 Z\" fill=\"#20C997\"/><text x=\"40\" y=\"55\" font-size=\"18\" fill=\"#FFF\" font-weight=\"bold\">100</text></svg>",
+      "example": {
+        "ja": "祖母は長生きして、95歳になりました。",
+        "hira": "そぼはながいきして、きゅうじゅうごさいになりました。",
+        "vi": "Bà tôi sống thọ và đã thọ 95 tuổi."
+      }
+    },
+    {
+      "id": "n4_l47_04",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "音/声がします",
+      "hanViet": "Âm / Thanh",
+      "hiragana": "おと/こえがします",
+      "romaji": "oto / koe ga shimasu",
+      "meaning": "có tiếng động, nghe thấy tiếng âm thanh/tiếng người",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F3F0FF\"/><path d=\"M30 45 L42 45 L54 35 L54 65 L42 55 L30 55 Z\" fill=\"#7950F2\"/><path d=\"M62 42 Q68 50 62 58\" stroke=\"#5F3DC4\" stroke-width=\"3\" fill=\"none\"/></svg>",
+      "example": {
+        "ja": "隣の部屋から変な音がします。",
+        "hira": "となりのへやからへんなおとがします。",
+        "vi": "Từ phòng bên cạnh phát ra âm thanh rất lạ."
+      }
+    },
+    {
+      "id": "n4_l47_05",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "味がします",
+      "hanViet": "Vị",
+      "hiragana": "あじがします",
+      "romaji": "aji ga shimasu",
+      "meaning": "có vị (ngọt, đắng, mặn...)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF3BF\"/><circle cx=\"50\" cy=\"50\" r=\"25\" fill=\"#FFA94D\"/><path d=\"M40 56 Q50 66 60 56\" stroke=\"#D9480F\" stroke-width=\"3\" fill=\"none\"/></svg>",
+      "example": {
+        "ja": "このスープはちょっと甘い味がします。",
+        "hira": "このスープはちょっとあまいあじがします。",
+        "vi": "Món súp này có vị hơi ngòn ngọt."
+      }
+    },
+    {
+      "id": "n4_l47_06",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "においがします",
+      "hanViet": "Có mùi",
+      "hiragana": "においがします",
+      "romaji": "nioi ga shimasu",
+      "meaning": "có mùi (thơm, khét, hôi...)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF4E6\"/><path d=\"M35 65 Q45 50 35 40 Q45 30 40 20\" stroke=\"#FD7E14\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M55 65 Q65 50 55 40 Q65 30 60 20\" stroke=\"#FD7E14\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+      "example": {
+        "ja": "台所からいいにおいがします。",
+        "hira": "だいどころからいいにおいがします。",
+        "vi": "Từ trong bếp thoang thoảng bay ra mùi hương thơm nức."
+      }
+    },
+    {
+      "id": "n4_l47_07",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "さします[傘を～]",
+      "hanViet": "Tản",
+      "hiragana": "さします",
+      "romaji": "sashimasu",
+      "meaning": "che, mở (ô, dù)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><path d=\"M25 50 Q50 25 75 50 Z\" fill=\"#339AF0\"/><line x1=\"50\" y1=\"50\" x2=\"50\" y2=\"72\" stroke=\"#1864AB\" stroke-width=\"4\"/><path d=\"M50 72 Q46 78 42 74\" stroke=\"#1864AB\" stroke-width=\"3\" fill=\"none\"/></svg>",
+      "example": {
+        "ja": "雨が降ってきたので、傘をさしました。",
+        "hira": "あめがふってきたので、かさをさしました。",
+        "vi": "Vì trời đổ mưa nên tôi đã che ô."
+      }
+    },
+    {
+      "id": "n4_l47_08",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "ひどい",
+      "hanViet": "Tồi tệ",
+      "hiragana": "ひどい",
+      "romaji": "hidoi",
+      "meaning": "tồi tệ, kinh khủng, nghiêm trọng",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#FF8787\"/><line x1=\"38\" y1=\"42\" x2=\"44\" y2=\"48\" stroke=\"#C92A2A\" stroke-width=\"3\"/><line x1=\"44\" y1=\"42\" x2=\"38\" y2=\"48\" stroke=\"#C92A2A\" stroke-width=\"3\"/><line x1=\"56\" y1=\"42\" x2=\"62\" y2=\"48\" stroke=\"#C92A2A\" stroke-width=\"3\"/><line x1=\"62\" y1=\"42\" x2=\"56\" y2=\"48\" stroke=\"#C92A2A\" stroke-width=\"3\"/><path d=\"M40 64 Q50 56 60 64\" stroke=\"#C92A2A\" stroke-width=\"3\" fill=\"none\"/></svg>",
+      "example": {
+        "ja": "ひどい雨で電車が止まりました。",
+        "hira": "ひどいあめででんしゃがとまりました。",
+        "vi": "Vì cơn mưa kinh khủng nên tàu điện đã phải dừng chạy."
+      }
+    },
+    {
+      "id": "n4_l47_09",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "怖い",
+      "hanViet": "Bố",
+      "hiragana": "こわい",
+      "romaji": "kowai",
+      "meaning": "đáng sợ, sợ hãi",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F3F0FF\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#B197FC\"/><circle cx=\"42\" cy=\"45\" r=\"5\" fill=\"#212529\"/><circle cx=\"58\" cy=\"45\" r=\"5\" fill=\"#212529\"/><ellipse cx=\"50\" cy=\"62\" rx=\"6\" ry=\"9\" fill=\"#212529\"/></svg>",
+      "example": {
+        "ja": "地震は本当に怖いです。",
+        "hira": "じしんはほんとうにこわいです。",
+        "vi": "Động đất thật sự rất đáng sợ."
+      }
+    },
+    {
+      "id": "n4_l47_10",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "天気予報",
+      "hanViet": "Thiên Khí Dự Báo",
+      "hiragana": "てんきよほう",
+      "romaji": "tenkiyohou",
+      "meaning": "dự báo thời tiết",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><circle cx=\"42\" cy=\"42\" r=\"14\" fill=\"#FFA94D\"/><path d=\"M45 55 Q55 45 68 55 Q78 55 76 65 Q76 72 65 72 L45 72 Q35 72 38 62 Q40 55 45 55 Z\" fill=\"#CED4DA\"/></svg>",
+      "example": {
+        "ja": "天気予報によると、明日は晴れるそうです。",
+        "hira": "てんきよほうによると、あしたははれるそうです。",
+        "vi": "Theo như dự báo thời tiết thì nghe nói ngày mai trời sẽ nắng."
+      }
+    },
+    {
+      "id": "n4_l47_11",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "発表",
+      "hanViet": "Phát Biểu",
+      "hiragana": "はっぴょう",
+      "romaji": "happyou",
+      "meaning": "phát biểu, công bố",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><rect x=\"30\" y=\"45\" width=\"40\" height=\"26\" rx=\"3\" fill=\"#20C997\"/><circle cx=\"50\" cy=\"32\" r=\"10\" fill=\"#099268\"/><line x1=\"42\" y1=\"55\" x2=\"58\" y2=\"55\" stroke=\"#FFF\" stroke-width=\"2\"/></svg>",
+      "example": {
+        "ja": "明日クラスで研究の結果を発表します。",
+        "hira": "あしたクラスでけんきゅうのけっかをはっぴょうします。",
+        "vi": "Ngày mai tôi sẽ thuyết trình công bố kết quả nghiên cứu trước lớp."
+      }
+    },
+    {
+      "id": "n4_l47_12",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "実験",
+      "hanViet": "Thực Nghiệm",
+      "hiragana": "じっけん",
+      "romaji": "jikken",
+      "meaning": "thí nghiệm",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF4E6\"/><path d=\"M45 30 L55 30 L55 45 L65 65 C67 69 63 74 58 74 L42 74 C37 74 33 69 35 65 L45 45 Z\" fill=\"#FF922B\"/><circle cx=\"48\" cy=\"62\" r=\"3\" fill=\"#FFF\"/><circle cx=\"53\" cy=\"56\" r=\"2\" fill=\"#FFF\"/></svg>",
+      "example": {
+        "ja": "大学の研究室で化学の実験をします。",
+        "hira": "だいがくのけんきゅうしつでかがくのじっけんをします。",
+        "vi": "Tôi làm thí nghiệm hóa học tại phòng nghiên cứu của trường đại học."
+      }
+    },
+    {
+      "id": "n4_l47_13",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "人口",
+      "hanViet": "Nhân Khẩu",
+      "hiragana": "じんこう",
+      "romaji": "jinkou",
+      "meaning": "dân số",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><circle cx=\"36\" cy=\"42\" r=\"8\" fill=\"#4DABF7\"/><circle cx=\"64\" cy=\"42\" r=\"8\" fill=\"#4DABF7\"/><circle cx=\"50\" cy=\"55\" r=\"9\" fill=\"#1C7ED6\"/><path d=\"M26 62 C26 55 46 55 46 62 Z\" fill=\"#4DABF7\"/><path d=\"M54 62 C54 55 74 55 74 62 Z\" fill=\"#4DABF7\"/></svg>",
+      "example": {
+        "ja": "東京の人口はますます増えています。",
+        "hira": "とうきょうのじんこうはますますふえています。",
+        "vi": "Dân số của thủ đô Tokyo ngày càng gia tăng."
+      }
+    },
+    {
+      "id": "n4_l47_14",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "におい",
+      "hanViet": "Khí vị",
+      "hiragana": "におい",
+      "romaji": "nioi",
+      "meaning": "mùi hương, mùi vị",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF9DB\"/><path d=\"M40 70 Q50 55 40 45 Q50 35 45 25\" stroke=\"#F59F00\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M60 70 Q70 55 60 45 Q70 35 65 25\" stroke=\"#F59F00\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+      "example": {
+        "ja": "香水のいいにおいが漂っています。",
+        "hira": "こうすいのいいにおいがただよっています。",
+        "vi": "Mùi hương nước hoa thơm dịu thoang thoảng bay khắp phòng."
+      }
+    },
+    {
+      "id": "n4_l47_15",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "科学",
+      "hanViet": "Khoa Học",
+      "hiragana": "かがく",
+      "romaji": "kagaku",
+      "meaning": "khoa học",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><ellipse cx=\"50\" cy=\"50\" rx=\"30\" ry=\"12\" fill=\"none\" stroke=\"#228BE6\" stroke-width=\"3\" transform=\"rotate(30 50 50)\"/><ellipse cx=\"50\" cy=\"50\" rx=\"30\" ry=\"12\" fill=\"none\" stroke=\"#228BE6\" stroke-width=\"3\" transform=\"rotate(-30 50 50)\"/><circle cx=\"50\" cy=\"50\" r=\"7\" fill=\"#1864AB\"/></svg>",
+      "example": {
+        "ja": "科学の進歩はとても速いです。",
+        "hira": "かがくのしんぽはとてもはやいです。",
+        "vi": "Sự tiến bộ của khoa học diễn ra vô cùng nhanh chóng."
+      }
+    },
+    {
+      "id": "n4_l47_16",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "医学",
+      "hanViet": "Y Học",
+      "hiragana": "いがく",
+      "romaji": "igaku",
+      "meaning": "y học, y khoa",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><circle cx=\"50\" cy=\"50\" r=\"30\" fill=\"#FFF\" stroke=\"#FA5252\" stroke-width=\"4\"/><rect x=\"46\" y=\"32\" width=\"8\" height=\"36\" fill=\"#FA5252\"/><rect x=\"32\" y=\"46\" width=\"36\" height=\"8\" fill=\"#FA5252\"/></svg>",
+      "example": {
+        "ja": "兄は大学で医学を勉強しています。",
+        "hira": "あにはだいがくでいがくをべんきょうしています。",
+        "vi": "Anh trai tôi đang theo học ngành y khoa tại trường đại học."
+      }
+    },
+    {
+      "id": "n4_l47_17",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "文学",
+      "hanViet": "Văn Học",
+      "hiragana": "ぶんがく",
+      "romaji": "bungaku",
+      "meaning": "văn học",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F3F0FF\"/><path d=\"M28 35 Q50 30 50 70 Q28 65 28 35 Z\" fill=\"#9775FA\"/><path d=\"M72 35 Q50 30 50 70 Q72 65 72 35 Z\" fill=\"#B197FC\"/></svg>",
+      "example": {
+        "ja": "日本文学に昔から興味があります。",
+        "hira": "にほんぶんがくにむかしからきょうみがあります。",
+        "vi": "Tôi có hứng thú với văn học Nhật Bản từ xưa."
+      }
+    },
+    {
+      "id": "n4_l47_18",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "パトカー",
+      "hanViet": "Xe cảnh sát tuần tra",
+      "hiragana": "パトカー",
+      "romaji": "patokaa",
+      "meaning": "xe cảnh sát tuần tra (patrol car)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F1F3F5\"/><rect x=\"25\" y=\"45\" width=\"50\" height=\"22\" rx=\"4\" fill=\"#212529\"/><rect x=\"25\" y=\"45\" width=\"50\" height=\"10\" fill=\"#FFF\"/><polygon points=\"46,38 54,38 50,32\" fill=\"#FA5252\"/><circle cx=\"36\" cy=\"67\" r=\"6\" fill=\"#495057\"/><circle cx=\"64\" cy=\"67\" r=\"6\" fill=\"#495057\"/></svg>",
+      "example": {
+        "ja": "パトカーがサイレンを鳴らして走っています。",
+        "hira": "パトカーがサイレンをならしてはしっています。",
+        "vi": "Xe cảnh sát đang hụ còi chạy trên đường."
+      }
+    },
+    {
+      "id": "n4_l47_19",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "救急車",
+      "hanViet": "Cứu Cấp Xa",
+      "hiragana": "きゅうきゅうしゃ",
+      "romaji": "kyuukyuusha",
+      "meaning": "xe cấp cứu",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><rect x=\"22\" y=\"42\" width=\"56\" height=\"26\" rx=\"4\" fill=\"#FFF\" stroke=\"#E03131\" stroke-width=\"2\"/><rect x=\"46\" y=\"48\" width=\"8\" height=\"14\" fill=\"#FA5252\"/><rect x=\"43\" y=\"51\" width=\"14\" height=\"8\" fill=\"#FA5252\"/><circle cx=\"34\" cy=\"68\" r=\"6\" fill=\"#495057\"/><circle cx=\"66\" cy=\"68\" r=\"6\" fill=\"#495057\"/></svg>",
+      "example": {
+        "ja": "急病人が出たので、救急車を呼びました。",
+        "hira": "きゅうびょうにんがでたので、きゅうきゅうしゃをよびました。",
+        "vi": "Vì có người trở bệnh cấp cứu nên chúng tôi đã gọi xe cấp cứu."
+      }
+    },
+    {
+      "id": "n4_l47_20",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "賛成",
+      "hanViet": "Tán Thành",
+      "hiragana": "さんせい",
+      "romaji": "sansei",
+      "meaning": "tán thành, đồng ý",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#20C997\"/><path d=\"M38 50 L46 58 L62 42\" stroke=\"#FFF\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "example": {
+        "ja": "皆さんの提案に心から賛成します。",
+        "hira": "みなさんのていあんにこころからさんせいします。",
+        "vi": "Tôi hết lòng tán thành với đề án của mọi người."
+      }
+    },
+    {
+      "id": "n4_l47_21",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "反対",
+      "hanViet": "Phản Đối",
+      "hiragana": "はんたい",
+      "romaji": "hantai",
+      "meaning": "phản đối",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#FA5252\"/><line x1=\"38\" y1=\"38\" x2=\"62\" y2=\"62\" stroke=\"#FFF\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"62\" y1=\"38\" x2=\"38\" y2=\"62\" stroke=\"#FFF\" stroke-width=\"5\" stroke-linecap=\"round\"/></svg>",
+      "example": {
+        "ja": "その計画には多くの人が反対しています。",
+        "hira": "そのけいかくにはおおくのひとがはんたいしています。",
+        "vi": "Kế hoạch đó có rất nhiều người phản đối."
+      }
+    },
+    {
+      "id": "n4_l47_22",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "男性",
+      "hanViet": "Nam Tính",
+      "hiragana": "だんせい",
+      "romaji": "dansei",
+      "meaning": "nam giới, phái nam, đàn ông",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><circle cx=\"45\" cy=\"55\" r=\"18\" fill=\"none\" stroke=\"#1971C2\" stroke-width=\"5\"/><line x1=\"58\" y1=\"42\" x2=\"72\" y2=\"28\" stroke=\"#1971C2\" stroke-width=\"5\"/><polyline points=\"60,28 72,28 72,40\" stroke=\"#1971C2\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "example": {
+        "ja": "この店は若い男性に人気があります。",
+        "hira": "このみせはわかいだんせいににんきがあります。",
+        "vi": "Cửa hàng này rất được ưa chuộng bởi các bạn nam trẻ."
+      }
+    },
+    {
+      "id": "n4_l47_23",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "女性",
+      "hanViet": "Nữ Tính",
+      "hiragana": "じょせい",
+      "romaji": "josei",
+      "meaning": "nữ giới, phái nữ, phụ nữ",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF0F6\"/><circle cx=\"50\" cy=\"42\" r=\"18\" fill=\"none\" stroke=\"#D6336C\" stroke-width=\"5\"/><line x1=\"50\" y1=\"60\" x2=\"50\" y2=\"78\" stroke=\"#D6336C\" stroke-width=\"5\"/><line x1=\"40\" y1=\"70\" x2=\"60\" y2=\"70\" stroke=\"#D6336C\" stroke-width=\"5\"/></svg>",
+      "example": {
+        "ja": "働く女性が増えてきました。",
+        "hira": "はたらくじょせいがふえてきました。",
+        "vi": "Số lượng phụ nữ đi làm ngày càng tăng lên."
+      }
+    },
+    {
+      "id": "n4_l47_24",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "どうも",
+      "hanViet": "Hình như",
+      "hiragana": "どうも",
+      "romaji": "doumo",
+      "meaning": "hình như, dường như (phỏng đoán không chắc chắn)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF9DB\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#F59F00\"/><text x=\"43\" y=\"58\" font-size=\"26\" font-weight=\"bold\" fill=\"#FFF\">?</text></svg>",
+      "example": {
+        "ja": "どうも風邪を引いたようです。",
+        "hira": "どうもかぜをひいたようです。",
+        "vi": "Hình như dường như tôi đã bị cảm cúm mất rồi."
+      }
+    },
+    {
+      "id": "n4_l47_25",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "～によると",
+      "hanViet": "Theo như",
+      "hiragana": "～によると",
+      "romaji": "~ ni yoru to",
+      "meaning": "theo như ~ (dùng khi dẫn nguồn tin tức)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><rect x=\"30\" y=\"30\" width=\"40\" height=\"40\" rx=\"4\" fill=\"#339AF0\"/><line x1=\"38\" y1=\"42\" x2=\"62\" y2=\"42\" stroke=\"#FFF\" stroke-width=\"3\"/><line x1=\"38\" y1=\"52\" x2=\"62\" y2=\"52\" stroke=\"#FFF\" stroke-width=\"3\"/><line x1=\"38\" y1=\"62\" x2=\"52\" y2=\"62\" stroke=\"#FFF\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "ニュースによると、桜がもう咲いたそうです。",
+        "hira": "ニュースによると、さくらがもうさいたそうです。",
+        "vi": "Theo như tin tức thì nghe nói hoa anh đào đã nở rồi."
+      }
+    },
+    {
+      "id": "n4_l47_26",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "恋人",
+      "hanViet": "Luyến Nhân",
+      "hiragana": "こいびと",
+      "romaji": "koibito",
+      "meaning": "người yêu",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><path d=\"M50 35 C40 20 20 30 20 48 C20 65 50 80 50 80 C50 80 80 65 80 48 C80 30 60 20 50 35 Z\" fill=\"#FA5252\"/></svg>",
+      "example": {
+        "ja": "週末に恋人と映画を見に行きます。",
+        "hira": "しゅうまつにこいびととえいがをみにいきます。",
+        "vi": "Cuối tuần tôi sẽ cùng người yêu đi xem phim."
+      }
+    },
+    {
+      "id": "n4_l47_27",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "婚約します",
+      "hanViet": "Hôn Ước",
+      "hiragana": "こんやくします",
+      "romaji": "konyakushimasu",
+      "meaning": "đính hôn",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF3BF\"/><circle cx=\"50\" cy=\"55\" r=\"18\" fill=\"none\" stroke=\"#F59F00\" stroke-width=\"5\"/><polygon points=\"50,28 56,36 44,36\" fill=\"#4DABF7\"/></svg>",
+      "example": {
+        "ja": "二人は先月婚約しました。",
+        "hira": "ふたりはせんげつこんやくしました。",
+        "vi": "Hai người họ đã đính hôn vào tháng trước."
+      }
+    },
+    {
+      "id": "n4_l47_28",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "相手",
+      "hanViet": "Tương Thủ",
+      "hiragana": "あいて",
+      "romaji": "aite",
+      "meaning": "đối phương, bạn đời, đối thủ",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F3F0FF\"/><circle cx=\"36\" cy=\"45\" r=\"10\" fill=\"#7950F2\"/><circle cx=\"64\" cy=\"45\" r=\"10\" fill=\"#BE4BDB\"/><path d=\"M46 50 L54 50\" stroke=\"#495057\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "結婚の相手が見つかりました。",
+        "hira": "けっこんのあいてがみつかりました。",
+        "vi": "Tôi đã tìm được đối tượng để kết hôn rồi."
+      }
+    },
+    {
+      "id": "n4_l47_29",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "知り合います",
+      "hanViet": "Tri Hợp",
+      "hiragana": "しりあいます",
+      "romaji": "shiriaimasu",
+      "meaning": "quen biết nhau",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><path d=\"M30 55 Q40 45 50 55 Q60 65 70 55\" stroke=\"#12B886\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+      "example": {
+        "ja": "パーティーで田中さんと知り合いました。",
+        "hira": "パーティーでたなかさんとしりあいました。",
+        "vi": "Tôi đã quen biết anh Tanaka tại một bữa tiệc."
+      }
+    },
+    {
+      "id": "n4_l47_30",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "化粧品",
+      "hanViet": "Hóa Trang Phẩm",
+      "hiragana": "けしょうひん",
+      "romaji": "keshouhin",
+      "meaning": "mỹ phẩm",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF0F6\"/><rect x=\"36\" y=\"45\" width=\"28\" height=\"30\" rx=\"5\" fill=\"#E64980\"/><rect x=\"44\" y=\"32\" width=\"12\" height=\"13\" fill=\"#F783AC\"/><line x1=\"42\" y1=\"26\" x2=\"58\" y2=\"26\" stroke=\"#C2255C\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "日本の化粧品は質がいいです。",
+        "hira": "にほんのけしょうひんはしつがいいです。",
+        "vi": "Mỹ phẩm của Nhật Bản có chất lượng rất tốt."
+      }
+    },
+    {
+      "id": "n4_l47_31",
+      "lesson": 47,
+      "level": "N4",
+      "kanji": "比べます",
+      "hanViet": "Tỷ",
+      "hiragana": "くらべます",
+      "romaji": "kurabemasu",
+      "meaning": "so sánh",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><rect x=\"28\" y=\"45\" width=\"18\" height=\"28\" rx=\"2\" fill=\"#339AF0\"/><rect x=\"54\" y=\"35\" width=\"18\" height=\"38\" rx=\"2\" fill=\"#1C7ED6\"/><line x1=\"20\" y1=\"75\" x2=\"80\" y2=\"75\" stroke=\"#495057\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "二つのパソコンの性能を比べます。",
+        "hira": "ふたつのパソコンのせいのうをくらべます。",
+        "vi": "Tôi so sánh hiệu năng giữa hai chiếc máy tính tính xách tay."
+      }
+    }
+  ]
+};
+
+const LESSON_48_DATA = {
+  "lessonNumber": 48,
+  "level": "N4",
+  "title": "Bài 48: Thể Sai Khiến & Cho Phép (使役形 ～させます)",
+  "topicVi": "Động từ Sai khiến (cho phép / bắt ai đó làm gì) & Xin phép lịch sự",
+  "icon": "👨‍🏫",
+  "grammarPoint": "1. Động từ Sai khiến: Nhóm 1: a+せます, Nhóm 2: させます, きます->こさせます, します->させます. 2. A は B に/を V-させます. 3. V-させていただけませんか (Xin phép cho tôi làm gì một cách lịch sự nhất).",
+  "kanjiList": [
+    {
+      "kanji": "降",
+      "hanViet": "Hàng/Giáng",
+      "onyomi": "コウ",
+      "kunyomi": "お・りる / ふ・る",
+      "meaning": "Hạ xuống, rơi tuyết",
+      "examples": [
+        "降ろします (おろします: cho xuống xe)",
+        "降ります (おります: xuống xe)"
+      ]
+    },
+    {
+      "kanji": "届",
+      "hanViet": "Giới",
+      "onyomi": "カイ",
+      "kunyomi": "とど・ける",
+      "meaning": "Giao đến, gửi nộp",
+      "examples": [
+        "届けます (とどけます: đưa đến)",
+        "届きます (とどきます: được chuyển tới)"
+      ]
+    },
+    {
+      "kanji": "嫌",
+      "hanViet": "Hiềm",
+      "onyomi": "ケン / ゲン",
+      "kunyomi": "きら・う / いや",
+      "meaning": "Ghét, nghi kỵ",
+      "examples": [
+        "嫌い (きらい: ghét)",
+        "嫌 (いや: khó chịu, không thích)"
+      ]
+    },
+    {
+      "kanji": "厳",
+      "hanViet": "Nghiêm",
+      "onyomi": "ゲン",
+      "kunyomi": "きび・しい",
+      "meaning": "Nghiêm khắc, trang trọng",
+      "examples": [
+        "厳しい (きびしい: nghiêm khắc)",
+        "厳重 (げんじゅう: nghiêm ngặt)"
+      ]
+    },
+    {
+      "kanji": "塾",
+      "hanViet": "Thục",
+      "onyomi": "ジュク",
+      "kunyomi": "-",
+      "meaning": "Trường học tư, luyện thi",
+      "examples": [
+        "塾 (じゅく: trường học thêm)",
+        "学習塾 (がくしゅうじゅく: lò luyện học tập)"
+      ]
+    },
+    {
+      "kanji": "徒",
+      "hanViet": "Đồ",
+      "onyomi": "ト",
+      "kunyomi": "-",
+      "meaning": "Học trò, môn đệ",
+      "examples": [
+        "生徒 (せいと: học sinh)",
+        "徒歩 (とほ: đi bộ)"
+      ]
+    },
+    {
+      "kanji": "営",
+      "hanViet": "Doanh",
+      "onyomi": "エイ",
+      "kunyomi": "いとな・む",
+      "meaning": "Kinh doanh, mưu cầu",
+      "examples": [
+        "営業 (えいぎょう: kinh doanh)",
+        "運営 (うんえい: vận hành)"
+      ]
+    },
+    {
+      "kanji": "親",
+      "hanViet": "Thân",
+      "onyomi": "シン",
+      "kunyomi": "おや / した・しい",
+      "meaning": "Cha mẹ, thân thiết",
+      "examples": [
+        "親 (おや: cha mẹ)",
+        "親切 (しんせつ: tốt bụng)"
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "id": "n4_l48_01",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "降ろします",
+      "hanViet": "Hàng",
+      "hiragana": "おろします",
+      "romaji": "oroshimasu",
+      "meaning": "cho xuống xe, hạ xuống",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><rect x=\"25\" y=\"35\" width=\"50\" height=\"26\" rx=\"4\" fill=\"#339AF0\"/><path d=\"M50 62 L50 78 M42 70 L50 78 L58 70\" stroke=\"#1864AB\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "example": {
+        "ja": "駅の前で荷物を降ろしました。",
+        "hira": "えきのまえでにものをおろしました。",
+        "vi": "Tôi đã cho hạ hành lý xuống ở trước nhà ga."
+      }
+    },
+    {
+      "id": "n4_l48_02",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "届けます",
+      "hanViet": "Giới",
+      "hiragana": "とどけます",
+      "romaji": "todokemasu",
+      "meaning": "chuyển đến, đưa đến, giao nộp",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF4E6\"/><rect x=\"32\" y=\"38\" width=\"36\" height=\"28\" rx=\"3\" fill=\"#FD7E14\"/><line x1=\"32\" y1=\"52\" x2=\"68\" y2=\"52\" stroke=\"#FFF\" stroke-width=\"2\"/><path d=\"M20 52 L32 52\" stroke=\"#D9480F\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "交番へ落とし物を届けました。",
+        "hira": "こうばんへおとしものをとどけました。",
+        "vi": "Tôi đã mang nộp đồ nhặt được đến đồn cảnh sát."
+      }
+    },
+    {
+      "id": "n4_l48_03",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "世話をします",
+      "hanViet": "Thế Thoại",
+      "hiragana": "せわをします",
+      "romaji": "sewa o shimasu",
+      "meaning": "chăm sóc, trông nom, phụng dưỡng",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><circle cx=\"50\" cy=\"40\" r=\"14\" fill=\"#FFA8A8\"/><path d=\"M30 75 C30 58 70 58 70 75 Z\" fill=\"#FA5252\"/><circle cx=\"62\" cy=\"48\" r=\"7\" fill=\"#FFD43B\"/></svg>",
+      "example": {
+        "ja": "母は毎日犬の世話をしています。",
+        "hira": "はははまいにちいぬのせわをしています。",
+        "vi": "Mẹ tôi ngày nào cũng chăm sóc chú cún cưng."
+      }
+    },
+    {
+      "id": "n4_l48_04",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "嫌[な]",
+      "hanViet": "Hiềm",
+      "hiragana": "いや[な]",
+      "romaji": "iya [na]",
+      "meaning": "ghét, khó chịu, không ưa",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F1F3F5\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#ADB5BD\"/><line x1=\"38\" y1=\"42\" x2=\"48\" y2=\"46\" stroke=\"#495057\" stroke-width=\"3\"/><line x1=\"62\" y1=\"42\" x2=\"52\" y2=\"46\" stroke=\"#495057\" stroke-width=\"3\"/><path d=\"M40 64 Q50 56 60 64\" stroke=\"#495057\" stroke-width=\"3\" fill=\"none\"/></svg>",
+      "example": {
+        "ja": "嫌なことは早く終わらせましょう。",
+        "hira": "いやなことははやくおわらせましょう。",
+        "vi": "Những việc không thích thì chúng ta hãy hoàn thành sớm đi nào."
+      }
+    },
+    {
+      "id": "n4_l48_05",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "厳しい",
+      "hanViet": "Nghiêm",
+      "hiragana": "きびしい",
+      "romaji": "kibishii",
+      "meaning": "nghiêm khắc, khắt khe",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#FF8787\"/><line x1=\"36\" y1=\"40\" x2=\"48\" y2=\"45\" stroke=\"#C92A2A\" stroke-width=\"3\"/><line x1=\"64\" y1=\"40\" x2=\"52\" y2=\"45\" stroke=\"#C92A2A\" stroke-width=\"3\"/><line x1=\"40\" y1=\"62\" x2=\"60\" y2=\"62\" stroke=\"#C92A2A\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "田中先生は厳しいですが、とても優しいです。",
+        "hira": "たなかせんせいはきびしいですが、とてもやさしいです。",
+        "vi": "Cô Tanaka tuy nghiêm khắc nhưng lại rất tốt bụng."
+      }
+    },
+    {
+      "id": "n4_l48_06",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "塾",
+      "hanViet": "Thục",
+      "hiragana": "じゅく",
+      "romaji": "juku",
+      "meaning": "trường học thêm, lò luyện thi",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF9DB\"/><polygon points=\"50,25 25,42 75,42\" fill=\"#F59F00\"/><rect x=\"32\" y=\"42\" width=\"36\" height=\"30\" fill=\"#FFE066\"/><rect x=\"44\" y=\"55\" width=\"12\" height=\"17\" fill=\"#E67700\"/></svg>",
+      "example": {
+        "ja": "日本の子供は放課後、塾へ通います。",
+        "hira": "にほんのこどもはほうかご、じゅくへかよいます。",
+        "vi": "Trẻ em Nhật Bản sau giờ học thường đến các trường học thêm."
+      }
+    },
+    {
+      "id": "n4_l48_07",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "スケジュール",
+      "hanViet": "Thời khóa biểu",
+      "hiragana": "スケジュール",
+      "romaji": "sukejuuru",
+      "meaning": "lịch trình, thời khóa biểu (schedule)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><rect x=\"30\" y=\"30\" width=\"40\" height=\"42\" rx=\"4\" fill=\"#FFF\" stroke=\"#1971C2\" stroke-width=\"3\"/><rect x=\"30\" y=\"30\" width=\"40\" height=\"10\" fill=\"#1971C2\"/><line x1=\"38\" y1=\"50\" x2=\"62\" y2=\"50\" stroke=\"#74C0FC\" stroke-width=\"2\"/><line x1=\"38\" y1=\"60\" x2=\"55\" y2=\"60\" stroke=\"#74C0FC\" stroke-width=\"2\"/></svg>",
+      "example": {
+        "ja": "来週のスケジュールを確認させてください。",
+        "hira": "らいしゅうのスケジュールをかくにんさせてください。",
+        "vi": "Xin hãy cho phép tôi xác nhận lại lịch trình tuần tới."
+      }
+    },
+    {
+      "id": "n4_l48_08",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "生徒",
+      "hanViet": "Sinh Đồ",
+      "hiragana": "せいと",
+      "romaji": "seito",
+      "meaning": "học sinh (cấp 2, cấp 3)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><circle cx=\"50\" cy=\"38\" r=\"13\" fill=\"#20C997\"/><path d=\"M30 72 C30 56 70 56 70 72 Z\" fill=\"#099268\"/></svg>",
+      "example": {
+        "ja": "生徒たちに自由に意見を言わせました。",
+        "hira": "せいとたちにじゆうにいけんをいわせました。",
+        "vi": "Thầy giáo đã cho các học sinh tự do phát biểu ý kiến."
+      }
+    },
+    {
+      "id": "n4_l48_09",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "ファイル",
+      "hanViet": "Tệp tài liệu",
+      "hiragana": "ファイル",
+      "romaji": "fairu",
+      "meaning": "tệp tài liệu, kẹp hồ sơ (file)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF4E6\"/><path d=\"M28 35 L45 35 L52 42 L72 42 Q75 42 75 45 L75 70 Q75 73 72 73 L28 73 Q25 73 25 70 L25 38 Q25 35 28 35 Z\" fill=\"#FF922B\"/></svg>",
+      "example": {
+        "ja": "このファイルをコピーさせていただけませんか。",
+        "hira": "このファイルをコピーさせていただけませんか。",
+        "vi": "Thầy/anh có thể cho phép em photocopy tệp tài liệu này được không ạ?"
+      }
+    },
+    {
+      "id": "n4_l48_10",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "自由に",
+      "hanViet": "Tự Do",
+      "hiragana": "じゆうに",
+      "romaji": "jiyuu ni",
+      "meaning": "một cách tự do, tùy thích",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><path d=\"M25 50 Q40 30 50 50 Q60 30 75 50\" stroke=\"#1971C2\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"50\" cy=\"40\" r=\"5\" fill=\"#339AF0\"/></svg>",
+      "example": {
+        "ja": "好きな物を自由に選んでください。",
+        "hira": "すきなものをじゆうにえらんでください。",
+        "vi": "Xin hãy tự do lựa chọn món đồ mà bạn yêu thích."
+      }
+    },
+    {
+      "id": "n4_l48_11",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "～間",
+      "hanViet": "Gian",
+      "hiragana": "～かん",
+      "romaji": "~ kan",
+      "meaning": "trong suốt khoảng thời gian ~",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F3F0FF\"/><line x1=\"25\" y1=\"50\" x2=\"75\" y2=\"50\" stroke=\"#7950F2\" stroke-width=\"4\"/><circle cx=\"25\" cy=\"50\" r=\"5\" fill=\"#5F3DC4\"/><circle cx=\"75\" cy=\"50\" r=\"5\" fill=\"#5F3DC4\"/></svg>",
+      "example": {
+        "ja": "夏休みの間、日本で旅行しました。",
+        "hira": "なつやすみのあいだ、にほんでりょこうしました。",
+        "vi": "Trong suốt khoảng kỳ nghỉ hè, tôi đã đi du lịch tại Nhật Bản."
+      }
+    },
+    {
+      "id": "n4_l48_12",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "いいことですね",
+      "hanViet": "Điều tốt",
+      "hiragana": "いいことですね",
+      "romaji": "ii koto desu ne",
+      "meaning": "điều đó thật tốt quá nhỉ, hay quá nhỉ",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#20C997\"/><path d=\"M38 48 Q50 62 62 48\" stroke=\"#FFF\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+      "example": {
+        "ja": "毎日運動しているんですか。いいことですね。",
+        "hira": "まいにちうんどうしているんですか。いいことですね。",
+        "vi": "Bạn vận động mỗi ngày à? Điều đó tốt quá nhỉ."
+      }
+    },
+    {
+      "id": "n4_l48_13",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "お忙しいですか",
+      "hanViet": "Mang",
+      "hiragana": "おいそがしいですか",
+      "romaji": "oisogashii desu ka",
+      "meaning": "bạn / thầy có đang bận không ạ?",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF9DB\"/><circle cx=\"50\" cy=\"40\" r=\"14\" fill=\"#F59F00\"/><path d=\"M35 75 C35 60 65 60 65 75 Z\" fill=\"#E67700\"/><text x=\"44\" y=\"47\" font-size=\"16\" fill=\"#FFF\" font-weight=\"bold\">?</text></svg>",
+      "example": {
+        "ja": "先生、今お忙しいですか。少しお話ししたいです。",
+        "hira": "せんせい、いまおいそがしいですか。すこしおはなししたいです。",
+        "vi": "Thưa cô, bây giờ cô có bận không ạ? Em xin phép muốn thưa chuyện đôi lời."
+      }
+    },
+    {
+      "id": "n4_l48_14",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "営業",
+      "hanViet": "Doanh Nghiệp",
+      "hiragana": "えいぎょう",
+      "romaji": "eigyou",
+      "meaning": "kinh doanh, mở cửa bán hàng",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><rect x=\"25\" y=\"35\" width=\"50\" height=\"34\" rx=\"4\" fill=\"#1C7ED6\"/><text x=\"32\" y=\"58\" font-size=\"16\" font-weight=\"bold\" fill=\"#FFF\">OPEN</text></svg>",
+      "example": {
+        "ja": "あのスーパーは24時間営業しています。",
+        "hira": "あのスーパーはにじゅうよじかんえいぎょうしています。",
+        "vi": "Siêu thị đó mở cửa kinh doanh 24 giờ mỗi ngày."
+      }
+    },
+    {
+      "id": "n4_l48_15",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "そちら",
+      "hanViet": "Phía đó",
+      "hiragana": "そちら",
+      "romaji": "sochira",
+      "meaning": "nơi đó, phía quý công ty/các bạn",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF4E6\"/><path d=\"M35 50 L65 50 M55 40 L65 50 L55 60\" stroke=\"#E8590C\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "example": {
+        "ja": "明日の午後、そちらへ伺ってもよろしいですか。",
+        "hira": "あしたのごご、そちらへうかがってもよろしいですか。",
+        "vi": "Chiều mai tôi xin phép ghé qua phía quý công ty có được không ạ?"
+      }
+    },
+    {
+      "id": "n4_l48_16",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "カタログ",
+      "hanViet": "Danh mục",
+      "hiragana": "カタログ",
+      "romaji": "katarogu",
+      "meaning": "cuốn danh mục sản phẩm, catalog",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F3F0FF\"/><rect x=\"32\" y=\"30\" width=\"36\" height=\"44\" rx=\"3\" fill=\"#9775FA\"/><rect x=\"38\" y=\"38\" width=\"24\" height=\"14\" fill=\"#FFF\"/><line x1=\"38\" y1=\"58\" x2=\"62\" y2=\"58\" stroke=\"#FFF\" stroke-width=\"2\"/></svg>",
+      "example": {
+        "ja": "新製品のカタログを送ってください。",
+        "hira": "しんせいひんのカタログをおくってください。",
+        "vi": "Xin vui lòng gửi giúp tôi cuốn catalog sản phẩm mới."
+      }
+    },
+    {
+      "id": "n4_l48_17",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "楽しみます",
+      "hanViet": "Lạc",
+      "hiragana": "たのしみます",
+      "romaji": "tanoshimimasu",
+      "meaning": "vui vẻ, tận hưởng",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF3BF\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#FAB005\"/><circle cx=\"42\" cy=\"45\" r=\"4\" fill=\"#212529\"/><circle cx=\"58\" cy=\"45\" r=\"4\" fill=\"#212529\"/><path d=\"M38 56 Q50 68 62 56\" stroke=\"#212529\" stroke-width=\"3\" fill=\"none\"/></svg>",
+      "example": {
+        "ja": "週末は家族と映画を楽しみます。",
+        "hira": "しゅうまつはかぞくとえいがをたのしみます。",
+        "vi": "Cuối tuần tôi cùng gia đình tận hưởng những bộ phim hay."
+      }
+    },
+    {
+      "id": "n4_l48_18",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "親",
+      "hanViet": "Thân",
+      "hiragana": "おや",
+      "romaji": "oya",
+      "meaning": "cha mẹ, phụ huynh",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><circle cx=\"42\" cy=\"40\" r=\"10\" fill=\"#FA5252\"/><circle cx=\"62\" cy=\"45\" r=\"8\" fill=\"#FF8787\"/><path d=\"M28 72 C28 58 56 58 56 72 Z\" fill=\"#E03131\"/><path d=\"M54 72 C54 60 72 60 72 72 Z\" fill=\"#FA5252\"/></svg>",
+      "example": {
+        "ja": "親の言うことをよく聞きなさい。",
+        "hira": "おやのいうことをよくききなさい。",
+        "vi": "Con hãy biết lắng nghe lời dạy bảo của cha mẹ."
+      }
+    },
+    {
+      "id": "n4_l48_19",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "小学生",
+      "hanViet": "Tiểu Học Sinh",
+      "hiragana": "しょうがくせい",
+      "romaji": "shougakusei",
+      "meaning": "học sinh tiểu học",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF9DB\"/><circle cx=\"50\" cy=\"38\" r=\"12\" fill=\"#F59F00\"/><path d=\"M35 50 Q50 40 65 50\" stroke=\"#F59F00\" stroke-width=\"4\" fill=\"none\"/><rect x=\"42\" y=\"52\" width=\"16\" height=\"22\" rx=\"3\" fill=\"#FAB005\"/></svg>",
+      "example": {
+        "ja": "弟は今年小学生になりました。",
+        "hira": "おとうとはことししょうがくせいになりました。",
+        "vi": "Năm nay em trai tôi đã trở thành học sinh tiểu học."
+      }
+    },
+    {
+      "id": "n4_l48_20",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "～％",
+      "hanViet": "Phần trăm",
+      "hiragana": "～パーセント",
+      "romaji": "~ paasento",
+      "meaning": "phần trăm (%)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><text x=\"35\" y=\"62\" font-size=\"34\" font-weight=\"bold\" fill=\"#1864AB\">%</text></svg>",
+      "example": {
+        "ja": "テストで100パーセントの正解を取りました。",
+        "hira": "テストでひゃくパーセントのせいかいをとりました。",
+        "vi": "Tôi đã trả lời đúng 100% trong bài kiểm tra."
+      }
+    },
+    {
+      "id": "n4_l48_21",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "次",
+      "hanViet": "Thứ",
+      "hiragana": "つぎ",
+      "romaji": "tsugi",
+      "meaning": "tiếp theo, lần tới",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><path d=\"M35 35 L65 50 L35 65 Z\" fill=\"#20C997\"/></svg>",
+      "example": {
+        "ja": "次は私の番です。",
+        "hira": "つぎはわたしのばんです。",
+        "vi": "Kế tiếp là đến lượt của tôi."
+      }
+    },
+    {
+      "id": "n4_l48_22",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "習字",
+      "hanViet": "Tập Tự",
+      "hiragana": "しゅうじ",
+      "romaji": "shuuji",
+      "meaning": "học viết chữ đẹp, thư pháp",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F8F9FA\"/><path d=\"M35 65 L48 30 L55 30 L65 65\" stroke=\"#212529\" stroke-width=\"4\" fill=\"none\"/><line x1=\"40\" y1=\"52\" x2=\"60\" y2=\"52\" stroke=\"#212529\" stroke-width=\"4\"/></svg>",
+      "example": {
+        "ja": "子供の頃、習字を習っていました。",
+        "hira": "こどものころ、しゅうじをならっていました。",
+        "vi": "Hồi bé tôi từng học viết thư pháp."
+      }
+    },
+    {
+      "id": "n4_l48_23",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "普通の",
+      "hanViet": "Phổ Thông",
+      "hiragana": "ふつうの",
+      "romaji": "futsuu no",
+      "meaning": "thông thường, bình thường",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><rect x=\"30\" y=\"42\" width=\"40\" height=\"20\" rx=\"3\" fill=\"#74C0FC\"/><line x1=\"38\" y1=\"52\" x2=\"62\" y2=\"52\" stroke=\"#1C7ED6\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "これは普通の水ではなく、特別な薬です。",
+        "hira": "これはふつうのみずではなく、とくべつなくすりです。",
+        "vi": "Đây không phải nước thông thường mà là một loại thuốc đặc biệt."
+      }
+    },
+    {
+      "id": "n4_l48_24",
+      "lesson": 48,
+      "level": "N4",
+      "kanji": "避難します",
+      "hanViet": "Tị Nạn",
+      "hiragana": "ひなんします",
+      "romaji": "hinanshimasu",
+      "meaning": "sơ tán, lánh nạn khẩn cấp",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><circle cx=\"40\" cy=\"38\" r=\"8\" fill=\"#E03131\"/><path d=\"M40 48 L48 60 L62 55 M44 60 L38 74 M48 60 L54 74\" stroke=\"#E03131\" stroke-width=\"4\" stroke-linecap=\"round\"/></svg>",
+      "example": {
+        "ja": "地震の時は学校のグラウンドへ避難します。",
+        "hira": "じしんのときはがっこうのグラウンドへひなんします。",
+        "vi": "Khi xảy ra động đất, mọi người hãy sơ tán ra sân trường."
+      }
+    }
+  ]
+};
+
+const LESSON_49_DATA = {
+  "lessonNumber": 49,
+  "level": "N4",
+  "title": "Bài 49: Tôn Kính Ngữ (Sonkeigo - 尊敬語)",
+  "topicVi": "Nâng cao hành động của cấp trên, khách hàng và đối phương",
+  "icon": "👑",
+  "grammarPoint": "1. Động từ thể Bị động dùng làm Tôn kính ngữ. 2. お + V(bỏ ます) + になります. 3. Các động từ Tôn kính ngữ đặc biệt (いらっしゃいます, 召し上がります, おっしゃいます, なさいます, ご覧になります, ご存じです). 4. お + V(bỏ ます) + ください.",
+  "kanjiList": [
+    {
+      "kanji": "勤",
+      "hanViet": "Cần",
+      "onyomi": "キン",
+      "kunyomi": "つと・める",
+      "meaning": "Làm việc, siêng năng",
+      "examples": [
+        "勤めます (つとめます: đi làm việc)",
+        "通勤 (つうきん: đi làm)"
+      ]
+    },
+    {
+      "kanji": "過",
+      "hanViet": "Quá",
+      "onyomi": "カ",
+      "kunyomi": "す・ごす / す・ぎる",
+      "meaning": "Trải qua, quá mức",
+      "examples": [
+        "過ごします (すごします: trải qua)",
+        "過去 (かこ: quá khứ)"
+      ]
+    },
+    {
+      "kanji": "存",
+      "hanViet": "Tồn",
+      "onyomi": "ゾン / ソン",
+      "kunyomi": "-",
+      "meaning": "Tồn tại, biết",
+      "examples": [
+        "ご存じです (ごぞんじです: biết - kính ngữ)",
+        "存在 (そんざい: tồn tại)"
+      ]
+    },
+    {
+      "kanji": "皿",
+      "hanViet": "Mãnh",
+      "onyomi": "ベイ",
+      "kunyomi": "さら",
+      "meaning": "Cái đĩa, gạt tàn",
+      "examples": [
+        "灰皿 (はいざら: gạt tàn)",
+        "お皿 (おさら: cái đĩa)"
+      ]
+    },
+    {
+      "kanji": "貿",
+      "hanViet": "Mậu",
+      "onyomi": "ボウ",
+      "kunyomi": "-",
+      "meaning": "Buôn bán mậu dịch",
+      "examples": [
+        "貿易 (ぼうえき: thương mại, xuất nhập khẩu)"
+      ]
+    },
+    {
+      "kanji": "易",
+      "hanViet": "Dịch",
+      "onyomi": "エキ / イ",
+      "kunyomi": "やさ・しい",
+      "meaning": "Giao thương, dễ dàng",
+      "examples": [
+        "貿易 (ぼうえき: mậu dịch)",
+        "容易 (ようい: dễ dàng)"
+      ]
+    },
+    {
+      "kanji": "様",
+      "hanViet": "Dạng",
+      "onyomi": "ヨウ",
+      "kunyomi": "さま",
+      "meaning": "Hình dạng, ngài",
+      "examples": [
+        "～様 (～さま: ngài, quý khách)",
+        "様子 (ようす: tình hình)"
+      ]
+    },
+    {
+      "kanji": "講",
+      "hanViet": "Giảng",
+      "onyomi": "コウ",
+      "kunyomi": "-",
+      "meaning": "Giảng giải, lớp học",
+      "examples": [
+        "講師 (こうし: giảng viên)",
+        "講義 (こうぎ: bài giảng)"
+      ]
+    },
+    {
+      "kanji": "師",
+      "hanViet": "Sư",
+      "onyomi": "シ",
+      "kunyomi": "-",
+      "meaning": "Thầy giáo, chuyên gia",
+      "examples": [
+        "講師 (こうし: giảng viên)",
+        "医師 (いし: bác sĩ)"
+      ]
+    },
+    {
+      "kanji": "作",
+      "hanViet": "Tác",
+      "onyomi": "サク / サ",
+      "kunyomi": "つく・る",
+      "meaning": "Làm ra, sáng tác",
+      "examples": [
+        "作品 (さくひん: tác phẩm)",
+        "作家 (さっか: nhà văn)"
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "id": "n4_l49_01",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "利用します",
+      "hanViet": "Lợi Dụng",
+      "hiragana": "りようします",
+      "romaji": "riyoushimasu",
+      "meaning": "tận dụng, sử dụng",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"none\" stroke=\"#228BE6\" stroke-width=\"4\"/><path d=\"M42 50 L48 56 L60 44\" stroke=\"#1971C2\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+      "example": {
+        "ja": "地下鉄をよく利用します。",
+        "hira": "ちかてつをよくりようします。",
+        "vi": "Tôi thường xuyên sử dụng tàu điện ngầm."
+      }
+    },
+    {
+      "id": "n4_l49_02",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "勤めます[会社に～]",
+      "hanViet": "Cần",
+      "hiragana": "つとめます",
+      "romaji": "tsutomemasu",
+      "meaning": "làm việc tại (công ty)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF4E6\"/><rect x=\"30\" y=\"32\" width=\"40\" height=\"42\" rx=\"3\" fill=\"#FD7E14\"/><rect x=\"36\" y=\"38\" width=\"8\" height=\"8\" fill=\"#FFF\"/><rect x=\"46\" y=\"38\" width=\"8\" height=\"8\" fill=\"#FFF\"/><rect x=\"56\" y=\"38\" width=\"8\" height=\"8\" fill=\"#FFF\"/></svg>",
+      "example": {
+        "ja": "父は日本の貿易会社に勤めています。",
+        "hira": "ちはにほんのぼうえきかいしゃにつとめています。",
+        "vi": "Bố tôi đang làm việc tại một công ty thương mại của Nhật."
+      }
+    },
+    {
+      "id": "n4_l49_03",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "かけます[いすに～]",
+      "hanViet": "Ngồi ghế",
+      "hiragana": "かけます",
+      "romaji": "kakemasu",
+      "meaning": "ngồi (ghế - cách nói lịch sự)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F3F0FF\"/><path d=\"M35 30 L35 55 L65 55 L65 72 M65 55 L65 30\" stroke=\"#7950F2\" stroke-width=\"4\" fill=\"none\"/><line x1=\"35\" y1=\"55\" x2=\"35\" y2=\"72\" stroke=\"#7950F2\" stroke-width=\"4\"/></svg>",
+      "example": {
+        "ja": "どうぞこちらのいすにお掛けください。",
+        "hira": "どうぞこちらのいすにおかけください。",
+        "vi": "Xin kính mời quý khách ngồi vào chiếc ghế bên này ạ."
+      }
+    },
+    {
+      "id": "n4_l49_04",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "過ごします",
+      "hanViet": "Quá",
+      "hiragana": "すごします",
+      "romaji": "sugoshimasu",
+      "meaning": "trải qua thời gian",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"none\" stroke=\"#20C997\" stroke-width=\"4\"/><line x1=\"50\" y1=\"50\" x2=\"50\" y2=\"34\" stroke=\"#0CA678\" stroke-width=\"3\"/><line x1=\"50\" y1=\"50\" x2=\"62\" y2=\"50\" stroke=\"#0CA678\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "週末は家でゆっくり過ごしました。",
+        "hira": "しゅうまつはいえでゆっくりすごしました。",
+        "vi": "Cuối tuần tôi đã trải qua thời gian thư thái tại nhà."
+      }
+    },
+    {
+      "id": "n4_l49_05",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "いらっしゃいます",
+      "hanViet": "Tôn kính ngữ",
+      "hiragana": "いらっしゃいます",
+      "romaji": "irasshaimasu",
+      "meaning": "ở, đi, đến (Tôn kính ngữ của います/いきます/きます)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><polygon points=\"50,22 55,34 68,34 58,42 62,54 50,46 38,54 42,42 32,34 45,34\" fill=\"#FA5252\"/><path d=\"M35 72 C35 58 65 58 65 72 Z\" fill=\"#E03131\"/></svg>",
+      "example": {
+        "ja": "部長は今社長室にいらっしゃいます。",
+        "hira": "ぶちょうはいましゃちょうしつにいらっしゃいます。",
+        "vi": "Trưởng phòng hiện đang có mặt ở trong phòng giám đốc ạ."
+      }
+    },
+    {
+      "id": "n4_l49_06",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "召し上がります",
+      "hanViet": "Triệu Thượng",
+      "hiragana": "めしあがります",
+      "romaji": "meshiagarimasu",
+      "meaning": "ăn, uống (Tôn kính ngữ của たべます/のみます)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF3BF\"/><path d=\"M30 60 Q50 75 70 60 Z\" fill=\"#F59F00\"/><line x1=\"38\" y1=\"35\" x2=\"38\" y2=\"50\" stroke=\"#E67700\" stroke-width=\"3\"/><line x1=\"62\" y1=\"35\" x2=\"62\" y2=\"50\" stroke=\"#E67700\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "どうぞ温かいうちに召し上がってください。",
+        "hira": "どうぞあたたかいうちにめしあがってください。",
+        "vi": "Kính mời quý khách dùng bữa trong lúc đồ ăn còn nóng ạ."
+      }
+    },
+    {
+      "id": "n4_l49_07",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "おっしゃいます",
+      "hanViet": "Tôn kính ngữ",
+      "hiragana": "おっしゃいます",
+      "romaji": "osshaimasu",
+      "meaning": "nói (Tôn kính ngữ của いいます)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><path d=\"M28 35 Q50 25 72 35 Q72 65 50 65 L40 75 L42 65 Q28 65 28 35 Z\" fill=\"#339AF0\"/></svg>",
+      "example": {
+        "ja": "先生がおっしゃった通りに勉強します。",
+        "hira": "せんせいがおっしゃったとおりにべんきょうします。",
+        "vi": "Em sẽ học theo đúng như lời cô đã chỉ dạy ạ."
+      }
+    },
+    {
+      "id": "n4_l49_08",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "なさいます",
+      "hanViet": "Tôn kính ngữ",
+      "hiragana": "なさいます",
+      "romaji": "nasaimasu",
+      "meaning": "làm (Tôn kính ngữ của します)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F3F0FF\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#845EF7\"/><polygon points=\"50,32 54,42 64,42 56,48 59,58 50,52 41,58 44,48 36,42 46,42\" fill=\"#FFF\"/></svg>",
+      "example": {
+        "ja": "週末は何をなさいますか。",
+        "hira": "しゅうまつはなにをなさいますか。",
+        "vi": "Cuối tuần ngài sẽ làm gì ạ?"
+      }
+    },
+    {
+      "id": "n4_l49_09",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "ご覧になります",
+      "hanViet": "Kiến",
+      "hiragana": "ごらんになります",
+      "romaji": "goran ni narimasu",
+      "meaning": "nhìn, xem (Tôn kính ngữ của みます)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><ellipse cx=\"50\" cy=\"50\" rx=\"26\" ry=\"16\" fill=\"none\" stroke=\"#20C997\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"50\" r=\"8\" fill=\"#0CA678\"/></svg>",
+      "example": {
+        "ja": "こちらの資料をご覧になりましたか。",
+        "hira": "こちらのしりょうをごらんになりましたか。",
+        "vi": "Quý ngài đã xem qua tập tài liệu này chưa ạ?"
+      }
+    },
+    {
+      "id": "n4_l49_10",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "ご存じです",
+      "hanViet": "Tồn",
+      "hiragana": "ごぞんじです",
+      "romaji": "gozonji desu",
+      "meaning": "biết (Tôn kính ngữ của しっています)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF9DB\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#FAB005\"/><circle cx=\"50\" cy=\"42\" r=\"6\" fill=\"#FFF\"/><rect x=\"47\" y=\"52\" width=\"6\" height=\"14\" fill=\"#FFF\"/></svg>",
+      "example": {
+        "ja": "田中先生のお宅をご存じですか。",
+        "hira": "たなかせんせいのおたくをごぞんじですか。",
+        "vi": "Bạn có biết nhà của cô giáo Tanaka ở đâu không ạ?"
+      }
+    },
+    {
+      "id": "n4_l49_11",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "あいさつ",
+      "hanViet": "Lời chào",
+      "hiragana": "あいさつ",
+      "romaji": "aisatsu",
+      "meaning": "chào hỏi, lời chào mừng",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><circle cx=\"36\" cy=\"38\" r=\"9\" fill=\"#FA5252\"/><circle cx=\"64\" cy=\"38\" r=\"9\" fill=\"#FA5252\"/><path d=\"M26 65 C26 52 46 52 46 65 Z\" fill=\"#E03131\"/><path d=\"M54 65 C54 52 74 52 74 65 Z\" fill=\"#E03131\"/><path d=\"M38 52 Q50 44 62 52\" stroke=\"#FFF\" stroke-width=\"2\" fill=\"none\"/></svg>",
+      "example": {
+        "ja": "朝、近所の人にあいさつをします。",
+        "hira": "あさ、きんじょのひとにあいさつをします。",
+        "vi": "Buổi sáng tôi luôn chào hỏi những người hàng xóm láng giềng."
+      }
+    },
+    {
+      "id": "n4_l49_12",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "灰皿",
+      "hanViet": "Hôi Mãnh",
+      "hiragana": "はいざら",
+      "romaji": "haizara",
+      "meaning": "gạt tàn thuốc lá",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F1F3F5\"/><ellipse cx=\"50\" cy=\"55\" rx=\"30\" ry=\"14\" fill=\"#868E96\"/><ellipse cx=\"50\" cy=\"52\" rx=\"24\" ry=\"10\" fill=\"#CED4DA\"/></svg>",
+      "example": {
+        "ja": "灰皿はあちらにございます。",
+        "hira": "はいざらはあちらにございます。",
+        "vi": "Gạt tàn thuốc lá ở phía đằng kia ạ."
+      }
+    },
+    {
+      "id": "n4_l49_13",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "旅館",
+      "hanViet": "Lữ Quán",
+      "hiragana": "りょかん",
+      "romaji": "ryokan",
+      "meaning": "quán trọ / khách sạn kiểu truyền thống Nhật Bản",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF4E6\"/><polygon points=\"50,25 22,45 78,45\" fill=\"#D9480F\"/><rect x=\"30\" y=\"45\" width=\"40\" height=\"28\" fill=\"#FFE8CC\"/><rect x=\"44\" y=\"55\" width=\"12\" height=\"18\" fill=\"#D9480F\"/></svg>",
+      "example": {
+        "ja": "京都の古い旅館に泊まりました。",
+        "hira": "きょうとのふるいりょかんにとまりました。",
+        "vi": "Tôi đã trọ lại tại một lữ quán cổ kính ở Kyoto."
+      }
+    },
+    {
+      "id": "n4_l49_14",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "会場",
+      "hanViet": "Hội Trường",
+      "hiragana": "かいじょう",
+      "romaji": "kaijou",
+      "meaning": "hội trường, địa điểm tổ chức",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><rect x=\"25\" y=\"32\" width=\"50\" height=\"40\" rx=\"3\" fill=\"#1C7ED6\"/><circle cx=\"40\" cy=\"46\" r=\"4\" fill=\"#FFF\"/><circle cx=\"60\" cy=\"46\" r=\"4\" fill=\"#FFF\"/><rect x=\"42\" y=\"58\" width=\"16\" height=\"14\" fill=\"#FFF\"/></svg>",
+      "example": {
+        "ja": "試験の会場は3階の大教室です。",
+        "hira": "しけんのかいじょうはさんがいのだいきょうしつです。",
+        "vi": "Địa điểm thi là phòng học lớn ở tầng 3."
+      }
+    },
+    {
+      "id": "n4_l49_15",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "バス停",
+      "hanViet": "Đình",
+      "hiragana": "バスてい",
+      "romaji": "basutei",
+      "meaning": "trạm xe buýt, điểm dừng xe buýt",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><circle cx=\"50\" cy=\"35\" r=\"14\" fill=\"#20C997\"/><rect x=\"47\" y=\"49\" width=\"6\" height=\"26\" fill=\"#0CA678\"/><rect x=\"38\" y=\"75\" width=\"24\" height=\"4\" fill=\"#0CA678\"/></svg>",
+      "example": {
+        "ja": "バス停でバスを待っています。",
+        "hira": "バスていでバスをまっています。",
+        "vi": "Tôi đang đợi xe buýt tại trạm dừng."
+      }
+    },
+    {
+      "id": "n4_l49_16",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "貿易",
+      "hanViet": "Mậu Dịch",
+      "hiragana": "ぼうえき",
+      "romaji": "boueki",
+      "meaning": "thương mại, xuất nhập khẩu",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF4E6\"/><path d=\"M28 42 L72 42 M60 32 L72 42 L60 52\" stroke=\"#FD7E14\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M72 58 L28 58 M40 48 L28 58 L40 68\" stroke=\"#E8590C\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+      "example": {
+        "ja": "日本とベトナムの貿易が盛んです。",
+        "hira": "にほんとベトナムのぼうえきがさかんです。",
+        "vi": "Mậu dịch thương mại giữa Nhật Bản và Việt Nam rất phát triển."
+      }
+    },
+    {
+      "id": "n4_l49_17",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "～様",
+      "hanViet": "Dạng",
+      "hiragana": "～さま",
+      "romaji": "~ sama",
+      "meaning": "ngài ~, vị ~, quý khách ~ (kính xưng cao cấp hơn さん)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF3BF\"/><polygon points=\"50,22 55,34 68,34 58,42 62,54 50,46 38,54 42,42 32,34 45,34\" fill=\"#FAB005\"/><circle cx=\"50\" cy=\"62\" r=\"10\" fill=\"#E67700\"/></svg>",
+      "example": {
+        "ja": "田中様、こちらへどうぞ。",
+        "hira": "たなかさま、こちらへどうぞ。",
+        "vi": "Kính mời ngài Tanaka đi lối này ạ."
+      }
+    },
+    {
+      "id": "n4_l49_18",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "帰りに",
+      "hanViet": "Quy",
+      "hiragana": "かえりに",
+      "romaji": "kaeri ni",
+      "meaning": "trên đường về",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><path d=\"M68 62 L32 62 M44 50 L32 62 L44 74\" stroke=\"#1C7ED6\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+      "example": {
+        "ja": "会社の帰りにスーパーで買い物をします。",
+        "hira": "かいしゃのかえりにスーパーでかいものをします。",
+        "vi": "Trên đường từ công ty về tôi ghé siêu thị mua sắm đồ."
+      }
+    },
+    {
+      "id": "n4_l49_19",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "たまに",
+      "hanViet": "Thỉnh thoảng",
+      "hiragana": "たまに",
+      "romaji": "tamani",
+      "meaning": "thỉnh thoảng, đôi khi (tần suất thấp)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F3F0FF\"/><circle cx=\"35\" cy=\"50\" r=\"6\" fill=\"#CED4DA\"/><circle cx=\"50\" cy=\"50\" r=\"6\" fill=\"#7950F2\"/><circle cx=\"65\" cy=\"50\" r=\"6\" fill=\"#CED4DA\"/></svg>",
+      "example": {
+        "ja": "たまに家族と外食します。",
+        "hira": "たまにかぞくとがいしょくします。",
+        "vi": "Thỉnh thoảng tôi cùng gia đình đi ăn tiệm ngoài."
+      }
+    },
+    {
+      "id": "n4_l49_20",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "ちっとも",
+      "hanViet": "Chẳng hề",
+      "hiragana": "ちっとも",
+      "romaji": "chittomo",
+      "meaning": "chẳng ~ chút nào (luôn đi kèm đuôi phủ định)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#FA5252\"/><line x1=\"34\" y1=\"50\" x2=\"66\" y2=\"50\" stroke=\"#FFF\" stroke-width=\"5\" stroke-linecap=\"round\"/></svg>",
+      "example": {
+        "ja": "この本はちっとも面白くありません。",
+        "hira": "このほんはちっともおもしろくありません。",
+        "vi": "Cuốn sách này chẳng thú vị một chút nào cả."
+      }
+    },
+    {
+      "id": "n4_l49_21",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "遠慮なく",
+      "hanViet": "Viễn Lự",
+      "hiragana": "えんりょなく",
+      "romaji": "enryo naku",
+      "meaning": "đừng khách sáo, cứ tự nhiên",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#20C997\"/><path d=\"M40 50 Q50 62 60 50\" stroke=\"#FFF\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+      "example": {
+        "ja": "遠慮なく召し上がってください。",
+        "hira": "えんりょなくめしあがってください。",
+        "vi": "Xin ngài đừng khách sáo, cứ tự nhiên dùng bữa ạ."
+      }
+    },
+    {
+      "id": "n4_l49_22",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "ー年ー組",
+      "hanViet": "Niên Tổ",
+      "hiragana": "ーねんーくみ",
+      "romaji": "- nen - kumi",
+      "meaning": "lớp... năm...",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF9DB\"/><rect x=\"28\" y=\"35\" width=\"44\" height=\"30\" rx=\"3\" fill=\"#FAB005\"/><text x=\"35\" y=\"56\" font-size=\"16\" font-weight=\"bold\" fill=\"#FFF\">3-A</text></svg>",
+      "example": {
+        "ja": "私は3年2組の生徒です。",
+        "hira": "わたしはさんねんにくみのせいとです。",
+        "vi": "Tôi là học sinh lớp 2 năm thứ 3."
+      }
+    },
+    {
+      "id": "n4_l49_23",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "では",
+      "hanViet": "Vậy thì",
+      "hiragana": "では",
+      "romaji": "dewa",
+      "meaning": "vậy thì, thế thì (lịch sự hơn じゃ)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><path d=\"M35 50 L65 50 M55 40 L65 50 L55 60\" stroke=\"#1971C2\" stroke-width=\"4\" stroke-linecap=\"round\"/></svg>",
+      "example": {
+        "ja": "では、失礼いたします。",
+        "hira": "では、しつれいいたします。",
+        "vi": "Vậy thì tôi xin phép phép cáo lui ạ."
+      }
+    },
+    {
+      "id": "n4_l49_24",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "出します[熱を～]",
+      "hanViet": "Xuất",
+      "hiragana": "だします",
+      "romaji": "dashimasu",
+      "meaning": "bị sốt, phát sốt",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><circle cx=\"50\" cy=\"50\" r=\"25\" fill=\"#FF8787\"/><rect x=\"46\" y=\"25\" width=\"8\" height=\"28\" rx=\"4\" fill=\"#C92A2A\"/></svg>",
+      "example": {
+        "ja": "昨夜から熱を出してしまいました。",
+        "hira": "ゆうべからねつをだしてしまいました。",
+        "vi": "Tôi bị phát sốt từ đêm hôm qua."
+      }
+    },
+    {
+      "id": "n4_l49_25",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "よろしくお伝えください",
+      "hanViet": "Truyền",
+      "hiragana": "よろしくおつたえください",
+      "romaji": "yoroshiku otsutae kudasai",
+      "meaning": "xin vui lòng cho tôi gửi lời chào/hỏi thăm",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF0F6\"/><path d=\"M28 35 L72 35 L72 65 L28 65 Z\" fill=\"#F783AC\"/><path d=\"M28 35 L50 52 L72 35\" fill=\"none\" stroke=\"#FFF\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "田中先生によろしくお伝えください。",
+        "hira": "たなかせんせいによろしくおつたえください。",
+        "vi": "Xin vui lòng gửi lời hỏi thăm của tôi tới cô giáo Tanaka ạ."
+      }
+    },
+    {
+      "id": "n4_l49_26",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "失礼いたします",
+      "hanViet": "Thất Lễ",
+      "hiragana": "しつれいいたします",
+      "romaji": "shitsurei itashimasu",
+      "meaning": "tôi xin phép thất lễ, xin phép cáo lui",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F1F3F5\"/><circle cx=\"50\" cy=\"38\" r=\"10\" fill=\"#495057\"/><path d=\"M36 72 C36 55 64 55 64 72 Z\" fill=\"#343A40\"/></svg>",
+      "example": {
+        "ja": "お先に失礼いたします。",
+        "hira": "おさきにしつれいいたします。",
+        "vi": "Tôi xin phép về trước ạ."
+      }
+    },
+    {
+      "id": "n4_l49_27",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "講師",
+      "hanViet": "Giảng Sư",
+      "hiragana": "こうし",
+      "romaji": "koushi",
+      "meaning": "giảng viên, người diễn thuyết",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><circle cx=\"50\" cy=\"36\" r=\"12\" fill=\"#1C7ED6\"/><path d=\"M32 72 C32 56 68 56 68 72 Z\" fill=\"#1864AB\"/><rect x=\"25\" y=\"65\" width=\"50\" height=\"6\" fill=\"#74C0FC\"/></svg>",
+      "example": {
+        "ja": "有名な先生が講師として来てくださいました。",
+        "hira": "ゆうめいなせんせいがこうしとしてきてくださいました。",
+        "vi": "Một vị giáo sư nổi tiếng đã tới làm giảng viên cho chúng tôi."
+      }
+    },
+    {
+      "id": "n4_l49_28",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "多くの～",
+      "hanViet": "Đa",
+      "hiragana": "おおくの～",
+      "romaji": "ooku no ~",
+      "meaning": "nhiều ~",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><circle cx=\"36\" cy=\"42\" r=\"7\" fill=\"#20C997\"/><circle cx=\"64\" cy=\"42\" r=\"7\" fill=\"#20C997\"/><circle cx=\"50\" cy=\"62\" r=\"7\" fill=\"#20C997\"/><circle cx=\"50\" cy=\"36\" r=\"7\" fill=\"#0CA678\"/></svg>",
+      "example": {
+        "ja": "多くの人が日本の文化に興味を持っています。",
+        "hira": "おおくのひとがにほんのぶんかにきょうみをもっています。",
+        "vi": "Rất nhiều người có niềm quan tâm hứng thú với văn hóa Nhật Bản."
+      }
+    },
+    {
+      "id": "n4_l49_29",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "作品",
+      "hanViet": "Tác Phẩm",
+      "hiragana": "さくひん",
+      "romaji": "sakuhin",
+      "meaning": "tác phẩm (nghệ thuật, văn học, tranh ảnh...)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF9DB\"/><rect x=\"30\" y=\"30\" width=\"40\" height=\"40\" fill=\"#FFF\" stroke=\"#F59F00\" stroke-width=\"3\"/><circle cx=\"45\" cy=\"45\" r=\"6\" fill=\"#FFA94D\"/><polygon points=\"35,62 50,50 65,62\" fill=\"#E67700\"/></svg>",
+      "example": {
+        "ja": "美術館で素晴らしい作品を鑑賞しました。",
+        "hira": "びじゅつかんですばらしいさくひんをかんしょうしました。",
+        "vi": "Tôi đã chiêm ngưỡng những tác phẩm tuyệt vời tại bảo tàng mỹ thuật."
+      }
+    },
+    {
+      "id": "n4_l49_30",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "授賞します",
+      "hanViet": "Thụ Thưởng",
+      "hiragana": "じゅしょうします",
+      "romaji": "jushoushimasu",
+      "meaning": "trao tặng giải thưởng",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF3BF\"/><polygon points=\"50,25 56,38 70,38 59,47 63,60 50,51 37,60 41,47 30,38 44,38\" fill=\"#FAB005\"/><rect x=\"46\" y=\"62\" width=\"8\" height=\"15\" fill=\"#E67700\"/></svg>",
+      "example": {
+        "ja": "ノーベル賞を授賞されました。",
+        "hira": "ノーベルしょうをじゅしょうされました。",
+        "vi": "Nhà khoa học đã được trao giải Nobel."
+      }
+    },
+    {
+      "id": "n4_l49_31",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "世界的に",
+      "hanViet": "Thế Giới Đích",
+      "hiragana": "せかいてきに",
+      "romaji": "sekaiteki ni",
+      "meaning": "mang tầm thế giới, trên toàn cầu",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"none\" stroke=\"#1971C2\" stroke-width=\"4\"/><ellipse cx=\"50\" cy=\"50\" rx=\"14\" ry=\"28\" fill=\"none\" stroke=\"#1971C2\" stroke-width=\"3\"/><line x1=\"22\" y1=\"50\" x2=\"78\" y2=\"50\" stroke=\"#1971C2\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "世界的に有名な作家です。",
+        "hira": "せかいてきにゆうめいなさっかです。",
+        "vi": "Đó là một nhà văn nổi tiếng mang tầm thế giới."
+      }
+    },
+    {
+      "id": "n4_l49_32",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "作家",
+      "hanViet": "Tác Gia",
+      "hiragana": "さっか",
+      "romaji": "sakka",
+      "meaning": "tác giả, nhà văn",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F3F0FF\"/><circle cx=\"50\" cy=\"38\" r=\"12\" fill=\"#7950F2\"/><path d=\"M32 72 C32 58 68 58 68 72 Z\" fill=\"#5F3DC4\"/><line x1=\"62\" y1=\"52\" x2=\"72\" y2=\"65\" stroke=\"#BE4BDB\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "将来、作家になりたいです。",
+        "hira": "しょうらい、さっかになりたいです。",
+        "vi": "Trong tương lai tôi muốn trở thành một nhà văn."
+      }
+    },
+    {
+      "id": "n4_l49_33",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "～でいらっしゃいます",
+      "hanViet": "Tôn kính ngữ",
+      "hiragana": "～でいらっしゃいます",
+      "romaji": "~ de irasshaimasu",
+      "meaning": "là ~ (Tôn kính ngữ của ～です)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><polygon points=\"50,25 54,36 65,36 56,43 59,54 50,48 41,54 44,43 35,36 46,36\" fill=\"#FA5252\"/></svg>",
+      "example": {
+        "ja": "あちらの方は田中先生でいらっしゃいます。",
+        "hira": "あちらのかたはたなかせんせいでいらっしゃいます。",
+        "vi": "Vị đằng kia chính là cô giáo Tanaka ạ."
+      }
+    },
+    {
+      "id": "n4_l49_34",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "長男",
+      "hanViet": "Trưởng Nam",
+      "hiragana": "ちょうなん",
+      "romaji": "chounan",
+      "meaning": "con trai trưởng, con trai đầu lòng",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><circle cx=\"50\" cy=\"36\" r=\"14\" fill=\"#339AF0\"/><path d=\"M30 72 C30 56 70 56 70 72 Z\" fill=\"#1C7ED6\"/><text x=\"44\" y=\"42\" font-size=\"16\" fill=\"#FFF\" font-weight=\"bold\">1</text></svg>",
+      "example": {
+        "ja": "長男は今年大学を卒業します。",
+        "hira": "ちょうなんはこといだいがくをそつぎょうします。",
+        "vi": "Con trai trưởng của tôi năm nay sẽ tốt nghiệp đại học."
+      }
+    },
+    {
+      "id": "n4_l49_35",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "障害",
+      "hanViet": "Chướng Hại",
+      "hiragana": "しょうがい",
+      "romaji": "shougai",
+      "meaning": "khuyết tật, trở ngại",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F1F3F5\"/><circle cx=\"48\" cy=\"35\" r=\"8\" fill=\"#495057\"/><path d=\"M48 43 L48 58 L58 58 M58 58 L64 72\" stroke=\"#495057\" stroke-width=\"4\" stroke-linecap=\"round\"/><circle cx=\"48\" cy=\"62\" r=\"12\" fill=\"none\" stroke=\"#228BE6\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "障害を乗り越えて夢をかなえました。",
+        "hira": "しょうがいをのりこえてゆめをかなえました。",
+        "vi": "Vượt qua những khiếm khuyết trở ngại, anh ấy đã biến ước mơ thành hiện thực."
+      }
+    },
+    {
+      "id": "n4_l49_36",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "お持ちです",
+      "hanViet": "Trì",
+      "hiragana": "おもちです",
+      "romaji": "omochi desu",
+      "meaning": "có, sở hữu (Tôn kính ngữ của もっています)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><rect x=\"34\" y=\"42\" width=\"32\" height=\"26\" rx=\"4\" fill=\"#20C997\"/><path d=\"M42 42 L42 34 Q50 30 58 34 L58 42\" stroke=\"#0CA678\" stroke-width=\"3\" fill=\"none\"/></svg>",
+      "example": {
+        "ja": "パスポートをお持ちですか。",
+        "hira": "パスポートをおもちですか。",
+        "vi": "Quý ngài có mang theo hộ chiếu bên mình không ạ?"
+      }
+    },
+    {
+      "id": "n4_l49_37",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "作曲",
+      "hanViet": "Tác Khúc",
+      "hiragana": "さっきょく",
+      "romaji": "sakkyoku",
+      "meaning": "soạn nhạc, sáng tác ca khúc",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F3F0FF\"/><circle cx=\"40\" cy=\"62\" r=\"7\" fill=\"#7950F2\"/><circle cx=\"62\" cy=\"52\" r=\"7\" fill=\"#7950F2\"/><line x1=\"47\" y1=\"62\" x2=\"47\" y2=\"35\" stroke=\"#5F3DC4\" stroke-width=\"3\"/><line x1=\"69\" y1=\"52\" x2=\"69\" y2=\"25\" stroke=\"#5F3DC4\" stroke-width=\"3\"/><line x1=\"47\" y1=\"35\" x2=\"69\" y2=\"25\" stroke=\"#5F3DC4\" stroke-width=\"4\"/></svg>",
+      "example": {
+        "ja": "この曲は誰が作曲しましたか。",
+        "hira": "このきょくはだれがさっきょくしましたか。",
+        "vi": "Khúc ca này do ai sáng tác vậy?"
+      }
+    },
+    {
+      "id": "n4_l49_38",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "活動",
+      "hanViet": "Hoạt Động",
+      "hiragana": "かつどう",
+      "romaji": "katsudou",
+      "meaning": "hoạt động (xã hội, nghệ thuật...)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF4E6\"/><polygon points=\"50,25 65,40 55,40 55,65 45,65 45,40 35,40\" fill=\"#FD7E14\"/><circle cx=\"50\" cy=\"74\" r=\"4\" fill=\"#D9480F\"/></svg>",
+      "example": {
+        "ja": "ボランティア活動に参加しました。",
+        "hira": "ボランティアかつどうにさんかしました。",
+        "vi": "Tôi đã tham gia các hoạt động tình nguyện vì cộng đồng."
+      }
+    },
+    {
+      "id": "n4_l49_39",
+      "lesson": 49,
+      "level": "N4",
+      "kanji": "それでは",
+      "hanViet": "Trong trường hợp đó",
+      "hiragana": "それでは",
+      "romaji": "soredewa",
+      "meaning": "vậy thì, bây giờ thì (bắt đầu một chương trình, chuyển đoạn)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><path d=\"M30 50 L65 50 M55 40 L65 50 L55 60\" stroke=\"#1971C2\" stroke-width=\"4\" stroke-linecap=\"round\"/></svg>",
+      "example": {
+        "ja": "それでは、会議を始めましょう。",
+        "hira": "それでは、かいぎをはじめましょう。",
+        "vi": "Vậy thì bây giờ chúng ta hãy bắt đầu cuộc họp nhé."
+      }
+    }
+  ]
+};
+
+const LESSON_50_DATA = {
+  "lessonNumber": 50,
+  "level": "N4",
+  "title": "Bài 50: Khiêm Nhường Ngữ (Kenjougo - 謙譲語) & Tốt Nghiệp N4",
+  "topicVi": "Hạ mình lịch sự để tôn kính đối phương & Hoàn tất trọn vẹn 50 Bài Minna",
+  "icon": "🎓",
+  "grammarPoint": "1. お + V(bỏ ます) + します / いたします. 2. ご + N(Hán tự) + します / いたします (CHÚ Ý BẪY: Không dùng cho hành động tự thân không hướng tới ai như *ご勉強します! Phải dùng: 勉強いたします). 3. Động từ Khiêm nhường đặc biệt (参ります, おります, いただきます, 申します, いたします, 拝見します, 存じます, 伺います, お目にかかります). 4. Lịch sự ngữ (ございます, でございます, わたくし).",
+  "kanjiList": [
+    {
+      "kanji": "参",
+      "hanViet": "Tham",
+      "onyomi": "サン",
+      "kunyomi": "まい・る",
+      "meaning": "Tham gia, đi đến",
+      "examples": [
+        "参ります (まいります: đi/đến - khiêm nhường)",
+        "参加 (さんか: tham gia)"
+      ]
+    },
+    {
+      "kanji": "申",
+      "hanViet": "Thân",
+      "onyomi": "シン",
+      "kunyomi": "もう・す",
+      "meaning": "Bày tỏ, nói",
+      "examples": [
+        "申します (もうします: tên là/nói - khiêm nhường)",
+        "申込 (もうしこみ: đăng ký)"
+      ]
+    },
+    {
+      "kanji": "拝",
+      "hanViet": "Bái",
+      "onyomi": "ハイ",
+      "kunyomi": "おが・む",
+      "meaning": "Kính lạy, bái kiến",
+      "examples": [
+        "拝見します (はいけんします: xem - khiêm nhường)",
+        "拝啓 (はいけい: kính thư)"
+      ]
+    },
+    {
+      "kanji": "宅",
+      "hanViet": "Trạch",
+      "onyomi": "タク",
+      "kunyomi": "-",
+      "meaning": "Nhà ở, tư gia",
+      "examples": [
+        "お宅 (おたく: nhà ngài)",
+        "自宅 (じたく: nhà mình)"
+      ]
+    },
+    {
+      "kanji": "郊",
+      "hanViet": "Giao",
+      "onyomi": "コウ",
+      "kunyomi": "-",
+      "meaning": "Vùng ngoại ô",
+      "examples": [
+        "郊外 (こうがい: ngoại ô)",
+        "近郊 (きんこう: vùng lân cận)"
+      ]
+    },
+    {
+      "kanji": "張",
+      "hanViet": "Trương",
+      "onyomi": "チョウ",
+      "kunyomi": "は・る",
+      "meaning": "Căng thẳng, kéo dài",
+      "examples": [
+        "緊張 (きんちょう: căng thẳng)",
+        "出張 (しゅっちょう: công tác)"
+      ]
+    },
+    {
+      "kanji": "賞",
+      "hanViet": "Thưởng",
+      "onyomi": "ショウ",
+      "kunyomi": "-",
+      "meaning": "Khen thưởng, giải thưởng",
+      "examples": [
+        "賞金 (しょうきん: tiền thưởng)",
+        "受賞 (じゅしょう: nhận giải)"
+      ]
+    },
+    {
+      "kanji": "然",
+      "hanViet": "Nhiên",
+      "onyomi": "ゼン / ネン",
+      "kunyomi": "-",
+      "meaning": "Tự nhiên, quả nhiên",
+      "examples": [
+        "自然 (しぜん: tự nhiên, thiên nhiên)",
+        "当然 (とうぜん: đương nhiên)"
+      ]
+    },
+    {
+      "kanji": "謝",
+      "hanViet": "Tạ",
+      "onyomi": "シャ",
+      "kunyomi": "あやま・る",
+      "meaning": "Cảm tạ, tạ lỗi",
+      "examples": [
+        "感謝 (かんしゃ: cảm tạ, biết ơn)",
+        "謝る (あやまる: xin lỗi)"
+      ]
+    },
+    {
+      "kanji": "惑",
+      "hanViet": "Hoặc",
+      "onyomi": "ワク",
+      "kunyomi": "まど・う",
+      "meaning": "Mê muội, làm phiền",
+      "examples": [
+        "迷惑 (めいわく: làm phiền, phiền hà)"
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "id": "n4_l50_01",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "参ります",
+      "hanViet": "Tham",
+      "hiragana": "まいります",
+      "romaji": "mairimasu",
+      "meaning": "đi, đến (Khiêm nhường ngữ của いきます/きます)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><path d=\"M30 50 L65 50 M55 40 L65 50 L55 60\" stroke=\"#1C7ED6\" stroke-width=\"4\" stroke-linecap=\"round\"/><circle cx=\"35\" cy=\"50\" r=\"4\" fill=\"#1864AB\"/></svg>",
+      "example": {
+        "ja": "明日10時にそちらへ参ります。",
+        "hira": "あしたじゅうじにそちらへまいります。",
+        "vi": "Ngày mai vào lúc 10 giờ tôi xin phép được đến chỗ quý ngài ạ."
+      }
+    },
+    {
+      "id": "n4_l50_02",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "おります",
+      "hanViet": "Khiêm nhường ngữ",
+      "hiragana": "おります",
+      "romaji": "orimasu",
+      "meaning": "ở, có mặt (Khiêm nhường ngữ của います)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><circle cx=\"50\" cy=\"38\" r=\"12\" fill=\"#20C997\"/><path d=\"M32 72 C32 58 68 58 68 72 Z\" fill=\"#0CA678\"/></svg>",
+      "example": {
+        "ja": "母は今外出しております。",
+        "hira": "はははいまがいしゅつしております。",
+        "vi": "Mẹ tôi hiện đang ra ngoài vắng nhà ạ."
+      }
+    },
+    {
+      "id": "n4_l50_03",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "いただきます",
+      "hanViet": "Khiêm nhường ngữ",
+      "hiragana": "いただきます",
+      "romaji": "itadakimasu",
+      "meaning": "ăn, uống, nhận (Khiêm nhường ngữ của たべます/のみます/もらいます)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF3BF\"/><path d=\"M30 60 Q50 75 70 60 Z\" fill=\"#FAB005\"/><circle cx=\"50\" cy=\"38\" r=\"10\" fill=\"#E67700\"/></svg>",
+      "example": {
+        "ja": "結構な物をいただき、ありがとうございます。",
+        "hira": "けっこうなものをいただき、ありがとうございます。",
+        "vi": "Tôi xin cảm ơn vì đã nhận được món quà quý giá từ ngài ạ."
+      }
+    },
+    {
+      "id": "n4_l50_04",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "申します",
+      "hanViet": "Thân",
+      "hiragana": "もうします",
+      "romaji": "moushimasu",
+      "meaning": "nói, tên là (Khiêm nhường ngữ của いいます)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F3F0FF\"/><rect x=\"28\" y=\"35\" width=\"44\" height=\"30\" rx=\"4\" fill=\"#845EF7\"/><text x=\"35\" y=\"55\" font-size=\"14\" fill=\"#FFF\" font-weight=\"bold\">NAME</text></svg>",
+      "example": {
+        "ja": "田中と申します。よろしくお願いいたします。",
+        "hira": "たなかともうします。よろしくおねがいいたします。",
+        "vi": "Tôi tên là Tanaka, rất mong nhận được sự giúp đỡ của quý vị ạ."
+      }
+    },
+    {
+      "id": "n4_l50_05",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "いたします",
+      "hanViet": "Khiêm nhường ngữ",
+      "hiragana": "いたします",
+      "romaji": "itashimasu",
+      "meaning": "làm (Khiêm nhường ngữ của します)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#FA5252\"/><path d=\"M40 50 L46 56 L60 42\" stroke=\"#FFF\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+      "example": {
+        "ja": "私が荷物をお持ちいたします。",
+        "hira": "わたしがにもつをおもちいたします。",
+        "vi": "Tôi xin phép xách hành lý giúp quý ngài ạ."
+      }
+    },
+    {
+      "id": "n4_l50_06",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "拝見します",
+      "hanViet": "Bái Kiến",
+      "hiragana": "はいけんします",
+      "romaji": "haikenshimasu",
+      "meaning": "xem, nhìn (Khiêm nhường ngữ của みます)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><ellipse cx=\"50\" cy=\"50\" rx=\"26\" ry=\"16\" fill=\"none\" stroke=\"#1971C2\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"50\" r=\"8\" fill=\"#1C7ED6\"/></svg>",
+      "example": {
+        "ja": "お送りいただいたメールを拝見しました。",
+        "hira": "おおくりいただいたメールをはいけんしました。",
+        "vi": "Tôi đã kính cẩn xem qua bức thư điện tử mà ngài gửi rồi ạ."
+      }
+    },
+    {
+      "id": "n4_l50_07",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "存じます",
+      "hanViet": "Tồn",
+      "hiragana": "ぞんじます",
+      "romaji": "zonjimasu",
+      "meaning": "biết, nghĩ (Khiêm nhường ngữ của しっています/おもいます)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF9DB\"/><circle cx=\"50\" cy=\"50\" r=\"26\" fill=\"#FAB005\"/><circle cx=\"50\" cy=\"40\" r=\"6\" fill=\"#FFF\"/></svg>",
+      "example": {
+        "ja": "その件につきましては存じております。",
+        "hira": "そのけんにつきましてはぞんじております。",
+        "vi": "Về sự việc đó thì tôi đã thấu suốt và biết rõ rồi ạ."
+      }
+    },
+    {
+      "id": "n4_l50_08",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "伺います",
+      "hanViet": "Tí",
+      "hiragana": "うかがいます",
+      "romaji": "ukagaimasu",
+      "meaning": "nghe, hỏi, đến thăm (Khiêm nhường ngữ của ききます/いきます/たずねます)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><path d=\"M35 40 Q50 25 65 40 Q50 60 35 40 Z\" fill=\"#20C997\"/><circle cx=\"50\" cy=\"68\" r=\"4\" fill=\"#0CA678\"/></svg>",
+      "example": {
+        "ja": "明日先生のお宅へ伺います。",
+        "hira": "あしたせんせいのおたくへうかがいます。",
+        "vi": "Ngày mai tôi xin phép được ghé thăm tư gia của cô giáo ạ."
+      }
+    },
+    {
+      "id": "n4_l50_09",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "お目にかかります",
+      "hanViet": "Mục",
+      "hiragana": "おめにかかります",
+      "romaji": "ome ni kakarimasu",
+      "meaning": "gặp mặt (Khiêm nhường ngữ của あいます)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><circle cx=\"38\" cy=\"45\" r=\"10\" fill=\"#FA5252\"/><circle cx=\"62\" cy=\"45\" r=\"10\" fill=\"#FA5252\"/><path d=\"M45 58 L55 58\" stroke=\"#C92A2A\" stroke-width=\"4\"/></svg>",
+      "example": {
+        "ja": "またお目にかかれる日を楽しみにしております。",
+        "hira": "またおめにかかれるひをたのしみにしております。",
+        "vi": "Tôi rất mong chờ đến ngày lại vinh hạnh được gặp mặt quý ngài."
+      }
+    },
+    {
+      "id": "n4_l50_10",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "ござる/ございます",
+      "hanViet": "Lịch sự",
+      "hiragana": "ございます",
+      "romaji": "gozaimasu",
+      "meaning": "có (thể lịch sự trang trọng của あります)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF4E6\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#FD7E14\"/><circle cx=\"50\" cy=\"50\" r=\"14\" fill=\"#FFF\"/></svg>",
+      "example": {
+        "ja": "お手洗いはあちらにございます。",
+        "hira": "おてあらいはあちらにございます。",
+        "vi": "Nhà vệ sinh ở phía bên kia ạ."
+      }
+    },
+    {
+      "id": "n4_l50_11",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "～でございます",
+      "hanViet": "Lịch sự",
+      "hiragana": "～でございます",
+      "romaji": "~ de gozaimasu",
+      "meaning": "là ~ (thể lịch sự trang trọng của ～です)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><rect x=\"25\" y=\"42\" width=\"50\" height=\"18\" rx=\"4\" fill=\"#1C7ED6\"/><circle cx=\"50\" cy=\"51\" r=\"4\" fill=\"#FFF\"/></svg>",
+      "example": {
+        "ja": "こちらは新製品のカタログでございます。",
+        "hira": "こちらはしんせいひんのカタログでございます。",
+        "vi": "Đây là cuốn danh mục giới thiệu sản phẩm mới ạ."
+      }
+    },
+    {
+      "id": "n4_l50_12",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "わたくし",
+      "hanViet": "Tư",
+      "hiragana": "わたくし",
+      "romaji": "watakushi",
+      "meaning": "tôi (Khiêm nhường trang trọng của わたし)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F8F9FA\"/><circle cx=\"50\" cy=\"38\" r=\"12\" fill=\"#495057\"/><path d=\"M32 72 C32 58 68 58 68 72 Z\" fill=\"#212529\"/></svg>",
+      "example": {
+        "ja": "わたくしがご案内いたします。",
+        "hira": "わたくしがごあんないいたします。",
+        "vi": "Tôi xin phép được hướng dẫn chỉ đường cho quý vị ạ."
+      }
+    },
+    {
+      "id": "n4_l50_13",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "ガイド",
+      "hanViet": "Hướng dẫn viên",
+      "hiragana": "ガイド",
+      "romaji": "gaido",
+      "meaning": "hướng dẫn viên du lịch (tour guide)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><circle cx=\"50\" cy=\"36\" r=\"12\" fill=\"#20C997\"/><polygon points=\"50,20 62,32 38,32\" fill=\"#099268\"/><path d=\"M34 72 C34 56 66 56 66 72 Z\" fill=\"#0CA678\"/></svg>",
+      "example": {
+        "ja": "観光ガイドについて東京を回りました。",
+        "hira": "かんこうガイドについてとうきょうをまわりました。",
+        "vi": "Chúng tôi đã đi tham quan quanh Tokyo theo chân người hướng dẫn viên du lịch."
+      }
+    },
+    {
+      "id": "n4_l50_14",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "お宅",
+      "hanViet": "Trạch",
+      "hiragana": "おたく",
+      "romaji": "otaku",
+      "meaning": "nhà của quý vị, nhà của ngài",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF4E6\"/><polygon points=\"50,25 22,48 78,48\" fill=\"#E8590C\"/><rect x=\"30\" y=\"48\" width=\"40\" height=\"26\" fill=\"#FFD8A8\"/><rect x=\"44\" y=\"58\" width=\"12\" height=\"16\" fill=\"#D9480F\"/></svg>",
+      "example": {
+        "ja": "先生のお宅はどちらですか。",
+        "hira": "せんせいのおたくはどちらですか。",
+        "vi": "Tư gia của cô giáo ở đâu ạ?"
+      }
+    },
+    {
+      "id": "n4_l50_15",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "郊外",
+      "hanViet": "Giao Ngoại",
+      "hiragana": "こうがい",
+      "romaji": "kougai",
+      "meaning": "ngoại ô, vùng ngoại thành",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><polygon points=\"35,65 25,45 45,45\" fill=\"#20C997\"/><polygon points=\"65,65 55,45 75,45\" fill=\"#20C997\"/><polygon points=\"50,60 38,38 62,38\" fill=\"#099268\"/></svg>",
+      "example": {
+        "ja": "東京の郊外に静かな家を買いました。",
+        "hira": "とうきょうのこうがいにしずかないえをかいました。",
+        "vi": "Tôi đã mua một ngôi nhà yên tĩnh ở vùng ngoại ô Tokyo."
+      }
+    },
+    {
+      "id": "n4_l50_16",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "アルバム",
+      "hanViet": "Album",
+      "hiragana": "アルバム",
+      "romaji": "arubamu",
+      "meaning": "album ảnh",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F3F0FF\"/><rect x=\"30\" y=\"28\" width=\"40\" height=\"46\" rx=\"4\" fill=\"#7950F2\"/><circle cx=\"50\" cy=\"48\" r=\"10\" fill=\"#FFF\"/><path d=\"M44 58 L56 58\" stroke=\"#FFF\" stroke-width=\"2\"/></svg>",
+      "example": {
+        "ja": "昔のアルバムを懐かしく拝見しました。",
+        "hira": "むかしのアルバムをなつかしくはいてんしました。",
+        "vi": "Tôi đã kính cẩn xem lại cuốn album ảnh ngày xưa với bao nỗi nhớ thương."
+      }
+    },
+    {
+      "id": "n4_l50_17",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "再来週",
+      "hanViet": "Tái Lai Chu",
+      "hiragana": "さらいしゅう",
+      "romaji": "saraishuu",
+      "meaning": "tuần sau nữa",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><rect x=\"28\" y=\"32\" width=\"44\" height=\"38\" rx=\"4\" fill=\"#1C7ED6\"/><text x=\"36\" y=\"56\" font-size=\"16\" fill=\"#FFF\" font-weight=\"bold\">+2w</text></svg>",
+      "example": {
+        "ja": "再来週の月曜日に試験があります。",
+        "hira": "さらいしゅうのげつようびにしけんがあります。",
+        "vi": "Vào thứ hai của tuần sau nữa sẽ có bài kiểm tra."
+      }
+    },
+    {
+      "id": "n4_l50_18",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "再来月",
+      "hanViet": "Tái Lai Nguyệt",
+      "hiragana": "さらいげつ",
+      "romaji": "saraigetsu",
+      "meaning": "tháng sau nữa",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF9DB\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#FAB005\"/><text x=\"34\" y=\"56\" font-size=\"16\" fill=\"#FFF\" font-weight=\"bold\">+2m</text></svg>",
+      "example": {
+        "ja": "再来月、日本へ出張する予定です。",
+        "hira": "さらいげつ、にほんへしゅっちょうするよていです。",
+        "vi": "Tháng sau nữa tôi dự định sẽ đi công tác sang Nhật Bản."
+      }
+    },
+    {
+      "id": "n4_l50_19",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "再来年",
+      "hanViet": "Tái Lai Niên",
+      "hiragana": "さらいねん",
+      "romaji": "sarainen",
+      "meaning": "năm sau nữa",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#20C997\"/><text x=\"36\" y=\"56\" font-size=\"16\" fill=\"#FFF\" font-weight=\"bold\">+2y</text></svg>",
+      "example": {
+        "ja": "再来年、大学院を受験します。",
+        "hira": "さらいねん、だいがくいんをじゅけんします。",
+        "vi": "Năm sau nữa tôi sẽ thi vào cao học."
+      }
+    },
+    {
+      "id": "n4_l50_20",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "半月",
+      "hanViet": "Bán Nguyệt",
+      "hiragana": "はんつき",
+      "romaji": "hantsuki",
+      "meaning": "nửa tháng",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF3BF\"/><path d=\"M50 25 A25 25 0 0 0 50 75 Z\" fill=\"#F59F00\"/><circle cx=\"50\" cy=\"50\" r=\"25\" fill=\"none\" stroke=\"#E67700\" stroke-width=\"2\"/></svg>",
+      "example": {
+        "ja": "半月ほど日本に滞在しました。",
+        "hira": "はんつきほどにほんにたいざいしました。",
+        "vi": "Tôi đã lưu lại Nhật Bản trong khoảng nửa tháng."
+      }
+    },
+    {
+      "id": "n4_l50_21",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "最初に",
+      "hanViet": "Tối Sơ",
+      "hiragana": "さいしょに",
+      "romaji": "saisho ni",
+      "meaning": "trước tiên, đầu tiên",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><circle cx=\"50\" cy=\"50\" r=\"26\" fill=\"#1C7ED6\"/><text x=\"44\" y=\"58\" font-size=\"24\" fill=\"#FFF\" font-weight=\"bold\">1</text></svg>",
+      "example": {
+        "ja": "最初に自己紹介をいたします。",
+        "hira": "さいしょにじこしょうかいをいたします。",
+        "vi": "Trước tiên tôi xin phép tự giới thiệu đôi lời về bản thân ạ."
+      }
+    },
+    {
+      "id": "n4_l50_22",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "最後に",
+      "hanViet": "Tối Hậu",
+      "hiragana": "さいごに",
+      "romaji": "saigo ni",
+      "meaning": "cuối cùng, sau cùng",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><circle cx=\"50\" cy=\"50\" r=\"26\" fill=\"#E03131\"/><text x=\"35\" y=\"58\" font-size=\"18\" fill=\"#FFF\" font-weight=\"bold\">END</text></svg>",
+      "example": {
+        "ja": "最後に皆さんに心から感謝申し上げます。",
+        "hira": "さいごにみなさんにこころからかんしゃもうしあげます。",
+        "vi": "Cuối cùng, tôi xin tự đáy lòng gửi lời cảm tạ chân thành tới toàn thể quý vị."
+      }
+    },
+    {
+      "id": "n4_l50_23",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "ただいま",
+      "hanViet": "Bây giờ",
+      "hiragana": "ただいま",
+      "romaji": "tadaima",
+      "meaning": "bây giờ / tôi đã về rồi đây",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#20C997\"/><text x=\"32\" y=\"56\" font-size=\"16\" fill=\"#FFF\" font-weight=\"bold\">NOW</text></svg>",
+      "example": {
+        "ja": "ただいま戻りました。",
+        "hira": "ただいまもどりました。",
+        "vi": "Tôi vừa mới quay trở về văn phòng ạ."
+      }
+    },
+    {
+      "id": "n4_l50_24",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "江戸東京博物館",
+      "hanViet": "Bảo tàng Edo-Tokyo",
+      "hiragana": "えどとうきょうはくぶつかん",
+      "romaji": "edo toukyou hakubutsukan",
+      "meaning": "Bảo tàng Edo-Tokyo (bảo tàng lịch sử nổi tiếng tại Tokyo)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF4E6\"/><polygon points=\"50,22 18,45 82,45\" fill=\"#D9480F\"/><rect x=\"26\" y=\"45\" width=\"48\" height=\"28\" fill=\"#FFE8CC\"/><line x1=\"38\" y1=\"45\" x2=\"38\" y2=\"73\" stroke=\"#D9480F\" stroke-width=\"3\"/><line x1=\"62\" y1=\"45\" x2=\"62\" y2=\"73\" stroke=\"#D9480F\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "江戸東京博物館で歴史を勉強しました。",
+        "hira": "えどとうきょうはくぶつかんでれきしをべんきょうしました。",
+        "vi": "Tôi đã tìm hiểu về lịch sử tại Bảo tàng Edo-Tokyo."
+      }
+    },
+    {
+      "id": "n4_l50_25",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "緊張します",
+      "hanViet": "Khẩn Trương",
+      "hiragana": "きんちょうします",
+      "romaji": "kinchoushimasu",
+      "meaning": "căng thẳng, hồi hộp",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF0F6\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#F783AC\"/><path d=\"M42 45 Q50 38 58 45 M44 58 Q50 52 56 58\" stroke=\"#A61E4D\" stroke-width=\"3\" fill=\"none\"/></svg>",
+      "example": {
+        "ja": "スピーチの前はとても緊張します。",
+        "hira": "スピーチのまえはとてもきんちょうします。",
+        "vi": "Trước bài diễn văn phát biểu tôi vô cùng hồi hộp và căng thẳng."
+      }
+    },
+    {
+      "id": "n4_l50_26",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "放送します",
+      "hanViet": "Phóng Tống",
+      "hiragana": "ほうそうします",
+      "romaji": "housoushimasu",
+      "meaning": "phát sóng, truyền hình, truyền thanh",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><circle cx=\"50\" cy=\"55\" r=\"8\" fill=\"#1C7ED6\"/><path d=\"M40 40 Q50 32 60 40\" stroke=\"#339AF0\" stroke-width=\"3\" fill=\"none\"/><path d=\"M32 30 Q50 18 68 30\" stroke=\"#339AF0\" stroke-width=\"3\" fill=\"none\"/><line x1=\"50\" y1=\"63\" x2=\"50\" y2=\"76\" stroke=\"#1864AB\" stroke-width=\"4\"/></svg>",
+      "example": {
+        "ja": "そのニュースは今夜テレビで放送されます。",
+        "hira": "そのニュースはこんやテレビでほうそうされます。",
+        "vi": "Bản tin đó sẽ được phát sóng trên truyền hình tối nay."
+      }
+    },
+    {
+      "id": "n4_l50_27",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "撮ります[ビデオに～]",
+      "hanViet": "Toát",
+      "hiragana": "とります",
+      "romaji": "torimasu",
+      "meaning": "quay video, thu hình",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F3F0FF\"/><rect x=\"25\" y=\"38\" width=\"38\" height=\"26\" rx=\"3\" fill=\"#7950F2\"/><polygon points=\"65,42 78,35 78,67 65,60\" fill=\"#5F3DC4\"/><circle cx=\"44\" cy=\"51\" r=\"5\" fill=\"#FFF\"/></svg>",
+      "example": {
+        "ja": "結婚式の様子をビデオに撮りました。",
+        "hira": "けっこんしきのようすをビデオにとりました。",
+        "vi": "Tôi đã quay lại khung cảnh lễ cưới vào video."
+      }
+    },
+    {
+      "id": "n4_l50_28",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "賞金",
+      "hanViet": "Thưởng Kim",
+      "hiragana": "しょうきん",
+      "romaji": "shoukin",
+      "meaning": "tiền thưởng",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF3BF\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#FAB005\"/><text x=\"40\" y=\"58\" font-size=\"24\" font-weight=\"bold\" fill=\"#E67700\">¥</text></svg>",
+      "example": {
+        "ja": "スピーチコンテストで優勝して、賞金をもらいました。",
+        "hira": "スピーチコンテストでゆうしょうして、しょうきんをもらいました。",
+        "vi": "Tôi đạt giải nhất cuộc thi diễn thuyết và nhận được tiền thưởng."
+      }
+    },
+    {
+      "id": "n4_l50_29",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "自然",
+      "hanViet": "Tự Nhiên",
+      "hiragana": "しぜん",
+      "romaji": "shizen",
+      "meaning": "thiên nhiên, tự nhiên",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><polygon points=\"50,25 28,68 72,68\" fill=\"#20C997\"/><polygon points=\"50,25 36,45 64,45\" fill=\"#FFF\"/></svg>",
+      "example": {
+        "ja": "北海道の豊かな自然を満喫しました。",
+        "hira": "ほっかいどうのゆたかなしぜんをまんきつしました。",
+        "vi": "Tôi đã thỏa thích tận hưởng thiên nhiên trù phú của Hokkaido."
+      }
+    },
+    {
+      "id": "n4_l50_30",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "きりん",
+      "hanViet": "Hươu cao cổ",
+      "hiragana": "きりん",
+      "romaji": "kirin",
+      "meaning": "con hươu cao cổ",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF9DB\"/><circle cx=\"55\" cy=\"30\" r=\"8\" fill=\"#F59F00\"/><path d=\"M52 36 L48 65 L48 78 M56 65 L56 78\" stroke=\"#E67700\" stroke-width=\"4\" stroke-linecap=\"round\"/><circle cx=\"52\" cy=\"48\" r=\"3\" fill=\"#D9480F\"/></svg>",
+      "example": {
+        "ja": "動物園できりんを見ました。",
+        "hira": "どうぶつえんできりんをみました。",
+        "vi": "Tôi đã ngắm nhìn hươu cao cổ tại vườn thú."
+      }
+    },
+    {
+      "id": "n4_l50_31",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "象",
+      "hanViet": "Tượng",
+      "hiragana": "ぞう",
+      "romaji": "zou",
+      "meaning": "con voi",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F1F3F5\"/><ellipse cx=\"50\" cy=\"52\" rx=\"22\" ry=\"16\" fill=\"#868E96\"/><path d=\"M68 52 Q76 60 72 70\" stroke=\"#495057\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"62\" cy=\"46\" r=\"3\" fill=\"#212529\"/></svg>",
+      "example": {
+        "ja": "象は体がとても大きいです。",
+        "hira": "ぞうはからだがとてもおおきいです。",
+        "vi": "Con voi có thân hình rất to lớn."
+      }
+    },
+    {
+      "id": "n4_l50_32",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "ころ",
+      "hanViet": "Thời kì",
+      "hiragana": "ころ",
+      "romaji": "koro",
+      "meaning": "hồi, thời, dạo (khoảng thời gian)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"none\" stroke=\"#339AF0\" stroke-width=\"4\"/><line x1=\"50\" y1=\"50\" x2=\"50\" y2=\"35\" stroke=\"#1C7ED6\" stroke-width=\"3\"/></svg>",
+      "example": {
+        "ja": "子供のころ、よく川で泳ぎました。",
+        "hira": "こどものころ、よくかわでおよぎました。",
+        "vi": "Hồi còn nhỏ, tôi thường hay đi bơi ở dưới sông."
+      }
+    },
+    {
+      "id": "n4_l50_33",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "かないます[夢が～]",
+      "hanViet": "Mộng",
+      "hiragana": "かないます",
+      "romaji": "kanaimasu",
+      "meaning": "thành hiện thực, thỏa nguyện (ước mơ)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF3BF\"/><polygon points=\"50,22 56,36 71,36 59,46 64,60 50,50 36,60 41,46 29,36 44,36\" fill=\"#FAB005\"/></svg>",
+      "example": {
+        "ja": "日本へ留学する夢がかないました。",
+        "hira": "にほんへりゅうがくするゆめがかないました。",
+        "vi": "Ước mơ sang Nhật Bản du học của tôi đã trở thành hiện thực."
+      }
+    },
+    {
+      "id": "n4_l50_34",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "応援します",
+      "hanViet": "Ứng Viện",
+      "hiragana": "おうえんします",
+      "romaji": "ouenshimasu",
+      "meaning": "cổ vũ, ủng hộ, tiếp sức",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><polygon points=\"50,30 65,48 55,48 55,68 45,68 45,48 35,48\" fill=\"#FA5252\"/></svg>",
+      "example": {
+        "ja": "皆さんのJLPT合格を心から応援しております。",
+        "hira": "みなさんのJLPTごうかくをこころからおうえんしております。",
+        "vi": "Cô Tanaka luôn tự đáy lòng cổ vũ tiếp sức cho các em thi đỗ chứng chỉ JLPT."
+      }
+    },
+    {
+      "id": "n4_l50_35",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "心から",
+      "hanViet": "Tâm",
+      "hiragana": "こころから",
+      "romaji": "kokoro kara",
+      "meaning": "từ tận đáy lòng, thành tâm",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF0F6\"/><path d=\"M50 36 C42 22 24 30 24 46 C24 62 50 76 50 76 C50 76 76 62 76 46 C76 30 58 22 50 36 Z\" fill=\"#E64980\"/></svg>",
+      "example": {
+        "ja": "心から感謝申し上げます。",
+        "hira": "こころからかんしゃもうしあげます。",
+        "vi": "Từ tận đáy lòng, tôi xin kính cẩn gửi lời cảm tạ sâu sắc."
+      }
+    },
+    {
+      "id": "n4_l50_36",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "感謝します",
+      "hanViet": "Cảm Tạ",
+      "hiragana": "かんしゃします",
+      "romaji": "kanshashimasu",
+      "meaning": "cảm tạ, biết ơn",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#20C997\"/><path d=\"M38 48 Q50 60 62 48\" stroke=\"#FFF\" stroke-width=\"4\" fill=\"none\"/></svg>",
+      "example": {
+        "ja": "先生の親切なご指導に感謝いたします。",
+        "hira": "せんせいのしんせつなごしどうにかんしゃいたします。",
+        "vi": "Em xin chân thành biết ơn sự chỉ bảo tận tình của cô giáo ạ."
+      }
+    },
+    {
+      "id": "n4_l50_37",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "お礼",
+      "hanViet": "Lễ",
+      "hiragana": "おれい",
+      "romaji": "orei",
+      "meaning": "cảm ơn, trả lễ, quà đáp lễ",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF4E6\"/><rect x=\"32\" y=\"38\" width=\"36\" height=\"30\" rx=\"3\" fill=\"#FD7E14\"/><line x1=\"32\" y1=\"52\" x2=\"68\" y2=\"52\" stroke=\"#FFF\" stroke-width=\"2\"/><line x1=\"50\" y1=\"38\" x2=\"50\" y2=\"68\" stroke=\"#FFF\" stroke-width=\"2\"/></svg>",
+      "example": {
+        "ja": "お世話になった先生にお礼の手紙を書きました。",
+        "hira": "おせわになったせんせいにおれいのてがみをかきました。",
+        "vi": "Tôi đã viết một bức thư cảm ơn gửi tới người cô đã chăm sóc bảo ban mình."
+      }
+    },
+    {
+      "id": "n4_l50_38",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "お元気でいてください",
+      "hanViet": "Nguyên Khí",
+      "hiragana": "おげんきでいてください",
+      "romaji": "ogenki de ite kudasai",
+      "meaning": "xin chúc ngài/bạn luôn luôn giữ gìn sức khỏe dồi dào",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#339AF0\"/><path d=\"M38 52 Q50 62 62 52\" stroke=\"#FFF\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/></svg>",
+      "example": {
+        "ja": "先生、どうぞいつまでもお元気でいてください。",
+        "hira": "せんせい、どうぞいつまでもおげんきでいてください。",
+        "vi": "Thưa cô, xin kính chúc cô mãi mãi mạnh khỏe và bình an ạ."
+      }
+    },
+    {
+      "id": "n4_l50_39",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "迷惑をかけます",
+      "hanViet": "Mê Hoặc",
+      "hiragana": "めいわくをかけます",
+      "romaji": "meiwaku o kakemasu",
+      "meaning": "làm phiền, gây phiền hà cho người khác",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#F1F3F5\"/><circle cx=\"50\" cy=\"40\" r=\"14\" fill=\"#868E96\"/><path d=\"M35 74 C35 60 65 60 65 74 Z\" fill=\"#495057\"/><path d=\"M40 70 L50 82 L60 70\" stroke=\"#212529\" stroke-width=\"3\" fill=\"none\"/></svg>",
+      "example": {
+        "ja": "ご迷惑をおかけして大変申し訳ありません。",
+        "hira": "ごめいわくをおかけしてたいへんもうしわけありません。",
+        "vi": "Đã gây phiền hà cho quý vị, tôi xin thành thật nhận lỗi và vô cùng xin lỗi."
+      }
+    },
+    {
+      "id": "n4_l50_40",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "生かします",
+      "hanViet": "Sinh",
+      "hiragana": "いかします",
+      "romaji": "ikashimasu",
+      "meaning": "phát huy, tận dụng (kinh nghiệm, kỹ năng)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#12B886\"/><polygon points=\"50,30 55,42 67,42 58,49 61,61 50,54 39,61 42,49 33,42 45,42\" fill=\"#FFF\"/></svg>",
+      "example": {
+        "ja": "学んだ日本語を生かして仕事で活躍したいです。",
+        "hira": "まなんだにほんごをいかしてしごとでかつやくしたいです。",
+        "vi": "Tôi muốn phát huy vốn tiếng Nhật đã học để cống hiến tốt trong công việc."
+      }
+    },
+    {
+      "id": "n4_l50_41",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "ミュンヘン",
+      "hanViet": "Munich",
+      "hiragana": "ミュンヘン",
+      "romaji": "myunhen",
+      "meaning": "Munich (thành phố lớn của nước Đức)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF9DB\"/><rect x=\"25\" y=\"35\" width=\"50\" height=\"34\" rx=\"4\" fill=\"#F59F00\"/><circle cx=\"50\" cy=\"52\" r=\"9\" fill=\"#FFF\"/></svg>",
+      "example": {
+        "ja": "ミュンヘンはドイツの美しい街です。",
+        "hira": "ミュンヘンはドイツのうつくしいまちです。",
+        "vi": "Munich là một thành phố vô cùng xinh đẹp của nước Đức."
+      }
+    },
+    {
+      "id": "n4_l50_42",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "スピーチ",
+      "hanViet": "Diễn văn",
+      "hiragana": "スピーチ",
+      "romaji": "supiichi",
+      "meaning": "bài phát biểu, bài diễn văn (speech)",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><rect x=\"42\" y=\"30\" width=\"16\" height=\"30\" rx=\"8\" fill=\"#1971C2\"/><path d=\"M35 48 C35 60 65 60 65 48\" stroke=\"#1971C2\" stroke-width=\"3\" fill=\"none\"/><line x1=\"50\" y1=\"60\" x2=\"50\" y2=\"72\" stroke=\"#1971C2\" stroke-width=\"4\"/></svg>",
+      "example": {
+        "ja": "卒業式で代表としてスピーチをいたしました。",
+        "hira": "そつぎょうしきでだいひょうとしてスピーチをいたしました。",
+        "vi": "Trong lễ tốt nghiệp, tôi đã đại diện học viên có bài phát biểu trước toàn trường."
+      }
+    },
+    {
+      "id": "n4_l50_43",
+      "lesson": 50,
+      "level": "N4",
+      "kanji": "再会",
+      "hanViet": "Tái Hội",
+      "hiragana": "さいかい",
+      "romaji": "saikai",
+      "meaning": "tái ngộ, gặp lại nhau",
+      "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><circle cx=\"36\" cy=\"45\" r=\"10\" fill=\"#FA5252\"/><circle cx=\"64\" cy=\"45\" r=\"10\" fill=\"#FA5252\"/><path d=\"M46 52 Q50 46 54 52\" stroke=\"#FFF\" stroke-width=\"3\" fill=\"none\"/></svg>",
+      "example": {
+        "ja": "いつか日本で先生と再会できることを祈っております。",
+        "hira": "いつかにほんでせんせいとさいかいできることをいのっております。",
+        "vi": "Em luôn nguyện cầu một ngày nào đó sẽ được tái ngộ cô giáo tại đất nước Nhật Bản."
+      }
+    }
+  ]
+};
+
+
 const LESSONS_N4 = [
   LESSON_26_DATA,
   LESSON_27_DATA,
@@ -23478,33 +26625,20 @@ const LESSONS_N4 = [
   LESSON_42_DATA,
   LESSON_43_DATA,
   LESSON_44_DATA,
-  LESSON_45_DATA
+  LESSON_45_DATA,
+  LESSON_46_DATA,
+  LESSON_47_DATA,
+  LESSON_48_DATA,
+  LESSON_49_DATA,
+  LESSON_50_DATA
 ];
 
-// Cáº¥u trÃºc outline tá»« BÃ i 46 Ä‘áº¿n 50 cá»§a N4 Ä‘á»ƒ sáºµn sÃ ng má»Ÿ rá»™ng
-const N4_OUTLINE_TOPICS = [
-  'BÃ i 46: Vá»«a má»›i lÃ m xong (V-ãŸã¨ã“ã‚ã§ã™ / V-ãŸã°ã‹ã‚Š)',
-  'BÃ i 47: Nghe nÃ³i lÃ  (Thá»ƒ thÃ´ng thÆ°á»ng + ãã†ã§ã™ - Truyá»n vÄƒn)',
-  'BÃ i 48: Thá»ƒ Sai khiáº¿n (ä½¿å½¹å½¢ - Shieki báº¯t ai lÃ m gÃ¬)',
-  'BÃ i 49: KÃ­nh ngá»¯ TÃ´n kÃ­nh ngá»¯ (å°Šæ•¬èªž - Sonkeigo)',
-  'BÃ i 50: KÃ­nh ngá»¯ KhiÃªm nhÆ°á»ng ngá»¯ (è¬™è­²èªž - Kenjougo) & Tá»‘t nghiá»‡p N4'
-];
+// Hoàn tất trọn vẹn 50/50 Bài Minna no Nihongo (Bài 1 - 25: JLPT N5 | Bài 26 - 50: JLPT N4)
+const N4_OUTLINE_TOPICS = [];
 
-N4_OUTLINE_TOPICS.forEach((topic, idx) => {
-  const lessonNum = 46 + idx;
-  LESSONS_N4.push({
-    lessonNumber: lessonNum,
-    level: 'N4',
-    title: topic.split(':')[0].trim(),
-    topicVi: topic.split(':')[1] ? topic.split(':')[1].trim() : topic,
-    icon: 'ðŸ“–',
-    grammarPoint: 'Ngá»¯ phÃ¡p trá»ng tÃ¢m N4 Minna no Nihongo.',
-    vocab: []
-  });
-});
 
 // ============================================================================
-// Há»† THá»NG TIá»†N ÃCH QUáº¢N LÃ Lá»˜ TRÃŒNH BÃ€I Há»ŒC
+// HỆ THỐNG TIỆN ÍCH QUẢN LÝ LỘ TRÌNH BÀI HỌC
 // ============================================================================
 class JapaneseLessonsManager {
   constructor() {

@@ -1,8 +1,8 @@
 @echo off
-title Nihongo Go! - Ung Dung Hoc Tieng Nhat N5
+title Nihongo Go! - Ung Dung Hoc Tieng Nhat N5 & N4
 color 0B
 echo ================================================================
-echo    DANG KHOI DONG APP HOC TIENG NHAT N5 (NIHONGO GO!)...
+echo    DANG KHOI DONG APP HOC TIENG NHAT N5 & N4 (NIHONGO GO!)...
 echo ================================================================
 echo.
 cd /d "%~dp0"

@@ -207,11 +207,357 @@ const JLPT_N5_MOCK_EXAM = [
   }
 ];
 
+// JLPT N4 Mock Exam (20 questions across 5 Mondai)
+const JLPT_N4_MOCK_EXAM = [
+  {
+    "id": "n4_q01",
+    "mondai": 1,
+    "mondaiTitle": "Mondai 1: 漢字の読み方 (Cách đọc chữ Kanji gạch chân)",
+    "instruction": "Chọn cách đọc Hiragana đúng của từ được gạch chân:",
+    "sentence": "妹は <u>毎週</u> プールへ 通っています。",
+    "targetWord": "毎週",
+    "options": [
+      "まいしゅう",
+      "まいしゅ",
+      "まいにち",
+      "まいげつ"
+    ],
+    "correctIndex": 0,
+    "meaning": "Em gái tôi mỗi tuần đều đi đến bể bơi.",
+    "takagiExplanation": "Chữ「毎週」(mỗi tuần) có trường âm「まいしゅう」(maishuu). Bẫy âm ngắn まいしゅ là lỗi rất nhiều thí sinh N4 chủ quan mắc phải!"
+  },
+  {
+    "id": "n4_q02",
+    "mondai": 1,
+    "mondaiTitle": "Mondai 1: 漢字の読み方 (Cách đọc chữ Kanji gạch chân)",
+    "instruction": "Chọn cách đọc Hiragana đúng của từ được gạch chân:",
+    "sentence": "この 計画に <u>反対</u> する 人は いません。",
+    "targetWord": "反対",
+    "options": [
+      "はんだい",
+      "はんたい",
+      "ほんたい",
+      "はんてい"
+    ],
+    "correctIndex": 1,
+    "meaning": "Không có ai phản đối kế hoạch này cả.",
+    "takagiExplanation": "Bẫy âm đục Dakuten! Chữ「反対」(phản đối) đọc là「はんたい」(hantai) âm trong, chữ 対 (đối) ở đây đọc là たい chứ KHÔNG PHẢI âm đục だい!"
+  },
+  {
+    "id": "n4_q03",
+    "mondai": 1,
+    "mondaiTitle": "Mondai 1: 漢字の読み方 (Cách đọc chữ Kanji gạch chân)",
+    "instruction": "Chọn cách đọc Hiragana đúng của từ được gạch chân:",
+    "sentence": "彼と <u>知り合って</u> もう 5年に なります。",
+    "targetWord": "知り合って",
+    "options": [
+      "ちりあって",
+      "とりあって",
+      "しりあって",
+      "しりかって"
+    ],
+    "correctIndex": 2,
+    "meaning": "Tôi quen biết anh ấy đến nay đã được 5 năm rồi.",
+    "takagiExplanation": "Động từ ghép「知り合います」(quen biết nhau) chia thể て là「しりあって」(shiriatte). Chữ 知る đọc là しる, không được nhầm với âm On ち!"
+  },
+  {
+    "id": "n4_q04",
+    "mondai": 1,
+    "mondaiTitle": "Mondai 1: 漢字の読み方 (Cách đọc chữ Kanji gạch chân)",
+    "instruction": "Chọn cách đọc Hiragana đúng của từ được gạch chân:",
+    "sentence": "地震の ときは、グラウンドへ <u>避難</u> してください。",
+    "targetWord": "避難",
+    "options": [
+      "ひなん",
+      "ひだん",
+      "びなん",
+      "へなん"
+    ],
+    "correctIndex": 0,
+    "meaning": "Khi có động đất, xin hãy sơ tán ra sân trường.",
+    "takagiExplanation": "Chữ「避難」(lánh nạn, sơ tán) đọc chuẩn là「ひなん」(hinan). Cả 2 chữ Hán đều là âm trong, không có âm đục び hay だ!"
+  },
+  {
+    "id": "n4_q05",
+    "mondai": 2,
+    "mondaiTitle": "Mondai 2: 文字の書き方 (Chọn Kanji / Katakana đúng)",
+    "instruction": "Chọn chữ Kanji đúng cho từ Hiragana được gạch chân:",
+    "sentence": "駅の前で 友達に 荷物を <u>わたしました</u>。",
+    "targetWord": "わたしました",
+    "options": [
+      "抜しました",
+      "渡しました",
+      "移しました",
+      "訪しました"
+    ],
+    "correctIndex": 1,
+    "meaning": "Tôi đã trao hành lý cho bạn ở trước cửa ga.",
+    "takagiExplanation": "Động từ「わたします」(trao đưa) viết chữ Hán là「渡」(Độ trong vượt sông, trao tay), có bộ Ba Chấm Thủy 氵 bên trái. Chữ 抜 (Bạt - rút ra) hay 移 (Di - di chuyển) là bẫy dạng chữ na ná!"
+  },
+  {
+    "id": "n4_q06",
+    "mondai": 2,
+    "mondaiTitle": "Mondai 2: 文字の書き方 (Chọn Kanji / Katakana đúng)",
+    "instruction": "Chọn cách viết Kanji đúng cho từ Hiragana được gạch chân:",
+    "sentence": "田中先生は 素晴らしい <u>さくひん</u> を 作られました。",
+    "targetWord": "さくひん",
+    "options": [
+      "作本",
+      "作品",
+      "昨品",
+      "作口"
+    ],
+    "correctIndex": 1,
+    "meaning": "Cô Tanaka đã sáng tác một tác phẩm vô cùng tuyệt vời.",
+    "takagiExplanation": "Từ「さくひん」(tác phẩm) viết là「作品」(Tác + Phẩm - bộ Khẩu xếp chồng). Đừng nhầm chữ 作 (Tác) với 昨 (Tối trong hôm qua)! Đi thi gạch chân chữ 作 mà chọn 昨 là bị trừ điểm ngay!"
+  },
+  {
+    "id": "n4_q07",
+    "mondai": 2,
+    "mondaiTitle": "Mondai 2: 文字の書き方 (Chọn Kanji / Katakana đúng)",
+    "instruction": "Chọn cách viết Kanji đúng cho từ Hiragana được gạch chân:",
+    "sentence": "その ニュースは 今夜 テレビで <u>ほうそう</u> されます。",
+    "targetWord": "ほうそう",
+    "options": [
+      "放送",
+      "報送",
+      "放争",
+      "法送"
+    ],
+    "correctIndex": 0,
+    "meaning": "Bản tin đó sẽ được phát sóng trên truyền hình tối nay.",
+    "takagiExplanation": "Chữ「ほうそう」(phát sóng, truyền thanh) là「放送」(Phóng + Tống). Rất nhiều bạn nhầm sang chữ 報 (Báo trong thông báo)! Nhớ kỹ: Phát sóng là 放 (Phóng thích tín hiệu ra không trung)!"
+  },
+  {
+    "id": "n4_q08",
+    "mondai": 2,
+    "mondaiTitle": "Mondai 2: 文字の書き方 (Chọn Kanji / Katakana đúng)",
+    "instruction": "Chọn từ Katakana viết chuẩn nhất cho đồ vật gạch chân:",
+    "sentence": "旅行会社で ツアーの <u>tờ rơi giới thiệu</u> を もらいました。",
+    "targetWord": "tờ rơi giới thiệu",
+    "options": [
+      "パンフレット",
+      "ハンフレット",
+      "パソフレット",
+      "パンフッレト"
+    ],
+    "correctIndex": 0,
+    "meaning": "Tôi đã lấy tập sách tờ rơi quảng cáo tour du lịch ở công ty lữ hành.",
+    "takagiExplanation": "Bẫy Katakana kinh điển:「パンフレット」(pamphlet). Nhầm chữ パ (Handakuten) với ハ, nhầm ン với ソ, hoặc đặt sai âm ngắt ッ!"
+  },
+  {
+    "id": "n4_q09",
+    "mondai": 3,
+    "mondaiTitle": "Mondai 3: 文脈規定 (Điền từ hợp ngữ cảnh)",
+    "instruction": "Chọn từ vựng thích hợp nhất điền vào chỗ trống （　　）:",
+    "sentence": "台所から なんだか カレーの いい（　　）が しますね。",
+    "targetWord": "いいにおい",
+    "options": [
+      "あじ",
+      "におい",
+      "おと",
+      "こえ"
+    ],
+    "correctIndex": 1,
+    "meaning": "Từ trong bếp thoang thoảng phát ra mùi cà ri thơm nức nhỉ.",
+    "takagiExplanation": "Bài 47 Minna N4: Nhận biết cảm quan bằng giác quan! Mùi hương thơm thì phải đi với「においが します」(có mùi). Còn「味が します」là có vị,「音が します」là có tiếng động,「声が します」là có tiếng người nói!"
+  },
+  {
+    "id": "n4_q10",
+    "mondai": 3,
+    "mondaiTitle": "Mondai 3: 文脈規定 (Điền từ hợp ngữ cảnh)",
+    "instruction": "Chọn dạng động từ thích hợp nhất điền vào chỗ trống （　　）:",
+    "sentence": "バスは たった今（　　）ところですから、走っても 間に合いません。",
+    "targetWord": "出たところ",
+    "options": [
+      "出る",
+      "出た",
+      "出ている",
+      "出ます"
+    ],
+    "correctIndex": 1,
+    "meaning": "Xe buýt vừa mới xuất phát tức thì xong, giờ có chạy cũng không kịp nữa đâu.",
+    "takagiExplanation": "Bài 46 Minna N4: Mẫu câu thời điểm! Đã có phó từ「たった今」(vừa mới tức thì) thì BẮT BUỘC động từ phải chia thể quá khứ「V-たところだ」! Còn V-るところだ là sắp sửa, V-ているところだ là đang trong lúc."
+  },
+  {
+    "id": "n4_q11",
+    "mondai": 3,
+    "mondaiTitle": "Mondai 3: 文脈規定 (Điền từ hợp ngữ cảnh)",
+    "instruction": "Chọn từ khiêm nhường thích hợp nhất điền vào chỗ trống （　　）:",
+    "sentence": "先生、今 お時間は よろしいでしょうか。少し（　　）たい ことが ございます。",
+    "targetWord": "伺いたい",
+    "options": [
+      "おっしゃい",
+      "召し上がり",
+      "伺い",
+      "参り"
+    ],
+    "correctIndex": 2,
+    "meaning": "Thưa cô, bây giờ cô có tiện không ạ? Em có điều muốn thưa hỏi cô đôi lời ạ.",
+    "takagiExplanation": "Bài 50 Minna N4: Khiêm nhường ngữ! Học sinh muốn hỏi giáo viên thì dùng「伺います」(うかがいます - khiêm nhường của 聞きます/尋ねます). Còn おっしゃいます và 召し上がります là Tôn kính ngữ (chỉ hành động của đối phương), không được dùng cho bản thân mình!"
+  },
+  {
+    "id": "n4_q12",
+    "mondai": 3,
+    "mondaiTitle": "Mondai 3: 文脈規定 (Điền từ hợp ngữ cảnh)",
+    "instruction": "Chọn động từ thích hợp nhất điền vào chỗ trống （　　）:",
+    "sentence": "急に 雨が 激しく なってきたので、傘を（　　）ました。",
+    "targetWord": "さしました",
+    "options": [
+      "かけ",
+      "はき",
+      "さし",
+      "つけ"
+    ],
+    "correctIndex": 2,
+    "meaning": "Bỗng nhiên mưa rào to quá nên tôi đã che ô.",
+    "takagiExplanation": "Bài 47 Minna N4: Đi với cái ô (傘) thì động từ giương ô, che ô bắt buộc dùng「傘をさします」(さす). Tuyệt đối không dùng かけます (đeo kính) hay はきます (xỏ giày)!"
+  },
+  {
+    "id": "n4_q13",
+    "mondai": 4,
+    "mondaiTitle": "Mondai 4: 言い換え類義 (Chọn câu có cùng ý nghĩa)",
+    "instruction": "Chọn câu có ý nghĩa gần nhất với câu được cho:",
+    "sentence": "田中さんは 先月 <u>婚約しました</u>。",
+    "targetWord": "婚約しました",
+    "options": [
+      "田中さんは 先月 結婚する 約束を しました。",
+      "田中さんは 先月 結婚式を 挙げました。",
+      "田中さんは 先月 恋人と 別れました。",
+      "田中さんは 先月 新しい 友達が できました。"
+    ],
+    "correctIndex": 0,
+    "meaning": "Anh Tanaka đã đính hôn vào tháng trước.",
+    "takagiExplanation": "Bài 47 Minna N4:「婚約する」(đính hôn) =「結婚する約束をする」(hứa hẹn kết hôn). Đính hôn là lập lời ước hẹn trước, chưa phải là làm đám cưới (結婚式を挙げる)!"
+  },
+  {
+    "id": "n4_q14",
+    "mondai": 4,
+    "mondaiTitle": "Mondai 4: 言い換え類義 (Chọn câu có cùng ý nghĩa)",
+    "instruction": "Chọn câu có ý nghĩa gần nhất với câu được cho:",
+    "sentence": "山田さんの 家へ 行きましたが、<u>留守でした</u>。",
+    "targetWord": "留守でした",
+    "options": [
+      "山田さんは 家で 寝ていました。",
+      "山田さんは 家に いませんでした。",
+      "山田さんは 忙しく 働いていました。",
+      "山田さんは 友達と 話していました。"
+    ],
+    "correctIndex": 1,
+    "meaning": "Tôi đã đến nhà anh Yamada nhưng anh ấy vắng nhà.",
+    "takagiExplanation": "Bài 46 Minna N4:「留守」(るす) nghĩa là vắng nhà =「家に いませんでした」(không có ở nhà)!"
+  },
+  {
+    "id": "n4_q15",
+    "mondai": 4,
+    "mondaiTitle": "Mondai 4: 言い換え類義 (Chọn câu có cùng ý nghĩa)",
+    "instruction": "Chọn câu có ý nghĩa gần nhất với câu được cho:",
+    "sentence": "社長は その 資料を <u>ご覧になりました</u>。",
+    "targetWord": "ご覧になりました",
+    "options": [
+      "社長は その 資料を 見せました。",
+      "社長は その 資料を 書きました。",
+      "社長は その 資料を 見ました。",
+      "社長は その 資料を 買いました。"
+    ],
+    "correctIndex": 2,
+    "meaning": "Giám đốc đã xem qua tập tài liệu đó rồi.",
+    "takagiExplanation": "Bài 49 Minna N4: Tôn kính ngữ đặc biệt!「ご覧になります」chính là Tôn kính ngữ của động từ「見ます」(xem, nhìn)!"
+  },
+  {
+    "id": "n4_q16",
+    "mondai": 4,
+    "mondaiTitle": "Mondai 4: 言い換え類義 (Chọn câu có cùng ý nghĩa)",
+    "instruction": "Chọn câu có ý nghĩa gần nhất với câu được cho:",
+    "sentence": "私は 明日 先生の 研究室へ <u>参ります</u>。",
+    "targetWord": "参ります",
+    "options": [
+      "私は 明日 先生の 研究室へ 行きます。",
+      "私は 明日 先生の 研究室から 帰ります。",
+      "先生は 明日 研究室へ 来られます。",
+      "私は 明日 先生の 研究室に 泊まります。"
+    ],
+    "correctIndex": 0,
+    "meaning": "Ngày mai tôi xin phép được đến phòng nghiên cứu của cô giáo.",
+    "takagiExplanation": "Bài 50 Minna N4: Khiêm nhường ngữ đặc biệt!「参ります」(まいります) là Khiêm nhường ngữ của「行きます / 来ます」(đi/đến) khi nói về hành động của chính mình!"
+  },
+  {
+    "id": "n4_q17",
+    "mondai": 5,
+    "mondaiTitle": "Mondai 5: ことばの使い方 (Cách dùng từ đúng nhất)",
+    "instruction": "Chọn câu sử dụng từ 「たった今」 chính xác và tự nhiên nhất:",
+    "sentence": "Từ cần xét: 「たった今」",
+    "targetWord": "たった今",
+    "options": [
+      "父は たった今 会社から 帰って 来ました。",
+      "たった今から 宿題を 始めましょう。",
+      "明日は たった今 雨が 降るでしょう。",
+      "たった今 来週の スケジュールを 立てます。"
+    ],
+    "correctIndex": 0,
+    "meaning": "Bố tôi vừa mới đi làm về tức thì.",
+    "takagiExplanation": "Bài 46 Minna N4: Phó từ「たった今」có nghĩa là vừa mới tích tắc tức thì, luôn đi với động từ thì quá khứ「V-ました / V-たばかり / V-たところ」. Không dùng cho tương lai hay thì hiện tại!"
+  },
+  {
+    "id": "n4_q18",
+    "mondai": 5,
+    "mondaiTitle": "Mondai 5: ことばの使い方 (Cách dùng từ đúng nhất)",
+    "instruction": "Chọn câu sử dụng từ 「遠慮なく」 chính xác và tự nhiên nhất:",
+    "sentence": "Từ cần xét: 「遠慮なく」",
+    "targetWord": "遠慮なく",
+    "options": [
+      "どうぞ 遠慮なく たくさん 召し上がって ください。",
+      "明日は 遠慮なく 学校を 休みます。",
+      "試験の ときは 遠慮なく 集中してください。",
+      "雨が 遠慮なく 激しく 降っています。"
+    ],
+    "correctIndex": 0,
+    "meaning": "Xin mời quý khách đừng khách sáo, cứ dùng thật nhiều vào nhé.",
+    "takagiExplanation": "Bài 49 Minna N4:「遠慮なく」(không ngần ngại, đừng khách sáo) dùng khi mời mọc, khuyên người khác cứ tự nhiên đón nhận sự hiếu khách chu đáo của mình!"
+  },
+  {
+    "id": "n4_q19",
+    "mondai": 5,
+    "mondaiTitle": "Mondai 5: ことばの使い方 (Bẫy Kính Ngữ N4 Tối Kỵ)",
+    "instruction": "【BẪY KÍNH NGỮ N4】Chọn câu tiếng Nhật LỊCH SỰ VÀ ĐÚNG NGỮ PHÁP NHẤT khi một học viên nói về việc học tập của bản thân mình:",
+    "sentence": "Tình huống: Học trò nói về việc học tiếng Nhật của chính mình trước mặt giáo viên:",
+    "targetWord": "Học tập bản thân",
+    "options": [
+      "私は 毎日 日本語を 勉強しております。",
+      "私は 毎日 日本語を ご勉強しています。",
+      "先生は 毎日 日本語を 勉強いたします。",
+      "私は 毎日 日本語を ご覧になります。"
+    ],
+    "correctIndex": 0,
+    "meaning": "Dạ thưa cô, em mỗi ngày đều chuyên tâm học tiếng Nhật ạ.",
+    "takagiExplanation": "BẪY TỬ THẦN CỦA KÍNH NGỮ N4! Rất nhiều người nhầm lẫn đem mẫu「ご + Hán tự + します」áp dụng bừa bãi thành「*ご勉強しています」! TUYỆT ĐỐI SAI! Mẫu「ご...します」chỉ áp dụng khi hành động hướng tới người khác (như ご案内します). Còn học tập là việc tự thân của mình, phải dùng động từ thường và hạ đuôi khiêm nhường:「勉強しております / 勉強いたします」!"
+  },
+  {
+    "id": "n4_q20",
+    "mondai": 5,
+    "mondaiTitle": "Mondai 5: ことばの使い方 (Cách dùng từ đúng nhất)",
+    "instruction": "Chọn câu sử dụng mẫu xin phép sai khiến 「～させていただけませんか」 chính xác nhất:",
+    "sentence": "Tình huống: Nhân viên xin phép sếp cho về sớm vì bị sốt:",
+    "targetWord": "～させていただけませんか",
+    "options": [
+      "熱が ありますので、今日は 早く 帰らせて いただけませんか。",
+      "熱が ありますので、今日は 早く 帰られて いただけませんか。",
+      "熱が ありますので、部長を 早く 帰らせて いただけませんか。",
+      "熱が ありますので、今日は 早く 帰ることに しました。"
+    ],
+    "correctIndex": 0,
+    "meaning": "Vì em bị sốt, hôm nay sếp có thể vui lòng cho phép em về sớm được không ạ?",
+    "takagiExplanation": "Bài 48 Minna N4: Đỉnh cao xin phép lịch sự trong công sở Nhật Bản:「Động từ thể Sai khiến + ていただけませんか」! 帰る (nhóm 1) -> thể sai khiến là 帰らせる -> 帰らせていただけませんか (Xin ngài hãy cho phép tôi được về)!"
+  }
+];
+
+
 class JLPTMockTestModule {
   constructor() {
+    this.currentLevel = "N5";
     this.questions = JLPT_N5_MOCK_EXAM;
     this.currentIndex = 0;
-    this.userAnswers = {}; // { q01: 1, q02: 0, ... }
+    this.userAnswers = {};
     this.timer = null;
     this.timeLeft = 600;   // 10 phút = 600 giây
     this.isExamStarted = false;
@@ -227,6 +573,21 @@ class JLPTMockTestModule {
   // --------------------------------------------------------------------------
   // GIAO DIỆN CHÍNH CỦA TAB THI THỬ JLPT N5
   // --------------------------------------------------------------------------
+  selectLevel(level) {
+    if (this.isExamStarted) {
+      if (!confirm('Bạn có chắc muốn chuyển đề thi khác không? Tiến trình làm bài hiện tại sẽ bị hủy.')) return;
+      clearInterval(this.timer);
+    }
+    this.currentLevel = (level && level.toUpperCase() === 'N4') ? 'N4' : 'N5';
+    this.questions = this.currentLevel === 'N4' ? JLPT_N4_MOCK_EXAM : JLPT_N5_MOCK_EXAM;
+    this.timeLeft = this.currentLevel === 'N4' ? 900 : 600;
+    this.isExamStarted = false;
+    this.isSubmitted = false;
+    this.currentIndex = 0;
+    this.userAnswers = {};
+    this.render();
+  }
+
   render() {
     const container = document.getElementById('mock-test-container');
     if (!container) return;
@@ -242,29 +603,43 @@ class JLPTMockTestModule {
 
   // MÀN HÌNH CHÀO MỪNG & HƯỚNG DẪN THI
   renderWelcomeScreen(container) {
+    const isN4 = this.currentLevel === 'N4';
+    const totalQ = isN4 ? 20 : 15;
+    const timeMinutes = isN4 ? 15 : 10;
+
     container.innerHTML = `
       <div class="mock-welcome-card">
+        <!-- Bộ chọn Cấp Độ Đề Thi (N5 vs N4) -->
+        <div class="mock-level-switch-wrap" style="display: flex; justify-content: center; gap: 12px; margin-bottom: 24px;">
+          <button class="btn ${!isN4 ? 'btn-primary' : 'btn-outline'}" onclick="window.mockTestModule.selectLevel('N5')" style="padding: 10px 22px; font-weight: 700; border-radius: 30px; font-size: 15px; cursor: pointer;">
+            🎯 Đề Thi Thử N5 (15 Câu • 10 Phút)
+          </button>
+          <button class="btn ${isN4 ? 'btn-primary' : 'btn-outline'}" onclick="window.mockTestModule.selectLevel('N4')" style="padding: 10px 22px; font-weight: 700; border-radius: 30px; font-size: 15px; cursor: pointer;">
+            🏆 Đề Thi Thử N4 Chuẩn 5 Mondai (20 Câu • 15 Phút)
+          </button>
+        </div>
+
         <div class="welcome-badge-header">
-          <span class="exam-cert-icon">🎌</span>
-          <h2>KỲ THI THỬ NĂNG LỰC TIẾNG NHẬT MINI JLPT N5</h2>
-          <p class="exam-subtitle">Chuẩn cấu trúc 4 phần thi • Giám thị: Cô giáo Tanaka (厳しい先生)</p>
+          <span class="exam-cert-icon">${isN4 ? '🏆' : '🎌'}</span>
+          <h2>KỲ THI THỬ NĂNG LỰC TIẾNG NHẬT MINI JLPT ${this.currentLevel}</h2>
+          <p class="exam-subtitle">${isN4 ? 'Chuẩn cấu trúc 5 Mondai chữ Hán & Từ vựng N4 • Bắt lỗi bẫy Kính ngữ' : 'Chuẩn cấu trúc 4 phần thi N5 • Giám thị: Cô giáo Tanaka (厳しい先生)'}</p>
         </div>
 
         <div class="exam-specs-grid">
           <div class="spec-card">
             <span class="spec-icon">📝</span>
-            <strong>15 Câu hỏi</strong>
-            <small>Đầy đủ 4 Mondai chuẩn đề JEES</small>
+            <strong>${totalQ} Câu hỏi</strong>
+            <small>${isN4 ? 'Đầy đủ 5 Mondai chuẩn JLPT N4' : 'Đầy đủ 4 Mondai chuẩn đề JEES N5'}</small>
           </div>
           <div class="spec-card">
             <span class="spec-icon">⏱️</span>
-            <strong>10 Phút</strong>
+            <strong>${timeMinutes} Phút</strong>
             <small>Bấm giờ đếm ngược tự động thu bài</small>
           </div>
           <div class="spec-card">
             <span class="spec-icon">💮</span>
             <strong>Mộc đỏ 合格</strong>
-            <small>Đạt từ 70% trở lên để đỗ N5</small>
+            <small>Đạt từ 70% trở lên để đỗ ${this.currentLevel}</small>
           </div>
           <div class="spec-card">
             <span class="spec-icon">👩‍🏫</span>
@@ -274,18 +649,28 @@ class JLPTMockTestModule {
         </div>
 
         <div class="exam-rules-box">
-          <h4>📋 Quy chế phòng thi của Cô Tanaka:</h4>
-          <ul>
-            <li><strong>Mondai 1 (Moji-Goi):</strong> 4 câu cách đọc chữ Kanji, cẩn thận bẫy âm đục và trường âm.</li>
-            <li><strong>Mondai 2 (Kanji):</strong> 4 câu nhận diện chữ Hán, chú ý từng nét phẩy và nét chấm.</li>
-            <li><strong>Mondai 3 (Bunpou):</strong> 4 câu ngữ pháp và trợ từ, phân biệt chính xác に / で / を.</li>
-            <li><strong>Mondai 4 (Choukai):</strong> 3 câu nghe hiểu Audio, bấm nút nghe đoạn hội thoại để chọn đáp án.</li>
-          </ul>
+          <h4>📋 Quy chế phòng thi của Cô Tanaka (${this.currentLevel}):</h4>
+          ${isN4 ? `
+            <ul>
+              <li><strong>Mondai 1 (漢字の読み方 - 4 câu):</strong> Cách đọc Hiragana của Kanji, cẩn thận bẫy trường âm & âm đục.</li>
+              <li><strong>Mondai 2 (文字の書き方 - 4 câu):</strong> Cách viết chữ Kanji & Katakana chuẩn xác, tránh nhầm bộ thủ tương đồng.</li>
+              <li><strong>Mondai 3 (文脈規定 - 4 câu):</strong> Điền từ hợp ngữ cảnh, phân biệt cảm giác giác quan (mùi/vị/âm thanh) và thời điểm (ところ/ばかり).</li>
+              <li><strong>Mondai 4 (言い換え類義 - 4 câu):</strong> Tìm câu đồng nghĩa tương đương, nắm chắc ý nghĩa từ vựng N4.</li>
+              <li><strong>Mondai 5 (ことばの使い方 - 4 câu):</strong> Dạng bài phân loại N4 cao cấp, bẫy Kính ngữ tối kỵ (chú ý cấm kỵ dùng ご...します cho bản thân!).</li>
+            </ul>
+          ` : `
+            <ul>
+              <li><strong>Mondai 1 (Moji-Goi):</strong> 4 câu cách đọc chữ Kanji, cẩn thận bẫy âm đục và trường âm.</li>
+              <li><strong>Mondai 2 (Kanji):</strong> 4 câu nhận diện chữ Hán, chú ý từng nét phẩy và nét chấm.</li>
+              <li><strong>Mondai 3 (Bunpou):</strong> 4 câu ngữ pháp và trợ từ, phân biệt chính xác に / で / を.</li>
+              <li><strong>Mondai 4 (Choukai):</strong> 3 câu nghe hiểu Audio, bấm nút nghe đoạn hội thoại để chọn đáp án.</li>
+            </ul>
+          `}
         </div>
 
         <div class="exam-start-actions">
           <button class="btn btn-primary btn-large btn-start-test" onclick="window.mockTestModule.startExam()">
-            🚀 Bắt Đầu Làm Bài Thi Ngay (10 Phút)
+            🚀 Bắt Đầu Làm Bài Thi ${this.currentLevel} Ngay (${timeMinutes} Phút)
           </button>
         </div>
       </div>
@@ -294,11 +679,12 @@ class JLPTMockTestModule {
 
   // BẮT ĐẦU TÍNH GIỜ VÀ MỞ BÀI THI
   startExam() {
+    this.questions = this.currentLevel === "N4" ? JLPT_N4_MOCK_EXAM : JLPT_N5_MOCK_EXAM;
     this.isExamStarted = true;
     this.isSubmitted = false;
     this.currentIndex = 0;
     this.userAnswers = {};
-    this.timeLeft = 600; // 10 phút
+    this.timeLeft = this.currentLevel === "N4" ? 900 : 600;
 
     if (window.soundSystem) window.soundSystem.playCorrect();
 
@@ -571,7 +957,7 @@ class JLPTMockTestModule {
         <!-- BẢNG ĐIỂM & MỘC ĐỎ CHỨNG NHẬN -->
         <div class="exam-cert-card ${isPassed ? 'passed' : 'failed'}">
           
-          <div class="cert-watermark">JLPT N5</div>
+          <div class="cert-watermark">JLPT ${this.currentLevel}</div>
 
           <!-- MỘC ĐỎ TRUYỀN THỐNG NHẬT BẢN (HANKO / INKAN STAMP) -->
           <div class="hanko-seal-stamp ${isPassed ? 'stamp-goukaku' : 'stamp-fugoukaku'}">
@@ -583,7 +969,7 @@ class JLPTMockTestModule {
           </div>
 
           <div class="cert-header">
-            <h2>KẾT QUẢ THI THỬ JLPT N5 (BẢN ĐÁNH GIÁ)</h2>
+            <h2>KẾT QUẢ THI THỬ JLPT ${this.currentLevel} (BẢN ĐÁNH GIÁ)</h2>
             <p>Kỳ thi sát hạch toàn diện • Đánh giá bởi Cô giáo Tanaka (東京)</p>
           </div>
 
@@ -595,7 +981,7 @@ class JLPTMockTestModule {
             </div>
             <div class="score-detail-pills">
               <span class="cert-pill">🎯 Số câu đúng: <strong>${this.correctCount} / ${this.questions.length}</strong></span>
-              <span class="cert-pill">⏱️ Thời gian thi: <strong>${Math.floor((600 - this.timeLeft) / 60)} phút ${(600 - this.timeLeft) % 60} giây</strong></span>
+              <span class="cert-pill">⏱️ Thời gian thi: <strong>${Math.floor(((this.currentLevel === "N4" ? 900 : 600) - this.timeLeft) / 60)} phút ${(600 - this.timeLeft) % 60} giây</strong></span>
               <span class="cert-pill">📅 Ngày thi: <strong>${today}</strong></span>
               <span class="cert-pill status-pill ${isPassed ? 'text-pass' : 'text-fail'}">
                 ${isPassed ? '✓ KẾT QUẢ: ĐỖ (合格)' : '✗ KẾT QUẢ: TRƯỢT (不合格)'}

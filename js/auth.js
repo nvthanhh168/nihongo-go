@@ -58,7 +58,12 @@ const MINNA_LESSONS_N5 = [
   { id: 42, title: 'Bài 42 (N4)', desc: 'Mục đích & Công dụng (～ために, ～のに, V-るのに使います)', targetWords: 44 },
   { id: 43, title: 'Bài 43 (N4)', desc: 'Phỏng đoán thị giác & Thể て来ます (～そうです, V-て来ます)', targetWords: 30 },
   { id: 44, title: 'Bài 44 (N4)', desc: 'Quá mức & Dễ / Khó làm (～すぎます, ～やすい, ～にくい)', targetWords: 41 },
-  { id: 45, title: 'Bài 45 (N4)', desc: 'Giả định tình huống & Trái với kỳ vọng (～場合は, ～のに)', targetWords: 32 }
+  { id: 45, title: 'Bài 45 (N4)', desc: 'Giả định tình huống & Trái với kỳ vọng (～場合は, ～のに)', targetWords: 32 },
+  { id: 46, title: 'Bài 46 (N4)', desc: 'Thời điểm hành động & Chắc chắn (～ところだ, ～たばかりだ, ～はずだ)', targetWords: 24 },
+  { id: 47, title: 'Bài 47 (N4)', desc: 'Truyền đạt thông tin & Cảm quan (～そうです, ～ようです, 声/音/におい/味がします)', targetWords: 31 },
+  { id: 48, title: 'Bài 48 (N4)', desc: 'Thể Sai khiến & Cho phép (使役形 ～させます, ～させてください)', targetWords: 24 },
+  { id: 49, title: 'Bài 49 (N4)', desc: 'Tôn Kính Ngữ Sonkeigo (お+V+になります, Động từ tôn kính đặc biệt)', targetWords: 39 },
+  { id: 50, title: 'Bài 50 (N4)', desc: 'Khiêm Nhường Ngữ Kenjougo (お+V+します, Động từ khiêm nhường & Tốt nghiệp N4)', targetWords: 43 }
 ];
 
 class JapaneseAuthModule {
@@ -500,8 +505,8 @@ class JapaneseAuthModule {
         completedAt: new Date().toISOString()
       };
 
-      // Mở khóa bài tiếp theo nếu bài vừa hoàn thành là bài cao nhất (cho phép đến Bài 45 nếu đã đăng nhập)
-      if (lessonNumber === p.unlockedLesson && lessonNumber < 45) {
+      // Mở khóa bài tiếp theo nếu bài vừa hoàn thành là bài cao nhất (cho phép đến Bài 50 nếu đã đăng nhập)
+      if (lessonNumber === p.unlockedLesson && lessonNumber < 50) {
         p.unlockedLesson = lessonNumber + 1;
       }
       unlocked = p.unlockedLesson;
@@ -546,9 +551,10 @@ class JapaneseAuthModule {
 
     if (window.soundSystem) window.soundSystem.playVictory();
     if (window.mascot) {
+      const maxL = unlocked > 25 ? 50 : 25;
       window.mascot.setMood(
         'celebrate',
-        `🎖️ XUẤT SẮC! Em đã vượt qua Bài ${lessonNumber} và mở khóa BÀI ${unlocked}/25! Nhận ngay +50 EXP & +10 Coins! 🏆🌸`,
+        `🎖️ XUẤT SẮC! Em đã vượt qua Bài ${lessonNumber} và mở khóa BÀI ${unlocked}/${maxL}! Nhận ngay +50 EXP & +10 Coins! 🏆🌸`,
         5000
       );
     }

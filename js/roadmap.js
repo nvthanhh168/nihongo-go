@@ -86,6 +86,15 @@ const ROADMAP_REGIONS = [
     desc: 'Kính ngữ Cho & Nhận (いただき・くださる), Mục đích & Công dụng (～ために, ～のに), Phỏng đoán thị giác (～そうです), Quá mức (～すぎます) & Giả định tình huống (～場合は)',
     themeColor: '#E03131',
     bgGradient: 'linear-gradient(135deg, #FFF5F5 0%, #FFE3E3 100%)'
+  },
+  {
+    id: 10,
+    name: 'Chặng 10: Đỉnh Cao N4 - Đại Học Tokyo & Lễ Tốt Nghiệp Minna (東京・卒業)',
+    icon: '🎓',
+    range: [46, 50],
+    desc: 'Thời điểm (～ところ), Truyền đạt (～そうです), Thể Sai khiến (使役形), Tôn kính ngữ (尊敬語) & Khiêm nhường ngữ (謙譲語) - Hoàn tất trọn vẹn 50 Bài Minna!',
+    themeColor: '#7048E8',
+    bgGradient: 'linear-gradient(135deg, #F3F0FF 0%, #E5DBFF 100%)'
   }
 ];
 
