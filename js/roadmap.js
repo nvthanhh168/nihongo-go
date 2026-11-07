@@ -50,6 +50,15 @@ const ROADMAP_REGIONS = [
     desc: 'Bày tỏ ý kiến cá nhân, Mệnh đề bổ nghĩa danh từ, Thao tác máy móc, Cho nhận giúp đỡ & Điều kiện giả định - Chạm đỉnh N5!',
     themeColor: '#7048E8',
     bgGradient: 'linear-gradient(135deg, #F3F0FF 0%, #E5DBFF 100%)'
+  },
+  {
+    id: 6,
+    name: 'Chặng 6: Bước Vào Trung Cấp N4 - Cố Đô Nara & Lâu Đài Himeji (奈良・姫路)',
+    icon: '🦌',
+    range: [26, 30],
+    desc: 'Lý do & Thắc mắc (～んです), Động từ Thể Khả năng, Hành động song song (～ながら), Tự động từ trạng thái & Chuẩn bị sẵn sàng (V-てあります)',
+    themeColor: '#D6336C',
+    bgGradient: 'linear-gradient(135deg, #FFF0F6 0%, #FFDEEB 100%)'
   }
 ];
 
@@ -246,7 +255,7 @@ class JapaneseRoadmapModule {
     if (!container) return;
 
     const prog = this.getUserProgress();
-    const allN5Lessons = window.LESSONS_DATA ? window.LESSONS_DATA.n5 : [];
+    const allLessons = window.LESSONS_DATA ? [...(window.LESSONS_DATA.n5 || []), ...(window.LESSONS_DATA.n4 || [])] : [];
 
     container.innerHTML = `
       <div class="roadmap-main-wrapper">
@@ -301,7 +310,7 @@ class JapaneseRoadmapModule {
         <div class="roadmap-serpentine-track">
           
           ${ROADMAP_REGIONS.map(reg => {
-            const lessonsInRegion = allN5Lessons.filter(l => l.lessonNumber >= reg.range[0] && l.lessonNumber <= reg.range[1]);
+            const lessonsInRegion = allLessons.filter(l => l && l.lessonNumber >= reg.range[0] && l.lessonNumber <= reg.range[1]);
 
             return `
               <div class="roadmap-region-section" style="background: ${reg.bgGradient};">
@@ -437,6 +446,32 @@ class JapaneseRoadmapModule {
   handleNodeClick(lessonNumber) {
     const prog = this.getUserProgress();
 
+    // KIỂM TRA ĐẶC BIỆT CHO CẤP ĐỘ N4 (BÀI 26 ĐẾN 30):
+    if (lessonNumber >= 26) {
+      // 1. Phải đăng nhập
+      if (!prog.isLogged) {
+        if (window.soundSystem) window.soundSystem.playBuzzer();
+        this.showTanakaAlert(
+          `Cấp độ Trung Cấp JLPT N4 (Bài 26 - 30) yêu cầu <strong>Đăng nhập tài khoản học viên</strong> để hệ thống bảo lưu học bạ và ghi nhận chứng chỉ đám mây!<br><br>` +
+          `Vui lòng Đăng nhập hoặc Tạo tài khoản miễn phí để tiếp tục. 🔑`
+        );
+        if (window.authModule) {
+          setTimeout(() => window.authModule.openAuthModal('login'), 800);
+        }
+        return;
+      }
+
+      // 2. Phải hoàn thành toàn bộ 25 bài N5
+      if (prog.completedCount < 25) {
+        if (window.soundSystem) window.soundSystem.playBuzzer();
+        this.showTanakaAlert(
+          `Cổng Thăng Cấp N4 đang được niêm phong bảo vệ!<br><br>` +
+          `Em cần hoàn thành xuất sắc <strong>toàn bộ 25 Bài học N5</strong> trước khi mở khóa Bài 26. Hiện tại em mới hoàn thành ${prog.completedCount}/25 Bài! 👩‍🏫`
+        );
+        return;
+      }
+    }
+
     // 1. Nếu bài đang bị khóa
     if (lessonNumber > prog.unlockedLesson) {
       if (window.soundSystem) window.soundSystem.playBuzzer();
@@ -464,7 +499,8 @@ class JapaneseRoadmapModule {
     const lNum = parseInt(lessonNumber, 10);
     this.activeMissionLesson = lNum;
 
-    const lesson = window.LESSONS_DATA ? window.LESSONS_DATA.getLesson('N5', lNum) : null;
+    const targetLevel = lNum >= 26 ? 'N4' : 'N5';
+    const lesson = window.LESSONS_DATA ? window.LESSONS_DATA.getLesson(targetLevel, lNum) : null;
     if (!lesson) return;
 
     const state = this.getLessonMissionState(lNum);
@@ -492,7 +528,8 @@ class JapaneseRoadmapModule {
   updateMissionModalIfOpen(lessonNumber) {
     const modal = document.getElementById('lesson-mission-modal');
     if (modal && modal.style.display === 'flex' && this.activeMissionLesson === lessonNumber) {
-      const lesson = window.LESSONS_DATA ? window.LESSONS_DATA.getLesson('N5', lessonNumber) : null;
+      const targetLevel = lessonNumber >= 26 ? 'N4' : 'N5';
+      const lesson = window.LESSONS_DATA ? window.LESSONS_DATA.getLesson(targetLevel, lessonNumber) : null;
       const state = this.getLessonMissionState(lessonNumber);
       if (lesson) {
         modal.innerHTML = this.renderLessonMissionHtml(lesson, state);

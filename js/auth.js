@@ -38,7 +38,12 @@ const MINNA_LESSONS_N5 = [
   { id: 22, title: 'Bài 22', desc: 'Mệnh đề bổ nghĩa cho danh từ trong tiếng Nhật N5', targetWords: 15 },
   { id: 23, title: 'Bài 23', desc: 'Cấu trúc điều kiện thời gian (～とき, ～と khi làm gì)', targetWords: 16 },
   { id: 24, title: 'Bài 24', desc: 'Cho và nhận hành động giúp đỡ (くれます, もらいます, あげます)', targetWords: 15 },
-  { id: 25, title: 'Bài 25', desc: 'Cấu trúc giả định điều kiện tổng kết N5 (～たら, ～ても)', targetWords: 20 }
+  { id: 25, title: 'Bài 25', desc: 'Cấu trúc giả định điều kiện tổng kết N5 (～たら, ～ても)', targetWords: 20 },
+  { id: 26, title: 'Bài 26 (N4)', desc: 'Giải thích lý do & Xin lời khuyên (～んです, ～たらいいですか)', targetWords: 35 },
+  { id: 27, title: 'Bài 27 (N4)', desc: 'Động từ Thể Khả năng (可能形 - Kanoukei) & Năng lực', targetWords: 33 },
+  { id: 28, title: 'Bài 28 (N4)', desc: 'Hành động song song (～ながら) & Nhiều lý do (～し、～し)', targetWords: 40 },
+  { id: 29, title: 'Bài 29 (N4)', desc: 'Tự động từ & Diễn tả trạng thái kết quả (V-ています)', targetWords: 39 },
+  { id: 30, title: 'Bài 30 (N4)', desc: 'Trạng thái có chủ đích (～てあります) & Chuẩn bị trước (～ておきます)', targetWords: 39 }
 ];
 
 class JapaneseAuthModule {
@@ -480,8 +485,8 @@ class JapaneseAuthModule {
         completedAt: new Date().toISOString()
       };
 
-      // Mở khóa bài tiếp theo nếu bài vừa hoàn thành là bài cao nhất
-      if (lessonNumber === p.unlockedLesson && lessonNumber < 25) {
+      // Mở khóa bài tiếp theo nếu bài vừa hoàn thành là bài cao nhất (cho phép đến Bài 30 nếu đã đăng nhập)
+      if (lessonNumber === p.unlockedLesson && lessonNumber < 30) {
         p.unlockedLesson = lessonNumber + 1;
       }
       unlocked = p.unlockedLesson;
@@ -566,6 +571,27 @@ class JapaneseAuthModule {
   // Kiểm tra quyền truy cập bài học
   checkLessonAccess(lessonNumber) {
     if (lessonNumber === 1) return true;
+
+    // Yêu cầu bắt buộc đối với cấp độ N4 (Bài 26 - 30):
+    if (lessonNumber >= 26) {
+      if (!this.isLoggedIn()) {
+        alert('🔒 Cấp độ Trung Cấp JLPT N4 (Bài 26 - 30) yêu cầu ĐĂNG NHẬP tài khoản học viên để bảo lưu học bạ!\nVui lòng đăng nhập hoặc tạo tài khoản miễn phí. 👩‍🏫');
+        this.openAuthModal('login');
+        return false;
+      }
+
+      const p = this.currentUser?.profile;
+      let completedN5Count = 0;
+      if (p && p.completedLessons) {
+        for (let i = 1; i <= 25; i++) {
+          if (p.completedLessons[i]?.completed) completedN5Count++;
+        }
+      }
+      if (completedN5Count < 25) {
+        alert(`🔒 Cổng N4 đang được niêm phong!\nEm cần hoàn thành đủ 25 Bài học N5 trước khi mở khóa Bài 26 nhé! Hiện tại em mới xong ${completedN5Count}/25 Bài. 👩‍🏫`);
+        return false;
+      }
+    }
 
     const unlocked = this.getUnlockedLesson();
     if (lessonNumber > unlocked) {

@@ -2333,20 +2333,25 @@ body {
 /* ==========================================================================
    RESPONSIVE DESIGN (MOBILE & TABLET)
    ========================================================================== */
-@media (max-width: 900px) {
+@media (max-width: 992px) {
   .app-container {
-  max-width: min(1400px, 96vw);
-  width: 100%;
-  margin: 20px auto;
-  padding: 0 16px;
-  display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  gap: 24px;
-  align-items: start;
-}
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    margin: 12px auto;
+    padding: 0 12px;
+    gap: 16px;
+  }
+  .content-area {
+    width: 100%;
+    min-width: 0;
+  }
   .mascot-sidebar {
     position: static;
-    margin-bottom: 20px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 12px;
   }
   .game-options-grid {
     grid-template-columns: 1fr;
@@ -8285,4 +8290,56 @@ body {
 
 .btn-hud-control.btn-hud-quit:hover {
   background: #FFE3E3;
+}
+
+/* ==========================================================================
+   RESPONSIVE ENHANCEMENTS FOR GAME ÄOÃN Tá»ª, FLASHCARD & ROADMAP (PC / IPAD / MOBILE)
+   ========================================================================== */
+.game-card {
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.guess-game-top-bar {
+  max-width: 960px;
+  margin: 0 auto 16px auto;
+  width: 100%;
+}
+
+.game-hud {
+  max-width: 960px;
+  margin: 0 auto 16px auto;
+  width: 100%;
+}
+
+.game-topic-scroll-wrap {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.game-topic-scroll {
+  display: flex;
+  gap: 8px;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 768px) {
+  .game-options-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+  }
+  .game-opt-btn {
+    padding: 12px 14px;
+    font-size: 13.5px;
+  }
+  .game-card {
+    padding: 18px 14px;
+  }
+  .target-kanji-large {
+    font-size: 38px;
+  }
 }
