@@ -408,9 +408,7 @@ class SpeechTestModule {
     }
 
     if (this.isListening) {
-      try {
-        this.recognition.stop();
-      } catch (e) {}
+      this.stopListening();
     } else {
       try {
         this.recognition.start();
@@ -418,6 +416,22 @@ class SpeechTestModule {
         console.error('[SpeechTest] Không thể kích hoạt Micro:', e);
         this.showPermissionWarning();
       }
+    }
+  }
+
+  // Dừng ngay lập tức Micro thu âm
+  stopListening() {
+    clearTimeout(this.safetyTimer);
+    if (this.recognition && this.isListening) {
+      try {
+        if (typeof this.recognition.abort === 'function') {
+          this.recognition.abort();
+        } else {
+          this.recognition.stop();
+        }
+      } catch (e) {}
+      this.isListening = false;
+      this.updateMicUI(false);
     }
   }
 

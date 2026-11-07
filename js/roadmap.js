@@ -660,8 +660,8 @@ class JapaneseRoadmapModule {
       }
       if (window.app) window.app.switchTab('flashcard');
     } else if (missionType === 'game') {
-      if (window.guessGame && typeof window.guessGame.startLessonGame === 'function') {
-        window.guessGame.startLessonGame(lNum);
+      if (window.guessGame && typeof window.guessGame.setLesson === 'function') {
+        window.guessGame.setLesson(lNum);
       }
       if (window.app) window.app.switchTab('guess-game');
     } else if (missionType === 'speech') {
@@ -1116,12 +1116,7 @@ window.handleQuickLessonChange = function(lessonValue, tabContext) {
       window.flashcardModule.loadLesson(lNum);
     }
   } else if (tabContext === 'guess-game' && window.guessGame) {
-    if (lNum === 'all') {
-      window.guessGame.start(window.JLPT_DATA?.n5 || []);
-      window.guessGame.currentLesson = null;
-    } else {
-      window.guessGame.startLessonGame(lNum);
-    }
+    window.guessGame.setLesson(lNum);
   } else if (tabContext === 'speech-test' && window.speechModule) {
     if (lNum === 'all') {
       window.speechModule.setWordList(window.JLPT_DATA?.n5 || []);
@@ -1131,12 +1126,7 @@ window.handleQuickLessonChange = function(lessonValue, tabContext) {
       window.speechModule.loadLesson(lNum);
     }
   } else if (tabContext === 'memory-game' && window.memoryGame) {
-    if (lNum === 'all') {
-      window.memoryGame.start(window.JLPT_DATA?.n5 || []);
-      window.memoryGame.currentLesson = null;
-    } else {
-      window.memoryGame.startLesson(lNum);
-    }
+    window.memoryGame.setLesson(lNum);
   }
 };
 

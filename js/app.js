@@ -1,7 +1,8 @@
 // ============================================================================
 // MAIN APPLICATION CONTROLLER: NIHONGO GO! (日本語ゴー!) - HOÀN CHỈNH
 // Quản lý Tabs, EXP, Level, Streak, Lưu trữ, Gamification & Sổ tay từ vựng N5
-// Tìm kiếm tức thời tiếng Việt không dấu/có dấu, Romaji, Hiragana, Kanji & Hán Việt
+// Kiểm soát hoàn toàn: CHỈ CHẠY GAME / THI THỬ KHI NGƯỜI DÙNG BẤM YÊU CẦU!
+// Tự động hủy đồng hồ, dừng âm thanh TTS & dừng Micro khi chuyển Tab
 // ============================================================================
 
 // Hàm chuẩn hóa loại bỏ dấu tiếng Việt để tìm kiếm siêu nhạy
@@ -42,11 +43,11 @@ class JapaneseApp {
       window.mascot = new window.JapaneseMascot('mascot-container');
     }
 
-    // Khởi tạo các module với dữ liệu JLPT N5
+    // Khởi tạo các module với dữ liệu JLPT N5 (Chỉ nạp dữ liệu & Màn hình chờ - TUYỆT ĐỐI KHÔNG TỰ CHẠY GAME/ĐỒNG HỒ)
     const n5Words = window.JLPT_DATA ? window.JLPT_DATA.n5 : [];
     
-    if (window.guessGame && typeof window.guessGame.start === 'function') {
-      window.guessGame.start(n5Words);
+    if (window.guessGame && typeof window.guessGame.init === 'function') {
+      window.guessGame.init(n5Words);
     }
     if (window.speechModule && typeof window.speechModule.setWordList === 'function') {
       window.speechModule.setWordList(n5Words);
@@ -54,8 +55,8 @@ class JapaneseApp {
     if (window.flashcardModule && typeof window.flashcardModule.init === 'function') {
       window.flashcardModule.init(n5Words);
     }
-    if (window.memoryGame && typeof window.memoryGame.start === 'function') {
-      window.memoryGame.start(n5Words);
+    if (window.memoryGame && typeof window.memoryGame.init === 'function') {
+      window.memoryGame.init(n5Words);
     }
     if (window.kanaModule && typeof window.kanaModule.init === 'function') {
       window.kanaModule.init();
@@ -82,12 +83,42 @@ class JapaneseApp {
       window.flashcardModule.updateHeaderMasteryStats();
     }
 
-    // Lời chào mừng ban đầu
+    // Lời chào mừng ban đầu (không tự động phát âm âm thanh)
     setTimeout(() => {
       if (window.mascot) {
-        window.mascot.say('Konnichiwa! Chào mừng bạn đến với Nihongo Go N5! Hãy thử chơi game đoán từ nhé! 🌸', 4000);
+        window.mascot.say('Konnichiwa! Chào mừng bạn đến với Nihongo Go N5! Hãy bấm chọn bài học hoặc trò chơi để bắt đầu nhé! 🌸', 4000);
       }
     }, 800);
+  }
+
+  // --------------------------------------------------------------------------
+  // DỪNG MỌI TIẾN TRÌNH ĐỒNG HỒ, MICRO, TTS KHI RỜI KHỎI TAB
+  // --------------------------------------------------------------------------
+  teardownCurrentTab() {
+    // 1. Dừng đếm ngược Game Đoán Từ
+    if (window.guessGame && typeof window.guessGame.pauseOrStop === 'function') {
+      window.guessGame.pauseOrStop();
+    }
+
+    // 2. Dừng đồng hồ Game Lật Thẻ
+    if (window.memoryGame && typeof window.memoryGame.stopTimer === 'function') {
+      window.memoryGame.stopTimer();
+    }
+
+    // 3. Dừng đồng hồ phòng thi thử JLPT
+    if (window.mockTestModule && typeof window.mockTestModule.stopTimer === 'function') {
+      window.mockTestModule.stopTimer();
+    }
+
+    // 4. Hủy nhận diện giọng nói Micro nếu đang thu
+    if (window.speechModule && typeof window.speechModule.stopListening === 'function') {
+      window.speechModule.stopListening();
+    }
+
+    // 5. Dừng âm thanh giọng nói TTS đang đọc dở
+    if ('speechSynthesis' in window) {
+      try { window.speechSynthesis.cancel(); } catch (e) {}
+    }
   }
 
   // --------------------------------------------------------------------------
@@ -211,9 +242,13 @@ class JapaneseApp {
   }
 
   switchTab(tabId) {
+    // Dọn dẹp tab cũ (dừng đếm ngược, tắt micro, tắt giọng nói)
+    if (this.currentTab !== tabId) {
+      this.teardownCurrentTab();
+    }
     this.currentTab = tabId;
 
-    // Tự động cuộn Tab đang chọn vào giữa tầm nhìn (rất quan trọng trên Điện thoại & iPad)
+    // Tự động cuộn Tab đang chọn vào giữa tầm nhìn
     const activeBtn = document.querySelector(`.nav-tab-btn[data-tab="${tabId}"]`);
     if (activeBtn) {
       try {
@@ -237,7 +272,7 @@ class JapaneseApp {
       window.mascot.setCharacter('shiba');
     }
 
-    // Tác vụ chuyên biệt cho từng Tab khi mở
+    // Tác vụ chuyên biệt cho từng Tab khi mở (CHỈ MỞ MÀN HÌNH CHỜ / RENDER DANH SÁCH - KHÔNG TỰ CHẠY GAME)
     if (tabId === 'roadmap') {
       if (window.roadmapModule) {
         window.roadmapModule.render();
@@ -245,9 +280,16 @@ class JapaneseApp {
       if (window.mascot) {
         window.mascot.say('Bản đồ chinh phục 25 Bài N5! Cùng vượt qua 5 chặng để tiến tới Đỉnh Phú Sĩ nhé! 🗺️🌸', 4000);
       }
-    } else if (tabId === 'guess-game' && !window.guessGame.gameActive) {
-      window.guessGame.start(window.JLPT_DATA.n5);
+    } else if (tabId === 'guess-game') {
+      if (window.guessGame) {
+        if (!window.guessGame.gameActive) {
+          window.guessGame.renderReadyScreen();
+        }
+      }
     } else if (tabId === 'speech-test') {
+      if (window.speechModule) {
+        window.speechModule.stopListening();
+      }
       if (window.mascot) {
         window.mascot.say('Phòng luyện phát âm AI! Bấm loa nghe mẫu rồi bấm micro để nói nhé! 🎙️', 3500);
       }
@@ -260,7 +302,11 @@ class JapaneseApp {
         window.mascot.say('Lớp khảo bài của cô Tanaka đây! Tập trung cao độ và làm bài cẩn thận nhé! 👩‍🏫', 4000);
       }
     } else if (tabId === 'memory-game') {
-      window.memoryGame.start(window.JLPT_DATA.n5);
+      if (window.memoryGame) {
+        if (!window.memoryGame.gameActive) {
+          window.memoryGame.renderReadyScreen();
+        }
+      }
     } else if (tabId === 'flashcard') {
       if (window.flashcardModule) {
         window.flashcardModule.render();
@@ -281,7 +327,9 @@ class JapaneseApp {
       }
     } else if (tabId === 'mock-test') {
       if (window.mockTestModule) {
-        window.mockTestModule.render();
+        if (!window.mockTestModule.isExamStarted) {
+          window.mockTestModule.render();
+        }
       }
       if (window.mascot) {
         window.mascot.setCharacter('sensei');
@@ -401,7 +449,7 @@ class JapaneseApp {
         return false;
       }
 
-      // 3. Tìm kiếm tức thời (Tiếng Việt không dấu/có dấu, Romaji, Hiragana, Kanji, Hán Việt)
+      // 3. Tìm kiếm tức thời
       if (cleanTerm) {
         const kanjiMatch = (w.kanji || '').toLowerCase().includes(rawTerm);
         const hiraMatch = (w.hiragana || '').toLowerCase().includes(rawTerm);
@@ -517,7 +565,7 @@ class JapaneseApp {
     }
   }
 
-  // Mở modal toàn bộ 10 Chế Độ Học N5 (hỗ trợ tối ưu Điện thoại & iPad)
+  // Mở modal toàn bộ 10 Chế Độ Học N5
   openModesModal() {
     const modal = document.getElementById('all-modes-modal');
     if (modal) {

@@ -312,17 +312,32 @@ class JLPTMockTestModule {
   }
 
   startTimer() {
-    clearInterval(this.timer);
+    this.stopTimer();
     this.timer = setInterval(() => {
       this.timeLeft--;
       this.updateTimerDisplay();
 
       if (this.timeLeft <= 0) {
-        clearInterval(this.timer);
+        this.stopTimer();
         alert('⏰ ĐÃ HẾT GIỜ LÀM BÀI! Hệ thống sẽ tự động thu bài nộp cho Cô Tanaka chấm!');
         this.submitExam();
       }
     }, 1000);
+  }
+
+  stopTimer() {
+    clearInterval(this.timer);
+    this.timer = null;
+  }
+
+  quitExam() {
+    if (confirm('Bạn có chắc muốn thoát phòng thi? Tiến độ làm bài hiện tại sẽ bị hủy và trở về màn hình giới thiệu.')) {
+      this.stopTimer();
+      this.isExamStarted = false;
+      this.isSubmitted = false;
+      this.render();
+      if (window.soundSystem) window.soundSystem.playPop();
+    }
   }
 
   updateTimerDisplay() {
@@ -395,7 +410,7 @@ class JLPTMockTestModule {
             }).join('')}
           </div>
 
-          <!-- Thanh điều hướng nút Câu trước / Câu kế / Nộp bài -->
+          <!-- Thanh điều hướng nút Câu trước / Câu kế / Nộp bài / Thoát -->
           <div class="exam-nav-footer">
             <button class="btn btn-secondary" onclick="window.mockTestModule.prevQuestion()" ${this.currentIndex === 0 ? 'disabled' : ''}>
               ⬅️ Câu trước
@@ -403,6 +418,10 @@ class JLPTMockTestModule {
             
             <button class="btn btn-danger btn-submit-exam" onclick="window.mockTestModule.confirmSubmit()">
               📝 Nộp bài thi
+            </button>
+
+            <button class="btn btn-outline-danger" onclick="window.mockTestModule.quitExam()">
+              ⏹️ Thoát phòng thi
             </button>
 
             <button class="btn btn-primary" onclick="window.mockTestModule.nextQuestion()" ${this.currentIndex === this.questions.length - 1 ? 'disabled' : ''}>

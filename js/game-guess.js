@@ -1,7 +1,8 @@
 // ============================================================================
 // GAME 1: ĐOÁN TỪ VỰNG TIẾNG NHẬT N5 (VOCABULARY GUESSING GAME) - HOÀN CHỈNH
 // 4 Chế độ chơi, Lọc theo Chủ đề, 3 Mạng Tim, Đồng hồ 15s đếm ngược đổi màu,
-// Combo streak x2/x3, High Score, Pháo hoa Confetti & Sổ tay từ hay sai
+// Màn hình chờ (Ready Screen) chuẩn mực: Chỉ chạy khi người dùng bấm BẮT ĐẦU!
+// Tạm dừng (Pause), Dừng game (Quit), Combo streak x2/x3, High Score & Sổ tay từ sai
 // ============================================================================
 
 class VocabGuessGame {
@@ -19,6 +20,7 @@ class VocabGuessGame {
     this.currentQuestion = null;
     this.isAnswering = false;
     this.gameActive = false;
+    this.gameState = 'ready'; // 'ready', 'playing', 'paused', 'ended'
     this.selectedCategory = 'all';
     this.gameMode = 'mix'; // 'mix', 'visual', 'audio', 'kanji'
     this.currentLesson = null; // null: toàn bộ từ vựng; 1-25: theo bài học
@@ -99,78 +101,44 @@ class VocabGuessGame {
   }
 
   // --------------------------------------------------------------------------
-  // BẮT ĐẦU TRÒ CHƠI
+  // KHỞI TẠO DỮ LIỆU - TUYỆT ĐỐI KHÔNG TỰ CHẠY ĐỒNG HỒ KHI MỞ TRANG
   // --------------------------------------------------------------------------
+  init(words) {
+    if (words && words.length > 0) {
+      this.allWords = [...words];
+    } else if (window.JLPT_DATA && window.JLPT_DATA.n5) {
+      this.allWords = [...window.JLPT_DATA.n5];
+    }
+    this.gameActive = false;
+    this.gameState = 'ready';
+    this.renderReadyScreen();
+  }
+
+  // Khả năng tương thích ngược: start() sẽ mở màn hình chờ hoặc bắt đầu khi được gọi
   start(words, category = null, mode = null) {
     if (words && words.length > 0) {
       this.allWords = [...words];
     } else if (window.JLPT_DATA && window.JLPT_DATA.n5) {
       this.allWords = [...window.JLPT_DATA.n5];
     }
+    if (category !== null) this.selectedCategory = category;
+    if (mode !== null) this.gameMode = mode;
 
-    if (category !== null) {
-      this.selectedCategory = category;
-    }
-    if (mode !== null) {
-      this.gameMode = mode;
-    }
-
-    // Lọc theo chủ đề
-    let filtered = this.allWords;
-    if (this.selectedCategory !== 'all') {
-      filtered = this.allWords.filter(w => w.category === this.selectedCategory);
-    }
-
-    if (!filtered || filtered.length < 4) {
-      alert('Chủ đề này chưa đủ 4 từ vựng để tạo 4 đáp án trắc nghiệm. Đang chuyển sang Tất cả chủ đề!');
-      this.selectedCategory = 'all';
-      filtered = this.allWords;
-    }
-
-    // Xáo trộn danh sách từ vựng
-    this.words = [...filtered].sort(() => Math.random() - 0.5);
-    this.currentIndex = 0;
-    this.score = 0;
-    this.combo = 0;
-    this.maxCombo = 0;
-    this.lives = this.maxLives;
-    this.gameActive = true;
-    this.isAnswering = false;
-    this.correctAnswersCount = 0;
-
-    this.renderGameContainer();
-    this.loadQuestion();
+    this.renderReadyScreen();
   }
 
   // --------------------------------------------------------------------------
-  // BẮT ĐẦU GAME THEO BÀI HỌC (NHIỆM VỤ 2: ĐOÁN TỪ BÀI 1 -> 25)
+  // BẮT ĐẦU CHƠI THEO BÀI HỌC (CHUẨN BỊ MÀN HÌNH CHỜ RIÊNG CHO BÀI ĐÓ)
   // --------------------------------------------------------------------------
-  startLessonGame(lessonNumber) {
-    const lNum = parseInt(lessonNumber, 10);
+  setLesson(lessonNumber) {
+    const lNum = lessonNumber === 'all' || !lessonNumber ? null : parseInt(lessonNumber, 10);
     this.currentLesson = lNum;
     this.selectedCategory = 'all';
+    this.renderReadyScreen();
+  }
 
-    const lesson = window.LESSONS_DATA ? window.LESSONS_DATA.getLesson('N5', lNum) : null;
-    let lessonWords = (lesson && lesson.vocab && lesson.vocab.length > 0) ? [...lesson.vocab] : [];
-
-    // Kèm thêm 2 từ của bài trước (nếu có) để ôn tập kết hợp theo chuẩn yêu cầu
-    if (lNum > 1 && window.LESSONS_DATA) {
-      const prevLesson = window.LESSONS_DATA.getLesson('N5', lNum - 1);
-      if (prevLesson && prevLesson.vocab && prevLesson.vocab.length > 0) {
-        const reviewWords = [...prevLesson.vocab].sort(() => Math.random() - 0.5).slice(0, 2);
-        lessonWords = [...lessonWords, ...reviewWords];
-      }
-    }
-
-    if (lessonWords.length < 4) {
-      lessonWords = window.JLPT_DATA?.n5 || [];
-    }
-
-    this.start(lessonWords, 'all', 'mix');
-
-    if (window.mascot) {
-      window.mascot.say(`🎯 Nhiệm vụ 2: Vượt Game Đoán Từ Bài ${lNum}! Cố gắng đạt trên 70% để mở khóa bài tiếp theo nhé! 🔥`, 4000);
-    }
+  startLessonGame(lessonNumber) {
+    this.setLesson(lessonNumber);
   }
 
   // Bắt đầu game chỉ với các từ trong Sổ tay từ hay sai
@@ -181,18 +149,11 @@ class VocabGuessGame {
     }
     this.closeMistakeModal();
     this.selectedCategory = 'all';
+    this.currentLesson = null;
     this.allWords = [...window.JLPT_DATA.n5];
     this.words = [...this.mistakesList].sort(() => Math.random() - 0.5);
-    this.currentIndex = 0;
-    this.score = 0;
-    this.combo = 0;
-    this.maxCombo = 0;
-    this.lives = this.maxLives;
-    this.gameActive = true;
-    this.isAnswering = false;
 
-    this.renderGameContainer();
-    this.loadQuestion();
+    this.startPlayingWithWords(this.words);
 
     if (window.mascot) {
       window.mascot.setMood('strict', 'Bắt đầu bài phục thù các từ hay sai! Tập trung và nhớ kỹ từng từ nhé! 👩‍🏫', 3500);
@@ -201,20 +162,37 @@ class VocabGuessGame {
 
   setCategory(category) {
     this.selectedCategory = category;
-    this.start(this.allWords, this.selectedCategory, this.gameMode);
+    if (this.gameState === 'ready') {
+      this.renderReadyScreen();
+    } else {
+      this.startPlaying();
+    }
   }
 
   setMode(mode) {
     this.gameMode = mode;
-    this.start(this.allWords, this.selectedCategory, this.gameMode);
+    if (this.gameState === 'ready') {
+      this.renderReadyScreen();
+    } else {
+      this.startPlaying();
+    }
   }
 
   // --------------------------------------------------------------------------
-  // GIAO DIỆN KHUNG GAME CHÍNH (CONTAINER & HUD)
+  // MÀN HÌNH CHỜ (READY SCREEN) - CHỜ NGƯỜI DÙNG BẤM "BẮT ĐẦU CHƠI"
   // --------------------------------------------------------------------------
-  renderGameContainer() {
+  renderReadyScreen() {
+    this.gameActive = false;
+    this.gameState = 'ready';
+    clearInterval(this.timer);
+    this.timer = null;
+
     const area = document.getElementById('guess-game-container');
     if (!area) return;
+
+    if (!this.allWords || this.allWords.length === 0) {
+      this.allWords = window.JLPT_DATA?.n5 || [];
+    }
 
     const quickSelectorHtml = window.renderQuickLessonSelector ? window.renderQuickLessonSelector(this.currentLesson, 'guess-game') : '';
 
@@ -229,7 +207,7 @@ class VocabGuessGame {
             <span class="banner-icon">🎯</span>
             <div>
               <strong>Nhiệm vụ 2: Vượt Game Đoán Từ Bài ${this.currentLesson}</strong>
-              <p>Mục tiêu: Đạt từ <strong>70% câu đúng</strong> trở lên để vượt qua bài học!</p>
+              <p>Mục tiêu: Đạt từ <strong>70% câu đúng</strong> trở lên để mở khóa bài tiếp theo!</p>
             </div>
           </div>
           <div class="mission-status-pill ${isMissionDone ? 'done' : 'pending'}">
@@ -241,7 +219,6 @@ class VocabGuessGame {
 
     // Danh sách các danh mục N5
     const cats = window.JLPT_CATEGORIES || {};
-
     let categoryPillsHtml = `
       <button class="game-topic-pill ${this.selectedCategory === 'all' ? 'active' : ''}" 
               onclick="window.guessGame.setCategory('all')">
@@ -261,11 +238,23 @@ class VocabGuessGame {
       `;
     });
 
+    const lessonInfo = this.currentLesson && window.LESSONS_DATA 
+      ? window.LESSONS_DATA.getLesson('N5', this.currentLesson) 
+      : null;
+
+    const readyTitle = lessonInfo 
+      ? `🎮 THỬ THÁCH ĐOÁN TỪ BÀI ${this.currentLesson}`
+      : '🎮 GAME ĐOÁN TỪ VỰNG TIẾNG NHẬT N5';
+
+    const readySubtitle = lessonInfo 
+      ? `Chủ đề: <strong>${lessonInfo.topicVi}</strong>. Gồm từ vựng trọng tâm Bài ${this.currentLesson} kèm ôn tập kết hợp.`
+      : 'Rèn luyện phản xạ đoán nghĩa 4 đáp án nhanh trong 15 giây cho toàn bộ kho từ vựng N5.';
+
     area.innerHTML = `
       <!-- BỘ CHỌN BÀI HỌC NHANH (QUICK LESSON SELECTOR) -->
       ${quickSelectorHtml}
 
-      <!-- BANNER NHIỆM VỤ BÀI HỌC NẾU CÓ -->
+      <!-- BANNER NHIỆM VỤ NẾU CÓ -->
       ${missionBannerHtml}
 
       <!-- THANH CHỌN CHỦ ĐỀ & CHẾ ĐỘ CHƠI -->
@@ -303,7 +292,148 @@ class VocabGuessGame {
         </div>
       </div>
 
-      <!-- GAME HUD (TIM, COMBO, ĐỒNG HỒ ĐẾM NGƯỢC, ĐIỂM SỐ) -->
+      <!-- MÀN HÌNH CHỜ (READY SCREEN) TRUNG TÂM -->
+      <div class="game-ready-screen">
+        <div class="ready-hero-card">
+          <div class="ready-icon-anim">🎮</div>
+          <h2 class="ready-title">${readyTitle}</h2>
+          <p class="ready-subtitle">${readySubtitle}</p>
+
+          <div class="ready-rules-grid">
+            <div class="rule-badge">
+              <span class="rule-icon">⏳</span>
+              <strong>15s / Câu</strong>
+              <small>Phản xạ nhanh nhận điểm thưởng</small>
+            </div>
+            <div class="rule-badge">
+              <span class="rule-icon">❤️</span>
+              <strong>3 Mạng Tim</strong>
+              <small>Chọn sai bị trừ 1 mạng</small>
+            </div>
+            <div class="rule-badge">
+              <span class="rule-icon">🔥</span>
+              <strong>Combo x2 x3</strong>
+              <small>Đúng liên tiếp nhân đôi điểm</small>
+            </div>
+            <div class="rule-badge">
+              <span class="rule-icon">🎯</span>
+              <strong>Mục tiêu: ≥ 70%</strong>
+              <small>${this.currentLesson ? `Đạt chuẩn để mở Bài ${this.currentLesson + 1}` : 'Ghi điểm kỷ lục N5'}</small>
+            </div>
+          </div>
+
+          <div class="ready-start-action">
+            <button class="btn-start-game-huge" onclick="window.guessGame.startPlaying()">
+              ▶️ BẮT ĐẦU CHƠI NGAY
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL SỔ TAY TỪ HAY SAI -->
+      <div id="guess-mistake-modal" class="modal-overlay hidden" onclick="if(event.target === this) window.guessGame.closeMistakeModal()">
+        <div class="modal-card mistake-modal-card">
+          <div class="modal-header">
+            <h3>📕 Sổ Tay Từ Hay Sai (Cần Phục Thù)</h3>
+            <button class="modal-close-btn" onclick="window.guessGame.closeMistakeModal()">✕</button>
+          </div>
+          <div class="modal-body" id="guess-mistake-modal-body">
+            <!-- Render danh sách từ sai -->
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // --------------------------------------------------------------------------
+  // CHỈ KHI BẤM "BẮT ĐẦU CHƠI NGAY" MỚI KHỞI ĐỘNG CÂU HỎI VÀ ĐỒNG HỒ
+  // --------------------------------------------------------------------------
+  startPlaying() {
+    let pool = this.allWords;
+
+    if (this.currentLesson) {
+      const lesson = window.LESSONS_DATA ? window.LESSONS_DATA.getLesson('N5', this.currentLesson) : null;
+      let lessonWords = (lesson && lesson.vocab && lesson.vocab.length > 0) ? [...lesson.vocab] : [];
+
+      // Kèm thêm 2 từ của bài trước (nếu có) để ôn tập kết hợp theo chuẩn yêu cầu
+      if (this.currentLesson > 1 && window.LESSONS_DATA) {
+        const prevLesson = window.LESSONS_DATA.getLesson('N5', this.currentLesson - 1);
+        if (prevLesson && prevLesson.vocab && prevLesson.vocab.length > 0) {
+          const reviewWords = [...prevLesson.vocab].sort(() => Math.random() - 0.5).slice(0, 2);
+          lessonWords = [...lessonWords, ...reviewWords];
+        }
+      }
+
+      if (lessonWords.length >= 4) {
+        pool = lessonWords;
+      }
+    } else if (this.selectedCategory !== 'all') {
+      const catWords = this.allWords.filter(w => w.category === this.selectedCategory);
+      if (catWords.length >= 4) {
+        pool = catWords;
+      }
+    }
+
+    this.words = [...pool].sort(() => Math.random() - 0.5);
+    this.startPlayingWithWords(this.words);
+  }
+
+  startPlayingWithWords(words) {
+    this.words = words;
+    this.currentIndex = 0;
+    this.score = 0;
+    this.combo = 0;
+    this.maxCombo = 0;
+    this.lives = this.maxLives;
+    this.gameActive = true;
+    this.gameState = 'playing';
+    this.isAnswering = false;
+    this.correctAnswersCount = 0;
+
+    if (window.soundSystem) window.soundSystem.playPop();
+
+    this.renderGameContainer();
+    this.loadQuestion();
+  }
+
+  // --------------------------------------------------------------------------
+  // GIAO DIỆN BÀN CHƠI (GAMEPLAY HUD & CÂU HỎI)
+  // --------------------------------------------------------------------------
+  renderGameContainer() {
+    const area = document.getElementById('guess-game-container');
+    if (!area) return;
+
+    const quickSelectorHtml = window.renderQuickLessonSelector ? window.renderQuickLessonSelector(this.currentLesson, 'guess-game') : '';
+
+    let missionBannerHtml = '';
+    if (this.currentLesson) {
+      const missionState = window.roadmapModule ? window.roadmapModule.getLessonMissionState(this.currentLesson) : {};
+      const isMissionDone = !!missionState.gameDone;
+
+      missionBannerHtml = `
+        <div class="lesson-mission-active-banner">
+          <div class="banner-mission-left">
+            <span class="banner-icon">🎯</span>
+            <div>
+              <strong>Nhiệm vụ 2: Vượt Game Đoán Từ Bài ${this.currentLesson}</strong>
+              <p>Mục tiêu: Đạt từ <strong>70% câu đúng</strong> trở lên để vượt qua bài học!</p>
+            </div>
+          </div>
+          <div class="mission-status-pill ${isMissionDone ? 'done' : 'pending'}">
+            ${isMissionDone ? `✅ ĐÃ ĐẠT (${missionState.gameScore}%)` : '⏳ CẦN ĐẠT ≥ 70%'}
+          </div>
+        </div>
+      `;
+    }
+
+    area.innerHTML = `
+      <!-- BỘ CHỌN BÀI HỌC NHANH (QUICK LESSON SELECTOR) -->
+      ${quickSelectorHtml}
+
+      <!-- BANNER NHIỆM VỤ NẾU CÓ -->
+      ${missionBannerHtml}
+
+      <!-- GAME HUD (TIM, COMBO, ĐỒNG HỒ ĐẾM NGƯỢC, ĐIỂM SỐ, NÚT TẠM DỪNG / DỪNG) -->
       <div class="game-hud">
         <div class="hud-item hearts" id="game-hearts" title="Mạng còn lại">
           ${'❤️ '.repeat(this.lives)}${'🖤 '.repeat(this.maxLives - this.lives)}
@@ -320,10 +450,20 @@ class VocabGuessGame {
         <div class="hud-item score" id="game-score">
           ⭐ Điểm: ${this.score}
         </div>
+
+        <!-- NÚT ĐIỀU KHIỂN: TẠM DỪNG & DỪNG GAME CHỦ ĐỘNG -->
+        <div class="hud-item controls-wrap">
+          <button class="btn-hud-control" onclick="window.guessGame.togglePause()" title="Tạm dừng trò chơi">
+            ⏸️ Tạm Dừng
+          </button>
+          <button class="btn-hud-control btn-hud-quit" onclick="window.guessGame.quitToReady()" title="Kết thúc ván chơi">
+            ⏹️ Dừng Game
+          </button>
+        </div>
       </div>
 
       <!-- KHUNG HIỂN THỊ CÂU HỎI -->
-      <div class="game-card" id="game-card">
+      <div class="game-card" id="game-card" style="position: relative;">
         <!-- Câu hỏi sẽ được tải động tại đây -->
       </div>
 
@@ -343,10 +483,97 @@ class VocabGuessGame {
   }
 
   // --------------------------------------------------------------------------
+  // TẠM DỪNG / TIẾP TỤC / THOÁT VÁN CHƠI
+  // --------------------------------------------------------------------------
+  togglePause() {
+    if (this.gameState === 'playing') {
+      this.pauseGame();
+    } else if (this.gameState === 'paused') {
+      this.resumeGame();
+    }
+  }
+
+  pauseGame() {
+    if (!this.gameActive) return;
+    this.gameState = 'paused';
+    clearInterval(this.timer);
+
+    const card = document.getElementById('game-card');
+    if (!card) return;
+
+    let overlay = document.getElementById('guess-pause-overlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'guess-pause-overlay';
+      overlay.className = 'game-pause-overlay';
+      card.appendChild(overlay);
+    }
+
+    overlay.innerHTML = `
+      <div class="pause-card">
+        <div class="pause-icon">⏸️</div>
+        <h3>TRÒ CHƠI ĐANG TẠM DỪNG</h3>
+        <p>Đồng hồ 15s đã dừng. Bạn có thể tiếp tục chơi câu này hoặc trở về màn hình chờ.</p>
+        <div class="pause-actions">
+          <button class="btn btn-primary btn-large" onclick="window.guessGame.resumeGame()">
+            ▶️ Tiếp Tục Chơi
+          </button>
+          <button class="btn btn-secondary btn-large" onclick="window.guessGame.quitToReady()">
+            ⏹️ Trở Về Màn Hình Chờ
+          </button>
+        </div>
+      </div>
+    `;
+    overlay.style.display = 'flex';
+  }
+
+  resumeGame() {
+    this.gameState = 'playing';
+    const overlay = document.getElementById('guess-pause-overlay');
+    if (overlay) overlay.style.display = 'none';
+
+    // Tiếp tục đồng hồ đếm ngược với số giây còn lại
+    this.resumeTimer();
+  }
+
+  resumeTimer() {
+    clearInterval(this.timer);
+    this.updateTimerUI();
+
+    this.timer = setInterval(() => {
+      this.timeLeft--;
+      this.updateTimerUI();
+
+      if (this.timeLeft <= 0) {
+        clearInterval(this.timer);
+        this.handleTimeout();
+      }
+    }, 1000);
+  }
+
+  quitToReady() {
+    clearInterval(this.timer);
+    this.timer = null;
+    this.gameActive = false;
+    this.gameState = 'ready';
+    this.renderReadyScreen();
+    if (window.soundSystem) window.soundSystem.playPop();
+  }
+
+  // Dừng đồng hồ khi rời tab
+  pauseOrStop() {
+    clearInterval(this.timer);
+    this.timer = null;
+    if (this.gameActive && this.gameState === 'playing') {
+      this.gameState = 'paused';
+    }
+  }
+
+  // --------------------------------------------------------------------------
   // TẠO CÂU HỎI THEO CHẾ ĐỘ
   // --------------------------------------------------------------------------
   loadQuestion() {
-    if (!this.gameActive) return;
+    if (!this.gameActive || this.gameState !== 'playing') return;
 
     if (this.lives <= 0) {
       this.endGame(false);
@@ -422,7 +649,7 @@ class VocabGuessGame {
       `;
       // Tự động phát âm ngay lập tức sau 200ms
       setTimeout(() => {
-        if (window.soundSystem) {
+        if (window.soundSystem && this.gameState === 'playing') {
           window.soundSystem.speak(q.target.hiragana);
         }
       }, 250);
@@ -451,7 +678,6 @@ class VocabGuessGame {
       const letter = ['A', 'B', 'C', 'D'][idx];
 
       if (q.type === 'audio') {
-        // Chế độ Audio: Người học chọn theo Hình ảnh + Nghĩa
         optionsHtml += `
           <button class="game-opt-btn opt-audio-layout" onclick="window.guessGame.selectOption(${idx}, ${isCorrect})">
             <span class="opt-index">${letter}</span>
@@ -463,7 +689,6 @@ class VocabGuessGame {
           </button>
         `;
       } else if (q.type === 'kanji') {
-        // Chế độ Kanji: Người học chọn Hiragana + Hán Việt
         optionsHtml += `
           <button class="game-opt-btn" onclick="window.guessGame.selectOption(${idx}, ${isCorrect})">
             <span class="opt-index">${letter}</span>
@@ -474,7 +699,6 @@ class VocabGuessGame {
           </button>
         `;
       } else {
-        // Chế độ Visual: Người học chọn Từ tiếng Nhật chuẩn
         const displayJp = opt.kanji !== opt.hiragana ? `${opt.kanji} (${opt.hiragana})` : opt.hiragana;
         optionsHtml += `
           <button class="game-opt-btn" onclick="window.guessGame.selectOption(${idx}, ${isCorrect})">
@@ -528,13 +752,12 @@ class VocabGuessGame {
       const percent = (Math.max(0, this.timeLeft) / 15) * 100;
       fillEl.style.width = `${percent}%`;
 
-      // Đổi màu thanh tiến độ: Xanh lá -> Cam -> Đỏ
       if (this.timeLeft > 8) {
-        fillEl.style.backgroundColor = '#51CF66'; // Xanh lá
+        fillEl.style.backgroundColor = '#51CF66';
       } else if (this.timeLeft > 4) {
-        fillEl.style.backgroundColor = '#FFA94D'; // Cam
+        fillEl.style.backgroundColor = '#FFA94D';
       } else {
-        fillEl.style.backgroundColor = '#FF6B6B'; // Đỏ gấp gáp
+        fillEl.style.backgroundColor = '#FF6B6B';
       }
     }
   }
@@ -543,7 +766,7 @@ class VocabGuessGame {
   // XỬ LÝ KHI NGƯỜI DÙNG CHỌN ĐÁP ÁN
   // --------------------------------------------------------------------------
   selectOption(selectedIndex, isCorrect) {
-    if (this.isAnswering || !this.gameActive) return;
+    if (this.isAnswering || !this.gameActive || this.gameState !== 'playing') return;
     this.isAnswering = true;
     clearInterval(this.timer);
 
@@ -555,7 +778,7 @@ class VocabGuessGame {
       window.soundSystem.speak(targetWord.hiragana);
     }
 
-    // Tô màu các nút đáp án (Xanh cho đúng, Đỏ cho sai)
+    // Tô màu các nút đáp án
     buttons.forEach((btn, idx) => {
       btn.disabled = true;
       const opt = this.currentQuestion.options[idx];
@@ -574,7 +797,6 @@ class VocabGuessGame {
         this.maxCombo = this.combo;
       }
 
-      // Phát âm thanh combo hoặc đúng
       if (window.soundSystem) {
         if (this.combo >= 2) {
           window.soundSystem.playCombo(this.combo);
@@ -583,106 +805,71 @@ class VocabGuessGame {
         }
       }
 
-      // Tính điểm theo tốc độ và hệ số Combo
-      // Công thức: 100 điểm gốc + (giây còn lại * 10) + (combo * 25)
       const timeBonus = this.timeLeft * 10;
       const comboBonus = this.combo * 25;
       const gainedScore = 100 + timeBonus + comboBonus;
       this.score += gainedScore;
 
-      // Kiểm tra và cập nhật Kỷ lục cao nhất
       this.saveHighScore(this.score);
 
-      // Phản hồi Linh vật
       if (window.mascot) {
         const compliments = [
           'Sugoi! Chính xác rồi! 🌸',
           `Quá nhanh! +${timeBonus} điểm tốc độ! ⚡`,
-          `Combo x${this.combo}! Giữ vững phong độ nào! 🔥`,
-          'Tuyệt vời! Từ này bạn nhớ rất chuẩn! ✨'
+          `Combo x${this.combo}! Phong độ tuyệt vời! 🔥`,
+          'Xuất sắc! Tiếp tục giữ vững nhé! 🎯'
         ];
-        const msg = compliments[Math.floor(Math.random() * compliments.length)];
-        window.mascot.setMood('happy', msg, 2000);
-      }
-
-      // Cộng EXP và Sakura Coins cho App
-      if (window.app) {
-        window.app.addExp(15 + this.combo * 2);
-        window.app.addCoins(3);
+        window.mascot.setMood('happy', compliments[Math.floor(Math.random() * compliments.length)], 2000);
       }
     } else {
-      // Trả lời SAI
-      if (window.soundSystem) {
-        window.soundSystem.playWrong();
-      }
       this.combo = 0;
       this.lives--;
-
-      // Lưu từ vào Sổ tay từ hay sai
       this.addMistake(targetWord);
       this.updateMistakeBadgeCount();
 
-      // Gọi Cô giáo Tanaka mắng yêu và chỉ ra lỗi
-      const chosenWord = this.currentQuestion.options[selectedIndex];
-      if (window.senseiAI && chosenWord) {
-        window.senseiAI.explainMistake(targetWord, chosenWord);
+      if (window.soundSystem) {
+        window.soundSystem.playWrong();
       }
 
       if (window.mascot) {
-        if (window.mascot.character === 'sensei') {
-          window.mascot.setMood('strict', `Sai rồi! Cô Tanaka nhắc: "${targetWord.hiragana}" nghĩa là "${targetWord.meaning || targetWord.vietnamese}"! 👩‍🏫`, 3200);
-        } else {
-          window.mascot.setMood('sad', `Tiếc quá! Đáp án đúng phải là "${targetWord.hiragana}" nha! 🐾`, 2500);
-        }
+        window.mascot.setMood('sad', `Tiếc quá! Đáp án đúng là: 「${targetWord.kanji}」(${targetWord.meaning})! 🐾`, 2500);
       }
     }
 
     this.updateHUD();
 
-    // Chuyển sang câu tiếp theo sau 2.4 giây để người học kịp đọc giải thích
     setTimeout(() => {
       this.currentIndex++;
       this.loadQuestion();
-    }, 2400);
+    }, 1400);
   }
 
-  // --------------------------------------------------------------------------
-  // XỬ LÝ KHI HẾT 15 GIÂY (TIMEOUT)
-  // --------------------------------------------------------------------------
   handleTimeout() {
     if (this.isAnswering || !this.gameActive) return;
     this.isAnswering = true;
 
-    if (window.soundSystem) {
-      window.soundSystem.playWrong();
-    }
     this.combo = 0;
     this.lives--;
-
     const targetWord = this.currentQuestion.target;
-    if (window.soundSystem) {
-      window.soundSystem.speak(targetWord.hiragana);
-    }
-
-    // Lưu từ vào Sổ tay từ hay sai vì không kịp phản xạ
     this.addMistake(targetWord);
     this.updateMistakeBadgeCount();
 
-    // Highlight đáp án đúng
+    if (window.soundSystem) {
+      window.soundSystem.playWrong();
+      window.soundSystem.speak(targetWord.hiragana);
+    }
+
     const buttons = document.querySelectorAll('.game-opt-btn');
     buttons.forEach((btn, idx) => {
       btn.disabled = true;
-      if (this.currentQuestion.options[idx].id === targetWord.id) {
+      const opt = this.currentQuestion.options[idx];
+      if (opt.id === targetWord.id) {
         btn.classList.add('correct');
       }
     });
 
     if (window.mascot) {
-      if (window.mascot.character === 'sensei') {
-        window.mascot.setMood('strict', 'Hết 15 giây rồi! Đi thi JLPT N5 phản xạ chậm thế này là mất điểm đấy! 👩‍🏫', 3000);
-      } else {
-        window.mascot.setMood('sad', 'Hết giờ mất rồi! Cố gắng bấm nhanh hơn ở câu sau nhé! ⏰', 2200);
-      }
+      window.mascot.setMood('surprised', `Hết 15 giây rồi! Từ cần tìm là: 「${targetWord.kanji}」(${targetWord.meaning})! ⏰`, 2500);
     }
 
     this.updateHUD();
@@ -690,12 +877,9 @@ class VocabGuessGame {
     setTimeout(() => {
       this.currentIndex++;
       this.loadQuestion();
-    }, 2000);
+    }, 1500);
   }
 
-  // --------------------------------------------------------------------------
-  // CẬP NHẬT GIAO DIỆN HUD
-  // --------------------------------------------------------------------------
   updateHUD() {
     const heartsEl = document.getElementById('game-hearts');
     const comboEl = document.getElementById('game-combo');
@@ -731,13 +915,13 @@ class VocabGuessGame {
   // --------------------------------------------------------------------------
   endGame(isVictory) {
     this.gameActive = false;
+    this.gameState = 'ended';
     clearInterval(this.timer);
 
     const card = document.getElementById('game-card');
     if (!card) return;
 
     const isNewRecord = this.score > 0 && this.score >= this.highScore;
-
     const totalWords = Math.max(1, this.words.length);
     const percent = Math.min(100, Math.round((this.correctAnswersCount / totalWords) * 100));
     const effectiveScore = isVictory ? Math.max(70, percent) : percent;
@@ -778,22 +962,10 @@ class VocabGuessGame {
         
         ${isNewRecord ? `<div class="new-record-banner">🎉 KỶ LỤC ĐIỂM SỐ MỚI: ${this.highScore} ĐIỂM! 🎉</div>` : ''}
 
-        ${this.currentLesson ? `
-          <div class="mission-outcome-box ${effectiveScore >= 70 ? 'passed' : 'failed'}">
-            ${effectiveScore >= 70 ? `
-              <div class="mission-outcome-title">✅ ĐÃ HOÀN THÀNH NHIỆM VỤ 2: BÀI ${this.currentLesson} (${effectiveScore}%)!</div>
-              <p>Chúc mừng em! Đã đạt yêu cầu chuẩn (≥ 70%) của Cô Tanaka!</p>
-            ` : `
-              <div class="mission-outcome-title">⏳ CHƯA ĐẠT CHUẨN 70% (Hiện tại: ${effectiveScore}%)</div>
-              <p>Cần tối thiểu 70% câu trả lời chính xác để Cô Tanaka cấp điểm bài học. Hãy chơi lại nhé!</p>
-            `}
-          </div>
-        ` : ''}
-
-        <div class="stats-summary">
+        <div class="result-stats-row">
           <div class="stat-box">
             <span class="stat-number">${this.score}</span>
-            <span class="stat-label">Tổng Điểm ⭐</span>
+            <span class="stat-label">Điểm Số ⭐</span>
           </div>
           <div class="stat-box">
             <span class="stat-number">x${this.maxCombo}</span>
@@ -810,8 +982,11 @@ class VocabGuessGame {
         </div>
 
         <div class="game-over-actions">
-          <button class="btn btn-primary btn-large" onclick="${this.currentLesson ? `window.guessGame.startLessonGame(${this.currentLesson})` : 'window.guessGame.start(window.JLPT_DATA.n5)'}">
+          <button class="btn btn-primary btn-large" onclick="window.guessGame.startPlaying()">
             🔄 Chơi lại ván mới
+          </button>
+          <button class="btn btn-secondary btn-large" onclick="window.guessGame.quitToReady()">
+            ↩️ Về màn hình chờ
           </button>
           ${this.mistakesList.length > 0 ? `
             <button class="btn btn-danger btn-large" onclick="window.guessGame.openMistakeModal()">

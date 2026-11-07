@@ -8077,3 +8077,212 @@ body {
     transform: scale(1);
   }
 }
+
+
+/* ==========================================================================
+   READY SCREENS & MANUAL START CONTROLS (GAME ĐOÁN TỪ & LẬT THẺ)
+   ========================================================================== */
+.game-ready-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 12px;
+  width: 100%;
+}
+
+.ready-hero-card {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFF5F5 100%);
+  border: 2px solid #FFE3E3;
+  border-radius: 24px;
+  padding: 36px 28px;
+  max-width: 680px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 12px 36px rgba(255, 107, 107, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+}
+
+.ready-icon-anim {
+  font-size: 58px;
+  line-height: 1;
+  filter: drop-shadow(0 6px 12px rgba(255, 107, 107, 0.25));
+  animation: bounceReady 2s infinite ease-in-out;
+}
+
+@keyframes bounceReady {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.ready-title {
+  font-size: 24px;
+  font-weight: 900;
+  color: #212529;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.ready-subtitle {
+  font-size: 14px;
+  color: #868E96;
+  margin: 0;
+  max-width: 520px;
+  line-height: 1.5;
+}
+
+.ready-rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  width: 100%;
+  margin: 8px 0;
+}
+
+.rule-badge {
+  background: #FFF;
+  border: 1.5px solid #F1F3F5;
+  border-radius: 16px;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.rule-badge .rule-icon {
+  font-size: 22px;
+}
+
+.rule-badge strong {
+  font-size: 13px;
+  color: #343A40;
+  font-weight: 800;
+}
+
+.rule-badge small {
+  font-size: 11px;
+  color: #868E96;
+  line-height: 1.2;
+}
+
+.ready-start-action {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.btn-start-game-huge {
+  background: linear-gradient(135deg, #FF6B6B 0%, #FA5252 50%, #E03131 100%);
+  color: #FFF;
+  border: none;
+  border-radius: 50px;
+  padding: 16px 42px;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(255, 107, 107, 0.4);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  letter-spacing: 0.5px;
+}
+
+.btn-start-game-huge:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(255, 107, 107, 0.5);
+}
+
+.btn-start-game-huge:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Pause Overlay */
+.game-pause-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 20px;
+}
+
+.pause-card {
+  text-align: center;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.pause-icon {
+  font-size: 48px;
+}
+
+.pause-card h3 {
+  font-size: 20px;
+  font-weight: 900;
+  color: #212529;
+  margin: 0;
+}
+
+.pause-card p {
+  font-size: 13px;
+  color: #868E96;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.pause-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+/* Nút điều khiển trong Game HUD */
+.hud-item.controls-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-hud-control {
+  background: #FFF;
+  border: 1.5px solid #CED4DA;
+  color: #495057;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-hud-control:hover {
+  background: #F1F3F5;
+  border-color: #ADB5BD;
+  transform: translateY(-1px);
+}
+
+.btn-hud-control.btn-hud-quit {
+  color: #C92A2A;
+  border-color: #FFA8A8;
+}
+
+.btn-hud-control.btn-hud-quit:hover {
+  background: #FFE3E3;
+}
