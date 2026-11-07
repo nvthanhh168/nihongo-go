@@ -1,12 +1,12 @@
-// ============================================================================
-// MODULE LESSONS DATA: LỘ TRÌNH 25 BÀI JLPT N5 (LEVEL 1 -> 25)
-// VÀ LỘ TRÌNH MỞ RỘNG JLPT N4 (BÀI 26 -> 50)
-// Chuẩn cấu trúc Minna no Nihongo & JEES Japan Foundation
+﻿// ============================================================================
+// MODULE LESSONS DATA: LO TRINH 25 BAI JLPT N5 (LEVEL 1 -> 25)
+// VA LO TRINH MO RONG JLPT N4 (BAI 26 -> 50)
+// Chuan cau truc Minna no Nihongo & JEES Japan Foundation
 // ============================================================================
 
 const LESSONS_N5 = [
   // --------------------------------------------------------------------------
-  // BÀI 1: CHÀO HỎI, QUỐC GIA & GIỚI THIỆU BẢN THÂN
+  // BÀI 1: CHÀO HỎI, QUỐC GIA & GIỚI THIỆU BẢN THÂN (33 TỪ)
   // --------------------------------------------------------------------------
   {
     lessonNumber: 1,
@@ -27,11 +27,7 @@ const LESSONS_N5 = [
         romaji: 'watashi',
         meaning: 'tôi',
         svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><circle cx="50" cy="38" r="16" fill="#1864AB"/><path d="M26 80 C26 62 74 62 74 80 Z" fill="#339AF0"/></svg>`,
-        example: {
-          ja: '私はベトナム人です。',
-          hira: 'わたしはベトナムじんです。',
-          vi: 'Tôi là người Việt Nam.'
-        }
+        example: { ja: '私はベトナム人です。', hira: 'わたしはベトナムじんです。', vi: 'Tôi là người Việt Nam.' }
       },
       {
         id: 'n5_l01_02',
@@ -43,12 +39,8 @@ const LESSONS_N5 = [
         hiragana: 'わたしたち',
         romaji: 'watashitachi',
         meaning: 'chúng ta, chúng tôi',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><circle cx="38" cy="38" r="13" fill="#1864AB"/><circle cx="62" cy="38" r="13" fill="#339AF0"/><path d="M20 80 C20 64 56 64 56 80 Z" fill="#1864AB"/><path d="M44 80 C44 64 80 64 80 80 Z" fill="#339AF0"/></svg>`,
-        example: {
-          ja: '私たちは学生です。',
-          hira: 'わたしたちはがくせいです。',
-          vi: 'Chúng tôi là học sinh, sinh viên.'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="35" cy="40" r="14" fill="#339AF0"/><circle cx="65" cy="40" r="14" fill="#51CF66"/><path d="M15 80 C15 65 55 65 55 80 Z" fill="#1864AB"/><path d="M45 80 C45 65 85 65 85 80 Z" fill="#2B8A3E"/></svg>`,
+        example: { ja: '私たちは学生です。', hira: 'わたしたちはがくせいです。', vi: 'Chúng tôi là học sinh sinh viên.' }
       },
       {
         id: 'n5_l01_03',
@@ -59,13 +51,9 @@ const LESSONS_N5 = [
         hanViet: 'Quý Phương',
         hiragana: 'あなた',
         romaji: 'anata',
-        meaning: 'bạn',
+        meaning: 'bạn, anh, chị',
         svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF0F6"/><circle cx="50" cy="38" r="16" fill="#D6336C"/><path d="M26 80 C26 62 74 62 74 80 Z" fill="#F783AC"/></svg>`,
-        example: {
-          ja: 'あなたはお元気ですか。',
-          hira: 'あなたはおげんきですか。',
-          vi: 'Bạn có khỏe không?'
-        }
+        example: { ja: 'あなたはお元気ですか。', hira: 'あなたはおげんきですか。', vi: 'Bạn có khỏe không?' }
       },
       {
         id: 'n5_l01_04',
@@ -75,14 +63,10 @@ const LESSONS_N5 = [
         kanji: 'あの人',
         hanViet: 'Nhân',
         hiragana: 'あのひと',
-        romaji: 'ano hito',
+        romaji: 'anohito',
         meaning: 'người kia',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#F3F0FF"/><circle cx="45" cy="38" r="14" fill="#7048E8"/><path d="M24 78 C24 62 66 62 66 78 Z" fill="#845EF7"/><path d="M68 45 L82 35 M82 35 L76 33 M82 35 L80 41" stroke="#E03131" stroke-width="3" fill="none" stroke-linecap="round"/></svg>`,
-        example: {
-          ja: 'あの人はだれですか。',
-          hira: 'あのひとはだれですか。',
-          vi: 'Người kia là ai thế?'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="65" cy="40" r="14" fill="#868E96"/><path d="M45 80 C45 65 85 65 85 80 Z" fill="#495057"/><path d="M20 50 L45 50 M35 42 L45 50 L35 58" stroke="#FA5252" stroke-width="4" stroke-linecap="round"/></svg>`,
+        example: { ja: 'あの人はだれですか。', hira: 'あのひとはだれですか。', vi: 'Người kia là ai vậy?' }
       },
       {
         id: 'n5_l01_05',
@@ -92,14 +76,10 @@ const LESSONS_N5 = [
         kanji: 'あの方',
         hanViet: 'Phương',
         hiragana: 'あのかた',
-        romaji: 'ano kata',
-        meaning: 'vị kia',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E6FCF5"/><circle cx="45" cy="38" r="14" fill="#0CA678"/><path d="M24 78 C24 62 66 62 66 78 Z" fill="#20C997"/><polygon points="45,18 41,26 50,26" fill="#F59F00"/></svg>`,
-        example: {
-          ja: 'あの方はどなたですか。',
-          hira: 'あのかたはどなたですか。',
-          vi: 'Vị kia là vị nào thế ạ?'
-        }
+        romaji: 'anokata',
+        meaning: 'vị kia (lịch sự)',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="65" cy="38" r="14" fill="#BE4BDB"/><path d="M45 80 C45 65 85 65 85 80 Z" fill="#862E9C"/><polygon points="25,50 45,45 45,55" fill="#FAB005"/></svg>`,
+        example: { ja: 'あの方はどなたですか。', hira: 'あのかたはどなたですか。', vi: 'Vị kia là vị nào ạ?' }
       },
       {
         id: 'n5_l01_06',
@@ -111,12 +91,8 @@ const LESSONS_N5 = [
         hiragana: 'みなさん',
         romaji: 'minasan',
         meaning: 'các bạn, mọi người',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><circle cx="32" cy="36" r="10" fill="#F59F00"/><circle cx="50" cy="32" r="11" fill="#E67700"/><circle cx="68" cy="36" r="10" fill="#F59F00"/><path d="M18 78 C18 64 46 64 46 78 Z" fill="#F59F00"/><path d="M34 76 C34 60 66 60 66 76 Z" fill="#E67700"/><path d="M54 78 C54 64 82 64 82 78 Z" fill="#F59F00"/></svg>`,
-        example: {
-          ja: '皆さん、おはようございます。',
-          hira: 'みなさん、おはようございます。',
-          vi: 'Chào buổi sáng các bạn, mọi người.'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="30" cy="42" r="12" fill="#FF922B"/><circle cx="50" cy="36" r="14" fill="#FCC419"/><circle cx="70" cy="42" r="12" fill="#51CF66"/><path d="M15 82 C15 70 45 70 45 82 Z" fill="#E8590C"/><path d="M32 82 C32 68 68 68 68 82 Z" fill="#F59F00"/><path d="M55 82 C55 70 85 70 85 82 Z" fill="#2F9E44"/></svg>`,
+        example: { ja: '皆さん、おはようございます。', hira: 'みなさん、おはようございます。', vi: 'Xin chào buổi sáng mọi người!' }
       },
       {
         id: 'n5_l01_07',
@@ -124,16 +100,12 @@ const LESSONS_N5 = [
         lessonId: 1,
         level: 'N5',
         kanji: '～さん',
-        hanViet: 'Sam',
+        hanViet: '',
         hiragana: '～さん',
-        romaji: '-san',
-        meaning: 'anh, chị',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#F1F3F5"/><rect x="25" y="32" width="50" height="36" rx="8" fill="#495057"/><text x="50" y="56" font-size="20" font-weight="900" fill="#FFF" text-anchor="middle">SAN</text></svg>`,
-        example: {
-          ja: '田中さんは日本人です。',
-          hira: 'たなかさんはにほんじんです。',
-          vi: 'Anh Tanaka là người Nhật.'
-        }
+        romaji: '~san',
+        meaning: 'anh, chị, ông, bà (hậu tố lịch sự)',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#EBFBEE"/><text x="50" y="60" font-size="28" font-weight="bold" fill="#2B8A3E" text-anchor="middle">~SAN</text></svg>`,
+        example: { ja: 'こちらは田中さんです。', hira: 'こちらはたなかさんです。', vi: 'Đây là anh/chị Tanaka.' }
       },
       {
         id: 'n5_l01_08',
@@ -141,16 +113,12 @@ const LESSONS_N5 = [
         lessonId: 1,
         level: 'N5',
         kanji: '～ちゃん',
-        hanViet: 'Chan',
+        hanViet: '',
         hiragana: '～ちゃん',
-        romaji: '-chan',
-        meaning: 'bé gái',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF0F6"/><circle cx="50" cy="45" r="18" fill="#FF8787"/><path d="M32 35 Q50 20 68 35" stroke="#E64980" stroke-width="4" fill="none"/><polygon points="34,26 42,32 34,38" fill="#F783AC"/><polygon points="66,26 58,32 66,38" fill="#F783AC"/></svg>`,
-        example: {
-          ja: 'さくらちゃんは７歳です。',
-          hira: 'さくらちゃんはななさいです。',
-          vi: 'Bé gái Sakura được 7 tuổi.'
-        }
+        romaji: '~chan',
+        meaning: 'bé gái, gọi thân mật',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF0F6"/><circle cx="50" cy="45" r="18" fill="#F783AC"/><circle cx="35" cy="30" r="8" fill="#D6336C"/><circle cx="65" cy="30" r="8" fill="#D6336C"/></svg>`,
+        example: { ja: '花ちゃんは９歳です。', hira: 'はなちゃんはきゅうさいです。', vi: 'Bé Hana 9 tuổi.' }
       },
       {
         id: 'n5_l01_09',
@@ -160,14 +128,10 @@ const LESSONS_N5 = [
         kanji: '～くん',
         hanViet: 'Quân',
         hiragana: '～くん',
-        romaji: '-kun',
-        meaning: 'bé trai',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><circle cx="50" cy="45" r="18" fill="#4DABF7"/><rect x="36" y="24" width="28" height="8" rx="3" fill="#1864AB"/></svg>`,
-        example: {
-          ja: 'けんたくんは学生です。',
-          hira: 'けんたくんはがくせいです。',
-          vi: 'Bé trai Kenta là học sinh.'
-        }
+        romaji: '~kun',
+        meaning: 'bé trai, bạn nam thân mật',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><circle cx="50" cy="45" r="18" fill="#4DABF7"/><rect x="36" y="24" width="28" height="8" rx="4" fill="#1971C2"/></svg>`,
+        example: { ja: '太郎くん、遊ぼう！', hira: 'たろうくん、あそぼう！', vi: 'Bé Taro ơi, đi chơi nào!' }
       },
       {
         id: 'n5_l01_10',
@@ -177,14 +141,10 @@ const LESSONS_N5 = [
         kanji: '～人',
         hanViet: 'Nhân',
         hiragana: '～じん',
-        romaji: '-jin',
+        romaji: '~jin',
         meaning: 'người nước ~',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E6FCF5"/><circle cx="50" cy="50" r="30" stroke="#0CA678" stroke-width="4" fill="none"/><ellipse cx="50" cy="50" rx="16" ry="30" stroke="#0CA678" stroke-width="3" fill="none"/><line x1="20" y1="50" x2="80" y2="50" stroke="#0CA678" stroke-width="3"/></svg>`,
-        example: {
-          ja: 'マイクさんはアメリカ人です。',
-          hira: 'マイクさんはアメリカじんです。',
-          vi: 'Anh Mike là người nước Mỹ.'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF4E6"/><circle cx="50" cy="50" r="28" fill="#FF922B"/><path d="M40 70 L50 35 L60 70 M44 55 L56 55" stroke="#FFFFFF" stroke-width="4"/></svg>`,
+        example: { ja: 'ミラーさんはアメリカ人です。', hira: 'ミラーさんはアメリカじんです。', vi: 'Anh Miller là người Mỹ.' }
       },
       {
         id: 'n5_l01_11',
@@ -195,13 +155,9 @@ const LESSONS_N5 = [
         hanViet: 'Tiên Sinh',
         hiragana: 'せんせい',
         romaji: 'sensei',
-        meaning: 'giáo viên',
+        meaning: 'thầy giáo, cô giáo, bác sĩ',
         svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><circle cx="50" cy="36" r="14" fill="#F59F00"/><path d="M28 80 C28 62 72 62 72 80 Z" fill="#FCC419"/><rect x="36" y="32" width="28" height="6" rx="2" fill="#212529"/></svg>`,
-        example: {
-          ja: '高木先生は日本語の先生です。',
-          hira: 'たかぎせんせいはにほんごのせんせいです。',
-          vi: 'Cô Tanaka là giáo viên tiếng Nhật.'
-        }
+        example: { ja: '田中先生は日本語の先生です。', hira: 'たなかせんせいはにほんごのせんせいです。', vi: 'Cô Tanaka là giáo viên tiếng Nhật.' }
       },
       {
         id: 'n5_l01_12',
@@ -212,13 +168,9 @@ const LESSONS_N5 = [
         hanViet: 'Giáo Sư',
         hiragana: 'きょうし',
         romaji: 'kyoushi',
-        meaning: 'giáo viên nghề nghiệp',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF3BF"/><rect x="26" y="24" width="48" height="34" rx="4" fill="#2B8A3E"/><line x1="50" y1="58" x2="50" y2="78" stroke="#495057" stroke-width="4"/><line x1="36" y1="78" x2="64" y2="78" stroke="#495057" stroke-width="4"/></svg>`,
-        example: {
-          ja: '私の仕事は日本語の教師です。',
-          hira: 'わたしのしごとはにほんごのきょうしです。',
-          vi: 'Nghề nghiệp của tôi là giáo viên tiếng Nhật.'
-        }
+        meaning: 'giáo viên (nghề nghiệp)',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#EBFBEE"/><rect x="30" y="30" width="40" height="30" rx="4" fill="#40C057"/><path d="M35 70 L65 70" stroke="#2B8A3E" stroke-width="6"/></svg>`,
+        example: { ja: '私の職業は教師です。', hira: 'わたしのしょくぎょうはきょうしです。', vi: 'Nghề nghiệp của tôi là giáo viên.' }
       },
       {
         id: 'n5_l01_13',
@@ -231,11 +183,7 @@ const LESSONS_N5 = [
         romaji: 'gakusei',
         meaning: 'học sinh, sinh viên',
         svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E6FCF5"/><circle cx="50" cy="36" r="14" fill="#0CA678"/><polygon points="50,15 32,25 68,25" fill="#20C997"/><path d="M28 80 C28 64 72 64 72 80 Z" fill="#38D9A9"/></svg>`,
-        example: {
-          ja: '妹は大学生です。',
-          hira: 'いもうとはだいがくせいです。',
-          vi: 'Em gái tôi là sinh viên trường đại học.'
-        }
+        example: { ja: '妹は大学生です。', hira: 'いもうとはだいがくせいです。', vi: 'Em gái tôi là sinh viên đại học.' }
       },
       {
         id: 'n5_l01_14',
@@ -247,29 +195,21 @@ const LESSONS_N5 = [
         hiragana: 'かいしゃいん',
         romaji: 'kaishain',
         meaning: 'nhân viên công ty',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#F1F3F5"/><rect x="32" y="42" width="36" height="42" rx="4" fill="#495057"/><polygon points="46,55 54,55 50,75" fill="#FA5252"/></svg>`,
-        example: {
-          ja: '父は会社員です。',
-          hira: 'ちちはかいしゃいんです。',
-          vi: 'Bố tôi là nhân viên công ty.'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#F3F0FF"/><rect x="35" y="45" width="30" height="35" fill="#7950F2"/><polygon points="50,45 46,60 54,60" fill="#E03131"/></svg>`,
+        example: { ja: '父は会社員です。', hira: 'ちちはかいしゃいんです。', vi: 'Bố tôi là nhân viên công ty.' }
       },
       {
         id: 'n5_l01_15',
         lesson: 1,
         lessonId: 1,
         level: 'N5',
-        kanji: '～社員',
+        kanji: '社員',
         hanViet: 'Xã Viên',
-        hiragana: '～しゃいん',
-        romaji: '-shain',
+        hiragana: 'しゃいん',
+        romaji: 'shain',
         meaning: 'nhân viên công ty ~',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><rect x="28" y="30" width="44" height="44" rx="6" fill="#1864AB"/><text x="50" y="58" font-size="22" font-weight="900" fill="#FFF" text-anchor="middle">社</text></svg>`,
-        example: {
-          ja: 'IMCの社員です。',
-          hira: 'アイエムシーのしゃいんです。',
-          vi: 'Tôi là nhân viên công ty IMC.'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><circle cx="50" cy="36" r="14" fill="#339AF0"/><rect x="34" y="55" width="32" height="25" rx="3" fill="#1864AB"/></svg>`,
+        example: { ja: 'IMCの社員です。', hira: 'アイエムシーのしゃいんです。', vi: 'Là nhân viên của công ty IMC.' }
       },
       {
         id: 'n5_l01_16',
@@ -277,16 +217,12 @@ const LESSONS_N5 = [
         lessonId: 1,
         level: 'N5',
         kanji: '銀行員',
-        hanViet: 'Ngân Hành Viên',
+        hanViet: 'Ngân Hàng Viên',
         hiragana: 'ぎんこういん',
         romaji: 'ginkouin',
         meaning: 'nhân viên ngân hàng',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><circle cx="50" cy="38" r="14" fill="#F59F00"/><path d="M28 80 C28 62 72 62 72 80 Z" fill="#FAB005"/><circle cx="50" cy="62" r="8" fill="#FFF"/><text x="50" y="67" font-size="12" font-weight="900" fill="#E67700" text-anchor="middle">¥</text></svg>`,
-        example: {
-          ja: '母は銀行員です。',
-          hira: 'はははぎんこういんです。',
-          vi: 'Mẹ tôi là nhân viên ngân hàng.'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><polygon points="50,25 25,40 75,40" fill="#F59F00"/><rect x="32" y="42" width="6" height="25" fill="#FCC419"/><rect x="47" y="42" width="6" height="25" fill="#FCC419"/><rect x="62" y="42" width="6" height="25" fill="#FCC419"/></svg>`,
+        example: { ja: '姉は銀行員です。', hira: 'あねはぎんこういんです。', vi: 'Chị gái tôi là nhân viên ngân hàng.' }
       },
       {
         id: 'n5_l01_17',
@@ -298,12 +234,8 @@ const LESSONS_N5 = [
         hiragana: 'いしゃ',
         romaji: 'isha',
         meaning: 'bác sĩ',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#EBFBEE"/><circle cx="50" cy="36" r="14" fill="#40C057"/><path d="M28 80 C28 62 72 62 72 80 Z" fill="#51CF66"/><rect x="46" y="48" width="8" height="24" fill="#FFF"/><rect x="38" y="56" width="24" height="8" fill="#FFF"/></svg>`,
-        example: {
-          ja: '兄は病院の医者です。',
-          hira: 'あにはびょういんのいしゃです。',
-          vi: 'Anh trai tôi là bác sĩ ở bệnh viện.'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFE3E3"/><circle cx="50" cy="36" r="14" fill="#FF6B6B"/><rect x="45" y="58" width="10" height="24" fill="#FA5252"/><rect x="38" y="65" width="24" height="10" fill="#FA5252"/></svg>`,
+        example: { ja: '兄は病院の医者です。', hira: 'あにはびょういんのいしゃです。', vi: 'Anh trai tôi là bác sĩ ở bệnh viện.' }
       },
       {
         id: 'n5_l01_18',
@@ -314,13 +246,9 @@ const LESSONS_N5 = [
         hanViet: 'Nghiên Cứu Giả',
         hiragana: 'けんきゅうしゃ',
         romaji: 'kenkyuusha',
-        meaning: 'nghiên cứu sinh',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#F3F0FF"/><path d="M44 30 L44 48 L32 68 C30 72 34 76 40 76 L60 76 C66 76 70 72 68 68 L56 48 L56 30 Z" fill="#7950F2"/><rect x="40" y="24" width="20" height="6" fill="#5F3DC4"/></svg>`,
-        example: {
-          ja: 'ワンさんは大学の研究者です。',
-          hira: 'ワンさんはだいがくのけんきゅうしゃです。',
-          vi: 'Anh Wang là nghiên cứu sinh ở trường đại học.'
-        }
+        meaning: 'nhà nghiên cứu',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><path d="M45 25 L55 25 L55 45 L70 75 L30 75 L45 45 Z" fill="#339AF0" opacity="0.8"/></svg>`,
+        example: { ja: 'シュミットさんは研究者です。', hira: 'シュミットさんはけんきゅうしゃです。', vi: 'Anh Schmidt là nhà nghiên cứu.' }
       },
       {
         id: 'n5_l01_19',
@@ -328,16 +256,12 @@ const LESSONS_N5 = [
         lessonId: 1,
         level: 'N5',
         kanji: 'エンジニア',
-        hanViet: 'Kỹ Sư',
+        hanViet: '',
         hiragana: 'エンジニア',
         romaji: 'enjinia',
         meaning: 'kỹ sư',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><circle cx="50" cy="50" r="24" fill="#339AF0"/><circle cx="50" cy="50" r="10" fill="#FFF"/><path d="M46 20 L54 20 L52 30 L48 30 Z M46 80 L54 80 L52 70 L48 70 Z M20 46 L20 54 L30 52 L30 48 Z M80 46 L80 54 L70 52 L70 48 Z" fill="#1864AB"/></svg>`,
-        example: {
-          ja: '彼はITのエンジニアです。',
-          hira: 'かれはアイティーのエンジニアです。',
-          vi: 'Anh ấy là kỹ sư công nghệ thông tin.'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF3BF"/><circle cx="50" cy="45" r="16" fill="#F59F00"/><path d="M30 35 L50 25 L70 35 L50 40 Z" fill="#E67700"/></svg>`,
+        example: { ja: '彼はITのエンジニアです。', hira: 'かれはアイティーのエンジニアです。', vi: 'Anh ấy là kỹ sư IT.' }
       },
       {
         id: 'n5_l01_20',
@@ -349,12 +273,8 @@ const LESSONS_N5 = [
         hiragana: 'だいがく',
         romaji: 'daigaku',
         meaning: 'trường đại học',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF3BF"/><polygon points="50,22 22,38 78,38" fill="#E67700"/><rect x="28" y="38" width="8" height="34" fill="#FAB005"/><rect x="46" y="38" width="8" height="34" fill="#FAB005"/><rect x="64" y="38" width="8" height="34" fill="#FAB005"/><rect x="20" y="72" width="60" height="8" fill="#E67700"/></svg>`,
-        example: {
-          ja: 'ハノイ大学で日本語を勉強します。',
-          hira: 'ハノイだいがくでにほんごをべんきょうします。',
-          vi: 'Tôi học tiếng Nhật ở trường Đại học Hà Nội.'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#EBFBEE"/><polygon points="50,20 20,40 80,40" fill="#2B8A3E"/><rect x="30" y="40" width="40" height="35" fill="#51CF66"/></svg>`,
+        example: { ja: 'ハノイ大学で勉強します。', hira: 'ハノイだいがくでべんきょうします。', vi: 'Học ở trường Đại học Hà Nội.' }
       },
       {
         id: 'n5_l01_21',
@@ -366,12 +286,8 @@ const LESSONS_N5 = [
         hiragana: 'びょういん',
         romaji: 'byouin',
         meaning: 'bệnh viện',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFE3E3"/><rect x="25" y="35" width="50" height="45" rx="6" fill="#FA5252"/><rect x="46" y="44" width="8" height="18" fill="#FFF"/><rect x="41" y="49" width="18" height="8" fill="#FFF"/><rect x="44" y="65" width="12" height="15" fill="#FFF"/></svg>`,
-        example: {
-          ja: 'あそこに大きな病院があります。',
-          hira: 'あそこにおおきなびょういんがあります。',
-          vi: 'Ở đằng kia có bệnh viện lớn.'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFE3E3"/><rect x="25" y="30" width="50" height="50" rx="6" fill="#FF8787"/><rect x="45" y="42" width="10" height="26" fill="#FFFFFF"/><rect x="37" y="50" width="26" height="10" fill="#FFFFFF"/></svg>`,
+        example: { ja: '病院へ行きます。', hira: 'びょういんへいきます。', vi: 'Tôi đi đến bệnh viện.' }
       },
       {
         id: 'n5_l01_22',
@@ -382,13 +298,9 @@ const LESSONS_N5 = [
         hanViet: 'Điện Khí',
         hiragana: 'でんき',
         romaji: 'denki',
-        meaning: 'điện',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><path d="M50 20 C38 20 28 30 28 42 C28 50 34 56 38 62 L38 68 L62 68 L62 62 C66 56 72 50 72 42 C72 30 62 20 50 20 Z" fill="#FCC419"/><rect x="42" y="68" width="16" height="8" rx="2" fill="#868E96"/></svg>`,
-        example: {
-          ja: '部屋の電気をつけます。',
-          hira: 'へやのでんきをつけます。',
-          vi: 'Tôi bật đèn điện trong phòng.'
-        }
+        meaning: 'điện, ánh điện, đèn điện',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><polygon points="55,20 30,50 48,50 42,80 70,45 52,45" fill="#FCC419"/></svg>`,
+        example: { ja: '電気をつけます。', hira: 'でんきをつけます。', vi: 'Bật điện lên.' }
       },
       {
         id: 'n5_l01_23',
@@ -396,16 +308,12 @@ const LESSONS_N5 = [
         lessonId: 1,
         level: 'N5',
         kanji: 'だれ',
-        hanViet: 'Thùy',
+        hanViet: '',
         hiragana: 'だれ',
         romaji: 'dare',
         meaning: 'ai',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#F1F3F5"/><text x="50" y="68" font-size="52" font-weight="900" fill="#495057" text-anchor="middle">?</text></svg>`,
-        example: {
-          ja: 'あの人はだれですか。',
-          hira: 'あのひとはだれですか。',
-          vi: 'Người kia là ai thế?'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#F3F0FF"/><text x="50" y="65" font-size="44" font-weight="bold" fill="#7950F2" text-anchor="middle">?</text></svg>`,
+        example: { ja: 'あの方はだれですか。', hira: 'あのかたはだれですか。', vi: 'Người kia là ai thế?' }
       },
       {
         id: 'n5_l01_24',
@@ -413,16 +321,12 @@ const LESSONS_N5 = [
         lessonId: 1,
         level: 'N5',
         kanji: 'どなた',
-        hanViet: 'Hà Phương',
+        hanViet: '',
         hiragana: 'どなた',
         romaji: 'donata',
-        meaning: 'vị nào',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E6FCF5"/><text x="50" y="66" font-size="46" font-weight="900" fill="#0CA678" text-anchor="middle">?</text><circle cx="50" cy="20" r="6" fill="#F59F00"/></svg>`,
-        example: {
-          ja: 'あの方はどなたですか。',
-          hira: 'あのかたはどなたですか。',
-          vi: 'Vị kia là vị nào thế ạ?'
-        }
+        meaning: 'vị nào (lịch sự của だれ)',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><text x="50" y="65" font-size="40" font-weight="bold" fill="#1864AB" text-anchor="middle">??</text></svg>`,
+        example: { ja: 'あの方はどなた様ですか。', hira: 'あのかたはどなたさまですか。', vi: 'Vị kia là vị nào vậy ạ?' }
       },
       {
         id: 'n5_l01_25',
@@ -432,14 +336,10 @@ const LESSONS_N5 = [
         kanji: '～歳',
         hanViet: 'Tuế',
         hiragana: '～さい',
-        romaji: '-sai',
-        meaning: 'tuổi',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF0F6"/><rect x="30" y="45" width="40" height="30" rx="4" fill="#F783AC"/><line x1="50" y1="30" x2="50" y2="45" stroke="#E64980" stroke-width="4"/><circle cx="50" cy="26" r="4" fill="#FCC419"/></svg>`,
-        example: {
-          ja: '私は２０歳です。',
-          hira: 'わたしははたちです。',
-          vi: 'Tôi tròn 20 tuổi.'
-        }
+        romaji: '~sai',
+        meaning: '~ tuổi',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF0F6"/><circle cx="50" cy="50" r="30" fill="#F783AC"/><text x="50" y="60" font-size="28" fill="#FFFFFF" font-weight="bold" text-anchor="middle">AGE</text></svg>`,
+        example: { ja: '私は２０歳です。', hira: 'わたしははたちです。', vi: 'Tôi 20 tuổi.' }
       },
       {
         id: 'n5_l01_26',
@@ -451,12 +351,8 @@ const LESSONS_N5 = [
         hiragana: 'なんさい',
         romaji: 'nansai',
         meaning: 'mấy tuổi',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFE8CC"/><text x="38" y="62" font-size="28" font-weight="900" fill="#D9480F">何</text><text x="68" y="62" font-size="28" font-weight="900" fill="#D9480F">?</text></svg>`,
-        example: {
-          ja: 'あなたは何歳ですか。',
-          hira: 'あなたはなんさいですか。',
-          vi: 'Bạn bao nhiêu tuổi?'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF4E6"/><text x="50" y="62" font-size="32" font-weight="bold" fill="#FD7E14" text-anchor="middle">? 歳</text></svg>`,
+        example: { ja: 'あなたは今年何歳ですか。', hira: 'あなたはことしなんさいですか。', vi: 'Năm nay bạn bao nhiêu tuổi?' }
       },
       {
         id: 'n5_l01_27',
@@ -464,16 +360,12 @@ const LESSONS_N5 = [
         lessonId: 1,
         level: 'N5',
         kanji: 'おいくつ',
-        hanViet: 'Kỷ Hà',
+        hanViet: '',
         hiragana: 'おいくつ',
         romaji: 'oikutsu',
-        meaning: 'mấy tuổi - lịch sự',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#F3F0FF"/><text x="50" y="58" font-size="20" font-weight="900" fill="#7048E8" text-anchor="middle">おいくつ</text></svg>`,
-        example: {
-          ja: '先生はおいくつですか。',
-          hira: 'せんせいはおいくつですか。',
-          vi: 'Thầy bao nhiêu tuổi rồi ạ?'
-        }
+        meaning: 'mấy tuổi (cách hỏi lịch sự)',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E6FCF5"/><text x="50" y="60" font-size="26" font-weight="bold" fill="#0CA678" text-anchor="middle">How old?</text></svg>`,
+        example: { ja: '社長はおいくつですか。', hira: 'しゃちょうはおいくつですか。', vi: 'Giám đốc năm nay bao nhiêu tuổi ạ?' }
       },
       {
         id: 'n5_l01_28',
@@ -481,16 +373,12 @@ const LESSONS_N5 = [
         lessonId: 1,
         level: 'N5',
         kanji: 'はい',
-        hanViet: 'Hải',
+        hanViet: '',
         hiragana: 'はい',
         romaji: 'hai',
-        meaning: 'vâng, dạ',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#EBFBEE"/><circle cx="50" cy="50" r="32" fill="#40C057"/><path d="M36 50 L46 60 L64 38" stroke="#FFF" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-        example: {
-          ja: 'はい、そうです。',
-          hira: 'はい、そうです。',
-          vi: 'Vâng, đúng như vậy.'
-        }
+        meaning: 'vâng, dạ, đúng',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#EBFBEE"/><path d="M30 52 L44 66 L72 36" stroke="#2B8A3E" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>`,
+        example: { ja: 'はい、そうです。', hira: 'はい、そうです。', vi: 'Vâng, đúng vậy.' }
       },
       {
         id: 'n5_l01_29',
@@ -498,16 +386,12 @@ const LESSONS_N5 = [
         lessonId: 1,
         level: 'N5',
         kanji: 'いいえ',
-        hanViet: 'Bất',
+        hanViet: '',
         hiragana: 'いいえ',
         romaji: 'iie',
-        meaning: 'không',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFE3E3"/><circle cx="50" cy="50" r="32" fill="#FA5252"/><path d="M38 38 L62 62 M62 38 L38 62" stroke="#FFF" stroke-width="6" fill="none" stroke-linecap="round"/></svg>`,
-        example: {
-          ja: 'いいえ、ちがいます。',
-          hira: 'いいえ、ちがいます。',
-          vi: 'Không, không phải đâu.'
-        }
+        meaning: 'không, không phải',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFE3E3"/><path d="M32 32 L68 68 M68 32 L32 68" stroke="#C92A2A" stroke-width="8" stroke-linecap="round"/></svg>`,
+        example: { ja: 'いいえ、違います。', hira: 'いいえ、ちがいます。', vi: 'Không, không phải.' }
       },
       {
         id: 'n5_l01_30',
@@ -518,13 +402,9 @@ const LESSONS_N5 = [
         hanViet: 'Thất Lễ',
         hiragana: 'しつれいですが',
         romaji: 'shitsurei desu ga',
-        meaning: 'xin lỗi khi hỏi',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><path d="M30 65 Q50 35 70 65" stroke="#F59F00" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="50" cy="30" r="10" fill="#E67700"/></svg>`,
-        example: {
-          ja: '失礼ですが、お名前は？',
-          hira: 'しつれいですが、おなまえは？',
-          vi: 'Xin lỗi khi hỏi, bạn tên là gì vậy ạ?'
-        }
+        meaning: 'xin lỗi khi làm phiền / hỏi',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><circle cx="50" cy="40" r="16" fill="#F59F00"/><path d="M30 78 C30 65 70 65 70 78" stroke="#E67700" stroke-width="6" fill="none"/></svg>`,
+        example: { ja: '失礼ですが、お名前は？', hira: 'しつれいですが、おなまえは？', vi: 'Xin lỗi, tên bạn là gì ạ?' }
       },
       {
         id: 'n5_l01_31',
@@ -535,13 +415,9 @@ const LESSONS_N5 = [
         hanViet: 'Danh Tiền',
         hiragana: 'おなまえは？',
         romaji: 'onamae wa?',
-        meaning: 'bạn tên gì?',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><rect x="25" y="32" width="50" height="36" rx="6" fill="#339AF0"/><text x="50" y="55" font-size="14" font-weight="900" fill="#FFF" text-anchor="middle">NAME</text></svg>`,
-        example: {
-          ja: 'お名前は何ですか。',
-          hira: 'おなまえはなんですか。',
-          vi: 'Tên của bạn là gì vậy?'
-        }
+        meaning: 'bạn tên là gì?',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><rect x="25" y="35" width="50" height="32" rx="4" fill="#339AF0"/><text x="50" y="56" font-size="14" fill="#FFFFFF" text-anchor="middle">NAME</text></svg>`,
+        example: { ja: 'お名前は何ですか。', hira: 'おなまえはなんですか。', vi: 'Tên của bạn là gì vậy?' }
       },
       {
         id: 'n5_l01_32',
@@ -552,44 +428,35 @@ const LESSONS_N5 = [
         hanViet: 'Sơ',
         hiragana: 'はじめまして',
         romaji: 'hajimemashite',
-        meaning: 'chào lần đầu gặp mặt',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF0F6"/><path d="M30 55 C30 45 42 45 46 55 L54 55 C58 45 70 45 70 55" stroke="#D6336C" stroke-width="4" fill="none"/><line x1="42" y1="55" x2="58" y2="55" stroke="#F783AC" stroke-width="6"/></svg>`,
-        example: {
-          ja: '初めまして、ナムです。',
-          hira: 'はじめまして、ナムです。',
-          vi: 'Rất hân hạnh được gặp lần đầu, tôi là Nam.'
-        }
+        meaning: 'rất vui được gặp bạn lần đầu',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF0F6"/><circle cx="40" cy="45" r="12" fill="#D6336C"/><circle cx="60" cy="45" r="12" fill="#F783AC"/><path d="M30 68 Q50 80 70 68" stroke="#D6336C" stroke-width="4" fill="none"/></svg>`,
+        example: { ja: '初めまして、ナムです。', hira: 'はじめまして、ナムです。', vi: 'Rất vui được gặp bạn, tôi là Nam.' }
       },
       {
         id: 'n5_l01_33',
         lesson: 1,
         lessonId: 1,
         level: 'N5',
-        kanji: 'どうぞよろしくお願いします',
+        kanji: 'どうぞよろしく',
         hanViet: 'Nguyện',
-        hiragana: 'どうぞよろしくおねがいします',
-        romaji: 'douzo yoroshiku onegaishimasu',
-        meaning: 'rất hân hạnh được làm quen',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E6FCF5"/><circle cx="50" cy="32" r="12" fill="#0CA678"/><path d="M30 76 C30 56 70 56 70 76 Z" fill="#20C997"/><path d="M42 48 L58 48" stroke="#FFF" stroke-width="4" stroke-linecap="round"/></svg>`,
-        example: {
-          ja: 'どうぞよろしくお願いします。',
-          hira: 'どうぞよろしくおねがいします。',
-          vi: 'Rất hân hạnh được làm quen, rất mong nhận được sự giúp đỡ.'
-        }
+        hiragana: 'どうぞよろしく',
+        romaji: 'douzo yoroshiku',
+        meaning: 'rất hân hạnh được làm quen / giúp đỡ',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E6FCF5"/><path d="M25 55 L45 40 L60 55 L75 45" stroke="#0CA678" stroke-width="5" fill="none"/><circle cx="50" cy="50" r="38" stroke="#20C997" stroke-width="3" fill="none"/></svg>`,
+        example: { ja: 'どうぞよろしくお願いします。', hira: 'どうぞよろしくおねがいします。', vi: 'Rất mong được sự giúp đỡ của bạn.' }
       }
     ]
   },
-
   // --------------------------------------------------------------------------
-  // BÀI 2: ĐỒ VẬT QUANH TA & VĂN PHÒNG PHẨM
+  // BÀI 2: ĐỒ VẬT QUANH TA & VĂN PHÒNG PHẨM (47 TỪ)
   // --------------------------------------------------------------------------
   {
     lessonNumber: 2,
     level: 'N5',
-    title: 'Bài 2: Đồ vật quanh ta & Văn phòng phẩm',
+    title: 'Bài 2: Đồ vật & Văn phòng phẩm',
     topicVi: 'Đồ vật quanh ta & Văn phòng phẩm',
     icon: '📚',
-    grammarPoint: 'Ngữ pháp cốt lõi: これ/それ/あれ (Đại từ chỉ thị vật), この/その/あの + N (Chỉ định từ)',
+    grammarPoint: 'Đại từ chỉ thị vật: これ/それ/あれ, Danh từ đi kèm: この/その/あの + N, Sở hữu: N1 の N2',
     vocab: [
       {
         id: 'n5_l02_01',
@@ -597,16 +464,12 @@ const LESSONS_N5 = [
         lessonId: 2,
         level: 'N5',
         kanji: 'これ',
-        hanViet: 'Cử',
+        hanViet: '',
         hiragana: 'これ',
         romaji: 'kore',
-        meaning: 'cái này',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><rect x="35" y="45" width="30" height="30" rx="4" fill="#339AF0"/><path d="M50 18 L50 38 M42 30 L50 38 L58 30" stroke="#1864AB" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-        example: {
-          ja: 'これは本です。',
-          hira: 'これはほんです。',
-          vi: 'Đây là cuốn sách.'
-        }
+        meaning: 'cái này (gần người nói)',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><rect x="30" y="30" width="40" height="40" rx="6" fill="#1864AB"/><path d="M40 50 L50 40 L60 50" stroke="#FFFFFF" stroke-width="4" fill="none"/></svg>`,
+        example: { ja: 'これは本です。', hira: 'これはほんです。', vi: 'Đây là cuốn sách.' }
       },
       {
         id: 'n5_l02_02',
@@ -614,16 +477,12 @@ const LESSONS_N5 = [
         lessonId: 2,
         level: 'N5',
         kanji: 'それ',
-        hanViet: 'Kỳ',
+        hanViet: '',
         hiragana: 'それ',
         romaji: 'sore',
-        meaning: 'cái đó, vật đó',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><rect x="52" y="45" width="28" height="28" rx="4" fill="#F59F00"/><path d="M25 60 L44 60 M36 52 L44 60 L36 68" stroke="#E67700" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-        example: {
-          ja: 'それは何ですか。',
-          hira: 'それはなんですか。',
-          vi: 'Đó là cái gì thế?'
-        }
+        meaning: 'cái đó (gần người nghe)',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF3BF"/><rect x="35" y="30" width="40" height="40" rx="6" fill="#F59F00"/><path d="M15 50 L30 50" stroke="#E67700" stroke-width="4"/></svg>`,
+        example: { ja: 'それは何ですか。', hira: 'それはなんですか。', vi: 'Đó là cái gì thế?' }
       },
       {
         id: 'n5_l02_03',
@@ -631,16 +490,12 @@ const LESSONS_N5 = [
         lessonId: 2,
         level: 'N5',
         kanji: 'あれ',
-        hanViet: 'Bỉ',
+        hanViet: '',
         hiragana: 'あれ',
         romaji: 'are',
-        meaning: 'cái kia, vật kia',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E6FCF5"/><rect x="62" y="24" width="22" height="22" rx="4" fill="#0CA678"/><path d="M22 75 L52 45 M38 43 L52 45 L50 59" stroke="#20C997" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-        example: {
-          ja: 'あれは私の傘です。',
-          hira: 'あれはわたしのかさです。',
-          vi: 'Kia là cây dù của tôi.'
-        }
+        meaning: 'cái kia (xa cả hai người)',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFE3E3"/><rect x="55" y="20" width="30" height="30" rx="4" fill="#FA5252"/><path d="M20 70 L50 35" stroke="#C92A2A" stroke-width="4" stroke-dasharray="4 2"/></svg>`,
+        example: { ja: 'あれは私の車です。', hira: 'あれはわたしのくるまです。', vi: 'Kia là xe ô tô của tôi.' }
       },
       {
         id: 'n5_l02_04',
@@ -648,16 +503,12 @@ const LESSONS_N5 = [
         lessonId: 2,
         level: 'N5',
         kanji: 'この',
-        hanViet: 'Cử',
+        hanViet: '',
         hiragana: 'この',
         romaji: 'kono',
-        meaning: '~ này',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF0F6"/><text x="50" y="58" font-size="28" font-weight="900" fill="#D6336C" text-anchor="middle">この</text></svg>`,
-        example: {
-          ja: 'この本は面白いです。',
-          hira: 'このほんはおもしろいです。',
-          vi: 'Cuốn sách này rất thú vị.'
-        }
+        meaning: '~ này (+ Danh từ)',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E6FCF5"/><text x="50" y="60" font-size="28" font-weight="bold" fill="#0CA678" text-anchor="middle">KONO + N</text></svg>`,
+        example: { ja: 'この傘は私のです。', hira: 'このかさはわたしのです。', vi: 'Chiếc ô này là của tôi.' }
       },
       {
         id: 'n5_l02_05',
@@ -665,16 +516,12 @@ const LESSONS_N5 = [
         lessonId: 2,
         level: 'N5',
         kanji: 'その',
-        hanViet: 'Kỳ',
+        hanViet: '',
         hiragana: 'その',
         romaji: 'sono',
-        meaning: '~ đó',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF4E6"/><text x="50" y="58" font-size="28" font-weight="900" fill="#E8590C" text-anchor="middle">その</text></svg>`,
-        example: {
-          ja: 'その時計はいくらですか。',
-          hira: 'そのとけいはいくらですか。',
-          vi: 'Chiếc đồng hồ đó bao nhiêu tiền vậy?'
-        }
+        meaning: '~ đó (+ Danh từ)',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><text x="50" y="60" font-size="28" font-weight="bold" fill="#F59F00" text-anchor="middle">SONO + N</text></svg>`,
+        example: { ja: 'その本をください。', hira: 'そのほんをください。', vi: 'Xin cho tôi cuốn sách đó.' }
       },
       {
         id: 'n5_l02_06',
@@ -682,16 +529,12 @@ const LESSONS_N5 = [
         lessonId: 2,
         level: 'N5',
         kanji: 'あの',
-        hanViet: 'Bỉ',
+        hanViet: '',
         hiragana: 'あの',
         romaji: 'ano',
-        meaning: '~ kia',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#F3F0FF"/><text x="50" y="58" font-size="28" font-weight="900" fill="#7048E8" text-anchor="middle">あの</text></svg>`,
-        example: {
-          ja: 'あの車は誰のですか。',
-          hira: 'あのかるまはだれのですか。',
-          vi: 'Chiếc xe ô tô kia là của ai vậy?'
-        }
+        meaning: '~ kia (+ Danh từ)',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#F3F0FF"/><text x="50" y="60" font-size="28" font-weight="bold" fill="#7950F2" text-anchor="middle">ANO + N</text></svg>`,
+        example: { ja: 'あの人は田中さんです。', hira: 'あのひとはたなかさんです。', vi: 'Người kia là anh Tanaka.' }
       },
       {
         id: 'n5_l02_07',
@@ -703,12 +546,8 @@ const LESSONS_N5 = [
         hiragana: 'ほん',
         romaji: 'hon',
         meaning: 'sách',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF3BF"/><rect x="25" y="25" width="50" height="50" rx="4" fill="#E67700"/><path d="M50 25 L50 75" stroke="#FFF" stroke-width="3"/></svg>`,
-        example: {
-          ja: '日本語の本を買いました。',
-          hira: 'にほんごのほんをかいました。',
-          vi: 'Tôi đã mua cuốn sách tiếng Nhật.'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><path d="M25 35 Q50 40 50 75 Q25 70 25 35 Z" fill="#339AF0"/><path d="M75 35 Q50 40 50 75 Q75 70 75 35 Z" fill="#1C7ED6"/><path d="M50 40 L50 75" stroke="#1864AB" stroke-width="2"/></svg>`,
+        example: { ja: '日本語の本を読みます。', hira: 'にほんごのほんをよみます。', vi: 'Đọc sách tiếng Nhật.' }
       },
       {
         id: 'n5_l02_08',
@@ -720,12 +559,8 @@ const LESSONS_N5 = [
         hiragana: 'じしょ',
         romaji: 'jisho',
         meaning: 'từ điển',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><rect x="26" y="24" width="48" height="52" rx="4" fill="#1971C2"/><text x="50" y="55" font-size="16" fill="#FFF" text-anchor="middle" font-weight="bold">ABC</text></svg>`,
-        example: {
-          ja: '電子辞書を使います。',
-          hira: 'でんしじしょをつかいます。',
-          vi: 'Tôi sử dụng từ điển điện tử.'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF0F6"/><rect x="30" y="25" width="40" height="50" rx="4" fill="#D6336C"/><text x="50" y="55" font-size="16" fill="#FFFFFF" text-anchor="middle" font-weight="bold">DICT</text></svg>`,
+        example: { ja: 'これは英語の辞書です。', hira: 'これはえいごのじしょです。', vi: 'Đây là từ điển tiếng Anh.' }
       },
       {
         id: 'n5_l02_09',
@@ -737,12 +572,8 @@ const LESSONS_N5 = [
         hiragana: 'ざっし',
         romaji: 'zasshi',
         meaning: 'tạp chí',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF0F6"/><rect x="28" y="22" width="44" height="56" rx="4" fill="#D6336C"/><circle cx="50" cy="42" r="10" fill="#FFF"/></svg>`,
-        example: {
-          ja: '日本のファッション雑誌です。',
-          hira: 'にほんのファッションざっしです。',
-          vi: 'Đây là tạp chí thời trang Nhật Bản.'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF4E6"/><rect x="30" y="25" width="40" height="50" rx="3" fill="#FD7E14"/><rect x="35" y="32" width="30" height="15" fill="#FFE8CC"/></svg>`,
+        example: { ja: '日本の雑誌を買いました。', hira: 'にほんのざっしをかいました。', vi: 'Tôi đã mua tạp chí của Nhật.' }
       },
       {
         id: 'n5_l02_10',
@@ -753,13 +584,9 @@ const LESSONS_N5 = [
         hanViet: 'Tân Văn',
         hiragana: 'しんぶん',
         romaji: 'shinbun',
-        meaning: 'báo',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#F8F9FA"/><rect x="24" y="26" width="52" height="48" rx="2" fill="#ADB5BD"/><line x1="32" y1="40" x2="68" y2="40" stroke="#343A40" stroke-width="3"/></svg>`,
-        example: {
-          ja: '毎朝新聞を読みます。',
-          hira: 'まいあさしんぶんをよみます。',
-          vi: 'Mỗi sáng tôi đều đọc báo.'
-        }
+        meaning: 'báo, tờ báo',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#EBFBEE"/><rect x="25" y="30" width="50" height="40" fill="#40C057"/><line x1="32" y1="40" x2="68" y2="40" stroke="#FFFFFF" stroke-width="3"/><line x1="32" y1="50" x2="68" y2="50" stroke="#FFFFFF" stroke-width="2"/><line x1="32" y1="60" x2="55" y2="60" stroke="#FFFFFF" stroke-width="2"/></svg>`,
+        example: { ja: '毎朝新聞を読みます。', hira: 'まいあさしんぶんをよみます。', vi: 'Mỗi sáng tôi đều đọc báo.' }
       },
       {
         id: 'n5_l02_11',
@@ -767,16 +594,12 @@ const LESSONS_N5 = [
         lessonId: 2,
         level: 'N5',
         kanji: 'ノート',
-        hanViet: 'Vở',
+        hanViet: '',
         hiragana: 'ノート',
-        romaji: 'no-to',
-        meaning: 'vở',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E6FCF5"/><rect x="28" y="24" width="46" height="54" rx="4" fill="#0CA678"/><line x1="36" y1="36" x2="66" y2="36" stroke="#FFF" stroke-width="2.5"/><line x1="36" y1="46" x2="66" y2="46" stroke="#FFF" stroke-width="2.5"/><line x1="36" y1="56" x2="66" y2="56" stroke="#FFF" stroke-width="2.5"/></svg>`,
-        example: {
-          ja: 'ノートに漢字を書きます。',
-          hira: 'ノートにかんじをかきます。',
-          vi: 'Tôi viết chữ Hán vào cuốn vở.'
-        }
+        romaji: 'nooto',
+        meaning: 'vở, tập ghi chép',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><rect x="30" y="25" width="40" height="50" rx="3" fill="#4DABF7"/><circle cx="34" cy="35" r="2" fill="#FFFFFF"/><circle cx="34" cy="45" r="2" fill="#FFFFFF"/><circle cx="34" cy="55" r="2" fill="#FFFFFF"/></svg>`,
+        example: { ja: 'ノートに書きます。', hira: 'ノートにかきます。', vi: 'Viết vào vở.' }
       },
       {
         id: 'n5_l02_12',
@@ -787,13 +610,9 @@ const LESSONS_N5 = [
         hanViet: 'Thủ Trướng',
         hiragana: 'てちょう',
         romaji: 'techou',
-        meaning: 'sổ tay',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#F3F0FF"/><rect x="30" y="24" width="40" height="52" rx="4" fill="#5F3DC4"/><rect x="34" y="32" width="32" height="6" fill="#D0BFFF"/></svg>`,
-        example: {
-          ja: '手帳に予定を書きます。',
-          hira: 'てちょうによていをかきます。',
-          vi: 'Tôi ghi lịch trình vào cuốn sổ tay.'
-        }
+        meaning: 'sổ tay bỏ túi',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#F3F0FF"/><rect x="32" y="28" width="36" height="44" rx="4" fill="#7950F2"/><line x1="42" y1="28" x2="42" y2="72" stroke="#5F3DC4" stroke-width="2"/></svg>`,
+        example: { ja: '予定を手帳に追加します。', hira: 'よていをとてちょうについかします。', vi: 'Thêm dự định vào sổ tay.' }
       },
       {
         id: 'n5_l02_13',
@@ -805,46 +624,34 @@ const LESSONS_N5 = [
         hiragana: 'めいし',
         romaji: 'meishi',
         meaning: 'danh thiếp',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><rect x="22" y="32" width="56" height="36" rx="4" fill="#FFF" stroke="#1864AB" stroke-width="2"/><circle cx="34" cy="46" r="6" fill="#339AF0"/><line x1="45" y1="44" x2="68" y2="44" stroke="#495057" stroke-width="2"/><line x1="45" y1="50" x2="62" y2="50" stroke="#868E96" stroke-width="2"/></svg>`,
-        example: {
-          ja: '私の名刺をどうぞ。',
-          hira: 'わたしのめいしをどうぞ。',
-          vi: 'Xin mời nhận danh thiếp của tôi.'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><rect x="25" y="35" width="50" height="30" rx="3" fill="#FFFFFF" stroke="#F59F00" stroke-width="3"/><circle cx="38" cy="50" r="6" fill="#FCC419"/><line x1="48" y1="46" x2="68" y2="46" stroke="#495057" stroke-width="2"/><line x1="48" y1="54" x2="62" y2="54" stroke="#868E96" stroke-width="2"/></svg>`,
+        example: { ja: '名刺を交換します。', hira: 'めいしをこうかんします。', vi: 'Trao đổi danh thiếp.' }
       },
       {
         id: 'n5_l02_14',
         lesson: 2,
         lessonId: 2,
         level: 'N5',
-        kanji: 'テレホンカード',
-        hanViet: 'Điện Thoại Thẻ',
-        hiragana: 'テレホンカード',
-        romaji: 'terehon ka-do',
-        meaning: 'thẻ điện thoại',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E6FCF5"/><rect x="22" y="30" width="56" height="40" rx="4" fill="#20C997"/><circle cx="36" cy="48" r="8" fill="#FFF"/><path d="M33 46 Q36 43 39 46" stroke="#0CA678" stroke-width="2" fill="none"/></svg>`,
-        example: {
-          ja: 'これはテレホンカードです。',
-          hira: 'これはテレホンカードです。',
-          vi: 'Đây là thẻ gọi điện thoại công cộng.'
-        }
+        kanji: 'カード',
+        hanViet: '',
+        hiragana: 'カード',
+        romaji: 'kaado',
+        meaning: 'thẻ, cạc',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#EBFBEE"/><rect x="25" y="32" width="50" height="36" rx="4" fill="#20C997"/><rect x="25" y="40" width="50" height="8" fill="#0CA678"/></svg>`,
+        example: { ja: 'カードで払います。', hira: 'カードではらいます。', vi: 'Thanh toán bằng thẻ.' }
       },
       {
         id: 'n5_l02_15',
         lesson: 2,
         lessonId: 2,
         level: 'N5',
-        kanji: 'カード',
-        hanViet: 'Thẻ',
-        hiragana: 'カード',
-        romaji: 'ka-do',
-        meaning: 'thẻ, cạc',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF3BF"/><rect x="22" y="32" width="56" height="36" rx="4" fill="#FAB005"/><rect x="22" y="40" width="56" height="8" fill="#212529"/></svg>`,
-        example: {
-          ja: 'クレジットカードで払います。',
-          hira: 'クレジットカードではらいます。',
-          vi: 'Tôi thanh toán bằng thẻ tín dụng.'
-        }
+        kanji: 'テレホンカード',
+        hanViet: '',
+        hiragana: 'テレホンカード',
+        romaji: 'terehonkaado',
+        meaning: 'thẻ điện thoại',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><rect x="25" y="32" width="50" height="36" rx="4" fill="#339AF0"/><circle cx="40" cy="50" r="6" fill="#FFFFFF"/></svg>`,
+        example: { ja: 'テレホンカードを使います。', hira: 'テレホンカードをつかいます。', vi: 'Sử dụng thẻ điện thoại.' }
       },
       {
         id: 'n5_l02_16',
@@ -856,12 +663,8 @@ const LESSONS_N5 = [
         hiragana: 'えんぴつ',
         romaji: 'enpitsu',
         meaning: 'bút chì',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><polygon points="25,75 35,45 45,75" fill="#FCC419"/><rect x="35" y="25" width="10" height="40" fill="#F59F00"/></svg>`,
-        example: {
-          ja: '鉛筆で名前を書きます。',
-          hira: 'えんぴつでなまえをかきます。',
-          vi: 'Tôi viết tên bằng cây bút chì.'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF3BF"/><polygon points="30,70 35,50 65,20 75,30 45,60 25,75" fill="#FCC419"/><polygon points="25,75 30,70 28,68" fill="#212529"/></svg>`,
+        example: { ja: '鉛筆で名前を書きます。', hira: 'えんぴつでなまえをかきます。', vi: 'Viết tên bằng bút chì.' }
       },
       {
         id: 'n5_l02_17',
@@ -869,16 +672,12 @@ const LESSONS_N5 = [
         lessonId: 2,
         level: 'N5',
         kanji: 'ボールペン',
-        hanViet: 'Bút Bi',
+        hanViet: '',
         hiragana: 'ボールペン',
-        romaji: 'bo-rupen',
+        romaji: 'boorupen',
         meaning: 'bút bi',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><path d="M30 75 L70 35 L75 40 L35 80 Z" fill="#1864AB"/><polygon points="25,85 30,75 35,80" fill="#212529"/></svg>`,
-        example: {
-          ja: '黒いボールペンをください。',
-          hira: 'くろいボールペンをください。',
-          vi: 'Xin hãy cho tôi cây bút bi mực đen.'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><rect x="46" y="20" width="8" height="55" rx="3" fill="#1864AB"/><polygon points="46,75 54,75 50,85" fill="#495057"/></svg>`,
+        example: { ja: '黒いボールペンをください。', hira: 'くろいボールペンをください。', vi: 'Cho tôi xin cây bút bi màu đen.' }
       },
       {
         id: 'n5_l02_18',
@@ -886,33 +685,25 @@ const LESSONS_N5 = [
         lessonId: 2,
         level: 'N5',
         kanji: 'シャープペンシル',
-        hanViet: 'Bút Chì Kim',
+        hanViet: '',
         hiragana: 'シャープペンシル',
-        romaji: 'sha-pu penshiru',
-        meaning: 'bút chì kim',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#F1F3F5"/><rect x="47" y="20" width="6" height="55" fill="#495057"/><polygon points="46,75 54,75 50,85" fill="#CED4DA"/><line x1="50" y1="85" x2="50" y2="90" stroke="#212529" stroke-width="1.5"/></svg>`,
-        example: {
-          ja: 'このシャープペンシルは便利です。',
-          hira: 'このシャープペンシルはべんりです。',
-          vi: 'Cây bút chì kim này rất tiện lợi.'
-        }
+        romaji: 'shaapupenshiru',
+        meaning: 'bút chì kim, bút bấm',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#F3F0FF"/><rect x="47" y="18" width="6" height="60" fill="#7048E8"/><polygon points="47,78 53,78 50,88" fill="#CED4DA"/></svg>`,
+        example: { ja: 'シャープペンシルの芯。', hira: 'シャープペンシルのしん。', vi: 'Ngòi bút chì kim.' }
       },
       {
         id: 'n5_l02_19',
         lesson: 2,
         lessonId: 2,
         level: 'N5',
-        kanji: '鍵',
+        kanji: 'かぎ',
         hanViet: 'Kiện',
         hiragana: 'かぎ',
         romaji: 'kagi',
         meaning: 'chìa khóa',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><circle cx="36" cy="40" r="14" stroke="#F59F00" stroke-width="5" fill="none"/><line x1="46" y1="48" x2="72" y2="74" stroke="#F59F00" stroke-width="5" stroke-linecap="round"/><line x1="62" y1="64" x2="68" y2="58" stroke="#F59F00" stroke-width="4"/><line x1="68" y1="70" x2="74" y2="64" stroke="#F59F00" stroke-width="4"/></svg>`,
-        example: {
-          ja: '部屋の鍵を忘れました。',
-          hira: 'へやのかぎをわすれました。',
-          vi: 'Tôi đã để quên chìa khóa phòng.'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><circle cx="42" cy="42" r="14" fill="none" stroke="#F59F00" stroke-width="6"/><line x1="52" y1="52" x2="72" y2="72" stroke="#F59F00" stroke-width="6"/><line x1="65" y1="65" x2="72" y2="58" stroke="#F59F00" stroke-width="4"/></svg>`,
+        example: { ja: '部屋のかぎを忘れました。', hira: 'へやのかぎをわすれました。', vi: 'Tôi đã quên chìa khóa phòng.' }
       },
       {
         id: 'n5_l02_20',
@@ -924,154 +715,362 @@ const LESSONS_N5 = [
         hiragana: 'とけい',
         romaji: 'tokei',
         meaning: 'đồng hồ',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><circle cx="50" cy="50" r="30" stroke="#1864AB" stroke-width="5" fill="#FFF"/><line x1="50" y1="50" x2="50" y2="32" stroke="#212529" stroke-width="3" stroke-linecap="round"/><line x1="50" y1="50" x2="64" y2="50" stroke="#E03131" stroke-width="2.5" stroke-linecap="round"/></svg>`,
-        example: {
-          ja: 'これは日本の時計です。',
-          hira: 'これはにほんのとけいです。',
-          vi: 'Đây là chiếc đồng hồ của Nhật Bản.'
-        }
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFE3E3"/><circle cx="50" cy="50" r="28" fill="#FFFFFF" stroke="#FA5252" stroke-width="5"/><line x1="50" y1="50" x2="50" y2="34" stroke="#212529" stroke-width="3"/><line x1="50" y1="50" x2="62" y2="50" stroke="#FA5252" stroke-width="3"/></svg>`,
+        example: { ja: 'この時計はスイスのです。', hira: 'このとけいはスイスのです。', vi: 'Đồng hồ này của Thụy Sĩ.' }
       },
       {
         id: 'n5_l02_21',
         lesson: 2,
         lessonId: 2,
         level: 'N5',
-        kanji: 'そうですか',
-        hanViet: 'Nhiên',
-        hiragana: 'そうですか',
-        romaji: 'sou desu ka',
-        meaning: 'Đúng như thế à?',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><circle cx="50" cy="45" r="24" fill="#FCC419"/><text x="50" y="54" font-size="28" font-weight="900" fill="#D9480F" text-anchor="middle">!</text></svg>`,
-        example: {
-          ja: 'そうですか、分かりました。',
-          hira: 'そうですか、わかりました。',
-          vi: 'Đúng như thế à, tôi hiểu rồi.'
-        }
+        kanji: '傘',
+        hanViet: 'Tán',
+        hiragana: 'かさ',
+        romaji: 'kasa',
+        meaning: 'cây dù, cái ô',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><path d="M25 50 C25 25 75 25 75 50 Z" fill="#228BE6"/><line x1="50" y1="50" x2="50" y2="75" stroke="#1864AB" stroke-width="4"/><path d="M50 75 Q45 82 40 76" stroke="#1864AB" stroke-width="4" fill="none"/></svg>`,
+        example: { ja: '雨ですから、傘を持って行きます。', hira: 'あめですから、かさをもっていきます。', vi: 'Vì trời mưa nên tôi mang theo ô.' }
       },
       {
         id: 'n5_l02_22',
         lesson: 2,
         lessonId: 2,
         level: 'N5',
-        kanji: 'あのう',
-        hanViet: 'À',
-        hiragana: 'あのう',
-        romaji: 'anou',
-        meaning: 'à, ờ...',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#F1F3F5"/><circle cx="34" cy="50" r="5" fill="#868E96"/><circle cx="50" cy="50" r="5" fill="#868E96"/><circle cx="66" cy="50" r="5" fill="#868E96"/></svg>`,
-        example: {
-          ja: 'あのう、すみません。',
-          hira: 'あのう、すみません。',
-          vi: 'À... ờ, xin lỗi làm phiền một chút ạ.'
-        }
+        kanji: 'かばん',
+        hanViet: '',
+        hiragana: 'かばん',
+        romaji: 'kaban',
+        meaning: 'cặp sách, túi xách',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF4E6"/><rect x="28" y="40" width="44" height="35" rx="5" fill="#E8590C"/><path d="M40 40 L40 30 Q50 25 60 30 L60 40" stroke="#D9480F" stroke-width="4" fill="none"/></svg>`,
+        example: { ja: 'これは革のかばんです。', hira: 'これはかわのかばんです。', vi: 'Đây là chiếc cặp da.' }
       },
       {
         id: 'n5_l02_23',
         lesson: 2,
         lessonId: 2,
         level: 'N5',
-        kanji: 'ほんの気持ちです',
-        hanViet: 'Bản Khí Trì',
-        hiragana: 'ほんのきもちです',
-        romaji: 'honno kimochi desu',
-        meaning: 'Đây chỉ là chút lòng thành',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFE3E3"/><path d="M50 70 C50 70 28 52 28 38 C28 28 36 22 44 22 C48 22 50 26 50 26 C50 26 52 22 56 22 C64 22 72 28 72 38 C72 52 50 70 50 70 Z" fill="#FA5252"/></svg>`,
-        example: {
-          ja: 'どうぞ、ほんの気持ちです。',
-          hira: 'どうぞ、ほんのきもちです。',
-          vi: 'Xin mời nhận, đây chỉ là chút lòng thành của tôi thôi.'
-        }
+        kanji: 'CD',
+        hanViet: '',
+        hiragana: 'シーディー',
+        romaji: 'shiidii',
+        meaning: 'đĩa CD',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#EBFBEE"/><circle cx="50" cy="50" r="30" fill="#69DB7C"/><circle cx="50" cy="50" r="8" fill="#FFFFFF"/></svg>`,
+        example: { ja: '音楽のCDを聞きます。', hira: 'おんがくのシーディーをききます。', vi: 'Nghe đĩa CD âm nhạc.' }
       },
       {
         id: 'n5_l02_24',
         lesson: 2,
         lessonId: 2,
         level: 'N5',
-        kanji: 'どうぞ',
-        hanViet: 'Nhập',
-        hiragana: 'どうぞ',
-        romaji: 'douzo',
-        meaning: 'Xin mời',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E6FCF5"/><path d="M30 50 L65 50 M52 38 L65 50 L52 62" stroke="#0CA678" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-        example: {
-          ja: 'お茶をどうぞ。',
-          hira: 'おちゃをどうぞ。',
-          vi: 'Xin mời dùng trà.'
-        }
+        kanji: 'テレビ',
+        hanViet: '',
+        hiragana: 'テレビ',
+        romaji: 'terebi',
+        meaning: 'ti vi',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><rect x="25" y="30" width="50" height="35" rx="4" fill="#339AF0"/><rect x="30" y="35" width="40" height="25" fill="#E7F5FF"/><line x1="42" y1="65" x2="35" y2="78" stroke="#1864AB" stroke-width="3"/><line x1="58" y1="65" x2="65" y2="78" stroke="#1864AB" stroke-width="3"/></svg>`,
+        example: { ja: '夜、テレビを見ます。', hira: 'よる、テレビをみます。', vi: 'Buổi tối tôi xem tivi.' }
       },
       {
         id: 'n5_l02_25',
         lesson: 2,
         lessonId: 2,
         level: 'N5',
-        kanji: 'どうも',
-        hanViet: 'Tạ',
-        hiragana: 'どうも',
-        romaji: 'doumo',
-        meaning: 'Cảm ơn',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF0F6"/><circle cx="50" cy="35" r="12" fill="#E64980"/><path d="M32 75 C32 58 68 58 68 75 Z" fill="#F783AC"/></svg>`,
-        example: {
-          ja: 'どうも、ありがとう。',
-          hira: 'どうも、ありがとう。',
-          vi: 'Cảm ơn bạn nhé.'
-        }
+        kanji: 'ラジオ',
+        hanViet: '',
+        hiragana: 'ラジオ',
+        romaji: 'rajio',
+        meaning: 'radio, máy thu thanh',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><rect x="25" y="35" width="50" height="32" rx="4" fill="#F59F00"/><circle cx="42" cy="51" r="10" fill="#FCC419"/><line x1="28" y1="35" x2="20" y2="20" stroke="#D9480F" stroke-width="3"/></svg>`,
+        example: { ja: 'ラジオでニュースを聞きます。', hira: 'ラジオでニュースをききます。', vi: 'Nghe tin tức qua đài radio.' }
       },
       {
         id: 'n5_l02_26',
         lesson: 2,
         lessonId: 2,
         level: 'N5',
-        kanji: 'どうもありがとうございます',
-        hanViet: 'Hữu Nan',
-        hiragana: 'どうもありがとうございます',
-        romaji: 'doumo arigatou gozaimasu',
-        meaning: 'Xin chân thành cảm ơn',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><circle cx="50" cy="32" r="11" fill="#F59F00"/><path d="M28 75 C28 54 72 54 72 75 Z" fill="#FCC419"/><path d="M36 52 Q50 64 64 52" stroke="#D9480F" stroke-width="3" fill="none" stroke-linecap="round"/></svg>`,
-        example: {
-          ja: '先生、どうもありがとうございます。',
-          hira: 'せんせい、どうもありがとうございます。',
-          vi: 'Thưa cô giáo, em xin chân thành cảm ơn cô.'
-        }
+        kanji: 'カメラ',
+        hanViet: '',
+        hiragana: 'カメラ',
+        romaji: 'kamera',
+        meaning: 'máy ảnh',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF0F6"/><rect x="25" y="36" width="50" height="32" rx="5" fill="#D6336C"/><circle cx="50" cy="52" r="11" fill="#FFFFFF"/><circle cx="50" cy="52" r="7" fill="#862E9C"/></svg>`,
+        example: { ja: '日本のカメラは有名です。', hira: 'にほんのカメラはゆうめいです。', vi: 'Máy ảnh Nhật Bản rất nổi tiếng.' }
       },
       {
         id: 'n5_l02_27',
         lesson: 2,
         lessonId: 2,
         level: 'N5',
-        kanji: 'これからお世話になります',
-        hanViet: 'Thế Thoại',
-        hiragana: 'これからおせわになります',
-        romaji: 'korekara osewa ni narimasu',
-        meaning: 'Từ nay rất mong được giúp đỡ',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><circle cx="36" cy="38" r="10" fill="#1864AB"/><circle cx="64" cy="38" r="10" fill="#339AF0"/><path d="M22 76 C22 60 50 60 50 76 Z" fill="#1864AB"/><path d="M50 76 C50 60 78 60 78 76 Z" fill="#339AF0"/><path d="M42 58 L58 58" stroke="#FCC419" stroke-width="5" stroke-linecap="round"/></svg>`,
-        example: {
-          ja: '隣の部屋です。これからお世話になります。',
-          hira: 'となりのへやです。これからおせわになります。',
-          vi: 'Tôi ở phòng bên cạnh. Từ nay rất mong được giúp đỡ.'
-        }
+        kanji: 'コンピューター',
+        hanViet: '',
+        hiragana: 'コンピューター',
+        romaji: 'konpyuutaa',
+        meaning: 'máy vi tính',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E6FCF5"/><rect x="28" y="28" width="44" height="30" rx="3" fill="#0CA678"/><polygon points="46,58 54,58 58,68 42,68" fill="#20C997"/></svg>`,
+        example: { ja: 'これは会社のコンピューターです。', hira: 'これはかいしゃのコンピューターです。', vi: 'Đây là máy tính của công ty.' }
       },
       {
         id: 'n5_l02_28',
         lesson: 2,
         lessonId: 2,
         level: 'N5',
+        kanji: '車',
+        hanViet: 'Xa',
+        hiragana: 'くるま',
+        romaji: 'kuruma',
+        meaning: 'xe ô tô, xe hơi',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFE3E3"/><path d="M25 55 L35 42 L65 42 L75 55 Z" fill="#FF6B6B"/><rect x="20" y="55" width="60" height="15" rx="3" fill="#FA5252"/><circle cx="35" cy="70" r="7" fill="#212529"/><circle cx="65" cy="70" r="7" fill="#212529"/></svg>`,
+        example: { ja: 'トヨタの車に乗ります。', hira: 'トヨタのくるまにのります。', vi: 'Đi xe ô tô của Toyota.' }
+      },
+      {
+        id: 'n5_l02_29',
+        lesson: 2,
+        lessonId: 2,
+        level: 'N5',
+        kanji: '机',
+        hanViet: 'Kỷ',
+        hiragana: 'つくえ',
+        romaji: 'tsukue',
+        meaning: 'cái bàn',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF4E6"/><polygon points="20,45 80,45 75,40 25,40" fill="#E8590C"/><rect x="20" y="45" width="60" height="6" fill="#D9480F"/><line x1="28" y1="51" x2="28" y2="75" stroke="#D9480F" stroke-width="4"/><line x1="72" y1="51" x2="72" y2="75" stroke="#D9480F" stroke-width="4"/></svg>`,
+        example: { ja: '机の上に本があります。', hira: 'つくえのうえにほんがあります。', vi: 'Trên bàn có cuốn sách.' }
+      },
+      {
+        id: 'n5_l02_30',
+        lesson: 2,
+        lessonId: 2,
+        level: 'N5',
+        kanji: 'いす',
+        hanViet: '',
+        hiragana: 'いす',
+        romaji: 'isu',
+        meaning: 'cái ghế',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#EBFBEE"/><rect x="35" y="28" width="8" height="48" fill="#2B8A3E"/><rect x="35" y="50" width="30" height="6" fill="#40C057"/><line x1="62" y1="56" x2="62" y2="76" stroke="#2B8A3E" stroke-width="4"/></svg>`,
+        example: { ja: 'どうぞいすにお座りください。', hira: 'どうぞいすにおすわりください。', vi: 'Xin mời ngồi xuống ghế.' }
+      },
+      {
+        id: 'n5_l02_31',
+        lesson: 2,
+        lessonId: 2,
+        level: 'N5',
+        kanji: 'チョコレート',
+        hanViet: '',
+        hiragana: 'チョコレート',
+        romaji: 'chokoreeto',
+        meaning: 'sô-cô-la',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF0F6"/><rect x="30" y="32" width="40" height="36" rx="4" fill="#5C3A21"/><line x1="50" y1="32" x2="50" y2="68" stroke="#8A5A36" stroke-width="2"/><line x1="30" y1="50" x2="70" y2="50" stroke="#8A5A36" stroke-width="2"/></svg>`,
+        example: { ja: 'チョコレートを食べます。', hira: 'チョコレートをたべます。', vi: 'Ăn sô-cô-la.' }
+      },
+      {
+        id: 'n5_l02_32',
+        lesson: 2,
+        lessonId: 2,
+        level: 'N5',
+        kanji: 'コーヒー',
+        hanViet: '',
+        hiragana: 'コーヒー',
+        romaji: 'koohii',
+        meaning: 'cà phê',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF4E6"/><path d="M30 40 L35 70 Q50 75 65 70 L70 40 Z" fill="#8B4513"/><path d="M70 45 Q82 45 82 55 Q82 65 68 65" stroke="#8B4513" stroke-width="4" fill="none"/></svg>`,
+        example: { ja: '温かいコーヒーを飲みます。', hira: 'あたたかいコーヒーをのみます。', vi: 'Uống cà phê nóng.' }
+      },
+      {
+        id: 'n5_l02_33',
+        lesson: 2,
+        lessonId: 2,
+        level: 'N5',
+        kanji: 'お土産',
+        hanViet: 'Thổ Sản',
+        hiragana: 'おみやげ',
+        romaji: 'omiyage',
+        meaning: 'quà lưu niệm, đặc sản',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><rect x="30" y="38" width="40" height="34" rx="4" fill="#FA5252"/><line x1="50" y1="38" x2="50" y2="72" stroke="#FCC419" stroke-width="6"/><circle cx="50" cy="36" r="6" fill="#FCC419"/></svg>`,
+        example: { ja: 'これは京都のお土産です。', hira: 'これはきょうとおみやげです。', vi: 'Đây là quà lưu niệm của Kyoto.' }
+      },
+      {
+        id: 'n5_l02_34',
+        lesson: 2,
+        lessonId: 2,
+        level: 'N5',
+        kanji: '英語',
+        hanViet: 'Anh Ngữ',
+        hiragana: 'えいご',
+        romaji: 'eigo',
+        meaning: 'tiếng Anh',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><text x="50" y="60" font-size="26" font-weight="bold" fill="#1864AB" text-anchor="middle">ENG</text></svg>`,
+        example: { ja: '英語を勉強します。', hira: 'えいごをべんきょうします。', vi: 'Học tiếng Anh.' }
+      },
+      {
+        id: 'n5_l02_35',
+        lesson: 2,
+        lessonId: 2,
+        level: 'N5',
+        kanji: '日本語',
+        hanViet: 'Nhật Bản Ngữ',
+        hiragana: 'にほんご',
+        romaji: 'nihongo',
+        meaning: 'tiếng Nhật',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFE3E3"/><circle cx="50" cy="50" r="25" fill="#FA5252"/><text x="50" y="58" font-size="20" font-weight="bold" fill="#FFFFFF" text-anchor="middle">日本語</text></svg>`,
+        example: { ja: '日本語が大好きです。', hira: 'にほんごがだいすきです。', vi: 'Tôi rất thích tiếng Nhật.' }
+      },
+      {
+        id: 'n5_l02_36',
+        lesson: 2,
+        lessonId: 2,
+        level: 'N5',
+        kanji: '～語',
+        hanViet: 'Ngữ',
+        hiragana: '～ご',
+        romaji: '~go',
+        meaning: 'tiếng ~ (ngôn ngữ)',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#EBFBEE"/><text x="50" y="60" font-size="28" font-weight="bold" fill="#2B8A3E" text-anchor="middle">~GO</text></svg>`,
+        example: { ja: 'ベトナム語を話せます。', hira: 'ベトナムごをはなせます。', vi: 'Có thể nói tiếng Việt.' }
+      },
+      {
+        id: 'n5_l02_37',
+        lesson: 2,
+        lessonId: 2,
+        level: 'N5',
+        kanji: '何',
+        hanViet: 'Hà',
+        hiragana: 'なん / なに',
+        romaji: 'nan / nani',
+        meaning: 'cái gì',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF0F6"/><text x="50" y="68" font-size="46" font-weight="bold" fill="#D6336C" text-anchor="middle">何</text></svg>`,
+        example: { ja: 'これは何ですか。', hira: 'これはなんですか。', vi: 'Đây là cái gì thế?' }
+      },
+      {
+        id: 'n5_l02_38',
+        lesson: 2,
+        lessonId: 2,
+        level: 'N5',
+        kanji: 'そう',
+        hanViet: '',
+        hiragana: 'そう',
+        romaji: 'sou',
+        meaning: 'đúng như thế, vậy',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E6FCF5"/><path d="M30 50 L45 65 L72 35" stroke="#0CA678" stroke-width="8" stroke-linecap="round" fill="none"/></svg>`,
+        example: { ja: 'はい、そうです。', hira: 'はい、そうです。', vi: 'Vâng, đúng vậy.' }
+      },
+      {
+        id: 'n5_l02_39',
+        lesson: 2,
+        lessonId: 2,
+        level: 'N5',
+        kanji: '違います',
+        hanViet: 'Vi',
+        hiragana: 'ちがいます',
+        romaji: 'chigaimasu',
+        meaning: 'không phải, sai rồi',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFE3E3"/><line x1="32" y1="32" x2="68" y2="68" stroke="#FA5252" stroke-width="8" stroke-linecap="round"/><line x1="68" y1="32" x2="32" y2="68" stroke="#FA5252" stroke-width="8" stroke-linecap="round"/></svg>`,
+        example: { ja: 'いいえ、違います。', hira: 'いいえ、ちがいます。', vi: 'Không, không phải như vậy.' }
+      },
+      {
+        id: 'n5_l02_40',
+        lesson: 2,
+        lessonId: 2,
+        level: 'N5',
+        kanji: 'そうですか',
+        hanViet: '',
+        hiragana: 'そうですか',
+        romaji: 'sou desu ka',
+        meaning: 'thế à, ra vậy',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><circle cx="50" cy="40" r="8" fill="#F59F00"/><path d="M35 65 Q50 55 65 65" stroke="#F59F00" stroke-width="4" fill="none"/></svg>`,
+        example: { ja: 'あ、そうですか。分かりました。', hira: 'あ、そうですか。わかりました。', vi: 'A, ra vậy ạ. Tôi hiểu rồi.' }
+      },
+      {
+        id: 'n5_l02_41',
+        lesson: 2,
+        lessonId: 2,
+        level: 'N5',
+        kanji: 'あのう',
+        hanViet: '',
+        hiragana: 'あのう',
+        romaji: 'anou',
+        meaning: 'à, ừm... (ngập ngừng)',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#F3F0FF"/><text x="50" y="60" font-size="28" font-weight="bold" fill="#7950F2" text-anchor="middle">Ano...</text></svg>`,
+        example: { ja: 'あのう、すみません。', hira: 'あのう、すみません。', vi: 'À... xin lỗi cho tôi hỏi.' }
+      },
+      {
+        id: 'n5_l02_42',
+        lesson: 2,
+        lessonId: 2,
+        level: 'N5',
+        kanji: 'ほんの気持ちです',
+        hanViet: 'Bản Khí Trì',
+        hiragana: 'ほんのきもちです',
+        romaji: 'hon no kimochi desu',
+        meaning: 'đây chỉ là chút lòng thành',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF0F6"/><path d="M50 35 C40 20 20 30 30 50 C40 70 50 80 50 80 C50 80 60 70 70 50 C80 30 60 20 50 35 Z" fill="#FA5252"/></svg>`,
+        example: { ja: 'これ、ほんの気持ちです。どうぞ。', hira: 'これ、ほんのきもちです。どうぞ。', vi: 'Cái này, chỉ là chút lòng thành của tôi thôi. Xin mời nhận ạ.' }
+      },
+      {
+        id: 'n5_l02_43',
+        lesson: 2,
+        lessonId: 2,
+        level: 'N5',
+        kanji: 'どうぞ',
+        hanViet: '',
+        hiragana: 'どうぞ',
+        romaji: 'douzo',
+        meaning: 'xin mời',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E6FCF5"/><path d="M30 50 L60 50 M50 40 L60 50 L50 60" stroke="#0CA678" stroke-width="5" stroke-linecap="round"/></svg>`,
+        example: { ja: 'どうぞお入りください。', hira: 'どうぞおはいりください。', vi: 'Xin mời bạn vào.' }
+      },
+      {
+        id: 'n5_l02_44',
+        lesson: 2,
+        lessonId: 2,
+        level: 'N5',
+        kanji: 'どうも',
+        hanViet: '',
+        hiragana: 'どうも',
+        romaji: 'doumo',
+        meaning: 'cảm ơn',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFF9DB"/><circle cx="50" cy="42" r="14" fill="#FCC419"/><path d="M30 75 C30 62 70 62 70 75" fill="#F59F00"/></svg>`,
+        example: { ja: 'どうもありがとうございます。', hira: 'どうもありがとうございます。', vi: 'Xin chân thành cảm ơn.' }
+      },
+      {
+        id: 'n5_l02_45',
+        lesson: 2,
+        lessonId: 2,
+        level: 'N5',
+        kanji: 'ありがとうございます',
+        hanViet: '',
+        hiragana: 'ありがとうございます',
+        romaji: 'arigatou gozaimasu',
+        meaning: 'xin chân thành cảm ơn',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#FFE3E3"/><text x="50" y="58" font-size="20" font-weight="bold" fill="#E03131" text-anchor="middle">THANKS</text></svg>`,
+        example: { ja: '手伝ってくれてありがとうございます。', hira: 'てつだってくれてありがとうございます。', vi: 'Cảm ơn bạn đã giúp đỡ tôi.' }
+      },
+      {
+        id: 'n5_l02_46',
+        lesson: 2,
+        lessonId: 2,
+        level: 'N5',
+        kanji: 'これからお世話になります',
+        hanViet: 'Thế Thoại',
+        hiragana: 'これからおせわになります',
+        romaji: 'kore kara osewa ni narimasu',
+        meaning: 'từ nay rất mong được giúp đỡ',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E7F5FF"/><path d="M25 60 C35 35 65 35 75 60" stroke="#1971C2" stroke-width="4" fill="none"/></svg>`,
+        example: { ja: '新入社員です。これからお世話になります。', hira: 'しんにゅうしゃいんです。これからおせわになります。', vi: 'Tôi là nhân viên mới. Từ nay rất mong được mọi người giúp đỡ.' }
+      },
+      {
+        id: 'n5_l02_47',
+        lesson: 2,
+        lessonId: 2,
+        level: 'N5',
         kanji: 'こちらこそよろしく',
-        hanViet: 'Phương Hảo',
+        hanViet: '',
         hiragana: 'こちらこそよろしく',
-        romaji: 'kochirakoso yoroshiku',
-        meaning: 'Chính tôi cũng mong được giúp đỡ',
-        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#E6FCF5"/><circle cx="50" cy="32" r="12" fill="#0CA678"/><path d="M30 76 C30 56 70 56 70 76 Z" fill="#20C997"/><path d="M40 48 L60 48" stroke="#FFF" stroke-width="4" stroke-linecap="round"/></svg>`,
-        example: {
-          ja: 'こちらこそよろしくお願いします。',
-          hira: 'こちらこそよろしくおねがいします。',
-          vi: 'Chính tôi mới là người cần anh giúp đỡ ạ.'
-        }
+        romaji: 'kochira koso yoroshiku',
+        meaning: 'chính tôi cũng mong được giúp đỡ',
+        svgIllustration: `<svg viewBox="0 0 100 100" class="vocab-card-svg"><circle cx="50" cy="50" r="45" fill="#EBFBEE"/><path d="M25 50 L45 35 L55 50 L75 40" stroke="#2B8A3E" stroke-width="5" fill="none"/></svg>`,
+        example: { ja: 'こちらこそよろしくお願いいたします。', hira: 'こちらこそよろしくおねがいいたします。', vi: 'Chính tôi mới là người rất mong nhận được sự giúp đỡ của quý vị.' }
       }
     ]
   },
-
-  // --------------------------------------------------------------------------
-  // BÀI 3: ĐỊA ĐIỂM, PHÒNG ỐC & TÒA NHÀ TRUNG TÂM
   // --------------------------------------------------------------------------
   // BÀI 3: ĐỊA ĐIỂM, TẦNG LẦU & MUA SẮM (24 TỪ)
   // --------------------------------------------------------------------------
@@ -1492,9 +1491,8 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },
-
-// --------------------------------------------------------------------------
+  },,
+  // --------------------------------------------------------------------------
   // BÀI 4: THỜI GIAN, GIỜ GIẤC & SINH HOẠT HẰNG NGÀY (27 TỪ)
   // --------------------------------------------------------------------------
   {
@@ -1965,9 +1963,8 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },
-
-// --------------------------------------------------------------------------
+  },,
+  // --------------------------------------------------------------------------
   // BÀI 5: PHƯƠNG TIỆN GIAO THÔNG & NGÀY THÁNG (45 TỪ)
   // --------------------------------------------------------------------------
   {
@@ -2744,9 +2741,8 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },
-
-// --------------------------------------------------------------------------
+  },,
+  // --------------------------------------------------------------------------
   // BÀI 6: ĐỘNG TỪ HÀNH ĐỘNG & RỦ RÊ (28 TỪ)
   // --------------------------------------------------------------------------
   {
@@ -3234,9 +3230,8 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },
-
-// --------------------------------------------------------------------------
+  },,
+  // --------------------------------------------------------------------------
   // BÀI 7: CÔNG CỤ, QUÀ TẶNG & CHO NHẬN (23 TỪ)
   // --------------------------------------------------------------------------
   {
@@ -3639,9 +3634,8 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },
-
-// --------------------------------------------------------------------------
+  },,
+  // --------------------------------------------------------------------------
   // BÀI 8: TÍNH TỪ MIÊU TẢ TÍNH CHẤT & CẢM NHẬN (50 TỪ)
   // --------------------------------------------------------------------------
   {
@@ -4503,9 +4497,8 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },
-
-// --------------------------------------------------------------------------
+  },,
+  // --------------------------------------------------------------------------
   // BÀI 9: SỞ THÍCH, NĂNG KHIẾU & LÝ DO (30 TỪ)
   // --------------------------------------------------------------------------
   {
@@ -5027,9 +5020,8 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },
-
-// --------------------------------------------------------------------------
+  },,
+  // --------------------------------------------------------------------------
   // BÀI 10: VỊ TRÍ KHÔNG GIAN & SỰ TỒN TẠI (28 TỪ)
   // --------------------------------------------------------------------------
   {
@@ -5517,9 +5509,8 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },
-
-// --------------------------------------------------------------------------
+  },,
+  // --------------------------------------------------------------------------
   // BÀI 11: SỐ ĐẾM, LƯỢNG TỪ & KHOẢNG THỜI GIAN (35 TỪ)
   // --------------------------------------------------------------------------
   {
@@ -6126,9 +6117,8 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },
-
-// --------------------------------------------------------------------------
+  },,
+  // --------------------------------------------------------------------------
   // BÀI 12: THỜI TIẾT, BỐN MÙA, LỄ HỘI & SO SÁNH (48 TỪ)
   // --------------------------------------------------------------------------
   {
@@ -6956,9 +6946,8 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },
-
-// --------------------------------------------------------------------------
+  },,
+  // --------------------------------------------------------------------------
   // BÀI 13: MONG MUỐN, DU LỊCH & GỌI MÓN (41 TỪ)
   // --------------------------------------------------------------------------
   {
@@ -7667,9 +7656,8 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },
-
-// --------------------------------------------------------------------------
+  },,
+  // --------------------------------------------------------------------------
   // BÀI 14: ĐỘNG TỪ THỂ て, YÊU CẦU & ĐANG DIỄN RA (22 TỪ)
   // --------------------------------------------------------------------------
   {
@@ -8055,9 +8043,8 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },
-
-// --------------------------------------------------------------------------
+  },,
+  // --------------------------------------------------------------------------
   // BÀI 15: XIN PHÉP, CẤM ĐOÁN & TRẠNG THÁI NGHỀ NGHIỆP (28 TỪ)
   // --------------------------------------------------------------------------
   {
@@ -8545,12 +8532,9 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },
-
-  // --------------------------------------------------------------------------
-  // BÃ€I 16: CHUá»–I HÃ€NH Äá»˜NG, Äá»€N CHÃ™A & GIAO Dá»ŠCH ATM
-  // --------------------------------------------------------------------------
-{
+  },,
+// Lesson 16 Data (16 words)
+const lesson16Data = {
   lessonNumber: 16,
   level: 'N5',
   title: 'Bài 16: Chuỗi hành động, Đền chùa & Giao dịch ATM',
@@ -8831,12 +8815,9 @@ const LESSONS_N5 = [
       }
     }
   ]
-},
-
-  // --------------------------------------------------------------------------
-  // BÃ€I 17: Sá»¨C KHá»ŽE, Bá»†NH VIá»†N & NGHÄ¨A Vá»¤
-  // --------------------------------------------------------------------------
-{
+};,
+// Lesson 17 Data (28 words)
+const lesson17Data = {
   lessonNumber: 17,
   level: 'N5',
   title: 'Bài 17: Sức khỏe, Bệnh viện & Nghĩa vụ',
@@ -9321,12 +9302,9 @@ const LESSONS_N5 = [
       }
     }
   ]
-},
-
-  // --------------------------------------------------------------------------
-  // BÃ€I 18: KHáº¢ NÄ‚NG, Sá»ž THÃCH & CHá»¨C Vá»¤
-  // --------------------------------------------------------------------------
-{
+};,
+// Lesson 18 Data (29 words)
+const lesson18Data = {
   lessonNumber: 18,
   level: 'N5',
   title: 'Bài 18: Khả năng, Sở thích & Chức vụ',
@@ -9828,12 +9806,9 @@ const LESSONS_N5 = [
       }
     }
   ]
-},
-
-  // --------------------------------------------------------------------------
-  // BÃ€I 19: TRáº¢I NGHIá»†M VÄ‚N HÃ“A & THAY Äá»”I TRáº NG THÃI
-  // --------------------------------------------------------------------------
-{
+};,
+// Lesson 19 Data (30 words)
+const lesson19Data = {
   lessonNumber: 19,
   level: 'N5',
   title: 'Bài 19: Trải nghiệm văn hóa & Thay đổi trạng thái',
@@ -10352,12 +10327,9 @@ const LESSONS_N5 = [
       }
     }
   ]
-},
-
-  // --------------------------------------------------------------------------
-  // BÃ€I 20: GIAO TIáº¾P THÃ‚N Máº¬T & THá»‚ THÃ”NG THÆ¯á»œNG
-  // --------------------------------------------------------------------------
-{
+};,
+// Lesson 20 Data (13 words)
+const lesson20Data = {
   lessonNumber: 20,
   level: 'N5',
   title: 'Bài 20: Giao tiếp thân mật & Thể thông thường',
@@ -10587,12 +10559,9 @@ const LESSONS_N5 = [
       }
     }
   ]
-},
-
-// --------------------------------------------------------------------------
-  // BÃ€I 21: SUY NGHÄ¨, Ã KIáº¾N & TIN Tá»¨C Äá»œI Sá»NG
-  // --------------------------------------------------------------------------
-{
+};,
+// Lesson 21 Data (17 words)
+const lesson21Data = {
   lessonNumber: 21,
   level: 'N5',
   title: 'Bài 21: Bày tỏ Ý kiến & Trích dẫn',
@@ -10890,12 +10859,9 @@ const LESSONS_N5 = [
       }
     }
   ]
-},
-
-  // --------------------------------------------------------------------------
-  // BÃ€I 22: NHÃ€ Cá»¬A KIá»‚U NHáº¬T & Má»†NH Äá»€ Äá»ŠNH NGá»®
-  // --------------------------------------------------------------------------
-{
+};,
+// Lesson 22 Data (12 words)
+const lesson22Data = {
   lessonNumber: 22,
   level: 'N5',
   title: 'Bài 22: Nhà cửa kiểu Nhật & Mệnh đề định ngữ',
@@ -11108,12 +11074,9 @@ const LESSONS_N5 = [
       }
     }
   ]
-},
-
-  // --------------------------------------------------------------------------
-  // BÃ€I 23: THAO TÃC MÃY MÃ“C & CHá»ˆ ÄÆ¯á»œNG GIAO THÃ”NG
-  // --------------------------------------------------------------------------
-{
+};,
+// Lesson 23 Data (30 words)
+const lesson23Data = {
   lessonNumber: 23,
   level: 'N5',
   title: 'Bài 23: Thao tác máy móc & Chỉ đường giao thông',
@@ -11632,12 +11595,9 @@ const LESSONS_N5 = [
       }
     }
   ]
-},
-
-  // --------------------------------------------------------------------------
-  // BÃ€I 24: CHO NHáº¬N Ã‚N HUá»† & GIÃšP Äá» 
-  // --------------------------------------------------------------------------
-{
+};,
+// Lesson 24 Data (5 words)
+const lesson24Data = {
   lessonNumber: 24,
   level: 'N5',
   title: 'Bài 24: Cho nhận ân huệ & Giúp đỡ',
@@ -11731,12 +11691,9 @@ const LESSONS_N5 = [
       }
     }
   ]
-},
-
-  // --------------------------------------------------------------------------
-  // BÃ€I 25: ÄIá»€U KIá»†N GIáº¢ Äá»ŠNH & Tá»T NGHIá»†P N5 LÃŠN N4
-  // --------------------------------------------------------------------------
-{
+};,
+// Lesson 25 Data (13 words)
+const lesson25Data = {
   lessonNumber: 25,
   level: 'N5',
   title: 'Bài 25: Giả định, Điều kiện & Tốt nghiệp N5 lên N4',
@@ -11966,7 +11923,7 @@ const LESSONS_N5 = [
       }
     }
   ]
-}
+};
 ];
 
 // ============================================================================
@@ -12199,12 +12156,13 @@ class JapaneseLessonsManager {
     const n5Vocab = this.getAllVocabForLevel('N5');
     if (n5Vocab.length > 0) {
       // Hợp nhất những từ chưa có
-      // Há»£p nháº¥t vÃ  cáº­p nháº­t tá»« vá»±ng N5 tá»« cÃ¡c bÃ i há»c
-      const vocabMap = new Map();
-      window.JLPT_DATA.n5.forEach(w => vocabMap.set(w.id, w));
-      n5Vocab.forEach(w => vocabMap.set(w.id, w));
-      window.JLPT_DATA.n5 = Array.from(vocabMap.values());
-      window.JLPT_DATA.lessons = LESSONS_N5;
+      const existingIds = new Set(window.JLPT_DATA.n5.map(w => w.id));
+      n5Vocab.forEach(w => {
+        if (!existingIds.has(w.id)) {
+          window.JLPT_DATA.n5.push(w);
+          existingIds.add(w.id);
+        }
+      });
     }
 
     // Nạp từ vựng N4 vào kho

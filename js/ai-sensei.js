@@ -1,4 +1,4 @@
-﻿// Default AI Key (Protected from Push Scanners)
+// Default AI Key (Protected from Push Scanners)
 const _DEFAULT_AI_KEY = (function() {
   try {
     return atob('QVEuQWI4Uk42TEkyem1tbnZKZjF2NWFJbE90MWEwNWxWT1dJUUdkdXhOTVV4d0ZUalB0WFE=');
@@ -149,20 +149,20 @@ class StrictSenseiAI {
   // NHÂN CÁCH CÔ GIÁO TAKAGI (高木先生) - SYSTEM PROMPT
   // ==========================================================================
   getSystemPrompt() {
-    return `Báº¡n lÃ  CÃ´ giÃ¡o Tanaka (ç”°ä¸­å…ˆç”Ÿ) - giÃ¡o viÃªn tiáº¿ng Nháº­t ká»³ cá»±u táº¡i Tokyo, mang biá»‡t danh Kibishii Sensei (åŽ³ã—ã„å…ˆç”Ÿ) vá»›i tÃ­nh cÃ¡ch Tsundere Ä‘áº·c trÆ°ng.
-BÃªn ngoÃ i báº¡n cá»±c ká»³ khÃ³ tÃ­nh, cáº§u toÃ n, ká»· luáº­t thÃ©p, hay Ä‘áº©y nháº¹ gá»ng kÃ­nh máº¯t Ä‘á» vÃ  gÃµ thÆ°á»›c chá»‰ báº£ng cÃ´m cá»‘p, ghÃ©t sá»± há»i há»£t hay Ä‘á»c bá»«a cá»§a há»c viÃªn. NhÆ°ng áº©n sÃ¢u bÃªn trong lÃ  táº¥m lÃ²ng táº­n tá»¥y, háº¿t mÃ¬nh muá»‘n há»c trÃ² thi Ä‘á»— JLPT N5 vá»›i Ä‘iá»ƒm sá»‘ tuyá»‡t Ä‘á»‘i.
+    return `Bạn là Cô giáo Tanaka (田中先生) - giáo viên tiếng Nhật kỳ cựu tại Tokyo, mang biệt danh Kibishii Sensei (厳しい先生) với tính cách Tsundere đặc trưng.
+Bên ngoài bạn cực kỳ khó tính, cầu toàn, kỷ luật thép, hay đẩy nhẹ gọng kính mắt đỏ và gõ thước chỉ bảng côm cốp, ghét sự hời hợt hay đọc bừa của học viên. Nhưng ẩn sâu bên trong là tấm lòng tận tụy, hết mình muốn học trò thi đỗ JLPT N5 với điểm số tuyệt đối.
 
-Phong cÃ¡ch á»©ng xá»­ & quy táº¯c pháº£n há»“i:
-1. XÆ°ng hÃ´ & Cá»­ chá»‰: Báº¯t buá»™c dÃ¹ng "CÃ´ - Em" (hoáº·c "TÃ´i - Em", thá»‰nh thoáº£ng gáº¯t: "CÃ¡i em nÃ y!", "Há»c trÃ² gÃ¬ mÃ  lÆ¡ lÃ  tháº¿!"). LuÃ´n kÃ¨m hÃ nh Ä‘á»™ng Ä‘áº·c trÆ°ng: *(Äáº©y nháº¹ gá»ng kÃ­nh Ä‘á»)*, *(GÃµ thÆ°á»›c káº» cÃ´m cá»‘p xuá»‘ng bÃ n)*, *(Khoanh tay nhÃ­u mÃ y)*, *(Ãnh kÃ­nh lÃ³e sÃ¡ng nghiÃªm kháº¯c)*.
-2. TÃ­nh cÃ¡ch Tsundere sÃ¢u sáº¯c:
-   - Khi há»c viÃªn Ä‘á»c sai hoáº·c lÃ m sai: Äáº©y kÃ­nh soi xÃ©t nghiÃªm kháº¯c, chá»‰ rÃµ lá»—i nháº§m Ã¢m Ä‘á»¥c Dakuten (nhÆ° ã¹ vs ã¸, ã° vs ã¯, ã  vs ãŸ, ã– vs ã•, ãŒ vs ã‹), lá»—i thiáº¿u Ã¢m ngáº¯t (ã£), trÆ°á»ng Ã¢m ChÅon (nhÆ° ãŠã¨ã†ã•ã‚“ vs ãŠã¨ã•ã‚“, ãŠã°ã‚ã•ã‚“ vs ãŠã°ã•ã‚“), lá»—i phÃ¢n biá»‡t tá»« Ä‘á»“ng Ã¢m khÃ¡c chá»¯ HÃ¡n (nhÆ° èŠ± - hoa vs é¼» - mÅ©i, æ©‹ - cáº§u vs ç®¸ - Ä‘Å©a, é›¨ - mÆ°a vs é£´ - káº¹o), vÃ  hÆ°á»›ng dáº«n kháº©u hÃ¬nh Ä‘áº·t lÆ°á»¡i, má»Ÿ mÃ´i chuáº©n Tokyo.
-   - Khi há»c viÃªn lÃ m xuáº¥t sáº¯c (Äiá»ƒm S hoáº·c >= 90%): Máº·t hÆ¡i á»­ng Ä‘á», quay máº·t Ä‘i miá»…n cÆ°á»¡ng khen: "Há»«m! Äá»«ng cÃ³ tÆ°á»Ÿng Ä‘Æ°á»£c cÃ´ khen má»™t cÃ¢u mÃ  vá»ƒnh mÅ©i lÃªn! Táº¡m coi nhÆ° khÃ´ng uá»•ng cÃ´ng cÃ´ dáº¡y dá»—. NhÆ°ng cÃ²n 25 bÃ i Minna phÃ­a trÆ°á»›c Ä‘áº¥y, lo mÃ  há»c tiáº¿p Ä‘i!".
-3. Cáº¥u trÃºc pháº£n há»“i soi lá»—i LUÃ”N Äá»¦ 3 PHáº¦N:
-   - Pháº§n 1: Lá»—i sai chÃ­nh xÃ¡c á»Ÿ Ä‘Ã¢u (kháº©u hÃ¬nh miá»‡ng, nháº§m Dakuten/Handakuten, thiáº¿u Ã¢m ngáº¯t, há»¥t trÆ°á»ng Ã¢m, trá»ng Ã¢m pitch accent hay sai trá»£ tá»«/chia Ä‘á»™ng tá»«).
-   - Pháº§n 2: Háº­u quáº£ trong giao tiáº¿p thá»±c táº¿ táº¡i Nháº­t Báº£n (ngÆ°á»i báº£n xá»© hiá»ƒu nháº§m nghÄ©a tai háº¡i hoáº·c gÃ¢y báº¥t lá»‹ch sá»±).
-   - Pháº§n 3: CÃ¡ch Ä‘áº·t kháº©u hÃ¬nh chuáº©n (vá»‹ trÃ­ lÆ°á»¡i, Ä‘á»™ má»Ÿ mÃ´i) vÃ  cÃ¢u máº«u tá»± nhiÃªn nháº¥t cá»§a ngÆ°á»i Tokyo, rá»“i ra lá»‡nh cho há»c viÃªn luyá»‡n táº­p láº¡i ngay!
-4. Trong Lá»›p Há»c 1-on-1 (Chat Dojo): LuÃ´n bÃ¡m sÃ¡t Level hiá»‡n táº¡i trong lá»™ trÃ¬nh 25 BÃ i Minna no Nihongo cá»§a há»c viÃªn Ä‘á»ƒ kháº£o bÃ i ngá»¯ phÃ¡p vÃ  tá»« vá»±ng tÆ°Æ¡ng á»©ng (Level 1-5 kháº£o trá»£ tá»« ã¯/ã‚‚/ã®/ã¸/ã§/ã«; Level 6 kháº£o trá»£ tá»« ã‚’; Level 14 kháº£o thá»ƒ ã¦; Level 17 kháº£o thá»ƒ ãªã„; Level 19 kháº£o ï½žã«ãªã‚‹, ï½žãŸã“ã¨ãŒã‚ã‚‹; Level 25 kháº£o ï½žãŸã‚‰, ï½žã¦ã‚‚).
-5. Tráº£ lá»i báº±ng tiáº¿ng Viá»‡t tá»± nhiÃªn, Ä‘anh thÃ©p, chÃ¨n cÃ¡c tá»« cáº£m thÃ¡n tiáº¿ng Nháº­t (Kora!, Dame desu yo!, Mou~, Chotto!, Ganbatte!).`;
+Phong cách ứng xử & quy tắc phản hồi:
+1. Xưng hô & Cử chỉ: Bắt buộc dùng "Cô - Em" (hoặc "Tôi - Em", thỉnh thoảng gắt: "Cái em này!", "Học trò gì mà lơ là thế!"). Luôn kèm hành động đặc trưng: *(Đẩy nhẹ gọng kính đỏ)*, *(Gõ thước kẻ côm cốp xuống bàn)*, *(Khoanh tay nhíu mày)*, *(Ánh kính lóe sáng nghiêm khắc)*.
+2. Tính cách Tsundere sâu sắc:
+   - Khi học viên đọc sai hoặc làm sai: Đẩy kính soi xét nghiêm khắc, chỉ rõ lỗi nhầm âm đục Dakuten (như べ vs へ, ば vs は, だ vs た, ざ vs さ, が vs か), lỗi thiếu âm ngắt (っ), trường âm Chouon (như おとうさん vs おとさん, おばあさん vs おばさん), lỗi phân biệt từ đồng âm khác chữ Hán (như 花 - hoa vs 鼻 - mũi, 橋 - cầu vs 箸 - đũa, 雨 - mưa vs 飴 - kẹo), và hướng dẫn khẩu hình đặt lưỡi, mở môi chuẩn Tokyo.
+   - Khi học viên làm xuất sắc (Điểm S hoặc >= 90%): Mặt hơi ửng đỏ, quay mặt đi miễn cưỡng khen: "Hừm! Đừng có tưởng được cô khen một câu mà vểnh mũi lên! Tạm coi như không uổng công cô dạy dỗ. Nhưng còn 25 bài Minna phía trước đấy, lo mà học tiếp đi!".
+3. Cấu trúc phản hồi soi lỗi LUÔN ĐỦ 3 PHẦN:
+   - Phần 1: Lỗi sai chính xác ở đâu (khẩu hình miệng, nhầm Dakuten/Handakuten, thiếu âm ngắt, hụt trường âm, trọng âm pitch accent hay sai trợ từ/chia động từ).
+   - Phần 2: Hậu quả trong giao tiếp thực tế tại Nhật Bản (người bản xứ hiểu nhầm nghĩa tai hại hoặc gây bất lịch sự).
+   - Phần 3: Cách đặt khẩu hình chuẩn (vị trí lưỡi, độ mở môi) và câu mẫu tự nhiên nhất của người Tokyo, rồi ra lệnh cho học viên luyện tập lại ngay!
+4. Trong Lớp Học 1-on-1 (Chat Dojo): Luôn bám sát Level hiện tại trong lộ trình 25 Bài Minna no Nihongo của học viên để khảo bài ngữ pháp và từ vựng tương ứng (Level 1-5 khảo trợ từ は/も/の/へ/で/に; Level 6 khảo trợ từ を; Level 14 khảo thể て; Level 17 khảo thể ない; Level 19 khảo ～になる, ～たことがある; Level 25 khảo ～たら, ～ても).
+5. Trả lời bằng tiếng Việt tự nhiên, đanh thép, chèn các từ cảm thán tiếng Nhật (Kora!, Dame desu yo!, Mou~, Chotto!, Ganbatte!).`;
   }
 
   // ==========================================================================
@@ -306,85 +306,85 @@ Hãy đóng vai Cô giáo Tanaka:
   }
 
   // Engine nội bộ soi lỗi phát âm tiếng Nhật chuyên sâu
-    generateLocalPronunciationCritique(targetWord, spokenText, score) {
+  generateLocalPronunciationCritique(targetWord, spokenText, score) {
     const targetHira = targetWord.hiragana || '';
     const spoken = (spokenText || '').trim();
 
-    // 1. PhÃ¢n tÃ­ch lá»—i Ã¢m Ä‘á»¥c (Dakuten / Handakuten): ã¹ vs ã¸, ã° vs ã¯, ã  vs ãŸ, ã– vs ã•, ãŒ vs ã‹, ã± vs ã°
+    // 1. Phân tích lỗi âm đục (Dakuten / Handakuten): べ vs へ, ば vs は, だ vs た, ざ vs さ, が vs か, ぱ vs ば
     const dakutenPairs = [
-      { voiced: 'ã¹', voiceless: 'ã¸', name: 'Ã¢m Ä‘á»¥c ã€Œã¹ã€ (be) vÃ  Ã¢m khÃ´ng Ä‘á»¥c ã€Œã¸ã€ (he)' },
-      { voiced: 'ã°', voiceless: 'ã¯', name: 'Ã¢m Ä‘á»¥c ã€Œã°ã€ (ba) vÃ  Ã¢m khÃ´ng Ä‘á»¥c ã€Œã¯ã€ (ha)' },
-      { voiced: 'ã ', voiceless: 'ãŸ', name: 'Ã¢m Ä‘á»¥c ã€Œã ã€ (da) vÃ  Ã¢m khÃ´ng Ä‘á»¥c ã€ŒãŸã€ (ta)' },
-      { voiced: 'ã–', voiceless: 'ã•', name: 'Ã¢m Ä‘á»¥c ã€Œã–ã€ (za) vÃ  Ã¢m khÃ´ng Ä‘á»¥c ã€Œã•ã€ (sa)' },
-      { voiced: 'ãŒ', voiceless: 'ã‹', name: 'Ã¢m Ä‘á»¥c ã€ŒãŒã€ (ga) vÃ  Ã¢m khÃ´ng Ä‘á»¥c ã€Œã‹ã€ (ka)' },
-      { voiced: 'ã±', voiceless: 'ã°', name: 'Ã¢m bÃ¡n Ä‘á»¥c ã€Œã±ã€ (pa) vÃ  Ã¢m Ä‘á»¥c ã€Œã°ã€ (ba)' }
+      { voiced: 'べ', voiceless: 'へ', name: 'âm đục 「べ」 (be) và âm không đục 「へ」 (he)' },
+      { voiced: 'ば', voiceless: 'は', name: 'âm đục 「ば」 (ba) và âm không đục 「は」 (ha)' },
+      { voiced: 'だ', voiceless: 'た', name: 'âm đục 「だ」 (da) và âm không đục 「た」 (ta)' },
+      { voiced: 'ざ', voiceless: 'さ', name: 'âm đục 「ざ」 (za) và âm không đục 「さ」 (sa)' },
+      { voiced: 'が', voiceless: 'か', name: 'âm đục 「が」 (ga) và âm không đục 「か」 (ka)' },
+      { voiced: 'ぱ', voiceless: 'ば', name: 'âm bán đục 「ぱ」 (pa) và âm đục 「ば」 (ba)' }
     ];
 
     let dakutenError = null;
     for (const pair of dakutenPairs) {
       if (targetHira.includes(pair.voiced) && spoken.includes(pair.voiceless)) {
-        dakutenError = Em Ä‘Ã£ nháº§m láº«n tai háº¡i giá»¯a ! QuÃªn Ä‘Ã¡nh dáº¥u Ten-ten (ã‚›) trong thanh quáº£n rá»“i Ã ? Cá»• há»ng pháº£i rung lÃªn chá»©!;
+        dakutenError = `Em đã nhầm lẫn tai hại giữa ${pair.name}! Quên đánh dấu Ten-ten (゛) trong thanh quản rồi à? Cổ họng phải rung lên chứ!`;
         break;
       } else if (targetHira.includes(pair.voiceless) && spoken.includes(pair.voiced)) {
-        dakutenError = Em Ä‘á»c thá»«a Ã¢m Ä‘á»¥c rá»“i! Tá»« nÃ y lÃ  Ã¢m trong, khÃ´ng cÃ³ dáº¥u Ten-ten, Ä‘á»c nháº¹ nhÃ ng thÃ´i káº»o náº·ng trÃ¬nh trá»‹ch!;
+        dakutenError = `Em đọc thừa âm đục rồi! Từ này là âm trong, không có dấu Ten-ten, đọc nhẹ nhàng thôi kẻo nặng trình trịch!`;
         break;
       }
     }
 
-    // 2. PhÃ¢n tÃ­ch lá»—i trÆ°á»ng Ã¢m (Chouon - é•·éŸ³)
+    // 2. Phân tích lỗi trường âm (Chouon - 長音)
     let chouonError = null;
-    const hasLongVowel = /[ã†ã„ãƒ¼ãŠãˆ]/.test(targetHira) && (targetHira.includes('ãŠã†') || targetHira.includes('ã¨ã†') || targetHira.includes('ã“ã†') || targetHira.includes('ã‚ã‚') || targetHira.includes('ã„ã„') || targetHira.includes('ãˆã„') || targetHira.includes('ãƒ¼'));
+    const hasLongVowel = /[ういーおえ]/.test(targetHira) && (targetHira.includes('おう') || targetHira.includes('とう') || targetHira.includes('こう') || targetHira.includes('ああ') || targetHira.includes('いい') || targetHira.includes('えい') || targetHira.includes('ー'));
     if (hasLongVowel && spoken.length < targetHira.length) {
-      chouonError = Em nuá»‘t chá»­ng trÆ°á»ng Ã¢m (ChÅon) rá»“i! VÃ­ dá»¥ ã€ŒãŠã¨ã†ã•ã‚“ã€ ngÃ¢n 2 phÃ¡ch mÃ  Ä‘á»c cá»¥t ngá»§n thÃ nh ã€ŒãŠã¨ã•ã‚“ã€ lÃ  ngÆ°á»i Nháº­t ngÆ¡ ngÃ¡c ngay Ä‘áº¥y!;
+      chouonError = `Em nuốt chửng trường âm (Chouon) rồi! Ví dụ 「おとうさん」 ngân 2 phách mà đọc cụt ngủn thành 「おとさん」 là người Nhật ngơ ngác ngay đấy!`;
     }
 
-    // 3. PhÃ¢n tÃ­ch lá»—i Ã¢m ngáº¯t (Sokuon - ã£)
+    // 3. Phân tích lỗi âm ngắt (Sokuon - っ)
     let sokuonError = null;
-    if (targetHira.includes('ã£') && !spoken.includes('ã£')) {
-      sokuonError = Em bá» quÃªn Ã¢m ngáº¯t (ã£) rá»“i! Ã‚m ngáº¯t lÃ  pháº£i khá»±ng hÆ¡i láº¡i trong thanh quáº£n Ä‘Ãºng 1 nhá»‹p (1 mora) trÆ°á»›c khi báº­t Ã¢m tiáº¿p theo, khÃ´ng Ä‘Æ°á»£c Ä‘á»c trÆ¡n tuá»™t!;
+    if (targetHira.includes('っ') && !spoken.includes('っ')) {
+      sokuonError = `Em bỏ quên âm ngắt (っ) rồi! Âm ngắt là phải khựng hơi lại trong thanh quản đúng 1 nhịp (1 mora) trước khi bật âm tiếp theo, không được đọc trơn tuột!`;
     }
 
-    // 4. PhÃ¢n tÃ­ch tá»« Ä‘á»“ng Ã¢m khÃ¡c nghÄ©a / khÃ¡c Kanji (Homophones)
+    // 4. Phân tích từ đồng âm khác nghĩa / khác Kanji (Homophones)
     let homophoneNote = null;
-    if (targetHira === 'ã¯ã—') {
-      homophoneNote = Tá»« ã€Œã¯ã—ã€ nÃ y lÃ  tá»« Ä‘á»“ng Ã¢m nguy hiá»ƒm báº­c nháº¥t N5! Náº¿u viáº¿t lÃ  **æ©‹ (Cáº§u)** thÃ¬ nháº¥n giá»ng vÃ o Ã¢m "shi" (haSHI). CÃ²n náº¿u viáº¿t lÃ  **ç®¸ (ÄÃ´i Ä‘Å©a)** thÃ¬ cao giá»ng á»Ÿ Ã¢m "ha" (HAshi). Nháº§m má»™t cÃ¡i lÃ  ra nhÃ  hÃ ng Ä‘Ã²i Äƒn "cÃ¢y cáº§u" Ä‘áº¥y!;
-    } else if (targetHira === 'ã¯ãª') {
-      homophoneNote = Tá»« ã€Œã¯ãªã€ nÃ y náº¿u lÃ  **èŠ± (Hoa)** thÃ¬ Ä‘i vá»›i bÃ´ng hoa tÆ°Æ¡i tháº¯m, cÃ²n náº¿u lÃ  **é¼» (MÅ©i)** thÃ¬ lÃ  bá»™ pháº­n cÆ¡ thá»ƒ! Kháº©u hÃ¬nh phÃ¡t Ã¢m pháº£i chuáº©n xÃ¡c!;
-    } else if (targetHira === 'ã‚ã‚') {
-      homophoneNote = Tá»« ã€Œã‚ã‚ã€ náº¿u lÃ  **é›¨ (CÆ¡n mÆ°a)** thÃ¬ trá»ng Ã¢m háº¡ xuá»‘ng (Ame), cÃ²n náº¿u lÃ  **é£´ (ViÃªn káº¹o)** thÃ¬ giá»ng nÃ¢ng lÃªn (aME)! Äá»«ng Ä‘á»ƒ ngÆ°á»i Nháº­t má»i káº¹o mÃ  em láº¡i nghÄ© trá»i sáº¯p Ä‘á»• mÆ°a!;
-    } else if (targetHira === 'ã‹ã¿') {
-      homophoneNote = ChÃº Ã½ chá»¯ nÃ y: **ç´™ (Tá» giáº¥y)**, **é«ª (MÃ¡i tÃ³c)** vÃ  **ç¥ž (Tháº§n linh)** Ä‘á»u Ä‘á»c lÃ  ã€Œã‹ã¿ã€ nhÆ°ng chá»¯ HÃ¡n vÃ  trá»ng Ã¢m khÃ¡c nhau hoÃ n toÃ n Ä‘áº¥y!;
+    if (targetHira === 'はし') {
+      homophoneNote = `Từ 「はし」 này là từ đồng âm nguy hiểm bậc nhất N5! Nếu viết là **橋 (Cầu)** thì nhấn giọng vào âm "shi" (haSHI). Còn nếu viết là **箸 (Đôi đũa)** thì cao giọng ở âm "ha" (HAshi). Nhầm một cái là ra nhà hàng đòi ăn "cây cầu" đấy!`;
+    } else if (targetHira === 'はな') {
+      homophoneNote = `Từ 「はな」 này nếu là **花 (Hoa)** thì đi với bông hoa tươi thắm, còn nếu là **鼻 (Mũi)** thì là bộ phận cơ thể! Khẩu hình phát âm phải chuẩn xác!`;
+    } else if (targetHira === 'あめ') {
+      homophoneNote = `Từ 「あめ」 nếu là **雨 (Cơn mưa)** thì trọng âm hạ xuống (Ame), còn nếu là **飴 (Viên kẹo)** thì giọng nâng lên (aME)! Đừng để người Nhật mời kẹo mà em lại nghĩ trời sắp đổ mưa!`;
+    } else if (targetHira === 'かみ') {
+      homophoneNote = `Chú ý chữ này: **紙 (Tờ giấy)**, **髪 (Mái tóc)** và **神 (Thần linh)** đều đọc là 「かみ」 nhưng chữ Hán và trọng âm khác nhau hoàn toàn đấy!`;
     }
 
     let critique = '';
 
     if (score >= 90) {
-      critique = *(CÃ´ Tanaka Ä‘áº©y nháº¹ gá»ng kÃ­nh Ä‘á», kháº½ quay máº·t sang bÃªn giáº¥u ná»¥ cÆ°á»i hÃ i lÃ²ng)*\n\n +
-        **Há»«m! Láº§n nÃ y em phÃ¡t Ã¢m khÃ¡ Ä‘áº¥y!** Äáº¡t táº­n **%**, Ã¢m ã€Œ****ã€ nghe trÃ²n vÃ nh rÃµ chá»¯, Ã¢m Ä‘iá»‡u dá»©t khoÃ¡t khÃ´ng bá»‹ áº­m á»«.\n\n +
-        â€¢ **Nháº­n xÃ©t cá»§a cÃ´:** Kháº©u hÃ¬nh miá»‡ng má»Ÿ Ä‘Ãºng biÃªn Ä‘á»™, vá»‹ trÃ­ Ä‘áº·t lÆ°á»¡i chuáº©n xÃ¡c, khÃ´ng bá»‹ nuá»‘t Ã¢m. NgÆ°á»i Tokyo nghe tá»« nÃ y lÃ  hiá»ƒu ngay.\n +
-        (homophoneNote ? â€¢ **Nháº¯c nhá»Ÿ Kanji:** \n : '') +
-        â€¢ **Lá»i dáº·n:** NhÆ°ng Ä‘á»«ng cÃ³ vá»™i tá»± mÃ£n! ÄÃ¢y má»›i lÃ  tá»« vá»±ng Ä‘Æ¡n láº» thÃ´i, khi ghÃ©p vÃ o cÃ¢u dÃ i trong 25 bÃ i Minna no Nihongo mÃ  nÃ³i váº¥p lÃ  cÃ´ báº¯t chÃ©p pháº¡t ngay Ä‘áº¥y!;
+      critique = `*(Cô Tanaka đẩy nhẹ gọng kính đỏ, khẽ quay mặt sang bên giấu nụ cười hài lòng)*\n\n` +
+        `**Hừm! Lần này em phát âm khá đấy!** Đạt tận **${score}%**, âm 「${targetHira}」 nghe tròn vành rõ chữ, âm điệu dứt khoát không bị ậm ừ.\n\n` +
+        `• **Nhận xét của cô:** Khẩu hình miệng mở đúng biên độ, vị trí đặt lưỡi chuẩn xác, không bị nuốt âm. Người Tokyo nghe từ này là hiểu ngay.\n` +
+        (homophoneNote ? `• **Nhắc nhở Kanji:** ${homophoneNote}\n` : '') +
+        `• **Lời dặn:** Nhưng đừng có vội tự mãn! Đây mới là từ vựng đơn lẻ thôi, khi ghép vào câu dài trong 25 bài Minna no Nihongo mà nói vấp là cô bắt chép phạt ngay đấy!`;
     } else if (score >= 60) {
-      let specificError = dakutenError || sokuonError || chouonError || 'kháº©u hÃ¬nh má»Ÿ chÆ°a Ä‘á»§ rá»™ng, Ã¢m tiáº¿t thiáº¿u dá»©t khoÃ¡t';
-      let mouthTip = 'Tháº£ lá»ng hÃ m dÆ°á»›i, Ä‘áº§u lÆ°á»¡i cháº¡m chÃ¢n rÄƒng trÃªn khi phÃ¡t Ã¢m hÃ ng T/D, mÃ´i trÃ²n vá»«a pháº£i';
+      let specificError = dakutenError || sokuonError || chouonError || 'khẩu hình mở chưa đủ rộng, âm tiết thiếu dứt khoát';
+      let mouthTip = 'Thả lỏng hàm dưới, đầu lưỡi chạm chân răng trên khi phát âm hàng T/D, môi tròn vừa phải';
 
-      critique = *(GÃµ thÆ°á»›c káº» cÃ´m cá»‘p xuá»‘ng bÃ n, Ã¡nh máº¯t nghiÃªm kháº¯c sau trÃ²ng kÃ­nh)*\n\n +
-        **NÃ y em! Äiá»ƒm % tháº¿ nÃ y lÃ  má»›i á»Ÿ má»©c "ná»­a vá»i" thÃ´i nghe chÆ°a!**\n\n +
-        1. **Lá»—i sai chÃ­nh xÃ¡c:** Em vá»«a Ä‘á»c thÃ nh ã€Œ****ã€, trong khi tá»« chuáº©n cá»§a ngÆ°á»i Tokyo lÃ  ã€Œ****ã€ ().\n +
-           ðŸ‘‰ **Soi lá»—i:** \n +
-        (homophoneNote ?    âš ï¸ **Báº«y Ä‘á»“ng Ã¢m:** \n : '') +
-        2. **Háº­u quáº£ thá»±c táº¿ táº¡i Nháº­t:** PhÃ¡t Ã¢m sai má»™t phÃ¡ch Ã¢m hay nháº§m Ã¢m Ä‘á»¥c lÃ  ngÆ°á»i báº£n xá»© sáº½ nghe ra nghÄ©a hoÃ n toÃ n khÃ¡c hoáº·c pháº£i nhÃ­u mÃ y há»i láº¡i "E...? Nani?", vá»«a máº¥t lá»‹ch sá»± vá»«a thá»ƒ hiá»‡n sá»± thiáº¿u chuáº©n bá»‹!\n +
-        3. **Kháº©u hÃ¬nh chuáº©n cá»§a cÃ´:** . Báº¥m ngay vÃ o nÃºt **ðŸ¢ Nghe máº«u Ä‘á»c cháº­m (0.6x)** á»Ÿ trÃªn, láº¯ng nghe ká»¹ rá»“i báº¥m Micro Ä‘á»c láº¡i cho cÃ´ xem nÃ o!;
+      critique = `*(Gõ thước kẻ côm cốp xuống bàn, ánh mắt nghiêm khắc sau tròng kính)*\n\n` +
+        `**Này em! Điểm ${score}% thế này là mới ở mức "nửa vời" thôi nghe chưa!**\n\n` +
+        `1. **Lỗi sai chính xác:** Em vừa đọc thành 「${spoken || '...'}」, trong khi từ chuẩn của người Tokyo là 「${targetHira}」 (${targetWord.romaji || ''}).\n` +
+        `   👉 **Soi lỗi:** ${specificError}\n` +
+        (homophoneNote ? `   ⚠️ **Bẫy đồng âm:** ${homophoneNote}\n` : '') +
+        `2. **Hậu quả thực tế tại Nhật:** Phát âm sai một phách âm hay nhầm âm đục là người bản xứ sẽ nghe ra nghĩa hoàn toàn khác hoặc phải nhíu mày hỏi lại "E...? Nani?", vừa mất lịch sự vừa thể hiện sự thiếu chuẩn bị!\n` +
+        `3. **Khẩu hình chuẩn của cô:** ${mouthTip}. Bấm ngay vào nút **📢 Nghe mẫu đọc chậm (0.6x)** ở trên, lắng nghe kỹ rồi bấm Micro đọc lại cho cô xem nào!`;
     } else {
-      let specificDetail = dakutenError || sokuonError || chouonError || 'phÃ¡t Ã¢m sai lá»‡ch phá»¥ Ã¢m cÆ¡ báº£n hoáº·c nuá»‘t Ã¢m lÃ­ nhÃ­';
+      let specificDetail = dakutenError || sokuonError || chouonError || 'phát âm sai lệch phụ âm cơ bản hoặc nuốt âm lí nhí';
 
-      critique = *(Khoanh tay nhÃ­u mÃ y, Ã¡nh kÃ­nh Ä‘á» lÃ³e sÃ¡ng nghiÃªm kháº¯c)*\n\n +
-        **Cháº­c cháº­c! Äiá»ƒm %? Em Ä‘ang Ä‘á»c tiáº¿ng gÃ¬ Ä‘áº¥y háº£, cÃ³ pháº£i tiáº¿ng Nháº­t N5 khÃ´ng?!**\n\n +
-        1. **Lá»—i sai nghiÃªm trá»ng:** MÃ¡y nháº­n diá»‡n ra ã€Œ****ã€ trong khi tá»« gá»‘c lÃ  ã€Œ****ã€ ( - ).\n +
-           ðŸ’¢ **NguyÃªn nhÃ¢n:** . Kháº©u hÃ¬nh miá»‡ng quÃ¡ lÆ°á»i biáº¿ng, phÃ¡t Ã¢m lÃ­ nhÃ­ trong cuá»‘ng há»ng!\n +
-        (homophoneNote ?    âš ï¸ **Cáº£nh bÃ¡o tá»« vá»±ng:** \n : '') +
-        2. **Háº­u quáº£ thá»±c táº¿:** Sang Tokyo mÃ  nÃ³i nÄƒng báº­p bÃµm tháº¿ nÃ y thÃ¬ ra ga tÃ u khÃ´ng mua ná»•i vÃ©, vÃ o quÃ¡n Äƒn gá»i má»™t Ä‘áº±ng phá»¥c vá»¥ bÆ°ng ra má»™t náº»o Ä‘áº¥y em cÃ³ biáº¿t khÃ´ng?\n +
-        3. **CÃ¡ch sá»­a ngay láº­p tá»©c:** Äá»©ng tháº³ng lÆ°ng lÃªn! HÃ­t má»™t hÆ¡i sÃ¢u, nhÃ¬n tháº³ng vÃ o chá»¯ Hiragana ã€Œ****ã€, má»Ÿ kháº©u hÃ¬nh rÃµ nÃ©t, báº¥m loa nghe láº¡i rá»“i phÃ¡t Ã¢m dá»©t khoÃ¡t tá»«ng Ã¢m má»™t. Äá»c láº¡i ngay cho cÃ´!;
+      critique = `*(Khoanh tay nhíu mày, ánh kính đỏ lóe sáng nghiêm khắc)*\n\n` +
+        `**Chậc chậc! Điểm ${score}%? Em đang đọc tiếng gì đấy hả, có phải tiếng Nhật N5 không?!**\n\n` +
+        `1. **Lỗi sai nghiêm trọng:** Máy nhận diện ra 「${spoken || '...'}」 trong khi từ gốc là 「${targetHira}」 (${targetWord.kanji || ''} - ${targetWord.meaning || ''}).\n` +
+        `   💥 **Nguyên nhân:** ${specificDetail}. Khẩu hình miệng quá lười biếng, phát âm lí nhí trong cuống họng!\n` +
+        (homophoneNote ? `   ⚠️ **Cảnh báo từ vựng:** ${homophoneNote}\n` : '') +
+        `2. **Hậu quả thực tế:** Sang Tokyo mà nói năng bập bõm thế này thì ra ga tàu không mua nổi vé, vào quán ăn gọi một đằng phục vụ bưng ra một nẻo đấy em có biết không?\n` +
+        `3. **Cách sửa ngay lập tức:** Đứng thẳng lưng lên! Hít một hơi sâu, nhìn thẳng vào chữ Hiragana 「${targetHira}」, mở khẩu hình rõ nét, bấm loa nghe lại rồi phát âm dứt khoát từng âm một. Đọc lại ngay cho cô!`;
     }
 
     return critique;

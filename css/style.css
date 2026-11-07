@@ -63,7 +63,7 @@ body {
   gap: 10px;
 }
 
-/* HÃ ng 1: Logo Brand + Level selector + Sound + Profile */
+/* Hang 1: Logo Brand + Level selector + Sound + Profile */
 .header-top-row {
   display: flex;
   align-items: center;
@@ -173,7 +173,7 @@ body {
   transform: translateY(-1px);
 }
 
-/* HÃ ng 2: Gamification HUD Ribbon */
+/* Hang 2: Gamification HUD Ribbon */
 .header-bottom-hud {
   display: flex;
   align-items: center;
@@ -248,7 +248,7 @@ body {
 }
 
 /* ==========================================================================
-   NAVIGATION BAR (TAB CHá»ŒN CHáº¾ Äá»˜ & NÃšT CUá»˜N TRÃI / PHáº¢I)
+   NAVIGATION BAR (TAB CHON CHE DO & NUT CUON TRAI / PHAI)
    ========================================================================== */
 .main-nav-bar {
   background: #FFF;
@@ -356,7 +356,7 @@ body {
   color: #FFF;
 }
 
-/* NÃºt Táº¥t cáº£ 10 Cháº¿ Ä‘á»™ (Quick Menu Button) */
+/* Nut Tat ca 10 Che do (Quick Menu Button) */
 .nav-all-modes-btn {
   display: inline-flex;
   align-items: center;
@@ -381,7 +381,7 @@ body {
 }
 
 /* ==========================================================================
-   MODAL 10 CHáº¾ Äá»˜ Há»ŒC Táº¬P (RESPONSIVE MODAL CHO MOBILE / TABLET / DESKTOP)
+   MODAL 10 CHE DO HOC TAP (RESPONSIVE MODAL CHO MOBILE / TABLET / DESKTOP)
    ========================================================================== */
 .modes-modal-backdrop {
   position: fixed;

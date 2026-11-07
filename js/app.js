@@ -1,4 +1,4 @@
-﻿// ============================================================================
+// ============================================================================
 // MAIN APPLICATION CONTROLLER: NIHONGO GO! (日本語ゴー!) - HOÀN CHỈNH
 // Quản lý Tabs, EXP, Level, Streak, Lưu trữ, Gamification & Sổ tay từ vựng N5
 // Tìm kiếm tức thời tiếng Việt không dấu/có dấu, Romaji, Hiragana, Kanji & Hán Việt
@@ -213,7 +213,7 @@ class JapaneseApp {
   switchTab(tabId) {
     this.currentTab = tabId;
 
-    // Tá»± Ä‘á»™ng cuá»™n Tab Ä‘ang chá»n vÃ o giá»¯a táº§m nhÃ¬n (ráº¥t quan trá»ng trÃªn Äiá»‡n thoáº¡i & iPad)
+    // Tự động cuộn Tab đang chọn vào giữa tầm nhìn (rất quan trọng trên Điện thoại & iPad)
     const activeBtn = document.querySelector(`.nav-tab-btn[data-tab="${tabId}"]`);
     if (activeBtn) {
       try {
@@ -509,7 +509,7 @@ class JapaneseApp {
     }
   }
 
-  // Cuá»™n thanh Ä‘iá»u hÆ°á»›ng Tabs sang trÃ¡i / pháº£i mÆ°á»£t mÃ 
+  // Cuộn thanh điều hướng Tabs sang trái / phải mượt mà
   scrollNav(offset) {
     const navWrap = document.getElementById('nav-tabs-wrap');
     if (navWrap) {
@@ -517,7 +517,7 @@ class JapaneseApp {
     }
   }
 
-  // Má»Ÿ modal toÃ n bá»™ 10 Cháº¿ Äá»™ Há»c N5 (há»— trá»£ tá»‘i Æ°u Äiá»‡n thoáº¡i & iPad)
+  // Mở modal toàn bộ 10 Chế Độ Học N5 (hỗ trợ tối ưu Điện thoại & iPad)
   openModesModal() {
     const modal = document.getElementById('all-modes-modal');
     if (modal) {
@@ -526,7 +526,7 @@ class JapaneseApp {
     }
   }
 
-  // ÄÃ³ng modal 10 Cháº¿ Äá»™ Há»c N5
+  // Đóng modal 10 Chế Độ Học N5
   closeModesModal() {
     const modal = document.getElementById('all-modes-modal');
     if (modal) {
