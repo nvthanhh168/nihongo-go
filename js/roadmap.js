@@ -77,6 +77,15 @@ const ROADMAP_REGIONS = [
     desc: 'Mục đích & Tập quán (～ように), Thể Bị động (受身形), Danh từ hóa (～のは), Nguyên nhân cảm xúc (～て) & Mệnh đề nghi vấn lồng (～かどうか)',
     themeColor: '#FD7E14',
     bgGradient: 'linear-gradient(135deg, #FFF4E6 0%, #FFE8CC 100%)'
+  },
+  {
+    id: 9,
+    name: 'Chặng 9: Bứt Phá N4 - Đảo Ngọc Kyushu & Suối Khoáng Onsen (九州・別府)',
+    icon: '♨️',
+    range: [41, 45],
+    desc: 'Kính ngữ Cho & Nhận (いただき・くださる), Mục đích & Công dụng (～ために, ～のに), Phỏng đoán thị giác (～そうです), Quá mức (～すぎます) & Giả định tình huống (～場合は)',
+    themeColor: '#E03131',
+    bgGradient: 'linear-gradient(135deg, #FFF5F5 0%, #FFE3E3 100%)'
   }
 ];
 

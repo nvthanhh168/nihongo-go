@@ -53,7 +53,12 @@ const MINNA_LESSONS_N5 = [
   { id: 37, title: 'Bài 37 (N4)', desc: 'Thể Bị động & Phát minh sáng chế (受身形 ～られます, Nによって)', targetWords: 40 },
   { id: 38, title: 'Bài 38 (N4)', desc: 'Danh từ hóa mệnh đề với の (～のは, ～のが, ～のを忘れました)', targetWords: 44 },
   { id: 39, title: 'Bài 39 (N4)', desc: 'Nguyên nhân dẫn đến Cảm xúc & Kết quả (～て, Nで, ～ので)', targetWords: 44 },
-  { id: 40, title: 'Bài 40 (N4)', desc: 'Câu hỏi lồng trong mệnh đề & Thử làm (～か, ～かどうか, ～てみます)', targetWords: 62 }
+  { id: 40, title: 'Bài 40 (N4)', desc: 'Câu hỏi lồng trong mệnh đề & Thử làm (～か, ～かどうか, ～てみます)', targetWords: 62 },
+  { id: 41, title: 'Bài 41 (N4)', desc: 'Kính ngữ Cho & Nhận (いただき, くださる, やる, ～ていただけませんか)', targetWords: 54 },
+  { id: 42, title: 'Bài 42 (N4)', desc: 'Mục đích & Công dụng (～ために, ～のに, V-るのに使います)', targetWords: 44 },
+  { id: 43, title: 'Bài 43 (N4)', desc: 'Phỏng đoán thị giác & Thể て来ます (～そうです, V-て来ます)', targetWords: 30 },
+  { id: 44, title: 'Bài 44 (N4)', desc: 'Quá mức & Dễ / Khó làm (～すぎます, ～やすい, ～にくい)', targetWords: 41 },
+  { id: 45, title: 'Bài 45 (N4)', desc: 'Giả định tình huống & Trái với kỳ vọng (～場合は, ～のに)', targetWords: 32 }
 ];
 
 class JapaneseAuthModule {
@@ -495,8 +500,8 @@ class JapaneseAuthModule {
         completedAt: new Date().toISOString()
       };
 
-      // Mở khóa bài tiếp theo nếu bài vừa hoàn thành là bài cao nhất (cho phép đến Bài 40 nếu đã đăng nhập)
-      if (lessonNumber === p.unlockedLesson && lessonNumber < 40) {
+      // Mở khóa bài tiếp theo nếu bài vừa hoàn thành là bài cao nhất (cho phép đến Bài 45 nếu đã đăng nhập)
+      if (lessonNumber === p.unlockedLesson && lessonNumber < 45) {
         p.unlockedLesson = lessonNumber + 1;
       }
       unlocked = p.unlockedLesson;
