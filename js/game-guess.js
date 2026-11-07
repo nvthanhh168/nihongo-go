@@ -238,8 +238,9 @@ class VocabGuessGame {
       `;
     });
 
+    const targetLvl = this.currentLesson >= 26 ? 'N4' : 'N5';
     const lessonInfo = this.currentLesson && window.LESSONS_DATA 
-      ? window.LESSONS_DATA.getLesson('N5', this.currentLesson) 
+      ? window.LESSONS_DATA.getLesson(targetLvl, this.currentLesson) 
       : null;
 
     const readyTitle = lessonInfo 
@@ -352,12 +353,14 @@ class VocabGuessGame {
     let pool = this.allWords;
 
     if (this.currentLesson) {
-      const lesson = window.LESSONS_DATA ? window.LESSONS_DATA.getLesson('N5', this.currentLesson) : null;
+      const targetLvl = this.currentLesson >= 26 ? 'N4' : 'N5';
+      const lesson = window.LESSONS_DATA ? window.LESSONS_DATA.getLesson(targetLvl, this.currentLesson) : null;
       let lessonWords = (lesson && lesson.vocab && lesson.vocab.length > 0) ? [...lesson.vocab] : [];
 
       // Kèm thêm 2 từ của bài trước (nếu có) để ôn tập kết hợp theo chuẩn yêu cầu
       if (this.currentLesson > 1 && window.LESSONS_DATA) {
-        const prevLesson = window.LESSONS_DATA.getLesson('N5', this.currentLesson - 1);
+        const prevLvl = (this.currentLesson - 1) >= 26 ? 'N4' : 'N5';
+        const prevLesson = window.LESSONS_DATA.getLesson(prevLvl, this.currentLesson - 1);
         if (prevLesson && prevLesson.vocab && prevLesson.vocab.length > 0) {
           const reviewWords = [...prevLesson.vocab].sort(() => Math.random() - 0.5).slice(0, 2);
           lessonWords = [...lessonWords, ...reviewWords];

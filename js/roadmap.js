@@ -1,8 +1,12 @@
 // ============================================================================
-// MODULE ROADMAP: BẢN ĐỒ CHINH PHỤC 25 LEVEL JLPT N5 -> JLPT N4
-// 5 Chặng địa danh Nhật Bản (Tokyo -> Kyoto -> Osaka -> Hokkaido -> Phú Sĩ)
-// Bảng Nhiệm Vụ Bài Học (Lesson Mission Modal), Tự Động Thăng Cấp & Mở Khóa,
-// Cổng Torii Chuyển Cấp N4, Bằng Tốt Nghiệp N5 & Pháo Hoa Toàn Màn Hình
+// MODULE LỘ TRÌNH HỌC TẬP THÔNG MINH - ROADMAP 25 BÀI N5 -> N4 MINNA NO NIHONGO
+// 1. Giao diện 5 Chặng địa danh Nhật Bản (Tokyo -> Kyoto -> Osaka -> Hokkaido -> Phú Sĩ)
+// 2. Thu gọn / Mở rộng (Accordion) cho từng Chặng, hiển thị Lưới 5 Thẻ Bài Học (Level Nodes)
+// 3. Quản lý 3 trạng thái: Đã hoàn thành (Completed ✅), Đang học (Current 🎯), Đang khóa (Locked 🔒)
+// 4. Bảng Nhiệm Vụ Vượt Ải (Mission Modal) với 3 bước (Flashcard -> Game Đoán Từ -> Test Phát Âm AI)
+// 5. Tính năng độc quyền: ⚡ Thi Vượt Nhanh Bài Này (Fast Pass Quiz)
+// 6. Cơ chế Tự Động Mở Khóa Bài Tiếp Theo (Unlock Level N+1) & Cổng Chuyển Cấp N4
+// 7. Sử dụng Event Delegation (document.addEventListener) 100% không bao giờ mất sự kiện click
 // ============================================================================
 
 const ROADMAP_REGIONS = [
@@ -11,7 +15,7 @@ const ROADMAP_REGIONS = [
     name: 'Chặng 1: Khởi Hành Từ Tokyo (東京)',
     icon: '🗼',
     range: [1, 5],
-    desc: 'Làm quen tiếng Nhật, Chào hỏi, Giới thiệu bản thân, Đồ vật quanh ta, Địa điểm, Thời gian & Tàu điện Shinkansen',
+    desc: 'Làm quen tiếng Nhật, Chào hỏi, Giới thiệu bản thân, Đồ vật quanh ta, Địa điểm & Thời gian',
     themeColor: '#E03131',
     bgGradient: 'linear-gradient(135deg, #FFF0F6 0%, #FFE3E3 100%)'
   },
@@ -20,7 +24,7 @@ const ROADMAP_REGIONS = [
     name: 'Chặng 2: Khám Phá Cố Đô Kyoto (京都)',
     icon: '⛩️',
     range: [6, 10],
-    desc: 'Ẩm thực Nhật Bản, Trao nhận quà tặng, Miêu tả tính cách & cảm nhận, Sở thích thể thao & Vị trí không gian',
+    desc: 'Ẩm thực Nhật Bản, Trao nhận quà tặng, Miêu tả tính cách & cảm nhận, Sở thích & Vị trí không gian',
     themeColor: '#F59F00',
     bgGradient: 'linear-gradient(135deg, #FFF9DB 0%, #FFF3BF 100%)'
   },
@@ -38,7 +42,7 @@ const ROADMAP_REGIONS = [
     name: 'Chặng 4: Tuyết Trắng Hokkaido (北海道)',
     icon: '❄️',
     range: [16, 20],
-    desc: 'Chuỗi hành động sinh hoạt, Sức khỏe bệnh viện (Thể ない), Năng lực (Thể từ điển), Trải nghiệm văn hóa (Thể た) & Hội thoại thân mật (Futsuukei)',
+    desc: 'Chuỗi hành động sinh hoạt, Sức khỏe bệnh viện (Thể ない), Năng lực (Thể từ điển) & Thể た',
     themeColor: '#1864AB',
     bgGradient: 'linear-gradient(135deg, #E7F5FF 0%, #D0EBFF 100%)'
   },
@@ -56,26 +60,26 @@ const ROADMAP_REGIONS = [
     name: 'Chặng 6: Bước Vào Trung Cấp N4 - Cố Đô Nara & Lâu Đài Himeji (奈良・姫路)',
     icon: '🦌',
     range: [26, 30],
-    desc: 'Lý do & Thắc mắc (～んです), Động từ Thể Khả năng, Hành động song song (～ながら), Tự động từ trạng thái & Chuẩn bị sẵn sàng (V-てあります)',
-    themeColor: '#D6336C',
-    bgGradient: 'linear-gradient(135deg, #FFF0F6 0%, #FFDEEB 100%)'
+    desc: 'Lý do & Lời khuyên (～んです), Khả năng (可能形), Tự & Tha động từ, Trạng thái (～てあります) & Chuẩn bị (～ておきます)',
+    themeColor: '#D9480F',
+    bgGradient: 'linear-gradient(135deg, #FFF4E6 0%, #FFE8CC 100%)'
   },
   {
     id: 7,
     name: 'Chặng 7: Vượt Vũ Môn N4 - Xứ Sở Biển Seto & Hoa Anh Đào (瀬戸内・広島)',
     icon: '🌸',
     range: [31, 35],
-    desc: 'Thể Ý chí (～よう), Lời khuyên & Phỏng đoán (～たほうがいい, ～でしょう), Thể Mệnh lệnh & Cấm chỉ (命令形・禁止形), Làm theo hướng dẫn (～とおりに) & Thể Điều kiện (～ば)',
-    themeColor: '#4C6EF5',
-    bgGradient: 'linear-gradient(135deg, #EDF2FF 0%, #DBE4FF 100%)'
+    desc: 'Ý chí & Dự định (～よう, ～つもり), Mệnh lệnh & Cấm chỉ (～なさい, ～な), Điều kiện giả định (～ば, ～なら)',
+    themeColor: '#E64980',
+    bgGradient: 'linear-gradient(135deg, #FFF0F6 0%, #FCC2D7 100%)'
   },
   {
     id: 8,
     name: 'Chặng 8: Thâm Nhập Trung Cấp N4 - Cố Đô Kyoto & Cầu Akashi (京都・明石)',
-    icon: '🏯',
+    icon: '🌉',
     range: [36, 40],
-    desc: 'Mục đích & Tập quán (～ように), Thể Bị động (受身形), Danh từ hóa (～のは), Nguyên nhân cảm xúc (～て) & Mệnh đề nghi vấn lồng (～かどうか)',
-    themeColor: '#FD7E14',
+    desc: 'Mục đích & Thay đổi (～ように), Bị động (受身形 ～られます), Danh từ hóa (～のは), Mục đích (～ために) & Câu hỏi lồng (～か)',
+    themeColor: '#F76707',
     bgGradient: 'linear-gradient(135deg, #FFF4E6 0%, #FFE8CC 100%)'
   },
   {
@@ -83,7 +87,7 @@ const ROADMAP_REGIONS = [
     name: 'Chặng 9: Bứt Phá N4 - Đảo Ngọc Kyushu & Suối Khoáng Onsen (九州・別府)',
     icon: '♨️',
     range: [41, 45],
-    desc: 'Kính ngữ Cho & Nhận (いただき・くださる), Mục đích & Công dụng (～ために, ～のに), Phỏng đoán thị giác (～そうです), Quá mức (～すぎます) & Giả định tình huống (～場合は)',
+    desc: 'Kính ngữ Cho & Nhận (いただき・くださる), Mục đích & Công dụng (～ために, ～のに), Phỏng đoán thị giác (～そうです) & Giả định (～場合は)',
     themeColor: '#E03131',
     bgGradient: 'linear-gradient(135deg, #FFF5F5 0%, #FFE3E3 100%)'
   },
@@ -101,12 +105,105 @@ const ROADMAP_REGIONS = [
 class JapaneseRoadmapModule {
   constructor() {
     this.containerId = 'roadmap-container';
-    this.currentLevelTarget = 'N5';
     this.activeMissionLesson = null;
+    this.expandedRegions = {}; // Lưu trạng thái đóng / mở của từng Chặng
+    this._eventsAttached = false;
+
+    // Khởi tạo Event Delegation một lần duy nhất
+    this.setupEventDelegation();
   }
 
   init() {
+    // Mặc định tự động mở Chặng đang có bài học của học viên
+    const prog = this.getUserProgress();
+    const currentRegionId = Math.min(10, Math.max(1, Math.ceil(prog.unlockedLesson / 5)));
+    
+    // Mở chặng hiện tại và Chặng 1
+    this.expandedRegions[currentRegionId] = true;
+    this.expandedRegions[1] = true;
+
     this.render();
+  }
+
+  // --------------------------------------------------------------------------
+  // EVENT DELEGATION BẤT TỬ: BẮT TOÀN BỘ SỰ KIỆN CLICK, KHÔNG BAO GIỜ BỊ MẤT SỰ KIỆN
+  // --------------------------------------------------------------------------
+  setupEventDelegation() {
+    if (this._eventsAttached) return;
+    this._eventsAttached = true;
+
+    document.addEventListener('click', (e) => {
+      // 1. Bấm vào thanh tiêu đề Chặng (Toggle Accordion)
+      const toggleRegionEl = e.target.closest('[data-action="toggle-region"]');
+      if (toggleRegionEl) {
+        e.preventDefault();
+        const regId = parseInt(toggleRegionEl.getAttribute('data-region-id'), 10);
+        this.toggleRegion(regId);
+        return;
+      }
+
+      // 2. Bấm vào Thẻ Bài Học (Lesson Node Card)
+      const lessonNodeEl = e.target.closest('[data-action="open-lesson"]');
+      if (lessonNodeEl) {
+        e.preventDefault();
+        const lNum = parseInt(lessonNodeEl.getAttribute('data-lesson-num'), 10);
+        this.handleNodeClick(lNum);
+        return;
+      }
+
+      // 3. Bấm vào nút Bắt đầu nhiệm vụ cụ thể (Flashcard, Game, Speech)
+      const startMissionBtn = e.target.closest('[data-action="start-mission"]');
+      if (startMissionBtn) {
+        e.preventDefault();
+        const lNum = parseInt(startMissionBtn.getAttribute('data-lesson-num'), 10);
+        const mType = startMissionBtn.getAttribute('data-mission-type');
+        this.startMission(lNum, mType);
+        return;
+      }
+
+      // 4. Bấm vào nút "Thi Vượt Nhanh Bài Này (Fast Pass)"
+      const fastPassBtn = e.target.closest('[data-action="fast-pass"]');
+      if (fastPassBtn) {
+        e.preventDefault();
+        const lNum = parseInt(fastPassBtn.getAttribute('data-lesson-num'), 10);
+        this.openFastPassQuiz(lNum);
+        return;
+      }
+
+      // 5. Bấm đóng Modal Nhiệm Vụ
+      const closeMissionBtn = e.target.closest('[data-action="close-mission-modal"]');
+      if (closeMissionBtn) {
+        e.preventDefault();
+        this.closeLessonMissionModal();
+        return;
+      }
+
+      // 6. Bấm đóng Modal Chiến Thắng
+      const closeVictoryBtn = e.target.closest('[data-action="close-victory-modal"]');
+      if (closeVictoryBtn) {
+        e.preventDefault();
+        this.closeVictoryModal();
+        return;
+      }
+
+      // 7. Bấm nút Học Tiếp Bài Mới trong Modal Chiến Thắng
+      const advanceNextBtn = e.target.closest('[data-action="advance-next-lesson"]');
+      if (advanceNextBtn) {
+        e.preventDefault();
+        const nextNum = parseInt(advanceNextBtn.getAttribute('data-next-lesson'), 10);
+        this.closeVictoryModal();
+        this.handleNodeClick(nextNum);
+        return;
+      }
+
+      // 8. Bấm vào Cổng Chuyển Cấp N4 Torii
+      const n4GateBtn = e.target.closest('[data-action="n4-gateway"]');
+      if (n4GateBtn) {
+        e.preventDefault();
+        this.handleN4GateClick();
+        return;
+      }
+    });
   }
 
   // --------------------------------------------------------------------------
@@ -126,7 +223,7 @@ class JapaneseRoadmapModule {
       unlocked = currentUser.profile.unlockedLesson || 1;
       completedLessons = currentUser.profile.completedLessons || {};
     } else {
-      // Chế độ khách (lấy từ localStorage dự phòng)
+      // Chế độ khách (lấy từ localStorage)
       try {
         unlocked = parseInt(localStorage.getItem('nihongo_guest_unlocked') || '1', 10);
         completedLessons = JSON.parse(localStorage.getItem('nihongo_guest_completed') || '{}');
@@ -138,11 +235,14 @@ class JapaneseRoadmapModule {
 
     // Đếm số bài đã hoàn thành
     let completedCount = 0;
-    for (let i = 1; i <= 25; i++) {
+    for (let i = 1; i <= 50; i++) {
       if (completedLessons[i] && completedLessons[i].completed) {
         completedCount++;
       }
     }
+
+    const n5CompletedCount = Math.min(25, completedCount);
+    const n5Percent = Math.min(100, Math.round((n5CompletedCount / 25) * 100));
 
     return {
       isLogged,
@@ -150,12 +250,13 @@ class JapaneseRoadmapModule {
       unlockedLesson: unlocked,
       completedLessons,
       completedCount,
-      percent: Math.min(100, Math.round((completedCount / 25) * 100))
+      n5CompletedCount,
+      percent: n5Percent
     };
   }
 
   // --------------------------------------------------------------------------
-  // QUẢN LÝ TRẠNG THÁI 3 NHIỆM VỤ CỦA TỪNG BÀI HỌC (1 ĐẾN 25)
+  // QUẢN LÝ TRẠNG THÁI 3 NHIỆM VỤ CỦA TỪNG BÀI HỌC (1 ĐẾN 50)
   // --------------------------------------------------------------------------
   getLessonMissionState(lessonNumber) {
     const prog = this.getUserProgress();
@@ -218,14 +319,14 @@ class JapaneseRoadmapModule {
       state.vocabDone = true;
       if (window.soundSystem) window.soundSystem.playCorrect();
       if (window.mascot) {
-        window.mascot.setMood('happy', `🌸 Tuyệt vời! Em đã hoàn thành Nhiệm Vụ 1: Học từ vựng Bài ${lNum}! ✨`, 3500);
+        window.mascot.setMood('happy', `🌸 Tuyệt vời! Em đã hoàn thành Bước 1: Học từ vựng Bài ${lNum}! ✨`, 3500);
       }
     } else if (missionKey === 'game') {
       state.gameDone = true;
       state.gameScore = data.gameScore || 80;
       if (window.soundSystem) window.soundSystem.playCorrect();
       if (window.mascot) {
-        window.mascot.setMood('happy', `🎯 Xuất sắc! Em đã hoàn thành Nhiệm Vụ 2: Vượt Game Đoán Từ Bài ${lNum} với ${state.gameScore}% điểm! 🔥`, 4000);
+        window.mascot.setMood('happy', `🎯 Xuất sắc! Em đã hoàn thành Bước 2: Vượt Game Đoán Từ Bài ${lNum} với ${state.gameScore}% điểm! 🔥`, 4000);
       }
     } else if (missionKey === 'pronun') {
       state.pronunDone = true;
@@ -233,14 +334,14 @@ class JapaneseRoadmapModule {
       state.pronunPassedCount = Math.max(state.pronunPassedCount || 0, data.pronunPassedCount || 3);
       if (window.soundSystem) window.soundSystem.playVictory();
       if (window.mascot) {
-        window.mascot.setMood('celebrate', `🎙️ Giỏi lắm! Em đã hoàn thành Nhiệm Vụ 3: Khảo bài phát âm chuẩn với Cô Tanaka! 🌸`, 4000);
+        window.mascot.setMood('celebrate', `🎙️ Giỏi lắm! Em đã hoàn thành Bước 3: Khảo bài phát âm với Cô Tanaka! 🌸`, 4000);
       }
     }
 
     this.saveLessonMissionState(lNum, state);
     this.updateMissionModalIfOpen(lNum);
 
-    // Nếu cả 3 nhiệm vụ đều đã hoàn thành và bài chưa được chốt -> Kích hoạt Lễ hoàn thành bài!
+    // Nếu cả 3 nhiệm vụ đều đã hoàn thành và bài chưa được chốt -> Kích hoạt Hoàn Thành Bài
     if (state.vocabDone && state.gameDone && state.pronunDone && !state.completed) {
       this.checkAndCompleteLesson(lNum, state);
     }
@@ -251,13 +352,9 @@ class JapaneseRoadmapModule {
     const lNum = parseInt(lessonNumber, 10);
     const state = currentState || this.getLessonMissionState(lNum);
 
-    if (!state.vocabDone || !state.gameDone || !state.pronunDone) {
-      return;
-    }
-
     state.completed = true;
 
-    // Tính số sao dựa trên điểm game đoán từ & điểm phát âm
+    // Tính số sao dựa trên điểm game & điểm phát âm
     const avgScore = Math.round(((state.gameScore || 80) + (state.pronunScore || 85)) / 2);
     let stars = 3;
     if (avgScore < 75) stars = 1;
@@ -267,19 +364,61 @@ class JapaneseRoadmapModule {
     this.saveLessonMissionState(lNum, state);
 
     // Mở khóa bài tiếp theo qua AuthModule
-    let result = { unlocked: lNum < 25 ? lNum + 1 : 25 };
+    let result = { unlocked: lNum < 50 ? lNum + 1 : 50 };
     if (window.authModule && typeof window.authModule.completeLesson === 'function') {
       result = window.authModule.completeLesson(lNum, {
         stars: stars,
         gameScore: state.gameScore || 85,
         pronunScore: state.pronunScore || 85
       }) || result;
+    } else {
+      // Guest mode
+      try {
+        const curU = parseInt(localStorage.getItem('nihongo_guest_unlocked') || '1', 10);
+        if (lNum === curU && lNum < 50) {
+          localStorage.setItem('nihongo_guest_unlocked', (lNum + 1).toString());
+        }
+        const comp = JSON.parse(localStorage.getItem('nihongo_guest_completed') || '{}');
+        comp[lNum] = { completed: true, stars: stars };
+        localStorage.setItem('nihongo_guest_completed', JSON.stringify(comp));
+      } catch (e) {}
     }
 
     // Hiển thị thông báo chiến thắng rực rỡ phong cách Anime
     this.showLessonVictoryModal(lNum, state, result.unlocked);
 
     // Re-render lại roadmap
+    this.render();
+  }
+
+  // VƯỢT NHANH BÀI HỌC (FAST PASS)
+  passLevelQuickly(lessonNumber) {
+    const lNum = parseInt(lessonNumber, 10);
+    const state = {
+      vocabDone: true,
+      gameDone: true,
+      pronunDone: true,
+      gameScore: 100,
+      pronunScore: 95,
+      pronunPassedCount: 3,
+      completed: true,
+      stars: 3
+    };
+
+    if (window.soundSystem) window.soundSystem.playVictory();
+    if (window.mascot) {
+      window.mascot.setMood('celebrate', `⚡ THẦN TỐC! Em đã hoàn thành xuất sắc Thử Thách Vượt Nhanh Bài ${lNum}! 🏆🌸`, 4500);
+    }
+
+    this.checkAndCompleteLesson(lNum, state);
+  }
+
+  // --------------------------------------------------------------------------
+  // BẬT / TẮT THU GỌN CHẶNG (ACCORDION TOGGLE)
+  // --------------------------------------------------------------------------
+  toggleRegion(regionId) {
+    this.expandedRegions[regionId] = !this.expandedRegions[regionId];
+    if (window.soundSystem) window.soundSystem.playPop();
     this.render();
   }
 
@@ -293,18 +432,25 @@ class JapaneseRoadmapModule {
     const prog = this.getUserProgress();
     const allLessons = window.LESSONS_DATA ? [...(window.LESSONS_DATA.n5 || []), ...(window.LESSONS_DATA.n4 || [])] : [];
 
+    // Chỉ hiển thị các Chặng N5 (1 - 5) mặc định, hoặc hiển thị cả N4 (6 - 10) nếu đã mở khóa N4
+    const regionsToShow = ROADMAP_REGIONS.filter(r => {
+      if (r.id <= 5) return true;
+      // Chặng N4 (6-10) hiển thị khi đã hoàn thành đủ N5 hoặc đang học N4
+      return prog.completedCount >= 25 || prog.unlockedLesson >= 26;
+    });
+
     container.innerHTML = `
       <div class="roadmap-main-wrapper">
         
-        <!-- ================= KHỐI 1: THANH TIẾN ĐỘ TỔNG N5 ================= -->
+        <!-- ================= KHỐI 1: THANH TIẾN ĐỘ TỔNG HUD ================= -->
         <div class="roadmap-header-hud">
           
           <div class="hud-top-meta">
             <div class="hud-hero-left">
               <span class="hud-map-icon">🗺️</span>
               <div>
-                <h2>BẢN ĐỒ CHINH PHỤC 25 BÀI JLPT N5</h2>
-                <p>Hành trình 5 Chặng từ Tokyo đến Đỉnh Phú Sĩ • Chuẩn giáo trình Minna no Nihongo</p>
+                <h2>BẢN ĐỒ LỘ TRÌNH 25 BÀI JLPT N5 & N4 MINNA</h2>
+                <p>Hành trình 10 Chặng khám phá Nhật Bản • Chuẩn giáo trình Minna no Nihongo</p>
               </div>
             </div>
 
@@ -315,7 +461,7 @@ class JapaneseRoadmapModule {
                 </div>
                 <div class="hud-user-details">
                   <strong>${prog.currentUser.displayName}</strong>
-                  <span class="hud-rank-tag">🏆 Level ${prog.currentUser.profile?.level || 1} • Đang ở Bài ${prog.unlockedLesson}/25</span>
+                  <span class="hud-rank-tag">🏆 Level ${prog.currentUser.profile?.level || 1} • Đang ở Bài ${prog.unlockedLesson}/50</span>
                 </div>
               ` : `
                 <div class="hud-user-avatar" style="background: #FFE8CC;">🐣</div>
@@ -329,10 +475,10 @@ class JapaneseRoadmapModule {
             </div>
           </div>
 
-          <!-- Thanh tiến trình % -->
+          <!-- Thanh tiến trình % N5 -->
           <div class="roadmap-progress-bar-wrap">
             <div class="progress-labels-row">
-              <span>Tiến độ N5: <strong>Đã hoàn thành ${prog.completedCount} / 25 Bài</strong></span>
+              <span>Tiến độ N5: <strong>Đã hoàn thành ${prog.n5CompletedCount} / 25 Bài</strong></span>
               <span class="progress-percent-badge">${prog.percent}%</span>
             </div>
             <div class="roadmap-progress-track">
@@ -342,34 +488,62 @@ class JapaneseRoadmapModule {
 
         </div>
 
-        <!-- ================= KHỐI 2: ĐƯỜNG ĐI UỐN LƯỢN (WINDING ROADMAP) ================= -->
-        <div class="roadmap-serpentine-track">
+        <!-- ================= KHỐI 2: CÁC CHẶNG BÀI HỌC (ACCORDION & GRID) ================= -->
+        <div class="roadmap-regions-container">
           
-          ${ROADMAP_REGIONS.map(reg => {
+          ${regionsToShow.map(reg => {
             const lessonsInRegion = allLessons.filter(l => l && l.lessonNumber >= reg.range[0] && l.lessonNumber <= reg.range[1]);
+            
+            // Chặng đang được mở hay thu gọn?
+            const isExpanded = !!this.expandedRegions[reg.id];
+
+            // Kiểm tra trạng thái hoàn thành của chặng
+            const completedInReg = lessonsInRegion.filter(l => prog.completedLessons[l.lessonNumber]?.completed).length;
+            const isRegCompleted = completedInReg === lessonsInRegion.length && lessonsInRegion.length > 0;
+            const hasCurrentLesson = lessonsInRegion.some(l => l.lessonNumber === prog.unlockedLesson);
 
             return `
-              <div class="roadmap-region-section" style="background: ${reg.bgGradient};">
+              <div class="roadmap-region-section ${isExpanded ? 'expanded' : 'collapsed'}" 
+                   style="background: ${reg.bgGradient};" id="roadmap-region-${reg.id}">
                 
-                <!-- Tiêu đề chặng -->
-                <div class="region-banner-header" style="border-left-color: ${reg.themeColor};">
+                <!-- Thanh tiêu đề Chặng (Click để Thu gọn / Mở rộng) -->
+                <div class="region-banner-header" 
+                     data-action="toggle-region" 
+                     data-region-id="${reg.id}"
+                     style="border-left-color: ${reg.themeColor};"
+                     title="Bấm để ${isExpanded ? 'thu gọn' : 'mở rộng'} danh sách 5 bài học">
+                  
                   <div class="region-title-wrap">
                     <span class="region-badge-icon">${reg.icon}</span>
-                    <div>
+                    <div class="region-title-texts">
                       <h3>${reg.name}</h3>
                       <p>${reg.desc}</p>
                     </div>
                   </div>
-                  <div class="region-stage-pill" style="background: ${reg.themeColor};">
-                    Bài ${reg.range[0]} - ${reg.range[1]}
+
+                  <div class="region-header-right">
+                    ${isRegCompleted ? `
+                      <span class="reg-done-badge">✅ ĐÃ QUA CHẶNG</span>
+                    ` : hasCurrentLesson ? `
+                      <span class="reg-current-badge anim-pulse">🎯 ĐANG HỌC</span>
+                    ` : ''}
+
+                    <div class="region-stage-pill" style="background: ${reg.themeColor};">
+                      Bài ${reg.range[0]} - ${reg.range[1]} (${completedInReg}/${lessonsInRegion.length} bài)
+                    </div>
+
+                    <span class="region-toggle-chevron">
+                      ${isExpanded ? '▲ Thu Gọn' : '▼ Mở Rộng 5 Bài'}
+                    </span>
                   </div>
+
                 </div>
 
-                <!-- Lưới / Đường uốn lượn 5 Bài học của chặng -->
-                <div class="region-lessons-path">
-                  ${lessonsInRegion.map((lesson, idx) => {
+                <!-- LƯỚI 5 THẺ BÀI HỌC (LESSON NODES GRID) -->
+                <div class="region-lessons-grid ${isExpanded ? 'visible' : 'hidden'}">
+                  ${lessonsInRegion.map(lesson => {
                     const lNum = lesson.lessonNumber;
-                    const isCompleted = prog.completedLessons[lNum]?.completed;
+                    const isCompleted = !!prog.completedLessons[lNum]?.completed;
                     const isCurrent = (lNum === prog.unlockedLesson) && !isCompleted;
                     const isLocked = lNum > prog.unlockedLesson;
 
@@ -377,54 +551,73 @@ class JapaneseRoadmapModule {
                     if (isCompleted) nodeClass = 'completed';
                     else if (isCurrent) nodeClass = 'current';
 
-                    const starsCount = prog.completedLessons[lNum]?.stars || (isCompleted ? 3 : 0);
+                    const missionState = this.getLessonMissionState(lNum);
+                    const starsCount = missionState.stars || (isCompleted ? 3 : 0);
                     const starsDisplay = isCompleted ? '⭐'.repeat(starsCount) : '';
-                    const score = prog.completedLessons[lNum]?.gameScore || 90;
-
-                    // Vị trí so le uốn lượn zigzag (trái - giữa - phải)
-                    const zigzagPos = idx % 2 === 0 ? 'pos-left' : 'pos-right';
+                    const vocabCount = lesson.vocab?.length || 20;
 
                     return `
-                      <div class="roadmap-node-wrap ${zigzagPos}">
+                      <div class="lesson-level-node ${nodeClass}" 
+                           id="lesson-node-${lNum}" 
+                           data-action="open-lesson" 
+                           data-lesson-num="${lNum}">
                         
-                        <div class="lesson-level-node ${nodeClass}" id="lesson-node-${lNum}" onclick="window.roadmapModule.handleNodeClick(${lNum})">
-                          
-                          <!-- Vòng tròn số Level -->
-                          <div class="node-circle-badge">
-                            <span class="node-num">${lNum}</span>
-                            ${isCompleted ? '<span class="node-check-corner">✅</span>' : ''}
-                            ${isLocked ? '<span class="node-lock-corner">🔒</span>' : ''}
-                          </div>
+                        <!-- Header thẻ: Level + Icon + Số lượng từ vựng -->
+                        <div class="node-header-row">
+                          <span class="node-level-badge ${nodeClass}">
+                            ${isCompleted ? '✅' : isCurrent ? '🎯' : '🔒'} LEVEL ${lNum} - Bài ${lNum}
+                          </span>
+                          <span class="node-vocab-count-badge">
+                            📚 ${vocabCount} từ
+                          </span>
+                        </div>
 
-                          <!-- Thông tin bài học -->
-                          <div class="node-content-card">
-                            <div class="node-top-bar">
-                              <span class="node-lesson-tag">${lesson.icon} Bài ${lNum}</span>
-                              ${isCompleted ? `<span class="node-stars">${starsDisplay}</span>` : ''}
-                              ${isCurrent ? '<span class="node-current-tag anim-pulse">🎯 Đang Học</span>' : ''}
-                              ${isLocked ? '<span class="node-locked-tag">Đang Khóa</span>' : ''}
+                        <!-- Body thẻ: Tiêu đề chủ đề bài học & Ngữ pháp tóm tắt -->
+                        <div class="node-body">
+                          <h4 class="node-topic-title">${lesson.topicVi}</h4>
+                          <p class="node-grammar-preview">${lesson.grammarPoint?.split('.')[0] || ''}.</p>
+                        </div>
+
+                        <!-- 3 Bước Nhiệm Vụ Mini Indicator -->
+                        <div class="node-missions-indicator-bar">
+                          <span class="m-pill ${missionState.vocabDone ? 'done' : 'pending'}" title="Nhiệm vụ 1: Học từ vựng Flashcard">
+                            📖 ${missionState.vocabDone ? 'Đã học' : 'Từ vựng'}
+                          </span>
+                          <span class="m-pill ${missionState.gameDone ? 'done' : 'pending'}" title="Nhiệm vụ 2: Vượt Game Đoán Từ (≥70%)">
+                            🎮 ${missionState.gameDone ? `${missionState.gameScore}%` : 'Đoán từ'}
+                          </span>
+                          <span class="m-pill ${missionState.pronunDone ? 'done' : 'pending'}" title="Nhiệm vụ 3: Khảo phát âm chuẩn cùng AI">
+                            🎤 ${missionState.pronunDone ? 'Đạt' : 'Phát âm'}
+                          </span>
+                        </div>
+
+                        <!-- Nút hành động tương ứng trạng thái -->
+                        <div class="node-footer-action">
+                          ${isCompleted ? `
+                            <div class="node-completed-foot">
+                              <span class="node-stars-row">${starsDisplay}</span>
+                              <button class="btn btn-sm btn-outline-warning btn-node-cta" 
+                                      data-action="open-lesson" 
+                                      data-lesson-num="${lNum}">
+                                🔄 Ôn tập lại Bài này
+                              </button>
                             </div>
-                            
-                            <h4 class="node-topic-title">${lesson.topicVi}</h4>
-                            <p class="node-grammar-preview">${lesson.grammarPoint.split('.')[0]}.</p>
-
-                            <!-- Nút hành động tương ứng trạng thái -->
-                            <div class="node-action-foot">
-                              ${isCompleted ? `
-                                <span class="node-completed-score">Điểm: <strong>${score}đ</strong></span>
-                                <button class="btn btn-sm btn-review-node">Nhiệm Vụ & Ôn Tập 🔄</button>
-                              ` : isCurrent ? `
-                                <div class="node-shiba-pointer">
-                                  <span class="shiba-pointer-icon">🐕</span>
-                                  <span class="shiba-pointer-bubble">Mục tiêu tiếp theo của em đây!</span>
-                                </div>
-                                <button class="btn btn-primary btn-sm btn-start-node">Vào Nhận Nhiệm Vụ 🚀</button>
-                              ` : `
-                                <span class="node-locked-hint">Cần hoàn thành Bài ${lNum - 1} 🔒</span>
-                              `}
+                          ` : isCurrent ? `
+                            <button class="btn btn-primary btn-sm btn-node-cta anim-pulse" 
+                                    data-action="open-lesson" 
+                                    data-lesson-num="${lNum}">
+                              ▶️ BẮT ĐẦU HỌC BÀI NÀY
+                            </button>
+                          ` : `
+                            <div class="node-locked-foot">
+                              <span class="node-lock-hint">Cần hoàn thành Bài ${lNum - 1} 🔒</span>
+                              <button class="btn btn-sm btn-locked-cta" 
+                                      data-action="open-lesson" 
+                                      data-lesson-num="${lNum}">
+                                🔒 Đang Khóa
+                              </button>
                             </div>
-                          </div>
-
+                          `}
                         </div>
 
                       </div>
@@ -437,7 +630,8 @@ class JapaneseRoadmapModule {
           }).join('')}
 
           <!-- ================= KHỐI 3: CỔNG THĂNG CẤP JLPT N4 ================= -->
-          <div class="roadmap-n4-gateway-section ${prog.completedCount >= 25 ? 'unlocked' : 'sealed'}" onclick="window.roadmapModule.handleN4GateClick()">
+          <div class="roadmap-n4-gateway-section ${prog.completedCount >= 25 ? 'unlocked' : 'sealed'}" 
+               data-action="n4-gateway">
             <div class="gateway-torii-frame">
               <div class="gateway-torii-icon">⛩️</div>
               
@@ -451,18 +645,18 @@ class JapaneseRoadmapModule {
                   </div>
                 ` : `
                   <div class="gateway-status-pill sealed">
-                    🔒 PHONG ẤN BẢO VỆ: Cần hoàn thành 25/25 Bài N5 (Hiện tại: ${prog.completedCount}/25)
+                    🔒 PHONG ẤN BẢO VỆ: Cần hoàn thành 25/25 Bài N5 (Hiện tại: ${prog.n5CompletedCount}/25)
                   </div>
                 `}
               </div>
 
               <div class="gateway-action-btn">
                 ${prog.completedCount >= 25 ? `
-                  <button class="btn btn-primary btn-enter-n4">
+                  <button class="btn btn-primary btn-enter-n4" data-action="n4-gateway">
                     📜 Nhận Bằng N5 & Lên N4 🎓
                   </button>
                 ` : `
-                  <button class="btn btn-secondary btn-locked-gate">
+                  <button class="btn btn-secondary btn-locked-gate" data-action="n4-gateway">
                     🔒 Cổng Bị Khóa
                   </button>
                 `}
@@ -477,18 +671,18 @@ class JapaneseRoadmapModule {
   }
 
   // --------------------------------------------------------------------------
-  // XỬ LÝ SỰ KIỆN CLICK VÀO NÚT BÀI HỌC
+  // XỬ LÝ SỰ KIỆN CLICK VÀO BÀI HỌC (LEVEL NODE)
   // --------------------------------------------------------------------------
   handleNodeClick(lessonNumber) {
+    const lNum = parseInt(lessonNumber, 10);
     const prog = this.getUserProgress();
 
-    // KIỂM TRA ĐẶC BIỆT CHO CẤP ĐỘ N4 (BÀI 26 ĐẾN 30):
-    if (lessonNumber >= 26) {
-      // 1. Phải đăng nhập
+    // 1. Kiểm tra bài thuộc cấp độ N4 (Bài 26 - 50)
+    if (lNum >= 26) {
       if (!prog.isLogged) {
         if (window.soundSystem) window.soundSystem.playBuzzer();
         this.showTanakaAlert(
-          `Cấp độ Trung Cấp JLPT N4 (Bài 26 - 30) yêu cầu <strong>Đăng nhập tài khoản học viên</strong> để hệ thống bảo lưu học bạ và ghi nhận chứng chỉ đám mây!<br><br>` +
+          `Cấp độ Trung Cấp JLPT N4 (Bài 26 - 50) yêu cầu <strong>Đăng nhập tài khoản học viên</strong> để hệ thống bảo lưu học bạ đám mây!<br><br>` +
           `Vui lòng Đăng nhập hoặc Tạo tài khoản miễn phí để tiếp tục. 🔑`
         );
         if (window.authModule) {
@@ -497,39 +691,38 @@ class JapaneseRoadmapModule {
         return;
       }
 
-      // 2. Phải hoàn thành toàn bộ 25 bài N5
       if (prog.completedCount < 25) {
         if (window.soundSystem) window.soundSystem.playBuzzer();
         this.showTanakaAlert(
           `Cổng Thăng Cấp N4 đang được niêm phong bảo vệ!<br><br>` +
-          `Em cần hoàn thành xuất sắc <strong>toàn bộ 25 Bài học N5</strong> trước khi mở khóa Bài 26. Hiện tại em mới hoàn thành ${prog.completedCount}/25 Bài! 👩‍🏫`
+          `Em cần hoàn thành xuất sắc <strong>toàn bộ 25 Bài học N5</strong> trước khi mở khóa Bài ${lNum}. Hiện tại em mới hoàn thành ${prog.n5CompletedCount}/25 Bài! 👩‍🏫`
         );
         return;
       }
     }
 
-    // 1. Nếu bài đang bị khóa
-    if (lessonNumber > prog.unlockedLesson) {
+    // 2. Nếu bài đang bị khóa
+    if (lNum > prog.unlockedLesson) {
       if (window.soundSystem) window.soundSystem.playBuzzer();
       
       this.showTanakaAlert(
-        `Chưa xong Bài ${lessonNumber - 1} mà đã đòi nhảy cóc sang Bài ${lessonNumber} hả em?!<br>` +
-        `Học tiếng Nhật không có chuyện đốt cháy giai đoạn! Em hãy quay lại hoàn thành chắc chắn Bài ${prog.unlockedLesson} trước cho cô! 👩‍🏫`
+        `💢 Chậc! Em phải hoàn thành xong <strong>Bài ${lNum - 1}</strong> trước thì cô mới mở khóa cho học tiếp <strong>Bài ${lNum}</strong> nhé!<br><br>` +
+        `Học tiếng Nhật không có chuyện đốt cháy giai đoạn! Hãy hoàn thành chắc chắn Bài ${prog.unlockedLesson} trước cho cô! 👩‍🏫`
       );
 
       if (window.mascot) {
         window.mascot.setCharacter('sensei');
-        window.mascot.setMood('strict', `Chưa xong Bài ${lessonNumber - 1} thì không được mở Bài ${lessonNumber} đâu nhé! 👩‍🏫`, 3500);
+        window.mascot.setMood('strict', `Chưa xong Bài ${lNum - 1} thì không được mở Bài ${lNum} đâu nhé! 👩‍🏫`, 3500);
       }
       return;
     }
 
-    // 2. Nếu bài đã mở khóa -> Mở Bảng Nhiệm Vụ Bài Học (Lesson Mission Modal)
-    this.openLessonMissionModal(lessonNumber);
+    // 3. Bài đã mở khóa -> Mở Bảng Nhiệm Vụ Bài Học (Lesson Mission Modal)
+    this.openLessonMissionModal(lNum);
   }
 
   // --------------------------------------------------------------------------
-  // BẢNG NHIỆM VỤ BÀI HỌC (LESSON MISSION MODAL)
+  // BẢNG NHIỆM VỤ VƯỢT ẢI (LESSON MISSION MODAL)
   // --------------------------------------------------------------------------
   openLessonMissionModal(lessonNumber) {
     const lNum = parseInt(lessonNumber, 10);
@@ -585,6 +778,7 @@ class JapaneseRoadmapModule {
     const lNum = lesson.lessonNumber;
     const completedCount = (state.vocabDone ? 1 : 0) + (state.gameDone ? 1 : 0) + (state.pronunDone ? 1 : 0);
     const progressPercent = Math.round((completedCount / 3) * 100);
+    const levelLabel = lNum >= 26 ? 'N4' : 'N5';
 
     return `
       <div class="modal-card lesson-mission-modal-card">
@@ -592,17 +786,17 @@ class JapaneseRoadmapModule {
         <!-- Header Bài Học -->
         <div class="mission-modal-header">
           <div class="mission-header-info">
-            <span class="mission-badge-pill">${lesson.icon} CẤP ĐỘ N5 • BÀI ${lNum}</span>
+            <span class="mission-badge-pill">${lesson.icon} CẤP ĐỘ ${levelLabel} • BÀI ${lNum}</span>
             <h2 class="mission-title">${lesson.topicVi}</h2>
-            <p class="mission-ja-subtitle">${lesson.topicJa || ''} • ${lesson.grammarPoint}</p>
+            <p class="mission-ja-subtitle">${lesson.title || ''} • ${lesson.grammarPoint || ''}</p>
           </div>
-          <button class="modal-close-btn" onclick="window.roadmapModule.closeLessonMissionModal()" title="Đóng">✕</button>
+          <button class="modal-close-btn" data-action="close-mission-modal" title="Đóng">✕</button>
         </div>
 
         <!-- Thanh Tiến Trình 3 Nhiệm Vụ -->
         <div class="mission-progress-overview">
           <div class="mission-progress-labels">
-            <span>Tiến độ vượt bài: <strong>${completedCount} / 3 Nhiệm vụ hoàn thành</strong></span>
+            <span>Tiến độ vượt ải: <strong>${completedCount} / 3 Nhiệm vụ hoàn thành</strong></span>
             <span class="mission-percent-tag ${completedCount === 3 ? 'all-done' : ''}">${progressPercent}%</span>
           </div>
           <div class="mission-progress-track">
@@ -610,10 +804,10 @@ class JapaneseRoadmapModule {
           </div>
         </div>
 
-        <!-- Danh Sách 3 Nhiệm Vụ -->
+        <!-- Danh Sách 3 Bước Nhiệm Vụ -->
         <div class="mission-steps-list">
           
-          <!-- ================= NHIỆM VỤ 1: FLASHCARD ================= -->
+          <!-- ================= BƯỚC 1: FLASHCARD ================= -->
           <div class="mission-step-card ${state.vocabDone ? 'step-done' : 'step-pending'}">
             <div class="step-num-badge">
               ${state.vocabDone ? '✅' : '1'}
@@ -621,7 +815,7 @@ class JapaneseRoadmapModule {
             
             <div class="step-details">
               <div class="step-top-line">
-                <h4>Nhiệm vụ 1: 📖 Học Flashcard Từ Vựng Bài ${lNum}</h4>
+                <h4>Bước 1: 📖 Học Từ Vựng (Flashcard 3D Bài ${lNum})</h4>
                 ${state.vocabDone ? `
                   <span class="mission-status-badge done">✅ ĐÃ HOÀN THÀNH</span>
                 ` : `
@@ -629,19 +823,21 @@ class JapaneseRoadmapModule {
                 `}
               </div>
               <p class="step-desc">
-                Lật mở và làm quen toàn bộ <strong>${lesson.vocab?.length || 20} từ vựng N5 trọng tâm</strong> của bài học này. Nghe cách phát âm chuẩn và ghi nhớ Kanji.
+                Lật mở và làm quen toàn bộ <strong>${lesson.vocab?.length || 20} từ vựng ${levelLabel}</strong> của bài học này. Bấm nút <em>"Đánh dấu đã thuộc hết thẻ bài này"</em> để hoàn tất.
               </p>
             </div>
 
             <div class="step-action-col">
               <button class="btn ${state.vocabDone ? 'btn-outline-secondary' : 'btn-primary'} btn-step-action" 
-                      onclick="window.roadmapModule.startMission(${lNum}, 'flashcard')">
-                ${state.vocabDone ? 'Ôn Tập Lại 🃏' : 'Lật Thẻ Học Ngay 🃏'}
+                      data-action="start-mission" 
+                      data-lesson-num="${lNum}" 
+                      data-mission-type="flashcard">
+                ${state.vocabDone ? 'Ôn Tập Lại 🃏' : `Vào Học Từ Vựng Bài ${lNum} 🃏`}
               </button>
             </div>
           </div>
 
-          <!-- ================= NHIỆM VỤ 2: GAME ĐOÁN TỪ ================= -->
+          <!-- ================= BƯỚC 2: GAME ĐOÁN TỪ ================= -->
           <div class="mission-step-card ${state.gameDone ? 'step-done' : 'step-pending'}">
             <div class="step-num-badge">
               ${state.gameDone ? '✅' : '2'}
@@ -649,7 +845,7 @@ class JapaneseRoadmapModule {
             
             <div class="step-details">
               <div class="step-top-line">
-                <h4>Nhiệm vụ 2: 🎮 Vượt Game Đoán Từ Bài ${lNum} (≥ 70%)</h4>
+                <h4>Bước 2: 🎮 Vượt Thử Thách Game Đoán Từ Bài ${lNum} (≥ 70%)</h4>
                 ${state.gameDone ? `
                   <span class="mission-status-badge done">✅ ĐÃ ĐẠT (${state.gameScore}% - ⭐⭐⭐)</span>
                 ` : `
@@ -657,19 +853,21 @@ class JapaneseRoadmapModule {
                 `}
               </div>
               <p class="step-desc">
-                Thử thách phản xạ đoán nghĩa 4 đáp án nhanh trong 15s cho từ vựng Bài ${lNum}. <strong>Đạt từ 70% điểm trở lên</strong> để vượt qua thử thách này!
+                Thử thách phản xạ đoán nghĩa 4 đáp án nhanh trong 15s cho từ vựng Bài ${lNum}. <strong>Đạt từ 70% điểm trở lên</strong> để hoàn tất bước này!
               </p>
             </div>
 
             <div class="step-action-col">
               <button class="btn ${state.gameDone ? 'btn-outline-warning' : 'btn-warning'} btn-step-action" 
-                      onclick="window.roadmapModule.startMission(${lNum}, 'game')">
-                ${state.gameDone ? 'Chơi Lại Game 🎯' : 'Vào Chơi Game Ngay 🎯'}
+                      data-action="start-mission" 
+                      data-lesson-num="${lNum}" 
+                      data-mission-type="game">
+                ${state.gameDone ? 'Chơi Lại Game 🎯' : `Vào Chơi Game Bài ${lNum} 🎯`}
               </button>
             </div>
           </div>
 
-          <!-- ================= NHIỆM VỤ 3: TEST PHÁT ÂM AI ================= -->
+          <!-- ================= BƯỚC 3: TEST PHÁT ÂM AI ================= -->
           <div class="mission-step-card ${state.pronunDone ? 'step-done' : 'step-pending'}">
             <div class="step-num-badge">
               ${state.pronunDone ? '✅' : '3'}
@@ -677,7 +875,7 @@ class JapaneseRoadmapModule {
             
             <div class="step-details">
               <div class="step-top-line">
-                <h4>Nhiệm vụ 3: 🎤 Khảo Bài Phát Âm Với Cô Tanaka (≥ 3 từ ≥ 60%)</h4>
+                <h4>Bước 3: 🎤 Khảo Phát Âm Cùng Cô Tanaka (≥ 3 từ ≥ 60%)</h4>
                 ${state.pronunDone ? `
                   <span class="mission-status-badge done">✅ ĐÃ ĐẠT (${state.pronunPassedCount || 3}/3 từ ≥ 60%)</span>
                 ` : `
@@ -685,32 +883,51 @@ class JapaneseRoadmapModule {
                 `}
               </div>
               <p class="step-desc">
-                Bật Micro đọc to rõ ràng các từ vựng của Bài ${lNum}. Hệ thống AI sẽ chấm điểm và Cô Tanaka sẽ phê duyệt khi em <strong>phát âm đạt từ 3 từ trở lên (≥ 60%)</strong>.
+                Bật Micro đọc to rõ ràng từ vựng của Bài ${lNum}. AI sẽ chấm điểm và Cô Tanaka sẽ phê duyệt khi em <strong>phát âm chuẩn ít nhất 3 từ (≥ 60%)</strong>.
               </p>
             </div>
 
             <div class="step-action-col">
               <button class="btn ${state.pronunDone ? 'btn-outline-info' : 'btn-info'} btn-step-action" 
-                      onclick="window.roadmapModule.startMission(${lNum}, 'speech')">
-                ${state.pronunDone ? 'Luyện Lại Giọng 🎙️' : 'Bật Micro Luyện Đọc 🎙️'}
+                      data-action="start-mission" 
+                      data-lesson-num="${lNum}" 
+                      data-mission-type="speech">
+                ${state.pronunDone ? 'Luyện Lại Giọng 🎙️' : `Vào Test Phát Âm Bài ${lNum} 🎙️`}
               </button>
             </div>
           </div>
 
         </div>
 
+        <!-- ================= KHỐI THI VƯỢT NHANH BÀI NÀY ================= -->
+        <div class="fast-pass-banner-row">
+          <div class="fast-pass-left">
+            <span class="fast-pass-icon">⚡</span>
+            <div>
+              <strong>Đã nắm vững kiến thức Bài ${lNum}?</strong>
+              <small>Làm nhanh 5 câu trắc nghiệm tổng hợp (đạt ≥ 80% là đỗ ngay)!</small>
+            </div>
+          </div>
+          <button class="btn btn-outline-danger btn-fast-pass-action" 
+                  data-action="fast-pass" 
+                  data-lesson-num="${lNum}">
+            ⚡ Thi Vượt Nhanh Bài Này (Pass Level)
+          </button>
+        </div>
+
         <!-- Footer Modal -->
         <div class="mission-modal-footer">
           ${completedCount === 3 ? `
             <div class="mission-all-done-banner">
-              <span>🎉 Em đã hoàn thành xuất sắc 3/3 Nhiệm vụ của Bài ${lNum}!</span>
-              <button class="btn btn-success" onclick="window.roadmapModule.showLessonVictoryModal(${lNum}, ${JSON.stringify(state).replace(/"/g, '&quot;')}, ${lNum < 25 ? lNum + 1 : 25})">
-                🏆 Xem Bảng Vàng & Cúp Bài Học
+              <span>🎉 Em đã hoàn thành xuất sắc cả 3/3 Nhiệm vụ của Bài ${lNum}!</span>
+              <button class="btn btn-success" 
+                      data-action="close-mission-modal">
+                🏆 Đã Hoàn Tất Bài Học ✅
               </button>
             </div>
           ` : `
             <div class="mission-footer-hint">
-              <span>💡 Hãy hoàn thành đủ 3 nhiệm vụ trên để Cô Tanaka cấp sao và tự động mở khóa Bài ${lNum < 25 ? lNum + 1 : 25}!</span>
+              <span>💡 Hoàn thành đủ 3 bước trên hoặc bấm "Thi Vượt Nhanh" để tự động mở khóa Bài ${lNum < 50 ? lNum + 1 : 50}!</span>
             </div>
           `}
         </div>
@@ -720,7 +937,7 @@ class JapaneseRoadmapModule {
   }
 
   // --------------------------------------------------------------------------
-  // BẮT ĐẦU TỪNG NHIỆM VỤ (CHUYỂN TAB & NẠP ĐÚNG TỪ VỰNG CỦA BÀI HỌC)
+  // BẮT ĐẦU TỪNG NHIỆM VỤ (CHUYỂN TAB & NẠP ĐÚNG BÀI HỌC)
   // --------------------------------------------------------------------------
   startMission(lessonNumber, missionType) {
     const lNum = parseInt(lessonNumber, 10);
@@ -746,12 +963,146 @@ class JapaneseRoadmapModule {
   }
 
   // --------------------------------------------------------------------------
+  // THI VƯỢT NHANH (FAST PASS QUIZ 5 CÂU)
+  // --------------------------------------------------------------------------
+  openFastPassQuiz(lessonNumber) {
+    const lNum = parseInt(lessonNumber, 10);
+    const targetLvl = lNum >= 26 ? 'N4' : 'N5';
+    const lesson = window.LESSONS_DATA ? window.LESSONS_DATA.getLesson(targetLvl, lNum) : null;
+    if (!lesson || !lesson.vocab || lesson.vocab.length < 4) {
+      alert('Không đủ dữ liệu bài học để tạo đề thi vượt nhanh!');
+      return;
+    }
+
+    this.closeLessonMissionModal();
+
+    // Sinh 5 câu hỏi trắc nghiệm từ từ vựng của bài
+    const words = [...lesson.vocab].sort(() => Math.random() - 0.5);
+    const quizQuestions = [];
+
+    for (let i = 0; i < Math.min(5, words.length); i++) {
+      const correctWord = words[i];
+      // 3 distractors
+      const distractors = lesson.vocab
+        .filter(w => w.id !== correctWord.id)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+
+      const options = [correctWord, ...distractors].sort(() => Math.random() - 0.5);
+      const correctIdx = options.findIndex(o => o.id === correctWord.id);
+
+      quizQuestions.push({
+        word: correctWord,
+        questionText: `Câu ${i + 1}: Từ 「${correctWord.kanji || correctWord.hiragana}」 (${correctWord.hiragana}) có nghĩa là gì?`,
+        options: options.map(o => o.meaning),
+        correctIndex: correctIdx
+      });
+    }
+
+    let quizModal = document.getElementById('fast-pass-quiz-modal');
+    if (!quizModal) {
+      quizModal = document.createElement('div');
+      quizModal.id = 'fast-pass-quiz-modal';
+      quizModal.className = 'modal-overlay';
+      document.body.appendChild(quizModal);
+    }
+
+    let currentQ = 0;
+    let score = 0;
+    const userAnswers = [];
+
+    const renderQuestion = () => {
+      const q = quizQuestions[currentQ];
+      quizModal.innerHTML = `
+        <div class="modal-card fast-pass-quiz-card">
+          <div class="quiz-header">
+            <span class="quiz-badge">⚡ THI VƯỢT NHANH • BÀI ${lNum}</span>
+            <span class="quiz-step-count">Câu ${currentQ + 1} / ${quizQuestions.length}</span>
+          </div>
+
+          <div class="quiz-question-box">
+            <h3>${q.questionText}</h3>
+            ${q.word.example?.ja ? `<p class="quiz-example-hint">Ví dụ: ${q.word.example.ja}</p>` : ''}
+          </div>
+
+          <div class="quiz-options-list">
+            ${q.options.map((opt, idx) => `
+              <button class="quiz-opt-btn" onclick="window.roadmapModule.handleFastPassAnswer(${lNum}, ${idx}, ${q.correctIndex})">
+                <span class="opt-key">${['A', 'B', 'C', 'D'][idx]}</span>
+                <span class="opt-text">${opt}</span>
+              </button>
+            `).join('')}
+          </div>
+
+          <div class="quiz-footer-row">
+            <button class="btn btn-secondary btn-sm" onclick="document.getElementById('fast-pass-quiz-modal').remove()">
+              ✕ Hủy bỏ
+            </button>
+          </div>
+        </div>
+      `;
+    };
+
+    window.roadmapModule.handleFastPassAnswer = (lessonNum, chosenIdx, correctIdx) => {
+      if (chosenIdx === correctIdx) {
+        score++;
+        if (window.soundSystem) window.soundSystem.playCorrect();
+      } else {
+        if (window.soundSystem) window.soundSystem.playWrong();
+      }
+
+      currentQ++;
+      if (currentQ < quizQuestions.length) {
+        renderQuestion();
+      } else {
+        // Hoàn thành quiz
+        const passed = score >= 4; // >= 80%
+        quizModal.innerHTML = `
+          <div class="modal-card fast-pass-quiz-card anim-bounce-in">
+            <div class="quiz-result-header ${passed ? 'pass' : 'fail'}">
+              <span class="result-icon">${passed ? '🎉' : '⚠️'}</span>
+              <h2>${passed ? 'THI VƯỢT NHANH THÀNH CÔNG!' : 'CHƯA ĐẠT ĐIỂM VƯỢT NHANH'}</h2>
+              <div class="result-score-circle">
+                <strong>${score} / ${quizQuestions.length}</strong>
+                <small>${Math.round((score / quizQuestions.length) * 100)}%</small>
+              </div>
+            </div>
+
+            <div class="quiz-result-body">
+              ${passed ? `
+                <p>Xuất sắc! Em đã chứng minh mình nắm rất vững từ vựng Bài ${lessonNum}. Cô Tanaka đồng ý cấp chứng chỉ hoàn thành bài học này cho em ngay lập tức!</p>
+              ` : `
+                <p>Rất tiếc! Em chỉ đúng ${score}/${quizQuestions.length} câu (cần đúng từ 4 câu trở lên). Hãy quay lại hoàn thành 3 bước nhiệm vụ để nắm chắc bài hơn nhé!</p>
+              `}
+            </div>
+
+            <div class="quiz-result-actions">
+              ${passed ? `
+                <button class="btn btn-primary btn-large" onclick="document.getElementById('fast-pass-quiz-modal').remove(); window.roadmapModule.passLevelQuickly(${lessonNum});">
+                  🚀 Xác Nhận Mở Khóa Bài Tiếp Theo Ngay!
+                </button>
+              ` : `
+                <button class="btn btn-primary" onclick="document.getElementById('fast-pass-quiz-modal').remove(); window.roadmapModule.openLessonMissionModal(${lessonNum});">
+                  📖 Quay Lại Bảng Nhiệm Vụ 3 Bước
+                </button>
+              `}
+            </div>
+          </div>
+        `;
+      }
+    };
+
+    renderQuestion();
+  }
+
+  // --------------------------------------------------------------------------
   // POPUP CHIẾN THẮNG RỰC RỠ PHONG CÁCH ANIME (HOÀN THÀNH BÀI N -> MỞ KHÓA BÀI N+1)
   // --------------------------------------------------------------------------
   showLessonVictoryModal(lessonNumber, state, newUnlocked) {
     const lNum = parseInt(lessonNumber, 10);
-    const nextLessonNum = lNum < 25 ? lNum + 1 : 25;
-    const nextLesson = window.LESSONS_DATA ? window.LESSONS_DATA.getLesson('N5', nextLessonNum) : null;
+    const nextLessonNum = lNum < 50 ? lNum + 1 : 50;
+    const targetLvl = nextLessonNum >= 26 ? 'N4' : 'N5';
+    const nextLesson = window.LESSONS_DATA ? window.LESSONS_DATA.getLesson(targetLvl, nextLessonNum) : null;
     const starsCount = state.stars || 3;
     const starsHtml = '⭐'.repeat(starsCount);
 
@@ -784,7 +1135,7 @@ class JapaneseRoadmapModule {
           <div class="victory-badge-icon">🏆</div>
           <h2 class="victory-main-title">🎉 HOÀN THÀNH BÀI ${lNum}!</h2>
           <div class="victory-stars-display">${starsHtml}</div>
-          <p class="victory-sub-text">Em đã xuất sắc vượt qua toàn bộ 3 nhiệm vụ của Bài ${lNum}!</p>
+          <p class="victory-sub-text">Em đã xuất sắc vượt qua toàn bộ thử thách của Bài ${lNum}!</p>
         </div>
 
         <!-- Bảng điểm chi tiết -->
@@ -795,7 +1146,7 @@ class JapaneseRoadmapModule {
           </div>
           <div class="v-score-item">
             <span class="v-score-label">🎮 Game Đoán Từ</span>
-            <span class="v-score-val text-warning">${state.gameScore || 85}%</span>
+            <span class="v-score-val text-warning">${state.gameScore || 90}%</span>
           </div>
           <div class="v-score-item">
             <span class="v-score-label">🎤 Khảo Bài AI</span>
@@ -811,29 +1162,47 @@ class JapaneseRoadmapModule {
         ${lNum < 25 ? `
           <div class="victory-next-lesson-box">
             <div class="v-next-tag">✨ ĐÃ MỞ KHÓA BÀI ${nextLessonNum}/25 ✨</div>
-            <h3 class="v-next-title">${nextLesson ? `${nextLesson.icon} Bài ${nextLessonNum}: ${nextLesson.topicVi}` : `Bài ${nextLessonNum}`}</h3>
-            <p class="v-next-desc">${nextLesson ? nextLesson.grammarPoint : ''}</p>
+            <h3 class="v-next-title">${nextLesson ? `${nextLesson.icon || '🌸'} Bài ${nextLessonNum}: ${nextLesson.topicVi}` : `Bài ${nextLessonNum}`}</h3>
+            <p class="v-next-desc">${nextLesson ? (nextLesson.grammarPoint || '') : ''}</p>
           </div>
-        ` : `
+        ` : lNum === 25 ? `
           <div class="victory-next-lesson-box max-level">
             <div class="v-next-tag">👑 ĐÃ CHINH PHỤC TOÀN BỘ 25 BÀI N5! 👑</div>
             <h3 class="v-next-title">Cổng Torii JLPT N4 Đã Được Giải Phóng!</h3>
-            <p class="v-next-desc">Hãy đến Cổng Thăng Cấp N4 để nhận Bằng Tốt Nghiệp và bước vào Sơ Trung Cấp!</p>
+            <p class="v-next-desc">Hãy đến Cổng Thăng Cấp N4 để nhận Bằng Tốt Nghiệp N5 và bước vào Lộ Trình N4 (Bài 26 - 50)!</p>
+          </div>
+        ` : `
+          <div class="victory-next-lesson-box">
+            <div class="v-next-tag">✨ ĐÃ MỞ KHÓA BÀI ${nextLessonNum}/50 (JLPT N4) ✨</div>
+            <h3 class="v-next-title">${nextLesson ? `${nextLesson.icon || '🏆'} Bài ${nextLessonNum}: ${nextLesson.topicVi}` : `Bài ${nextLessonNum}`}</h3>
+            <p class="v-next-desc">${nextLesson ? (nextLesson.grammarPoint || '') : ''}</p>
           </div>
         `}
 
         <div class="victory-actions-row">
-          <button class="btn btn-secondary" onclick="window.roadmapModule.viewOnMapAndScroll(${nextLessonNum})">
+          <button class="btn btn-secondary" data-action="close-victory-modal">
             🗺️ Xem Trên Bản Đồ
           </button>
           
           ${lNum < 25 ? `
-            <button class="btn btn-primary btn-advance-next" onclick="window.roadmapModule.closeVictoryModal(); window.roadmapModule.openLessonMissionModal(${nextLessonNum});">
-              🚀 Vào Học Bài ${nextLessonNum} Ngay!
+            <button class="btn btn-primary btn-advance-next" 
+                    data-action="advance-next-lesson" 
+                    data-next-lesson="${nextLessonNum}">
+              ➡️ Học Tiếp Bài ${nextLessonNum} Ngay!
+            </button>
+          ` : lNum === 25 ? `
+            <button class="btn btn-primary btn-advance-next" data-action="n4-gateway">
+              📜 Nhận Bằng Tốt Nghiệp N5 Ngay! 🎓
+            </button>
+          ` : lNum < 50 ? `
+            <button class="btn btn-primary btn-advance-next" 
+                    data-action="advance-next-lesson" 
+                    data-next-lesson="${nextLessonNum}">
+              ➡️ Học Tiếp Bài ${nextLessonNum} Ngay!
             </button>
           ` : `
-            <button class="btn btn-primary btn-advance-next" onclick="window.roadmapModule.closeVictoryModal(); window.roadmapModule.handleN4GateClick();">
-              📜 Nhận Bằng N5 Ngay!
+            <button class="btn btn-primary btn-advance-next" onclick="alert('🎉 CHÚC MỪNG BẠN ĐÃ TỐT NGHIỆP TOÀN BỘ 50 BÀI MINNA NO NIHONGO!');">
+              🎓 Tốt Nghiệp Minna no Nihongo!
             </button>
           `}
         </div>
@@ -850,23 +1219,6 @@ class JapaneseRoadmapModule {
     }
   }
 
-  viewOnMapAndScroll(lessonNumber) {
-    this.closeVictoryModal();
-    if (window.app) window.app.switchTab('roadmap');
-    this.scrollToLessonNode(lessonNumber);
-  }
-
-  scrollToLessonNode(lessonNumber) {
-    setTimeout(() => {
-      const node = document.getElementById(`lesson-node-${lessonNumber}`);
-      if (node) {
-        node.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        node.classList.add('anim-golden-pulse');
-        setTimeout(() => node.classList.remove('anim-golden-pulse'), 4500);
-      }
-    }, 400);
-  }
-
   // --------------------------------------------------------------------------
   // XỬ LÝ SỰ KIỆN CLICK VÀO CỔNG CHUYỂN CẤP N4
   // --------------------------------------------------------------------------
@@ -874,11 +1226,11 @@ class JapaneseRoadmapModule {
     const prog = this.getUserProgress();
 
     // 1. Chưa hoàn thành đủ 25 bài N5
-    if (prog.completedCount < 25) {
+    if (prog.n5CompletedCount < 25) {
       if (window.soundSystem) window.soundSystem.playBuzzer();
       this.showTanakaAlert(
-        `Cổng N4 được niêm phong nghiêm ngặt! Em mới hoàn thành có <strong>${prog.completedCount}/25 Bài</strong> N5 thôi!<br>` +
-        `Không nắm chắc kiến thức sơ cấp N5 thì lên N4 làm sao nghe hiểu và chia thể động từ được?! Hãy cày xong cả 25 bài rồi quay lại đây nhận bằng tốt nghiệp! 👩‍🏫`
+        `Cổng N4 được niêm phong nghiêm ngặt! Em mới hoàn thành có <strong>${prog.n5CompletedCount}/25 Bài</strong> N5 thôi!<br><br>` +
+        `Không nắm chắc kiến thức sơ cấp N5 thì lên N4 làm sao nghe hiểu và chia thể động từ được?! Hãy hoàn thành cả 25 bài rồi quay lại đây nhận bằng tốt nghiệp! 👩‍🏫`
       );
       return;
     }
@@ -1007,12 +1359,16 @@ class JapaneseRoadmapModule {
       window.app.selectLevel('n4');
     }
 
-    if (window.soundSystem) window.soundSystem.playCorrect();
+    // Tự động mở Chặng 6
+    this.expandedRegions[6] = true;
+    this.render();
+
+    if (window.soundSystem) window.soundSystem.playVictory();
     alert('🎉 CHÀO MỪNG BẠN BƯỚC VÀO LỘ TRÌNH JLPT N4 (Bài 26 đến Bài 50)!\nChúc bạn tiếp tục giữ vững phong độ và sớm chinh phục chứng chỉ quốc tế N4!');
   }
 
   // --------------------------------------------------------------------------
-  // HỘP THÔNG BÁO NHẮC NHỞ CỦA CÔ TAKAGI
+  // HỘP THÔNG BÁO NHẮC NHỞ CỦA CÔ TANAKA
   // --------------------------------------------------------------------------
   showTanakaAlert(messageHtml) {
     const toastId = 'roadmap-takagi-toast';
@@ -1037,7 +1393,7 @@ class JapaneseRoadmapModule {
       if (toast && toast.parentElement) {
         toast.remove();
       }
-    }, 5500);
+    }, 6000);
   }
 
   // --------------------------------------------------------------------------
@@ -1071,7 +1427,6 @@ class JapaneseRoadmapModule {
         y: Math.random() * canvas.height - canvas.height,
         r: Math.random() * 7 + 4,
         color: colors[Math.floor(Math.random() * colors.length)],
-        tilt: Math.random() * 10 - 5,
         speedY: Math.random() * 4 + 3,
         speedX: Math.random() * 2 - 1
       });
@@ -1133,28 +1488,29 @@ class JapaneseRoadmapModule {
 window.renderQuickLessonSelector = function(selectedLesson, tabContext) {
   const unlocked = window.authModule ? window.authModule.getUnlockedLesson() : 1;
   const completedObj = window.authModule ? window.authModule.getCompletedLessons() : {};
-  const allN5Lessons = window.LESSONS_DATA ? window.LESSONS_DATA.n5 : [];
-  const totalN5Words = window.JLPT_DATA?.n5?.length || 104;
+  const allLessons = window.LESSONS_DATA ? [...(window.LESSONS_DATA.n5 || []), ...(window.LESSONS_DATA.n4 || [])] : [];
+  const maxLesson = Math.max(25, unlocked);
 
-  let optionsHtml = `<option value="all" ${selectedLesson === 'all' || !selectedLesson ? 'selected' : ''}>🌐 Toàn bộ Từ vựng JLPT N5 (${totalN5Words} từ)</option>`;
+  let optionsHtml = `<option value="all" ${selectedLesson === 'all' || !selectedLesson ? 'selected' : ''}>🌐 Toàn bộ Từ vựng Đang Học</option>`;
 
-  allN5Lessons.forEach(l => {
+  allLessons.slice(0, maxLesson).forEach(l => {
     const lNum = l.lessonNumber;
     const isCompleted = !!completedObj[lNum]?.completed;
     const isUnlocked = lNum <= unlocked;
     const count = l.vocab ? l.vocab.length : 0;
     const isSel = (selectedLesson && parseInt(selectedLesson, 10) === lNum);
+    const lvlTag = lNum >= 26 ? 'N4' : 'N5';
 
     if (isUnlocked) {
       optionsHtml += `
         <option value="${lNum}" ${isSel ? 'selected' : ''}>
-          ${isCompleted ? '✅' : '🎯'} Bài ${lNum}: ${l.topicVi} (${count} từ)
+          ${isCompleted ? '✅' : '🎯'} [${lvlTag}] Bài ${lNum}: ${l.topicVi} (${count} từ)
         </option>
       `;
     } else {
       optionsHtml += `
         <option value="${lNum}" disabled class="opt-locked">
-          🔒 Bài ${lNum}: ${l.topicVi} (Cần vượt Bài ${lNum - 1})
+          🔒 [${lvlTag}] Bài ${lNum}: ${l.topicVi} (Cần vượt Bài ${lNum - 1})
         </option>
       `;
     }
@@ -1172,7 +1528,7 @@ window.renderQuickLessonSelector = function(selectedLesson, tabContext) {
         </select>
       </div>
       <div class="ql-unlocked-status">
-        <span class="ql-pill">Tiến độ mở khóa: <strong>Bài ${unlocked}/25</strong></span>
+        <span class="ql-pill">Tiến độ mở khóa: <strong>Bài ${unlocked}/50</strong></span>
       </div>
     </div>
   `;

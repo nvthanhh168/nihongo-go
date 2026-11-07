@@ -82,8 +82,9 @@ class FlashcardModule {
     this.isFlipped = false;
     this.cardsReviewedInLesson = 1;
 
-    const lesson = window.LESSONS_DATA ? window.LESSONS_DATA.getLesson('N5', lNum) : null;
-    const vocab = (lesson && lesson.vocab && lesson.vocab.length > 0) ? lesson.vocab : (window.JLPT_DATA?.n5 || []);
+    const targetLvl = lNum >= 26 ? 'N4' : 'N5';
+    const lesson = window.LESSONS_DATA ? window.LESSONS_DATA.getLesson(targetLvl, lNum) : null;
+    const vocab = (lesson && lesson.vocab && lesson.vocab.length > 0) ? lesson.vocab : (targetLvl === 'N4' ? (window.JLPT_DATA?.n4 || []) : (window.JLPT_DATA?.n5 || []));
 
     this.allWords = [...vocab];
     this.words = [...vocab];

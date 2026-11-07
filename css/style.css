@@ -8345,3 +8345,1032 @@ body {
     font-size: 38px;
   }
 }
+
+/* ============================================================================
+   BỘ NGUYÊN GIAO DIỆN LỘ TRÌNH 25 BÀI MINNA (ROADMAP ACCORDION & 5-CARD GRID)
+   Tương thích hoàn hảo 100% Mobile / iPad / Desktop
+   ============================================================================ */
+
+.roadmap-main-wrapper {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 10px 16px 60px 16px;
+}
+
+/* 1. HUD TIẾN ĐỘ TỔNG QUAN ROADMAP */
+.roadmap-header-hud {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 22px 26px;
+  margin-bottom: 24px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #E9ECEF;
+}
+
+.hud-top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.hud-hero-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hud-map-icon {
+  font-size: 42px;
+  line-height: 1;
+}
+
+.hud-hero-left h2 {
+  margin: 0 0 4px 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #212529;
+}
+
+.hud-hero-left p {
+  margin: 0;
+  font-size: 13.5px;
+  color: #868E96;
+}
+
+.hud-user-profile-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #F8F9FA;
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: 1px solid #E9ECEF;
+}
+
+.hud-user-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hud-user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.hud-user-details strong {
+  font-size: 13.5px;
+  color: #212529;
+}
+
+.hud-rank-tag {
+  font-size: 11.5px;
+  color: #7048E8;
+  font-weight: 600;
+}
+
+.hud-btn-login-small {
+  background: #FF6B6B;
+  color: #FFF;
+  border: none;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  cursor: pointer;
+  margin-top: 3px;
+  transition: opacity 0.2s;
+}
+
+.hud-btn-login-small:hover {
+  opacity: 0.9;
+}
+
+.roadmap-progress-bar-wrap {
+  margin-top: 10px;
+}
+
+.progress-labels-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13.5px;
+  color: #495057;
+  margin-bottom: 8px;
+}
+
+.progress-percent-badge {
+  font-weight: 800;
+  color: #D9480F;
+  background: #FFE8CC;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.roadmap-progress-track {
+  height: 12px;
+  background: #E9ECEF;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.roadmap-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FF6B6B 0%, #FCC419 60%, #20C997 100%);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+/* 2. KHỐI CÁC CHẶNG BẢN ĐỒ (ACCORDION SECTIONS) */
+.roadmap-regions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.roadmap-region-section {
+  border-radius: 20px;
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.roadmap-region-section:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+}
+
+.region-banner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  cursor: pointer;
+  border-left: 6px solid #E03131;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  user-select: none;
+  transition: background 0.2s ease;
+}
+
+.region-banner-header:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.region-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.region-badge-icon {
+  font-size: 36px;
+  line-height: 1;
+}
+
+.region-title-texts h3 {
+  margin: 0 0 4px 0;
+  font-size: 17.5px;
+  font-weight: 800;
+  color: #212529;
+}
+
+.region-title-texts p {
+  margin: 0;
+  font-size: 13px;
+  color: #495057;
+  max-width: 600px;
+  line-height: 1.4;
+}
+
+.region-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.reg-done-badge {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #2B8A3E;
+  background: #D3F9D8;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.reg-current-badge {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #D9480F;
+  background: #FFE8CC;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.anim-pulse {
+  animation: pulseBadge 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseBadge {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.05); }
+}
+
+.region-stage-pill {
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.region-toggle-chevron {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #495057;
+  background: rgba(0, 0, 0, 0.06);
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.region-banner-header:hover .region-toggle-chevron {
+  background: rgba(0, 0, 0, 0.12);
+  color: #212529;
+}
+
+/* 3. LƯỚI 5 THẺ BÀI HỌC (LESSON NODES GRID) */
+.region-lessons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+  padding: 22px 24px;
+  background: rgba(255, 255, 255, 0.45);
+  transition: all 0.3s ease;
+}
+
+.region-lessons-grid.hidden {
+  display: none !important;
+}
+
+.region-lessons-grid.visible {
+  display: grid !important;
+}
+
+/* 4. TỪNG THẺ BÀI HỌC (LESSON NODE CARD) */
+.lesson-node-card {
+  border-radius: 18px;
+  background: #FFFFFF;
+  border: 2px solid #E9ECEF;
+  padding: 18px 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+}
+
+.lesson-node-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Trạng thái 1: Hoàn thành */
+.lesson-node-card.completed {
+  border-color: #FCC419;
+  background: linear-gradient(180deg, #FFFDF5 0%, #FFFFFF 100%);
+}
+
+/* Trạng thái 2: Đang học */
+.lesson-node-card.current {
+  border-color: #FF6B6B;
+  box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.2), 0 8px 24px rgba(255, 107, 107, 0.2);
+  animation: pulseCurrentCard 2.2s infinite ease-in-out;
+}
+
+@keyframes pulseCurrentCard {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.2), 0 8px 24px rgba(255, 107, 107, 0.2); }
+  50% { box-shadow: 0 0 0 6px rgba(255, 107, 107, 0.35), 0 12px 28px rgba(255, 107, 107, 0.3); }
+}
+
+/* Trạng thái 3: Đang khóa */
+.lesson-node-card.locked {
+  opacity: 0.72;
+  background: #F8F9FA;
+  border-color: #DEE2E6;
+}
+
+.node-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.node-level-badge {
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: #E9ECEF;
+  color: #495057;
+}
+
+.lesson-node-card.completed .node-level-badge {
+  background: #FFF3BF;
+  color: #D9480F;
+}
+
+.lesson-node-card.current .node-level-badge {
+  background: #FFE3E3;
+  color: #C92A2A;
+}
+
+.node-vocab-count-badge {
+  font-size: 12px;
+  font-weight: 700;
+  color: #868E96;
+}
+
+.node-body {
+  margin-bottom: 14px;
+}
+
+.node-topic-vi {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #212529;
+  margin: 0 0 4px 0;
+  line-height: 1.35;
+}
+
+.node-grammar-preview {
+  font-size: 12.5px;
+  color: #868E96;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Thanh chỉ số 3 nhiệm vụ */
+.node-missions-indicator-bar {
+  display: flex;
+  gap: 6px;
+  margin: 12px 0 16px 0;
+}
+
+.m-pill {
+  flex: 1;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 6px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.m-pill.done {
+  background: #D3F9D8;
+  color: #2B8A3E;
+  border-color: #B2F2BB;
+}
+
+.m-pill.pending {
+  background: #F1F3F5;
+  color: #868E96;
+  border-color: #E9ECEF;
+}
+
+/* Nút bấm hành động thẻ */
+.node-footer-action {
+  margin-top: auto;
+}
+
+.node-completed-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.node-stars-row {
+  color: #FCC419;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.btn-node-cta {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 13.5px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-node-cta.start {
+  background: linear-gradient(135deg, #FF6B6B 0%, #FA5252 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(250, 82, 82, 0.35);
+}
+
+.btn-node-cta.start:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(250, 82, 82, 0.45);
+}
+
+.btn-outline-warning {
+  background: #FFF9DB;
+  color: #D9480F;
+  border: 1px solid #FFE066;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-warning:hover {
+  background: #FFE8CC;
+}
+
+.node-locked-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.node-lock-hint {
+  font-size: 11.5px;
+  color: #868E96;
+  text-align: center;
+}
+
+.btn-locked-cta {
+  width: 100%;
+  background: #E9ECEF;
+  color: #868E96;
+  border: 1px solid #DEE2E6;
+  border-radius: 12px;
+  padding: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-locked-cta:hover {
+  background: #FFE3E3;
+  color: #C92A2A;
+  border-color: #FFA8A8;
+}
+
+/* 5. CỔNG CHUYỂN CẤP N4 TORII */
+.n4-gateway-banner {
+  border-radius: 24px;
+  background: linear-gradient(135deg, #FF6B6B 0%, #D9480F 50%, #7048E8 100%);
+  color: #FFFFFF;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 12px 36px rgba(217, 72, 15, 0.3);
+  margin-top: 24px;
+}
+
+.n4-torii-icon {
+  font-size: 52px;
+  margin-bottom: 8px;
+}
+
+.n4-gateway-content h3 {
+  font-size: 24px;
+  font-weight: 900;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+}
+
+.n4-gateway-content p {
+  font-size: 14.5px;
+  opacity: 0.95;
+  margin: 0 0 20px 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+.gateway-action-btn {
+  background: #FFFFFF;
+  color: #D9480F;
+  font-size: 15px;
+  font-weight: 800;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+}
+
+.gateway-action-btn:hover {
+  transform: scale(1.05);
+  background: #FFF9DB;
+  color: #E03131;
+}
+
+/* 6. MODAL NHIỆM VỤ 3 BƯỚC (LESSON MISSION MODAL) */
+.lesson-mission-modal-card {
+  max-width: 680px;
+  width: 94%;
+  border-radius: 24px;
+  padding: 26px 28px;
+  background: #FFFFFF;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.mission-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.mission-header-info {
+  flex: 1;
+}
+
+.mission-badge-pill {
+  font-size: 12px;
+  font-weight: 800;
+  color: #7048E8;
+  background: #F3F0FF;
+  padding: 4px 12px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.mission-title {
+  margin: 0 0 4px 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #212529;
+}
+
+.mission-ja-subtitle {
+  margin: 0;
+  font-size: 13.5px;
+  color: #868E96;
+}
+
+.mission-progress-overview {
+  margin-bottom: 20px;
+}
+
+.mission-progress-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13.5px;
+  margin-bottom: 6px;
+  color: #495057;
+}
+
+.mission-percent-tag {
+  font-size: 12px;
+  font-weight: 800;
+  color: #1864AB;
+  background: #E7F5FF;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.mission-percent-tag.all-done {
+  color: #2B8A3E;
+  background: #D3F9D8;
+}
+
+.mission-progress-track {
+  height: 10px;
+  background: #E9ECEF;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mission-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FF6B6B, #FCC419, #20C997);
+  transition: width 0.4s ease;
+}
+
+.mission-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.mission-step-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1.5px solid #E9ECEF;
+  background: #FAFAFA;
+  transition: all 0.2s ease;
+}
+
+.mission-step-card.step-done {
+  background: #F8FFF9;
+  border-color: #B2F2BB;
+}
+
+.step-num-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #E9ECEF;
+  color: #495057;
+  font-weight: 800;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mission-step-card.step-done .step-num-badge {
+  background: #D3F9D8;
+  color: #2B8A3E;
+}
+
+.step-details {
+  flex: 1;
+}
+
+.step-top-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.step-top-line h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+  color: #212529;
+}
+
+.mission-status-badge {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.mission-status-badge.done {
+  color: #2B8A3E;
+  background: #D3F9D8;
+}
+
+.mission-status-badge.pending {
+  color: #868E96;
+  background: #E9ECEF;
+}
+
+.step-desc {
+  margin: 0;
+  font-size: 12.5px;
+  color: #868E96;
+}
+
+.step-action-col {
+  flex-shrink: 0;
+}
+
+.btn-step-action {
+  background: #212529;
+  color: #FFF;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 12.5px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-step-action:hover {
+  background: #FF6B6B;
+}
+
+/* 7. NÚT ĐẶC BIỆT: THI VƯỢT NHANH (FAST PASS BANNER) */
+.fast-pass-banner-row {
+  background: linear-gradient(135deg, #FFF9DB 0%, #FFF3BF 100%);
+  border: 2px dashed #FCC419;
+  border-radius: 18px;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.fast-pass-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fast-pass-icon {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.fast-pass-left strong {
+  display: block;
+  font-size: 14px;
+  color: #D9480F;
+  margin-bottom: 2px;
+}
+
+.fast-pass-left p {
+  margin: 0;
+  font-size: 12px;
+  color: #868E96;
+}
+
+.btn-fast-pass-action {
+  background: linear-gradient(135deg, #FCC419 0%, #F59F00 100%);
+  color: #212529;
+  font-weight: 800;
+  font-size: 13.5px;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(245, 159, 0, 0.35);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-fast-pass-action:hover {
+  transform: scale(1.04);
+  background: #FAB005;
+}
+
+/* 8. MINI-QUIZ THI VƯỢT NHANH MODAL */
+.fast-pass-quiz-card {
+  max-width: 580px;
+  width: 92%;
+  border-radius: 22px;
+  padding: 24px;
+  background: #FFFFFF;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.quiz-badge {
+  font-size: 12px;
+  font-weight: 800;
+  color: #D9480F;
+  background: #FFE8CC;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.quiz-step-count {
+  font-size: 13px;
+  font-weight: 700;
+  color: #868E96;
+}
+
+.quiz-question-box {
+  background: #F8F9FA;
+  border-left: 5px solid #FF6B6B;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+
+.quiz-question-box h3 {
+  margin: 0 0 6px 0;
+  font-size: 16.5px;
+  color: #212529;
+  line-height: 1.4;
+}
+
+.quiz-example-hint {
+  margin: 0;
+  font-size: 12.5px;
+  color: #868E96;
+  font-style: italic;
+}
+
+.quiz-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.quiz-opt-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #FFFFFF;
+  border: 1.5px solid #DEE2E6;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 14.5px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quiz-opt-btn:hover {
+  border-color: #FF6B6B;
+  background: #FFF5F5;
+  transform: translateX(4px);
+}
+
+.opt-key {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #E9ECEF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+  color: #495057;
+  flex-shrink: 0;
+}
+
+.quiz-opt-btn:hover .opt-key {
+  background: #FF6B6B;
+  color: #FFFFFF;
+}
+
+.quiz-footer-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Kết quả Fast Pass */
+.quiz-result-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.result-icon {
+  font-size: 54px;
+  margin-bottom: 8px;
+}
+
+.result-score-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #FFF9DB;
+  border: 4px solid #FCC419;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 12px auto;
+}
+
+.result-score-circle strong {
+  font-size: 26px;
+  color: #D9480F;
+}
+
+.result-score-circle span {
+  font-size: 11px;
+  color: #868E96;
+}
+
+.quiz-result-body {
+  text-align: center;
+  font-size: 14.5px;
+  margin-bottom: 22px;
+  color: #495057;
+  line-height: 1.5;
+}
+
+.quiz-result-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* 9. VICTORY ANIME MODAL */
+.btn-advance-next {
+  background: linear-gradient(135deg, #0CA678 0%, #20C997 100%);
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 800;
+  padding: 12px 26px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(12, 166, 120, 0.4);
+  transition: all 0.25s ease;
+}
+
+.btn-advance-next:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 22px rgba(12, 166, 120, 0.5);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .roadmap-main-wrapper {
+    padding: 8px 10px 50px 10px;
+  }
+  .roadmap-header-hud {
+    padding: 16px;
+  }
+  .hud-top-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .region-banner-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+  .region-header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .region-lessons-grid {
+    grid-template-columns: 1fr;
+    padding: 14px 12px;
+    gap: 14px;
+  }
+  .lesson-node-card {
+    padding: 14px 16px;
+  }
+  .fast-pass-banner-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn-fast-pass-action {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.anim-bounce-in {
+  animation: bounceInAnim 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes bounceInAnim {
+  0% { opacity: 0; transform: scale(0.7); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.victory-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.text-warning { color: #F59F00 !important; }
+.text-info { color: #1864AB !important; }
+.text-danger { color: #E03131 !important; }
+
+.cert-body {
+  padding: 18px 0;
+}
