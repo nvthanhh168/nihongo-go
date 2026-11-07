@@ -5,6 +5,18 @@
   },
   "nvthanh": {
     "username": "nvthanh",
-    "displayName": "Thành"
+    "displayName": "Nguyễn Văn Thành 🌸",
+    "passwordHash": "bmlob25nb19nb19zZWNyZXRfc2FsdF8xMjM0NTY=",
+    "avatar": "ninja",
+    "profile": {
+      "currentJLPTLevel": "N5",
+      "unlockedLesson": 2,
+      "exp": 150,
+      "coins": 80,
+      "streak": 2,
+      "completedLessons": {},
+      "learnedWords": []
+    },
+    "updatedAt": "2026-11-07T20:02:33.881Z"
   }
 }
