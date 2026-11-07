@@ -1491,7 +1491,7 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },,
+  },
   // --------------------------------------------------------------------------
   // BÀI 4: THỜI GIAN, GIỜ GIẤC & SINH HOẠT HẰNG NGÀY (27 TỪ)
   // --------------------------------------------------------------------------
@@ -1963,7 +1963,7 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },,
+  },
   // --------------------------------------------------------------------------
   // BÀI 5: PHƯƠNG TIỆN GIAO THÔNG & NGÀY THÁNG (45 TỪ)
   // --------------------------------------------------------------------------
@@ -2741,7 +2741,7 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },,
+  },
   // --------------------------------------------------------------------------
   // BÀI 6: ĐỘNG TỪ HÀNH ĐỘNG & RỦ RÊ (28 TỪ)
   // --------------------------------------------------------------------------
@@ -3230,7 +3230,7 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },,
+  },
   // --------------------------------------------------------------------------
   // BÀI 7: CÔNG CỤ, QUÀ TẶNG & CHO NHẬN (23 TỪ)
   // --------------------------------------------------------------------------
@@ -3634,7 +3634,7 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },,
+  },
   // --------------------------------------------------------------------------
   // BÀI 8: TÍNH TỪ MIÊU TẢ TÍNH CHẤT & CẢM NHẬN (50 TỪ)
   // --------------------------------------------------------------------------
@@ -4497,7 +4497,7 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },,
+  },
   // --------------------------------------------------------------------------
   // BÀI 9: SỞ THÍCH, NĂNG KHIẾU & LÝ DO (30 TỪ)
   // --------------------------------------------------------------------------
@@ -5020,7 +5020,7 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },,
+  },
   // --------------------------------------------------------------------------
   // BÀI 10: VỊ TRÍ KHÔNG GIAN & SỰ TỒN TẠI (28 TỪ)
   // --------------------------------------------------------------------------
@@ -5509,7 +5509,7 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },,
+  },
   // --------------------------------------------------------------------------
   // BÀI 11: SỐ ĐẾM, LƯỢNG TỪ & KHOẢNG THỜI GIAN (35 TỪ)
   // --------------------------------------------------------------------------
@@ -6117,7 +6117,7 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },,
+  },
   // --------------------------------------------------------------------------
   // BÀI 12: THỜI TIẾT, BỐN MÙA, LỄ HỘI & SO SÁNH (48 TỪ)
   // --------------------------------------------------------------------------
@@ -6946,7 +6946,7 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },,
+  },
   // --------------------------------------------------------------------------
   // BÀI 13: MONG MUỐN, DU LỊCH & GỌI MÓN (41 TỪ)
   // --------------------------------------------------------------------------
@@ -7656,7 +7656,7 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },,
+  },
   // --------------------------------------------------------------------------
   // BÀI 14: ĐỘNG TỪ THỂ て, YÊU CẦU & ĐANG DIỄN RA (22 TỪ)
   // --------------------------------------------------------------------------
@@ -8043,7 +8043,7 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },,
+  },
   // --------------------------------------------------------------------------
   // BÀI 15: XIN PHÉP, CẤM ĐOÁN & TRẠNG THÁI NGHỀ NGHIỆP (28 TỪ)
   // --------------------------------------------------------------------------
@@ -8532,9 +8532,9 @@ const LESSONS_N5 = [
         }
       }
     ]
-  },,
+  },
 // Lesson 16 Data (16 words)
-const lesson16Data = {
+{
   lessonNumber: 16,
   level: 'N5',
   title: 'Bài 16: Chuỗi hành động, Đền chùa & Giao dịch ATM',
@@ -8815,9 +8815,9 @@ const lesson16Data = {
       }
     }
   ]
-};,
+},
 // Lesson 17 Data (28 words)
-const lesson17Data = {
+{
   lessonNumber: 17,
   level: 'N5',
   title: 'Bài 17: Sức khỏe, Bệnh viện & Nghĩa vụ',
@@ -9302,9 +9302,9 @@ const lesson17Data = {
       }
     }
   ]
-};,
+},
 // Lesson 18 Data (29 words)
-const lesson18Data = {
+{
   lessonNumber: 18,
   level: 'N5',
   title: 'Bài 18: Khả năng, Sở thích & Chức vụ',
@@ -9806,9 +9806,9 @@ const lesson18Data = {
       }
     }
   ]
-};,
+},
 // Lesson 19 Data (30 words)
-const lesson19Data = {
+{
   lessonNumber: 19,
   level: 'N5',
   title: 'Bài 19: Trải nghiệm văn hóa & Thay đổi trạng thái',
@@ -10327,9 +10327,9 @@ const lesson19Data = {
       }
     }
   ]
-};,
+},
 // Lesson 20 Data (13 words)
-const lesson20Data = {
+{
   lessonNumber: 20,
   level: 'N5',
   title: 'Bài 20: Giao tiếp thân mật & Thể thông thường',
@@ -10559,9 +10559,9 @@ const lesson20Data = {
       }
     }
   ]
-};,
+},
 // Lesson 21 Data (17 words)
-const lesson21Data = {
+{
   lessonNumber: 21,
   level: 'N5',
   title: 'Bài 21: Bày tỏ Ý kiến & Trích dẫn',
@@ -10859,9 +10859,9 @@ const lesson21Data = {
       }
     }
   ]
-};,
+},
 // Lesson 22 Data (12 words)
-const lesson22Data = {
+{
   lessonNumber: 22,
   level: 'N5',
   title: 'Bài 22: Nhà cửa kiểu Nhật & Mệnh đề định ngữ',
@@ -11074,9 +11074,9 @@ const lesson22Data = {
       }
     }
   ]
-};,
+},
 // Lesson 23 Data (30 words)
-const lesson23Data = {
+{
   lessonNumber: 23,
   level: 'N5',
   title: 'Bài 23: Thao tác máy móc & Chỉ đường giao thông',
@@ -11595,9 +11595,9 @@ const lesson23Data = {
       }
     }
   ]
-};,
+},
 // Lesson 24 Data (5 words)
-const lesson24Data = {
+{
   lessonNumber: 24,
   level: 'N5',
   title: 'Bài 24: Cho nhận ân huệ & Giúp đỡ',
@@ -11691,9 +11691,9 @@ const lesson24Data = {
       }
     }
   ]
-};,
+},
 // Lesson 25 Data (13 words)
-const lesson25Data = {
+{
   lessonNumber: 25,
   level: 'N5',
   title: 'Bài 25: Giả định, Điều kiện & Tốt nghiệp N5 lên N4',
@@ -11923,7 +11923,7 @@ const lesson25Data = {
       }
     }
   ]
-};
+}
 ];
 
 // ============================================================================
@@ -12132,14 +12132,14 @@ class JapaneseLessonsManager {
 
   getLesson(level, lessonNumber) {
     const list = level.toUpperCase() === 'N4' ? this.n4 : this.n5;
-    return list.find(l => l.lessonNumber === lessonNumber) || null;
+    return list.find(l => l && l.lessonNumber === lessonNumber) || null;
   }
 
   getAllVocabForLevel(level) {
     const list = level.toUpperCase() === 'N4' ? this.n4 : this.n5;
     const all = [];
     list.forEach(l => {
-      if (Array.isArray(l.vocab)) {
+      if (l && Array.isArray(l.vocab)) {
         all.push(...l.vocab);
       }
     });

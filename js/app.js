@@ -584,6 +584,7 @@ class JapaneseApp {
 }
 
 // Khởi tạo app khi DOM sẵn sàng
+window.JapaneseApp = JapaneseApp;
 window.addEventListener('DOMContentLoaded', () => {
   window.app = new JapaneseApp();
 });
