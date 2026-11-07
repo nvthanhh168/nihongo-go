@@ -21,4 +21,6 @@ scratch/
 # Local Environment
 .env
 .env.local
+.git_token
+*token*
 *thi N5*
