@@ -29,7 +29,8 @@
         "n5_l01_13",
         "n5_l01_14",
         "n5_l01_15",
-        "n5_l01_16"
+        "n5_l01_16",
+        "n5_l01_17"
       ],
       "wrongWords": [
         {
@@ -96,7 +97,7 @@
         "tan_binh_nhap_mon"
       ]
     },
-    "updatedAt": "2026-11-08T02:34:57.843Z",
+    "updatedAt": "2026-11-08T02:35:01.112Z",
     "email": "nvthanh@nihongo.local",
     "createdAt": "2026-11-07T16:31:06.144Z",
     "lastLoginAt": "2026-11-07T16:31:06.144Z"
