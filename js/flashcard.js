@@ -95,18 +95,34 @@ class FlashcardModule {
     }
   }
 
-  // Đánh dấu hoàn thành Nhiệm vụ 1 Bài học
+  // Đánh dấu hoàn thành Nhiệm vụ 1 và tự động mở khóa Bài tiếp theo
   markLessonVocabComplete() {
     if (!this.currentLesson) return;
+    const lNum = this.currentLesson;
+
+    // 1. Ghi nhận đã học xong từ vựng trong hệ thống Lộ Trình
     if (window.roadmapModule && typeof window.roadmapModule.recordMissionProgress === 'function') {
-      window.roadmapModule.recordMissionProgress(this.currentLesson, 'vocab', { vocabDone: true });
+      window.roadmapModule.recordMissionProgress(lNum, 'vocab', { vocabDone: true });
     }
+
+    // 2. Tự động thăng cấp và mở khóa bài tiếp theo ngay lập tức!
+    if (window.roadmapModule && typeof window.roadmapModule.checkAndCompleteLesson === 'function') {
+      window.roadmapModule.checkAndCompleteLesson(lNum);
+    } else if (window.authModule && typeof window.authModule.completeLesson === 'function') {
+      window.authModule.completeLesson(lNum, { stars: 3 });
+    }
+
+    // 3. Cập nhật nút bấm: cho phép bấm sang bài tiếp theo ngay
+    const nextL = lNum < 50 ? lNum + 1 : 50;
     const btn = document.querySelector('.btn-finish-mission-vocab');
     if (btn) {
-      btn.innerHTML = '✅ ĐÃ HOÀN THÀNH NHIỆM VỤ 1';
-      btn.disabled = true;
-      btn.classList.add('btn-success', 'disabled');
-      btn.classList.remove('btn-primary');
+      btn.innerHTML = `🚀 ĐÃ MỞ BÀI ${nextL} • BẤM ĐỂ HỌC BÀI ${nextL} NGAY ▶️`;
+      btn.classList.remove('btn-primary', 'disabled');
+      btn.classList.add('btn-success');
+      btn.disabled = false;
+      btn.onclick = () => {
+        window.flashcardModule.loadLesson(nextL);
+      };
     }
   }
 
@@ -206,7 +222,8 @@ class FlashcardModule {
     if (this.currentLesson) {
       const lessonObj = window.LESSONS_DATA ? window.LESSONS_DATA.getLesson('N5', this.currentLesson) : null;
       const missionState = window.roadmapModule ? window.roadmapModule.getLessonMissionState(this.currentLesson) : {};
-      const isMissionDone = !!missionState.vocabDone;
+      const isMissionDone = !!missionState.vocabDone || !!missionState.completed;
+      const nextL = this.currentLesson < 50 ? this.currentLesson + 1 : 50;
 
       missionBannerHtml = `
         <div class="lesson-mission-active-banner">
@@ -217,11 +234,24 @@ class FlashcardModule {
               <p>Đã duyệt: <strong>${Math.min(this.words.length, this.cardsReviewedInLesson || 1)} / ${this.words.length}</strong> thẻ từ vựng N5</p>
             </div>
           </div>
-          <button class="btn btn-sm ${isMissionDone ? 'btn-success disabled' : 'btn-primary'} btn-finish-mission-vocab" 
-                  onclick="window.flashcardModule.markLessonVocabComplete()" 
-                  ${isMissionDone ? 'disabled' : ''}>
-            ${isMissionDone ? '✅ ĐÃ HOÀN THÀNH NHIỆM VỤ 1' : '✅ Đánh dấu Đã Thuộc Hết Thẻ Bài Này'}
-          </button>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            ${isMissionDone ? `
+              <button class="btn btn-sm btn-success btn-finish-mission-vocab" 
+                      onclick="window.flashcardModule.loadLesson(${nextL})">
+                🚀 Đã Xong Bài ${this.currentLesson} • Học Bài ${nextL} Ngay ▶️
+              </button>
+            ` : `
+              <button class="btn btn-sm btn-primary btn-finish-mission-vocab" 
+                      onclick="window.flashcardModule.markLessonVocabComplete()">
+                ✅ Đánh dấu Đã Thuộc Hết Thẻ Bài Này
+              </button>
+              <button class="btn btn-sm btn-warning" 
+                      onclick="window.roadmapModule ? window.roadmapModule.openFastPassQuiz(${this.currentLesson}) : null"
+                      title="Thi vượt nhanh 5 câu trắc nghiệm để mở bài tiếp theo ngay">
+                ⚡ Thi Vượt Nhanh
+              </button>
+            `}
+          </div>
         </div>
       `;
     }

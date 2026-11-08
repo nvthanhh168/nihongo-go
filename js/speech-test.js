@@ -168,8 +168,16 @@ class SpeechTestModule {
               <p>Mục tiêu: Đọc đúng tối thiểu 3 từ (≥ 60%). Đã đạt: <strong>${passedCount} / 3 từ</strong></p>
             </div>
           </div>
-          <div class="mission-status-pill ${isDone ? 'done' : 'pending'}">
-            ${isDone ? '✅ ĐÃ ĐẠT NHIỆM VỤ 3' : `⏳ ĐÃ ĐẠT ${passedCount}/3 TỪ`}
+          <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+            <div class="mission-status-pill ${isDone ? 'done' : 'pending'}">
+              ${isDone ? '✅ ĐÃ ĐẠT NHIỆM VỤ 3' : `⏳ ĐÃ ĐẠT ${passedCount}/3 TỪ`}
+            </div>
+            ${isDone ? `
+              <button class="btn btn-sm btn-success" 
+                      onclick="if (window.roadmapModule) window.roadmapModule.checkAndCompleteLesson(${this.currentLesson}); window.speechModule.loadLesson(${this.currentLesson < 50 ? this.currentLesson + 1 : 50});">
+                🚀 Mở Khóa Bài ${this.currentLesson < 50 ? this.currentLesson + 1 : 50} Ngay ▶️
+              </button>
+            ` : ''}
           </div>
         </div>
       `;

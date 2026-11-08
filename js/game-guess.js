@@ -985,6 +985,12 @@ class VocabGuessGame {
         </div>
 
         <div class="game-over-actions">
+          ${(this.currentLesson && effectiveScore >= 70) ? `
+            <button class="btn btn-success btn-large anim-pulse" 
+                    onclick="if (window.roadmapModule) window.roadmapModule.checkAndCompleteLesson(${this.currentLesson}); window.guessGame.setLesson(${this.currentLesson < 50 ? this.currentLesson + 1 : 50}); window.guessGame.startPlaying();">
+              🚀 Mở Khóa & Chơi Tiếp Bài ${this.currentLesson < 50 ? this.currentLesson + 1 : 50} Ngay ▶️
+            </button>
+          ` : ''}
           <button class="btn btn-primary btn-large" onclick="window.guessGame.startPlaying()">
             🔄 Chơi lại ván mới
           </button>

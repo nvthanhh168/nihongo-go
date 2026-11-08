@@ -750,7 +750,10 @@ class JapaneseAuthModule {
       const p = this.currentUser.profile;
       if (!p.completedLessons) p.completedLessons = {};
 
-      p.completedLessons[lessonNumber] = {
+      const lNum = parseInt(lessonNumber, 10);
+      const curU = parseInt(p.unlockedLesson || 1, 10);
+
+      p.completedLessons[lNum] = {
         completed: true,
         stars: lessonStats.stars || 3,
         vocabDone: true,
@@ -759,9 +762,9 @@ class JapaneseAuthModule {
         completedAt: new Date().toISOString()
       };
 
-      // Mở khóa bài tiếp theo nếu bài vừa hoàn thành là bài cao nhất (cho phép đến Bài 50 nếu đã đăng nhập)
-      if (lessonNumber === p.unlockedLesson && lessonNumber < 50) {
-        p.unlockedLesson = lessonNumber + 1;
+      // Mở khóa bài tiếp theo: nếu lNum >= unlockedLesson thì thăng cấp lên lNum + 1 (cho phép đến Bài 50 nếu đã đăng nhập)
+      if (lNum >= curU && lNum < 50) {
+        p.unlockedLesson = lNum + 1;
       }
       unlocked = p.unlockedLesson;
       completedLessons = p.completedLessons;
@@ -770,6 +773,7 @@ class JapaneseAuthModule {
       this.renderHeaderAuthUI();
     } else {
       // Chế độ khách (Lưu vào localStorage để không gián đoạn trải nghiệm)
+      const lNum = parseInt(lessonNumber, 10);
       try {
         unlocked = parseInt(localStorage.getItem('nihongo_guest_unlocked') || '1', 10);
         completedLessons = JSON.parse(localStorage.getItem('nihongo_guest_completed') || '{}');
@@ -778,7 +782,7 @@ class JapaneseAuthModule {
         completedLessons = {};
       }
 
-      completedLessons[lessonNumber] = {
+      completedLessons[lNum] = {
         completed: true,
         stars: lessonStats.stars || 3,
         vocabDone: true,
@@ -787,8 +791,8 @@ class JapaneseAuthModule {
         completedAt: new Date().toISOString()
       };
 
-      if (lessonNumber === unlocked && lessonNumber < 25) {
-        unlocked = lessonNumber + 1;
+      if (lNum >= unlocked && lNum < 50) {
+        unlocked = lNum + 1;
       }
 
       try {

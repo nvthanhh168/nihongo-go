@@ -133,44 +133,28 @@ class JapaneseRoadmapModule {
     this._eventsAttached = true;
 
     document.addEventListener('click', (e) => {
-      // 1. Bấm vào thanh tiêu đề Chặng (Toggle Accordion)
-      const toggleRegionEl = e.target.closest('[data-action="toggle-region"]');
-      if (toggleRegionEl) {
+      // 1. Nút "Thi Vượt Nhanh (Fast Pass)" - Đặt ưu tiên cao nhất để không bị chặn bởi thẻ cha
+      const fastPassBtn = e.target.closest('[data-action="fast-pass"]');
+      if (fastPassBtn) {
         e.preventDefault();
-        const regId = parseInt(toggleRegionEl.getAttribute('data-region-id'), 10);
-        this.toggleRegion(regId);
+        e.stopPropagation();
+        const lNum = parseInt(fastPassBtn.getAttribute('data-lesson-num'), 10);
+        this.openFastPassQuiz(lNum);
         return;
       }
 
-      // 2. Bấm vào Thẻ Bài Học (Lesson Node Card)
-      const lessonNodeEl = e.target.closest('[data-action="open-lesson"]');
-      if (lessonNodeEl) {
-        e.preventDefault();
-        const lNum = parseInt(lessonNodeEl.getAttribute('data-lesson-num'), 10);
-        this.handleNodeClick(lNum);
-        return;
-      }
-
-      // 3. Bấm vào nút Bắt đầu nhiệm vụ cụ thể (Flashcard, Game, Speech)
+      // 2. Bấm vào nút Bắt đầu nhiệm vụ cụ thể (Flashcard, Game, Speech)
       const startMissionBtn = e.target.closest('[data-action="start-mission"]');
       if (startMissionBtn) {
         e.preventDefault();
+        e.stopPropagation();
         const lNum = parseInt(startMissionBtn.getAttribute('data-lesson-num'), 10);
         const mType = startMissionBtn.getAttribute('data-mission-type');
         this.startMission(lNum, mType);
         return;
       }
 
-      // 4. Bấm vào nút "Thi Vượt Nhanh Bài Này (Fast Pass)"
-      const fastPassBtn = e.target.closest('[data-action="fast-pass"]');
-      if (fastPassBtn) {
-        e.preventDefault();
-        const lNum = parseInt(fastPassBtn.getAttribute('data-lesson-num'), 10);
-        this.openFastPassQuiz(lNum);
-        return;
-      }
-
-      // 5. Bấm đóng Modal Nhiệm Vụ
+      // 3. Bấm đóng Modal Nhiệm Vụ
       const closeMissionBtn = e.target.closest('[data-action="close-mission-modal"]');
       if (closeMissionBtn) {
         e.preventDefault();
@@ -178,7 +162,7 @@ class JapaneseRoadmapModule {
         return;
       }
 
-      // 6. Bấm đóng Modal Chiến Thắng
+      // 4. Bấm đóng Modal Chiến Thắng
       const closeVictoryBtn = e.target.closest('[data-action="close-victory-modal"]');
       if (closeVictoryBtn) {
         e.preventDefault();
@@ -186,7 +170,7 @@ class JapaneseRoadmapModule {
         return;
       }
 
-      // 7. Bấm nút Học Tiếp Bài Mới trong Modal Chiến Thắng
+      // 5. Bấm nút Học Tiếp Bài Mới trong Modal Chiến Thắng
       const advanceNextBtn = e.target.closest('[data-action="advance-next-lesson"]');
       if (advanceNextBtn) {
         e.preventDefault();
@@ -196,8 +180,31 @@ class JapaneseRoadmapModule {
         return;
       }
 
-      // 8. Bấm vào Cổng Chuyển Cấp N4 Torii
+      // 6. Bấm vào Cổng Chuyển Cấp N4 Torii
       const n4GateBtn = e.target.closest('[data-action="n4-gateway"]');
+      if (n4GateBtn) {
+        e.preventDefault();
+        this.handleN4GatewayClick();
+        return;
+      }
+
+      // 7. Bấm vào thanh tiêu đề Chặng (Toggle Accordion)
+      const toggleRegionEl = e.target.closest('[data-action="toggle-region"]');
+      if (toggleRegionEl) {
+        e.preventDefault();
+        const regId = parseInt(toggleRegionEl.getAttribute('data-region-id'), 10);
+        this.toggleRegion(regId);
+        return;
+      }
+
+      // 8. Bấm vào Thẻ Bài Học (Lesson Node Card)
+      const lessonNodeEl = e.target.closest('[data-action="open-lesson"]');
+      if (lessonNodeEl) {
+        e.preventDefault();
+        const lNum = parseInt(lessonNodeEl.getAttribute('data-lesson-num'), 10);
+        this.handleNodeClick(lNum);
+        return;
+      }
       if (n4GateBtn) {
         e.preventDefault();
         this.handleN4GateClick();
@@ -375,8 +382,9 @@ class JapaneseRoadmapModule {
       // Guest mode
       try {
         const curU = parseInt(localStorage.getItem('nihongo_guest_unlocked') || '1', 10);
-        if (lNum === curU && lNum < 50) {
+        if (lNum >= curU && lNum < 50) {
           localStorage.setItem('nihongo_guest_unlocked', (lNum + 1).toString());
+          result.unlocked = lNum + 1;
         }
         const comp = JSON.parse(localStorage.getItem('nihongo_guest_completed') || '{}');
         comp[lNum] = { completed: true, stars: stars };
@@ -384,11 +392,27 @@ class JapaneseRoadmapModule {
       } catch (e) {}
     }
 
+    // Tự động mở Chặng tương ứng của bài mới mở
+    const nextRegionId = Math.min(10, Math.max(1, Math.ceil(result.unlocked / 5)));
+    this.expandedRegions[nextRegionId] = true;
+
     // Hiển thị thông báo chiến thắng rực rỡ phong cách Anime
     this.showLessonVictoryModal(lNum, state, result.unlocked);
 
     // Re-render lại roadmap
     this.render();
+
+    // Đồng bộ lại tất cả thanh quick selector bài học trên toàn app
+    if (typeof window.renderQuickLessonSelector === 'function') {
+      const qlBars = document.querySelectorAll('.quick-lesson-selector-bar');
+      qlBars.forEach(bar => {
+        const tabCtx = bar.getAttribute('data-tab-context') || 'flashcard';
+        const curL = (tabCtx === 'flashcard' && window.flashcardModule && window.flashcardModule.currentLesson)
+          ? window.flashcardModule.currentLesson
+          : result.unlocked;
+        bar.outerHTML = window.renderQuickLessonSelector(curL, tabCtx);
+      });
+    }
   }
 
   // VƯỢT NHANH BÀI HỌC (FAST PASS)
@@ -603,19 +627,39 @@ class JapaneseRoadmapModule {
                               </button>
                             </div>
                           ` : isCurrent ? `
-                            <button class="btn btn-primary btn-sm btn-node-cta anim-pulse" 
-                                    data-action="open-lesson" 
-                                    data-lesson-num="${lNum}">
-                              ▶️ BẮT ĐẦU HỌC BÀI NÀY
-                            </button>
+                            <div class="node-current-actions-row" style="display: flex; gap: 8px; width: 100%;">
+                              <button class="btn btn-primary btn-sm btn-node-cta anim-pulse" 
+                                      data-action="open-lesson" 
+                                      data-lesson-num="${lNum}"
+                                      style="flex: 1;">
+                                ▶️ BẮT ĐẦU HỌC
+                              </button>
+                              <button class="btn btn-warning btn-sm" 
+                                      data-action="fast-pass" 
+                                      data-lesson-num="${lNum}"
+                                      title="Thi vượt nhanh 5 câu trắc nghiệm để mở bài tiếp theo"
+                                      style="font-size: 13px; font-weight: 800; padding: 0 12px; border-radius: 12px; white-space: nowrap;">
+                                ⚡ Thi Vượt
+                              </button>
+                            </div>
                           ` : `
                             <div class="node-locked-foot">
                               <span class="node-lock-hint">Cần hoàn thành Bài ${lNum - 1} 🔒</span>
-                              <button class="btn btn-sm btn-locked-cta" 
-                                      data-action="open-lesson" 
-                                      data-lesson-num="${lNum}">
-                                🔒 Đang Khóa
-                              </button>
+                              <div style="display: flex; gap: 6px; width: 100%;">
+                                <button class="btn btn-sm btn-locked-cta" 
+                                        data-action="open-lesson" 
+                                        data-lesson-num="${lNum}"
+                                        style="flex: 1;">
+                                  🔒 Đang Khóa
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" 
+                                        data-action="fast-pass" 
+                                        data-lesson-num="${lNum - 1}"
+                                        title="Thi vượt Bài ${lNum - 1} để mở khóa Bài ${lNum} ngay!"
+                                        style="font-size: 11.5px; font-weight: 800; padding: 0 10px; border-radius: 12px; white-space: nowrap;">
+                                  ⚡ Vượt Bài ${lNum - 1}
+                                </button>
+                              </div>
                             </div>
                           `}
                         </div>
@@ -702,17 +746,23 @@ class JapaneseRoadmapModule {
     }
 
     // 2. Nếu bài đang bị khóa
-    if (lNum > prog.unlockedLesson) {
+    const curUnlocked = parseInt(prog.unlockedLesson || 1, 10);
+    if (lNum > curUnlocked) {
       if (window.soundSystem) window.soundSystem.playBuzzer();
       
+      const prevLesson = lNum - 1;
       this.showTanakaAlert(
-        `💢 Chậc! Em phải hoàn thành xong <strong>Bài ${lNum - 1}</strong> trước thì cô mới mở khóa cho học tiếp <strong>Bài ${lNum}</strong> nhé!<br><br>` +
-        `Học tiếng Nhật không có chuyện đốt cháy giai đoạn! Hãy hoàn thành chắc chắn Bài ${prog.unlockedLesson} trước cho cô! 👩‍🏫`
+        `💢 <strong>Bài ${lNum} đang bị khóa!</strong> Em cần hoàn thành xong <strong>Bài ${prevLesson}</strong> trước thì cô mới mở khóa nhé!<br><br>` +
+        `💡 <em>Mẹo nhanh:</em> Nếu em đã nắm vững kiến thức Bài ${prevLesson}, hãy làm nhanh <strong>Bài Thi Vượt Nhanh (5 câu trắc nghiệm)</strong> để mở khóa Bài ${lNum} ngay lập tức!<br><br>` +
+        `<div style="display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap;">` +
+          `<button class="btn btn-sm btn-primary" onclick="this.closest('#roadmap-takagi-toast').remove(); window.roadmapModule.openLessonMissionModal(${curUnlocked});">📖 Học Bài ${curUnlocked}</button>` +
+          `<button class="btn btn-sm btn-warning" onclick="this.closest('#roadmap-takagi-toast').remove(); window.roadmapModule.openFastPassQuiz(${prevLesson});">⚡ Thi Vượt Bài ${prevLesson}</button>` +
+        `</div>`
       );
 
       if (window.mascot) {
         window.mascot.setCharacter('sensei');
-        window.mascot.setMood('strict', `Chưa xong Bài ${lNum - 1} thì không được mở Bài ${lNum} đâu nhé! 👩‍🏫`, 3500);
+        window.mascot.setMood('strict', `Chưa xong Bài ${prevLesson} thì không được mở Bài ${lNum} đâu nhé! 👩‍🏫`, 3500);
       }
       return;
     }
@@ -1003,9 +1053,13 @@ class JapaneseRoadmapModule {
     if (!quizModal) {
       quizModal = document.createElement('div');
       quizModal.id = 'fast-pass-quiz-modal';
-      quizModal.className = 'modal-overlay';
+      quizModal.className = 'modal-overlay active';
       document.body.appendChild(quizModal);
+    } else {
+      quizModal.classList.add('active');
     }
+    quizModal.classList.remove('hidden');
+    quizModal.style.display = 'flex';
 
     let currentQ = 0;
     let score = 0;
@@ -1035,7 +1089,7 @@ class JapaneseRoadmapModule {
           </div>
 
           <div class="quiz-footer-row">
-            <button class="btn btn-secondary btn-sm" onclick="document.getElementById('fast-pass-quiz-modal').remove()">
+            <button class="btn btn-secondary btn-sm" onclick="window.roadmapModule.closeFastPassQuiz()">
               ✕ Hủy bỏ
             </button>
           </div>
@@ -1056,7 +1110,7 @@ class JapaneseRoadmapModule {
         renderQuestion();
       } else {
         // Hoàn thành quiz
-        const passed = score >= 4; // >= 80%
+        const passed = score >= 4; // >= 80% (4/5 câu)
         quizModal.innerHTML = `
           <div class="modal-card fast-pass-quiz-card anim-bounce-in">
             <div class="quiz-result-header ${passed ? 'pass' : 'fail'}">
@@ -1072,17 +1126,20 @@ class JapaneseRoadmapModule {
               ${passed ? `
                 <p>Xuất sắc! Em đã chứng minh mình nắm rất vững từ vựng Bài ${lessonNum}. Cô Tanaka đồng ý cấp chứng chỉ hoàn thành bài học này cho em ngay lập tức!</p>
               ` : `
-                <p>Rất tiếc! Em chỉ đúng ${score}/${quizQuestions.length} câu (cần đúng từ 4 câu trở lên). Hãy quay lại hoàn thành 3 bước nhiệm vụ để nắm chắc bài hơn nhé!</p>
+                <p>Rất tiếc! Em chỉ đúng ${score}/${quizQuestions.length} câu (cần đúng từ 4 câu trở lên). Hãy quay lại ôn luyện từ vựng hoặc làm lại bài kiểm tra nhé!</p>
               `}
             </div>
 
-            <div class="quiz-result-actions">
+            <div class="quiz-result-actions" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
               ${passed ? `
-                <button class="btn btn-primary btn-large" onclick="document.getElementById('fast-pass-quiz-modal').remove(); window.roadmapModule.passLevelQuickly(${lessonNum});">
+                <button class="btn btn-primary btn-large" onclick="window.roadmapModule.closeFastPassQuiz(); window.roadmapModule.passLevelQuickly(${lessonNum});">
                   🚀 Xác Nhận Mở Khóa Bài Tiếp Theo Ngay!
                 </button>
               ` : `
-                <button class="btn btn-primary" onclick="document.getElementById('fast-pass-quiz-modal').remove(); window.roadmapModule.openLessonMissionModal(${lessonNum});">
+                <button class="btn btn-warning" onclick="window.roadmapModule.openFastPassQuiz(${lessonNum});">
+                  🔄 Thi Lại Ngay
+                </button>
+                <button class="btn btn-secondary" onclick="window.roadmapModule.closeFastPassQuiz(); window.roadmapModule.openLessonMissionModal(${lessonNum});">
                   📖 Quay Lại Bảng Nhiệm Vụ 3 Bước
                 </button>
               `}
@@ -1093,6 +1150,16 @@ class JapaneseRoadmapModule {
     };
 
     renderQuestion();
+  }
+
+  // Đóng Modal Thi Vượt Nhanh an toàn
+  closeFastPassQuiz() {
+    const quizModal = document.getElementById('fast-pass-quiz-modal');
+    if (quizModal) {
+      quizModal.classList.remove('active');
+      quizModal.style.display = 'none';
+      quizModal.remove();
+    }
   }
 
   // --------------------------------------------------------------------------
