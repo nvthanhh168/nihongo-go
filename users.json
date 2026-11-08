@@ -5,7 +5,7 @@
   },
   "nvthanh": {
     "username": "nvthanh",
-    "displayName": "THANH IT",
+    "displayName": "NVTHANH",
     "passwordHash": "bmlob25nb19nb19zZWNyZXRfc2FsdF8xNjA4MjAwMQ==",
     "avatar": "shiba",
     "profile": {
@@ -46,61 +46,434 @@
       ],
       "wrongWords": [
         {
-          "id": "n5_l05_36",
-          "lesson": 5,
-          "lessonId": 5,
+          "id": "n5_l12_43",
+          "lesson": 12,
+          "lessonId": 12,
           "level": "N5",
-          "kanji": "ー日",
-          "hanViet": "Nhật",
-          "hiragana": "ーにち",
-          "romaji": "-nichi",
-          "meaning": "ngày (hậu tố đếm ngày)",
-          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#12B886\"/><text x=\"50\" y=\"58\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#FFF\">15日</text></svg>",
+          "kanji": "すごいですね",
+          "hanViet": "",
+          "hiragana": "すごいですね",
+          "romaji": "sugoi desu ne",
+          "meaning": "Giỏi ghê nhỉ",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF9DB\"/><polygon points=\"50,20 62,40 84,40 68,56 72,78 50,66 28,78 32,56 16,40 38,40\" fill=\"#FAB005\"/></svg>",
           "example": {
-            "ja": "十五日は金曜日です。",
-            "hira": "じゅうごにちはきんようびです。",
-            "vi": "Ngày 15 là thứ Sáu."
+            "ja": "日本語がお上手ですね。すごいですね！",
+            "hira": "にほんごがおじょうずですね。すごいですね！",
+            "vi": "Tiếng Nhật bạn giỏi quá. Thật đáng nể!"
           },
           "wrongCount": 1,
-          "lastFailedAt": "2026-11-07T15:27:55.492Z"
+          "lastFailedAt": "2026-11-07T15:27:32.205Z"
         },
         {
-          "id": "n5_l19_29",
-          "lesson": 19,
-          "lessonId": 19,
-          "level": "N5",
-          "kanji": "体にいい",
-          "hanViet": "Thể",
-          "hiragana": "からだにいい",
-          "romaji": "karada ni ii",
-          "meaning": "tốt cho cơ thể, có lợi cho sức khỏe",
-          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#EBFBEE\"/><path d=\"M50 30 C42 20 26 26 26 44 C26 62 50 78 50 78 C50 78 74 62 74 44 C74 26 58 20 50 30 Z\" fill=\"#40C057\"/><polygon points=\"48,42 54,48 64,38\" fill=\"#FFF\"/></svg>",
-          "example": {
-            "ja": "毎朝野菜ジュースを飲むのは体にいいです。",
-            "hira": "まいあさ やさいジュースを のむのは からだに いいです。",
-            "vi": "Mỗi sáng uống nước ép rau củ rất tốt cho sức khỏe."
-          },
-          "wrongCount": 1,
-          "lastFailedAt": "2026-11-07T15:28:12.505Z"
-        },
-        {
-          "id": "n5_l08_38",
+          "id": "n5_l08_42",
           "lesson": 8,
           "lessonId": 8,
           "level": "N5",
-          "kanji": "所",
-          "hanViet": "Sở",
-          "hiragana": "ところ",
-          "romaji": "tokoro",
-          "meaning": "nơi, chỗ",
-          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><circle cx=\"50\" cy=\"44\" r=\"14\" fill=\"#E03131\"/><path d=\"M50 58 L50 74\" stroke=\"#C92A2A\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"44\" r=\"5\" fill=\"#FFF\"/></svg>",
+          "kanji": "仕事",
+          "hanViet": "Sĩ Sự",
+          "hiragana": "しごと",
+          "romaji": "shigoto",
+          "meaning": "công việc",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><rect x=\"26\" y=\"40\" width=\"48\" height=\"34\" rx=\"4\" fill=\"#1864AB\"/><path d=\"M40 40 L40 32 C40 28 60 28 60 32 L60 40\" stroke=\"#1971C2\" stroke-width=\"4\" fill=\"none\"/></svg>",
           "example": {
-            "ja": "ここは静かな所です。",
-            "hira": "ここはしずかなところです。",
-            "vi": "Nơi này là một chỗ rất yên tĩnh."
+            "ja": "仕事は忙しいですが、面白いです。",
+            "hira": "しごとはいそがしいですが、おもしろいです。",
+            "vi": "Công việc bận rộn nhưng rất thú vị."
           },
           "wrongCount": 1,
-          "lastFailedAt": "2026-11-07T15:28:29.524Z"
+          "lastFailedAt": "2026-11-07T15:27:49.216Z"
+        },
+        {
+          "id": "n5_l14_10",
+          "lesson": 14,
+          "lessonId": 14,
+          "level": "N5",
+          "kanji": "取ります",
+          "hanViet": "Thủ",
+          "hiragana": "とります",
+          "romaji": "torimasu",
+          "meaning": "lấy",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE8CC\"/><path d=\"M30 60 Q50 42 70 60 L66 72 Q50 54 34 72 Z\" fill=\"#F76707\"/></svg>",
+          "example": {
+            "ja": "塩を取ってください。",
+            "hira": "しおをとってください。",
+            "vi": "Xin hãy lấy giúp tôi lọ muối."
+          },
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T15:28:06.237Z"
+        },
+        {
+          "id": "n5_l08_32",
+          "lesson": 8,
+          "lessonId": 8,
+          "level": "N5",
+          "kanji": "青い",
+          "hanViet": "Thanh",
+          "hiragana": "あおい",
+          "romaji": "aoi",
+          "meaning": "xanh",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><circle cx=\"50\" cy=\"50\" r=\"26\" fill=\"#1971C2\"/></svg>",
+          "example": {
+            "ja": "青い空が綺麗です。",
+            "hira": "あおいそらがきれいです。",
+            "vi": "Bầu trời xanh thật là đẹp."
+          },
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T15:30:04.519Z"
+        },
+        {
+          "id": "n5_l14_19",
+          "lesson": 14,
+          "lessonId": 14,
+          "level": "N5",
+          "kanji": "まっすぐ",
+          "hanViet": "",
+          "hiragana": "まっすぐ",
+          "romaji": "massugu",
+          "meaning": "thẳng",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><line x1=\"50\" y1=\"75\" x2=\"50\" y2=\"25\" stroke=\"#0CA678\" stroke-width=\"6\" stroke-linecap=\"round\"/><polygon points=\"50,20 40,36 60,36\" fill=\"#0CA678\"/></svg>",
+          "example": {
+            "ja": "この道をまっすぐ行ってください。",
+            "hira": "このみちをまっすぐいってください。",
+            "vi": "Xin hãy đi thẳng con đường này."
+          },
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T15:30:21.542Z"
+        },
+        {
+          "id": "n5_l07_18",
+          "lesson": 7,
+          "lessonId": 7,
+          "level": "N5",
+          "kanji": "メール",
+          "hanViet": "",
+          "hiragana": "メール",
+          "romaji": "me-ru",
+          "meaning": "email",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><rect x=\"22\" y=\"32\" width=\"56\" height=\"36\" rx=\"4\" fill=\"#339AF0\"/><path d=\"M22 36 L50 56 L78 36\" stroke=\"#FFF\" stroke-width=\"3\" fill=\"none\"/></svg>",
+          "example": {
+            "ja": "先生にメールを送りました。",
+            "hira": "せんせいにメールをおくりました。",
+            "vi": "Tôi đã gửi email cho thầy giáo."
+          },
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T15:30:38.549Z"
+        },
+        {
+          "id": "n5_l11_04",
+          "lesson": 11,
+          "lessonId": 11,
+          "level": "N5",
+          "kanji": "休みます[会社を～]",
+          "hanViet": "Hưu Hội Xã",
+          "hiragana": "かいしゃをやすみます",
+          "romaji": "kaisha o yasumimasu",
+          "meaning": "nghỉ làm ở công ty",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><circle cx=\"50\" cy=\"40\" r=\"14\" fill=\"#0CA678\"/><path d=\"M30 76 C30 62 70 62 70 76 Z\" fill=\"#20C997\"/><line x1=\"38\" y1=\"50\" x2=\"62\" y2=\"50\" stroke=\"#FFF\" stroke-width=\"3\"/></svg>",
+          "example": {
+            "ja": "風邪で会社を休みます。",
+            "hira": "かぜでかいしゃをやすみます。",
+            "vi": "Vì bị cảm cúm nên tôi xin nghỉ làm."
+          },
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T15:44:34.904Z"
+        },
+        {
+          "id": "n5_l11_07",
+          "lesson": 11,
+          "lessonId": 11,
+          "level": "N5",
+          "kanji": "三つ",
+          "hanViet": "Tam",
+          "hiragana": "みっつ",
+          "romaji": "mittsu",
+          "meaning": "3 cái",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE8CC\"/><circle cx=\"50\" cy=\"36\" r=\"10\" fill=\"#F76707\"/><circle cx=\"36\" cy=\"60\" r=\"10\" fill=\"#F76707\"/><circle cx=\"64\" cy=\"60\" r=\"10\" fill=\"#F76707\"/></svg>",
+          "example": {
+            "ja": "ケーキを三つください。",
+            "hira": "ケーキをみっつください。",
+            "vi": "Xin cho tôi 3 chiếc bánh ngọt."
+          },
+          "wrongCount": 2,
+          "lastFailedAt": "2026-11-07T16:03:32.041Z"
+        },
+        {
+          "id": "n5_l11_19",
+          "lesson": 11,
+          "lessonId": 11,
+          "level": "N5",
+          "kanji": "ー時間",
+          "hanViet": "Thời Gian",
+          "hiragana": "ーじかん",
+          "romaji": "-jikan",
+          "meaning": "tiếng đồng hồ",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#1971C2\"/><text x=\"50\" y=\"58\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"#FFF\">1 hr</text></svg>",
+          "example": {
+            "ja": "毎日二時間勉強します。",
+            "hira": "まいにちにじかんべんきょうします。",
+            "vi": "Mỗi ngày tôi học 2 tiếng đồng hồ."
+          },
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T15:45:08.926Z"
+        },
+        {
+          "id": "n5_l08_30",
+          "lesson": 8,
+          "lessonId": 8,
+          "level": "N5",
+          "kanji": "黒い",
+          "hanViet": "Hắc",
+          "hiragana": "くろい",
+          "romaji": "kuroi",
+          "meaning": "đen",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#343A40\"/><circle cx=\"50\" cy=\"50\" r=\"26\" fill=\"#212529\"/></svg>",
+          "example": {
+            "ja": "黒い靴を買いました。",
+            "hira": "くろいくつをかいました。",
+            "vi": "Tôi đã mua đôi giày màu đen."
+          },
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T16:03:15.033Z"
+        },
+        {
+          "id": "n5_basho_02",
+          "level": "N5",
+          "category": "basho",
+          "kanji": "家",
+          "hiragana": "いえ",
+          "romaji": "ie",
+          "hanViet": "GIA",
+          "meaning": "Ngôi nhà",
+          "vietnamese": "Ngôi nhà",
+          "pitch": "[2] (Odaka)",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#EBFBEE\"/><polygon points=\"50,20 82,46 18,46\" fill=\"#FA5252\"/><rect x=\"25\" y=\"46\" width=\"50\" height=\"36\" fill=\"#FFF4E6\"/><rect x=\"42\" y=\"58\" width=\"16\" height=\"24\" fill=\"#A61E4D\"/></svg>",
+          "example": {
+            "ja": "午後五時に仕事が終わって、家に帰ります。",
+            "hira": "ごごごじにしごとがおわって、いえにかえります。",
+            "romaji": "Gogo goji ni shigoto ga owatte, ie ni kaerimasu.",
+            "vi": "5 giờ chiều công việc kết thúc và tôi về nhà."
+          },
+          "exampleJa": "午後五時に仕事が終わって、家に帰ります。",
+          "exampleVi": "5 giờ chiều công việc kết thúc và tôi về nhà.",
+          "commonMistake": "Nhầm lẫn sắc thái giữa いえ (ngôi nhà vật lý) và うち (tổ ấm, nhà tôi).",
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T16:03:49.053Z"
+        },
+        {
+          "id": "n5_aisatsu_03",
+          "level": "N5",
+          "category": "aisatsu",
+          "kanji": "こんばんは",
+          "hiragana": "こんばんは",
+          "romaji": "konbanwa",
+          "hanViet": "KIM VÃN HÀ",
+          "meaning": "Chào buổi tối",
+          "vietnamese": "Chào buổi tối",
+          "pitch": "[0] (Heiban)",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#343A40\"/><path d=\"M42 25 A28 28 0 0 0 72 75 A32 32 0 1 1 42 25 Z\" fill=\"#FCC419\"/><circle cx=\"28\" cy=\"35\" r=\"2.5\" fill=\"#FFF\"/><circle cx=\"76\" cy=\"32\" r=\"2\" fill=\"#FFF\"/><circle cx=\"34\" cy=\"65\" r=\"1.5\" fill=\"#FFF\"/></svg>",
+          "example": {
+            "ja": "こんばんは、お元気ですか？",
+            "hira": "こんばんは、おげんきですか？",
+            "romaji": "Konbanwa, ogenki desu ka?",
+            "vi": "Chào buổi tối, bạn có khỏe không?"
+          },
+          "exampleJa": "こんばんは、お元気ですか？",
+          "exampleVi": "Chào buổi tối, bạn có khỏe không?",
+          "commonMistake": "Viết sai chữ は cuối thành わ.",
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T16:07:10.043Z"
+        },
+        {
+          "id": "n5_tabemono_02",
+          "level": "N5",
+          "category": "tabemono",
+          "kanji": "ご飯",
+          "hiragana": "ごはん",
+          "romaji": "gohan",
+          "hanViet": "PHẠN",
+          "meaning": "Cơm trắng / Bữa ăn",
+          "vietnamese": "Cơm trắng / Bữa ăn",
+          "pitch": "[1] (Atamadaka)",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF9DB\"/><path d=\"M22 55 Q50 88 78 55 Z\" fill=\"#E03131\"/><ellipse cx=\"50\" cy=\"54\" rx=\"28\" ry=\"16\" fill=\"#FFFFFF\"/><circle cx=\"50\" cy=\"50\" r=\"4\" fill=\"#C92A2A\"/></svg>",
+          "example": {
+            "ja": "毎朝、ご飯と味噌汁を食べます。",
+            "hira": "まいあさ、ごはんとみそしるをたべます。",
+            "romaji": "Maiasa, gohan to misoshiru o tabemasu.",
+            "vi": "Mỗi sáng tôi đều ăn cơm và súp miso."
+          },
+          "exampleJa": "毎朝、ご飯と味噌汁を食べます。",
+          "exampleVi": "Mỗi sáng tôi đều ăn cơm và súp miso.",
+          "commonMistake": "Nhầm lẫn giữa nghĩa cơm trắng đơn thuần và nghĩa cả bữa ăn (như 朝ご飯: bữa sáng).",
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T16:07:27.052Z"
+        },
+        {
+          "id": "n5_tabemono_09",
+          "level": "N5",
+          "category": "tabemono",
+          "kanji": "牛乳",
+          "hiragana": "ぎゅうにゅう",
+          "romaji": "gyuunyuu",
+          "hanViet": "NGƯU NHŨ",
+          "meaning": "Sữa bò tươi",
+          "vietnamese": "Sữa bò tươi",
+          "pitch": "[0] (Heiban)",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><rect x=\"35\" y=\"32\" width=\"30\" height=\"48\" rx=\"6\" fill=\"#FFF\" stroke=\"#74C0FC\" stroke-width=\"3\"/><rect x=\"40\" y=\"44\" width=\"20\" height=\"15\" fill=\"#4DABF7\"/></svg>",
+          "example": {
+            "ja": "寝る前に温かい牛乳を飲みます。",
+            "hira": "ねるまえにあたたかいぎゅうにゅうをのみます。",
+            "romaji": "Neru mae ni atatakai gyuunyuu o nomimasu.",
+            "vi": "Trước khi đi ngủ tôi uống sữa ấm."
+          },
+          "exampleJa": "寝る前に温かい牛乳を飲みます。",
+          "exampleVi": "Trước khi đi ngủ tôi uống sữa ấm.",
+          "commonMistake": "Bỏ mất cả 2 trường âm ぎゅう và にゅう (phải đọc là gyūnyū).",
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T16:07:44.064Z"
+        },
+        {
+          "id": "n5_doubutsu_10",
+          "level": "N5",
+          "category": "doubutsu",
+          "kanji": "空",
+          "hiragana": "そら",
+          "romaji": "sora",
+          "hanViet": "KHÔNG",
+          "meaning": "Bầu trời",
+          "vietnamese": "Bầu trời",
+          "pitch": "[1] (Atamadaka)",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#A5D8FF\"/><path d=\"M25 60 Q35 48 50 50 Q65 42 75 58 Z\" fill=\"#FFF\"/><circle cx=\"30\" cy=\"30\" r=\"10\" fill=\"#FFD43B\"/></svg>",
+          "example": {
+            "ja": "今日の空は青くてとても晴れています。",
+            "hira": "きょうのそらはあおくてとてもはれています。",
+            "romaji": "Kyou no sora wa aokute totemo harete imasu.",
+            "vi": "Bầu trời hôm nay xanh ngắt và rất quang đãng."
+          },
+          "exampleJa": "今日の空は青くてとても晴れています。",
+          "exampleVi": "Bầu trời hôm nay xanh ngắt và rất quang đãng.",
+          "commonMistake": "Đọc âm ら (ra) thành \"la\" thay vì gõ nhẹ đầu lưỡi vào vòm họng.",
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T16:08:05.308Z"
+        },
+        {
+          "id": "n5_keiyoushi_08",
+          "level": "N5",
+          "category": "keiyoushi",
+          "kanji": "良い",
+          "hiragana": "いい",
+          "romaji": "ii",
+          "hanViet": "LƯƠNG",
+          "meaning": "Tốt / Đẹp / Hay",
+          "vietnamese": "Tốt / Đẹp / Hay",
+          "pitch": "[1] (Atamadaka)",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#EBFBEE\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#40C057\"/><path d=\"M40 50 L47 58 L62 42\" stroke=\"#FFF\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\"/></svg>",
+          "example": {
+            "ja": "今日はとても天気が良くて気持ちがいいです。",
+            "hira": "きょうはとてもてんきがよくてきもちがいいです。",
+            "romaji": "Kyou wa totemo tenki ga yokute kimochi ga ii desu.",
+            "vi": "Hôm nay thời tiết rất đẹp, tâm trạng thật sảng khoái."
+          },
+          "exampleJa": "今日はとても天気が良くて気持ちがいいです。",
+          "exampleVi": "Hôm nay thời tiết rất đẹp, tâm trạng thật sảng khoái.",
+          "commonMistake": "LỖI ĐẶC BIỆT KINH ĐIỂN: Khi chia phủ định hoặc quá khứ phải chia từ gốc よい (よくない, よかった), KHÔNG ĐƯỢC chia từ いい!",
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T16:08:22.313Z"
+        },
+        {
+          "id": "n5_tabemono_04",
+          "level": "N5",
+          "category": "tabemono",
+          "kanji": "魚",
+          "hiragana": "さかな",
+          "romaji": "sakana",
+          "hanViet": "NGƯ",
+          "meaning": "Con cá / Món cá",
+          "vietnamese": "Con cá / Món cá",
+          "pitch": "[0] (Heiban)",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E7F5FF\"/><path d=\"M20 50 Q55 25 80 50 Q55 75 20 50 Z\" fill=\"#4DABF7\"/><polygon points=\"15,35 30,50 15,65\" fill=\"#1971C2\"/><circle cx=\"68\" cy=\"46\" r=\"3.5\" fill=\"#FFF\"/><circle cx=\"69\" cy=\"46\" r=\"1.5\" fill=\"#000\"/></svg>",
+          "example": {
+            "ja": "肉より魚の方が好きです。",
+            "hira": "にくよりさかなのほうがすきです。",
+            "romaji": "Niku yori sakana no hou ga suki desu.",
+            "vi": "Tôi thích ăn cá hơn là thịt."
+          },
+          "exampleJa": "肉より魚の方が好きです。",
+          "exampleVi": "Tôi thích ăn cá hơn là thịt.",
+          "commonMistake": "Đọc sai trọng âm rơi vào âm giữa ka.",
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T16:08:39.322Z"
+        },
+        {
+          "id": "n5_kurashi_12",
+          "level": "N5",
+          "category": "kurashi",
+          "kanji": "手紙",
+          "hiragana": "てがみ",
+          "romaji": "tegami",
+          "hanViet": "THỦ CHỈ",
+          "meaning": "Bức thư",
+          "vietnamese": "Bức thư",
+          "pitch": "[0] (Heiban)",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><rect x=\"25\" y=\"32\" width=\"50\" height=\"36\" rx=\"4\" fill=\"#FFF\" stroke=\"#FA5252\" stroke-width=\"2\"/><polygon points=\"25,32 50,54 75,32\" fill=\"#FFC9C9\"/><polygon points=\"25,32 50,54 75,32\" fill=\"none\" stroke=\"#FA5252\" stroke-width=\"2\"/></svg>",
+          "example": {
+            "ja": "故郷の母に長い手紙を書きました。",
+            "hira": "こきょうのははにながいてがみをかきました。",
+            "romaji": "Kokyou no haha ni nagai tegami o kakimashita.",
+            "vi": "Tôi đã viết một bức thư dài gửi về cho mẹ ở quê."
+          },
+          "exampleJa": "故郷の母に長い手紙を書きました。",
+          "exampleVi": "Tôi đã viết một bức thư dài gửi về cho mẹ ở quê.",
+          "commonMistake": "Nhầm nghĩa chữ Hán 手紙 (thư từ trong tiếng Nhật, còn tiếng Trung là giấy vệ sinh).",
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T16:14:04.862Z"
+        },
+        {
+          "id": "n5_tabemono_12",
+          "level": "N5",
+          "category": "tabemono",
+          "kanji": "寿司",
+          "hiragana": "すし",
+          "romaji": "sushi",
+          "hanViet": "THỌ TƯ",
+          "meaning": "Món Sushi Nhật Bản",
+          "vietnamese": "Món Sushi Nhật Bản",
+          "pitch": "[1] (Atamadaka)",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF5F5\"/><rect x=\"25\" y=\"50\" width=\"50\" height=\"24\" rx=\"8\" fill=\"#FFF\" stroke=\"#E9ECEF\"/><path d=\"M22 45 Q50 35 78 45 L75 56 Q50 48 25 56 Z\" fill=\"#FF8787\"/><rect x=\"44\" y=\"44\" width=\"12\" height=\"32\" rx=\"2\" fill=\"#212529\"/></svg>",
+          "example": {
+            "ja": "日本の寿司は世界中で有名です。",
+            "hira": "にほんのすしはせかいじゅうでゆうめいです。",
+            "romaji": "Nihon no sushi wa sekaijuu de yuumei desu.",
+            "vi": "Món sushi của Nhật Bản nổi tiếng trên toàn thế giới."
+          },
+          "exampleJa": "日本の寿司は世界中で有名です。",
+          "exampleVi": "Món sushi của Nhật Bản nổi tiếng trên toàn thế giới.",
+          "commonMistake": "Đọc âm す (su) chu môi nhọn như tiếng Việt (tiếng Nhật môi hơi bè ngang).",
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T16:14:21.873Z"
+        },
+        {
+          "id": "n5_aisatsu_02",
+          "level": "N5",
+          "category": "aisatsu",
+          "kanji": "おはようございます",
+          "hiragana": "おはようございます",
+          "romaji": "ohayou gozaimasu",
+          "hanViet": "TẢO",
+          "meaning": "Chào buổi sáng (lịch sự)",
+          "vietnamese": "Chào buổi sáng (lịch sự)",
+          "pitch": "[0] (Heiban)",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFF3BF\"/><path d=\"M15 70 L85 70\" stroke=\"#E67700\" stroke-width=\"4\" stroke-linecap=\"round\"/><circle cx=\"50\" cy=\"68\" r=\"24\" fill=\"#FF922B\"/><line x1=\"50\" y1=\"35\" x2=\"50\" y2=\"25\" stroke=\"#FFA94D\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"28\" y1=\"44\" x2=\"20\" y2=\"38\" stroke=\"#FFA94D\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"72\" y1=\"44\" x2=\"80\" y2=\"38\" stroke=\"#FFA94D\" stroke-width=\"4\" stroke-linecap=\"round\"/></svg>",
+          "example": {
+            "ja": "皆さん、おはようございます。",
+            "hira": "みなさん、おはようございます。",
+            "romaji": "Minasan, ohayou gozaimasu.",
+            "vi": "Chào buổi sáng tất cả mọi người."
+          },
+          "exampleJa": "皆さん、おはようございます。",
+          "exampleVi": "Chào buổi sáng tất cả mọi người.",
+          "commonMistake": "Quên trường âm よう (đọc vội thành ohayo thay vì kéo dài âm ohayō).",
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T16:14:38.885Z"
         }
       ],
       "level": 3,
@@ -109,9 +482,9 @@
         "tan_binh_nhap_mon"
       ]
     },
-    "updatedAt": "2026-11-08T02:36:46.929Z",
-    "email": "nvthanh@nihongo.local",
-    "createdAt": "2026-11-07T16:31:06.144Z",
-    "lastLoginAt": "2026-11-07T16:31:06.144Z"
+    "updatedAt": "2026-11-08T04:02:36.859Z",
+    "email": "nvthanhh168@gmail.com",
+    "createdAt": "2026-11-07T16:13:40.478Z",
+    "lastLoginAt": "2026-11-07T16:13:40.478Z"
   }
 }
