@@ -19,7 +19,8 @@
         "n5_l01_01",
         "n5_l01_02",
         "n5_l01_04",
-        "n5_l01_05"
+        "n5_l01_05",
+        "n5_l01_06"
       ],
       "wrongWords": [
         {
@@ -80,13 +81,13 @@
           "lastFailedAt": "2026-11-07T15:28:29.524Z"
         }
       ],
-      "level": 2,
+      "level": 3,
       "lastActiveDate": "2026-11-07",
       "badges": [
         "tan_binh_nhap_mon"
       ]
     },
-    "updatedAt": "2026-11-08T02:34:15.932Z",
+    "updatedAt": "2026-11-08T02:34:21.517Z",
     "email": "nvthanh@nihongo.local",
     "createdAt": "2026-11-07T16:31:06.144Z",
     "lastLoginAt": "2026-11-07T16:31:06.144Z"
