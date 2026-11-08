@@ -4027,9 +4027,11 @@ body {
 
 .kana-layout-wrapper {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   gap: 22px;
   align-items: start;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* CỘT TRÁI: BẢNG CHỮ CÁI */
@@ -4388,16 +4390,18 @@ body {
 /* Bảng Canvas */
 .canvas-board-container {
   position: relative;
-  width: 380px;
-  height: 380px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 380px;
+  height: auto;
   aspect-ratio: 1 / 1;
+  margin: 0 auto;
   background: #FFF;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   border: 3px solid #FFE3E3;
   overflow: hidden;
   touch-action: none;
+  box-sizing: border-box;
 }
 
 #kana-draw-canvas {
@@ -4617,14 +4621,25 @@ body {
   justify-content: flex-end;
 }
 
-/* Responsive trên mobile/tablet */
-@media (max-width: 950px) {
+/* Responsive trên mobile/tablet/laptop màn hình vừa */
+@media (max-width: 1250px) {
   .kana-layout-wrapper {
-    grid-template-columns: 1fr;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    width: 100% !important;
+  }
+  .kana-chart-section,
+  .kana-canvas-section {
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .canvas-board-container {
-    width: 320px;
-    height: 320px;
+    width: 100% !important;
+    max-width: 360px !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    margin: 0 auto !important;
   }
   .guide-character {
     font-size: 210px;
@@ -8772,23 +8787,27 @@ body {
 .node-missions-indicator-bar {
   display: flex !important;
   flex-direction: row !important;
-  gap: 8px !important;
+  gap: 6px !important;
   margin: 10px 0 16px 0 !important;
   width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .m-pill {
-  flex: 1 !important;
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
   text-align: center !important;
-  font-size: 13px !important;
+  font-size: 12px !important;
   font-weight: 700 !important;
-  padding: 6px 8px !important;
+  padding: 6px 4px !important;
   border-radius: 10px !important;
   border: 1px solid transparent !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
   height: 34px !important;
   box-sizing: border-box !important;
 }
@@ -9476,10 +9495,20 @@ body {
 /* 1. KHUNG CHÍNH TAB KANA */
 .kana-layout-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   gap: 24px;
   align-items: start;
   width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1250px) {
+  .kana-layout-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    width: 100% !important;
+  }
 }
 
 .kana-chart-section {
@@ -9801,18 +9830,19 @@ body {
 }
 
 .canvas-board-container {
-  position: relative;
-  width: 380px;
-  height: 380px;
-  max-width: 100%;
-  aspect-ratio: 1 / 1;
-  margin: 0 auto;
-  background: #FFFFFF;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  border: 3px solid #FFE3E3;
-  overflow: hidden;
-  touch-action: none;
+  position: relative !important;
+  width: 100% !important;
+  max-width: 380px !important;
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  background: #FFFFFF !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+  border: 3px solid #FFE3E3 !important;
+  overflow: hidden !important;
+  touch-action: none !important;
+  box-sizing: border-box !important;
 }
 
 #kana-draw-canvas {
@@ -9828,39 +9858,41 @@ body {
 }
 
 .canvas-toolbar {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  background: #F8F9FA;
-  padding: 10px 14px;
-  border-radius: 16px;
-  border: 1px solid #E9ECEF;
-  box-sizing: border-box;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  background: #F8F9FA !important;
+  padding: 12px 16px !important;
+  border-radius: 16px !important;
+  border: 1px solid #E9ECEF !important;
+  box-sizing: border-box !important;
 }
 
 .canvas-submit-row {
-  width: 100%;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .btn-sensei-grade {
-  width: 100%;
-  background: linear-gradient(135deg, #E03131 0%, #C92A2A 100%);
-  color: #FFFFFF;
-  font-size: 15px;
-  font-weight: 800;
-  padding: 14px 20px;
-  border-radius: 14px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 16px rgba(201, 42, 42, 0.35);
-  transition: all 0.25s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+  width: 100% !important;
+  background: linear-gradient(135deg, #E03131 0%, #C92A2A 100%) !important;
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  padding: 14px 20px !important;
+  border-radius: 14px !important;
+  border: none !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 16px rgba(201, 42, 42, 0.35) !important;
+  transition: all 0.25s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  box-sizing: border-box !important;
 }
 
 .btn-sensei-grade:hover {
@@ -9988,8 +10020,11 @@ body {
 
   /* Canvas vừa vặn mọi màn hình điện thoại */
   .canvas-board-container {
-    width: 310px !important;
-    height: 310px !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    margin: 0 auto !important;
   }
 
   .canvas-toolbar {

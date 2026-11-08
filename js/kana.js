@@ -477,9 +477,9 @@ class JapaneseKanaModule {
     this.clearCanvas();
     if (window.soundSystem) window.soundSystem.playPop();
 
-    // Cuộn mượt đến bảng tập viết nếu trên mobile / iPad
+    // Cuộn mượt đến bảng tập viết nếu trên mobile / iPad hoặc màn hình xếp chồng
     const canvasSec = document.querySelector('.kana-canvas-section');
-    if (canvasSec && window.innerWidth < 992) {
+    if (canvasSec) {
       canvasSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
