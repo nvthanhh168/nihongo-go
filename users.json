@@ -11,7 +11,7 @@
     "profile": {
       "currentJLPTLevel": "N5",
       "unlockedLesson": 2,
-      "exp": 190,
+      "exp": 200,
       "coins": 80,
       "streak": 2,
       "completedLessons": {},
@@ -39,7 +39,8 @@
         "n5_l01_24",
         "n5_l01_25",
         "n5_l01_26",
-        "n5_l01_28"
+        "n5_l01_28",
+        "n5_l01_29"
       ],
       "wrongWords": [
         {
@@ -106,7 +107,7 @@
         "tan_binh_nhap_mon"
       ]
     },
-    "updatedAt": "2026-11-08T02:36:34.867Z",
+    "updatedAt": "2026-11-08T02:36:36.656Z",
     "email": "nvthanh@nihongo.local",
     "createdAt": "2026-11-07T16:31:06.144Z",
     "lastLoginAt": "2026-11-07T16:31:06.144Z"
