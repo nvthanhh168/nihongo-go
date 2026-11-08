@@ -537,11 +537,12 @@
         "n5_l02_04",
         "n5_l02_05",
         "n5_l02_06",
-        "n5_l02_07"
+        "n5_l02_07",
+        "n5_l02_08"
       ],
       "wrongWords": [],
       "exp": 395,
-      "level": 4,
+      "level": 5,
       "coins": 130,
       "streak": 1,
       "lastActiveDate": "2026-11-07",
@@ -549,6 +550,6 @@
         "tan_binh_nhap_mon"
       ]
     },
-    "updatedAt": "2026-11-08T14:01:27.147Z"
+    "updatedAt": "2026-11-08T14:01:45.208Z"
   }
 }
