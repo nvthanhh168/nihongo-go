@@ -5,9 +5,9 @@
   },
   "nvthanh": {
     "username": "nvthanh",
-    "displayName": "Nguyễn Văn Thành 🌸",
-    "passwordHash": "bmlob25nb19nb19zZWNyZXRfc2FsdF8xMjM0NTY=",
-    "avatar": "ninja",
+    "displayName": "THANH IT",
+    "passwordHash": "bmlob25nb19nb19zZWNyZXRfc2FsdF8xNjA4MjAwMQ==",
+    "avatar": "shiba",
     "profile": {
       "currentJLPTLevel": "N5",
       "unlockedLesson": 2,
@@ -15,8 +15,78 @@
       "coins": 80,
       "streak": 2,
       "completedLessons": {},
-      "learnedWords": []
+      "learnedWords": [
+        "n5_l01_01",
+        "n5_l01_02"
+      ],
+      "wrongWords": [
+        {
+          "id": "n5_l05_36",
+          "lesson": 5,
+          "lessonId": 5,
+          "level": "N5",
+          "kanji": "ー日",
+          "hanViet": "Nhật",
+          "hiragana": "ーにち",
+          "romaji": "-nichi",
+          "meaning": "ngày (hậu tố đếm ngày)",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E6FCF5\"/><circle cx=\"50\" cy=\"50\" r=\"28\" fill=\"#12B886\"/><text x=\"50\" y=\"58\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#FFF\">15日</text></svg>",
+          "example": {
+            "ja": "十五日は金曜日です。",
+            "hira": "じゅうごにちはきんようびです。",
+            "vi": "Ngày 15 là thứ Sáu."
+          },
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T15:27:55.492Z"
+        },
+        {
+          "id": "n5_l19_29",
+          "lesson": 19,
+          "lessonId": 19,
+          "level": "N5",
+          "kanji": "体にいい",
+          "hanViet": "Thể",
+          "hiragana": "からだにいい",
+          "romaji": "karada ni ii",
+          "meaning": "tốt cho cơ thể, có lợi cho sức khỏe",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#EBFBEE\"/><path d=\"M50 30 C42 20 26 26 26 44 C26 62 50 78 50 78 C50 78 74 62 74 44 C74 26 58 20 50 30 Z\" fill=\"#40C057\"/><polygon points=\"48,42 54,48 64,38\" fill=\"#FFF\"/></svg>",
+          "example": {
+            "ja": "毎朝野菜ジュースを飲むのは体にいいです。",
+            "hira": "まいあさ やさいジュースを のむのは からだに いいです。",
+            "vi": "Mỗi sáng uống nước ép rau củ rất tốt cho sức khỏe."
+          },
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T15:28:12.505Z"
+        },
+        {
+          "id": "n5_l08_38",
+          "lesson": 8,
+          "lessonId": 8,
+          "level": "N5",
+          "kanji": "所",
+          "hanViet": "Sở",
+          "hiragana": "ところ",
+          "romaji": "tokoro",
+          "meaning": "nơi, chỗ",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#FFE3E3\"/><circle cx=\"50\" cy=\"44\" r=\"14\" fill=\"#E03131\"/><path d=\"M50 58 L50 74\" stroke=\"#C92A2A\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"44\" r=\"5\" fill=\"#FFF\"/></svg>",
+          "example": {
+            "ja": "ここは静かな所です。",
+            "hira": "ここはしずかなところです。",
+            "vi": "Nơi này là một chỗ rất yên tĩnh."
+          },
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-07T15:28:29.524Z"
+        }
+      ],
+      "level": 2,
+      "lastActiveDate": "2026-11-07",
+      "badges": [
+        "tan_binh_nhap_mon"
+      ]
     },
-    "updatedAt": "2026-11-07T20:02:33.881Z"
+    "updatedAt": "2026-11-08T02:33:26.764Z",
+    "email": "nvthanh@nihongo.local",
+    "createdAt": "2026-11-07T16:31:06.144Z",
+    "lastLoginAt": "2026-11-07T16:31:06.144Z"
   }
 }
