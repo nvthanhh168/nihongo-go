@@ -32,6 +32,7 @@
 
 body {
   font-family: var(--font-main);
+  font-size: 15px;
   background: linear-gradient(135deg, #FFF9F6 0%, #FFFDF9 50%, #F4F9FF 100%);
   color: var(--dark);
   min-height: 100vh;
@@ -92,7 +93,7 @@ body {
 }
 
 .brand-text h1 {
-  font-size: 21px;
+  font-size: 23px;
   font-weight: 900;
   color: var(--primary);
   letter-spacing: -0.5px;
@@ -103,10 +104,10 @@ body {
 }
 
 .brand-text p {
-  font-size: 11.5px;
+  font-size: 13.5px;
   color: var(--text-muted);
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .header-actions-wrap {
@@ -122,17 +123,17 @@ body {
   display: flex;
   background: #F1F3F5;
   border-radius: 30px;
-  padding: 3px;
-  gap: 3px;
+  padding: 4px;
+  gap: 4px;
 }
 
 .level-chip {
   border: none;
   background: transparent;
-  padding: 6px 12px;
+  padding: 7px 15px;
   border-radius: 20px;
-  font-weight: 700;
-  font-size: 12.5px;
+  font-weight: 800;
+  font-size: 14px;
   cursor: pointer;
   transition: all 0.2s ease;
   color: #495057;
@@ -157,10 +158,10 @@ body {
   background: #FFF;
   border: 1.5px solid #CED4DA;
   color: #495057;
-  padding: 6px 14px;
+  padding: 7px 16px;
   border-radius: 20px;
-  font-weight: 700;
-  font-size: 12.5px;
+  font-weight: 800;
+  font-size: 13.5px;
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 2px 6px rgba(0,0,0,0.04);
@@ -178,11 +179,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: 10px;
   background: linear-gradient(135deg, #FFF5F5 0%, #F8F9FA 100%);
   border: 1.5px solid #FFE3E3;
-  border-radius: 14px;
-  padding: 6px 14px;
+  border-radius: 16px;
+  padding: 8px 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -196,7 +197,7 @@ body {
 .user-hud-badges {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   width: 100%;
   justify-content: space-between;
   flex-wrap: nowrap;
@@ -207,14 +208,16 @@ body {
   align-items: center;
   gap: 6px;
   background: #FFF;
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: 20px;
   border: 1px solid #E9ECEF;
-  font-size: 12.5px;
+  font-size: 14px;
   font-weight: 700;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
   white-space: nowrap;
   flex-shrink: 0;
+  height: 38px;
+  box-sizing: border-box;
 }
 
 .hud-pill.n5-mastery {
@@ -270,13 +273,13 @@ body {
 }
 
 .nav-scroll-btn {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
+  width: 36px;
+  height: 42px;
+  border-radius: 12px;
   border: 1.5px solid #DEE2E6;
   background: #FFF;
   color: #495057;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1;
   font-weight: 800;
   display: flex;
@@ -293,7 +296,7 @@ body {
   background: #FFF5F5;
   border-color: #FF8787;
   color: #E03131;
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .nav-tabs-wrap {
@@ -317,16 +320,18 @@ body {
   gap: 8px;
   background: #F8F9FA;
   border: 1.5px solid transparent;
-  padding: 9px 16px;
+  padding: 0 18px;
+  height: 42px;
   border-radius: 14px;
-  font-size: 13.5px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 800;
   color: #495057;
   cursor: pointer;
   white-space: nowrap;
   flex-shrink: 0;
   transition: all 0.22s ease;
   user-select: none;
+  box-sizing: border-box;
 }
 
 .nav-tab-btn:hover {
@@ -345,8 +350,8 @@ body {
 .tab-badge {
   background: #FFF;
   color: var(--primary);
-  font-size: 11px;
-  padding: 2px 7px;
+  font-size: 12.5px;
+  padding: 2px 8px;
   border-radius: 10px;
   font-weight: 800;
 }
@@ -364,15 +369,17 @@ body {
   background: linear-gradient(135deg, #FF6B6B 0%, #FA5252 100%);
   color: #FFF;
   border: none;
-  padding: 8px 14px;
-  border-radius: 12px;
+  padding: 0 16px;
+  height: 42px;
+  border-radius: 14px;
   font-weight: 800;
-  font-size: 13px;
+  font-size: 14.5px;
   cursor: pointer;
   flex-shrink: 0;
   box-shadow: 0 3px 10px rgba(255, 107, 107, 0.35);
   transition: all 0.2s ease;
   white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .nav-all-modes-btn:hover {
@@ -432,14 +439,14 @@ body {
 }
 
 .modes-modal-title h3 {
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 900;
   color: #C92A2A;
   margin: 0;
 }
 
 .modes-modal-title p {
-  font-size: 12px;
+  font-size: 14px;
   color: #868E96;
   margin: 2px 0 0;
 }
@@ -514,7 +521,7 @@ body {
 }
 
 .mode-info h4 {
-  font-size: 14px;
+  font-size: 16.5px;
   font-weight: 800;
   color: #212529;
   margin: 0 0 3px;
@@ -524,10 +531,10 @@ body {
 }
 
 .mode-info p {
-  font-size: 11.5px;
+  font-size: 13.5px;
   color: #868E96;
   margin: 0;
-  line-height: 1.35;
+  line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -535,9 +542,9 @@ body {
 }
 
 .mode-badge-pill {
-  font-size: 10.5px;
+  font-size: 12px;
   font-weight: 800;
-  padding: 3px 8px;
+  padding: 4px 10px;
   border-radius: 12px;
   white-space: nowrap;
 }
@@ -580,12 +587,12 @@ body {
 
 .char-pill-btn {
   flex: 1;
-  padding: 6px 10px;
+  padding: 7px 12px;
   border: none;
   border-radius: 16px;
   background: transparent;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 13.5px;
+  font-weight: 800;
   color: #495057;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -616,7 +623,7 @@ body {
   border: 2px solid #FF8787;
   border-radius: 16px;
   padding: 10px 14px;
-  font-size: 13px;
+  font-size: 14.5px;
   font-weight: 700;
   color: #C92A2A;
   margin-bottom: 12px;
@@ -664,6 +671,9 @@ body {
 .mascot-svg {
   display: block;
   margin: 0 auto;
+  width: 160px;
+  height: 160px;
+  aspect-ratio: 1 / 1;
 }
 
 /* ==========================================================================
@@ -921,12 +931,12 @@ body {
 
 .mascot-name {
   font-weight: 800;
-  font-size: 15px;
+  font-size: 17px;
   color: #D9480F;
 }
 
 .mascot-role {
-  font-size: 12px;
+  font-size: 13.5px;
   color: var(--text-muted);
 }
 
@@ -1057,14 +1067,14 @@ body {
 }
 
 .question-hint-meaning {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 800;
   color: #495057;
   margin-top: 12px;
 }
 
 .target-kanji-large {
-  font-size: 52px;
+  font-size: 56px;
   font-weight: 900;
   color: var(--dark);
   margin-bottom: 5px;
@@ -1072,7 +1082,7 @@ body {
 }
 
 .target-hiragana-sub {
-  font-size: 22px;
+  font-size: 24px;
   color: #868E96;
   font-weight: 600;
   margin-bottom: 15px;
@@ -1164,14 +1174,14 @@ body {
 .opt-index {
   background: #F1F3F5;
   color: #495057;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 14px;
+  font-size: 16px;
   flex-shrink: 0;
 }
 
@@ -1186,13 +1196,13 @@ body {
 }
 
 .opt-title {
-  font-size: 17px;
+  font-size: 19px;
   color: var(--dark);
   font-weight: 800;
 }
 
 .opt-desc {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--text-muted);
 }
 
@@ -1949,25 +1959,25 @@ body {
 }
 
 .card-kanji {
-  font-size: 46px;
+  font-size: 54px;
   font-weight: 900;
   color: var(--dark);
 }
 
 .card-hiragana {
-  font-size: 20px;
+  font-size: 24px;
   color: var(--primary);
   font-weight: 700;
 }
 
 .card-flip-prompt {
-  font-size: 12px;
+  font-size: 14px;
   color: #ADB5BD;
   font-weight: 600;
 }
 
 .meaning-vi {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 800;
   color: #212529;
   text-align: center;
@@ -1984,21 +1994,21 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   color: #E8590C;
   margin-bottom: 6px;
 }
 
 .example-ja {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--dark);
   margin-bottom: 2px;
 }
 
 .example-vi {
-  font-size: 13px;
+  font-size: 15.5px;
   color: #495057;
 }
 
@@ -2071,9 +2081,9 @@ body {
 }
 
 .card-hint {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 800;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .card-back {
@@ -2096,25 +2106,25 @@ body {
 }
 
 .mem-card-meaning {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 800;
   color: var(--dark);
 }
 
 .mem-kanji {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 900;
   color: var(--dark);
 }
 
 .mem-hira {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--primary);
   font-weight: 700;
 }
 
 .mem-romaji {
-  font-size: 11px;
+  font-size: 13px;
   color: #868E96;
 }
 
@@ -3114,7 +3124,7 @@ body {
 .chat-bubble-content {
   padding: 14px 18px;
   border-radius: 18px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -3138,7 +3148,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 6px;
-  font-size: 12px;
+  font-size: 13.5px;
   color: #E8590C;
 }
 
@@ -3146,7 +3156,7 @@ body {
   background: transparent;
   border: none;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .sensei-chat-input-bar {
@@ -3164,7 +3174,7 @@ body {
   border-radius: 25px;
   border: 2px solid #FFE3E3;
   outline: none;
-  font-size: 14px;
+  font-size: 15.5px;
   transition: all 0.2s ease;
 }
 
@@ -3842,9 +3852,9 @@ body {
   background: #FFF;
   border: 1.5px solid #DEE2E6;
   color: #495057;
-  padding: 5px 12px;
-  border-radius: 16px;
-  font-size: 12px;
+  padding: 7px 15px;
+  border-radius: 18px;
+  font-size: 14px;
   font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
@@ -3871,9 +3881,9 @@ body {
   background: #FFF;
   border: 1.5px solid #DEE2E6;
   color: #495057;
-  padding: 5px 12px;
-  border-radius: 16px;
-  font-size: 12px;
+  padding: 7px 15px;
+  border-radius: 18px;
+  font-size: 14px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -3886,7 +3896,7 @@ body {
 }
 
 .vault-summary-bar {
-  font-size: 13px;
+  font-size: 14.5px;
   color: #868E96;
   font-weight: 600;
   padding-left: 4px;
@@ -4148,7 +4158,7 @@ body {
 }
 
 .kana-char-main {
-  font-size: 26px;
+  font-size: 30px;
   font-weight: 900;
   color: var(--dark);
   line-height: 1.1;
@@ -4159,7 +4169,7 @@ body {
 }
 
 .kana-romaji-sub {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   color: #868E96;
   margin-top: 3px;
@@ -4743,19 +4753,19 @@ body {
 }
 
 .grammar-title {
-  font-size: 17px;
+  font-size: 19.5px;
   font-weight: 900;
   color: var(--dark);
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.35;
 }
 
 .grammar-meaning-badge {
   background: #EBFBEE;
   color: #2B8A3E;
-  font-size: 12px;
+  font-size: 13.5px;
   font-weight: 800;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 12px;
   white-space: nowrap;
   border: 1px solid #B2F2BB;
@@ -4773,16 +4783,16 @@ body {
 
 .grammar-formula-box code {
   font-family: inherit;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 900;
   color: #1864AB;
   letter-spacing: 0.5px;
 }
 
 .grammar-explanation {
-  font-size: 13.5px;
+  font-size: 15.5px;
   color: #495057;
-  line-height: 1.55;
+  line-height: 1.6;
   margin: 0;
 }
 
@@ -4797,7 +4807,7 @@ body {
 }
 
 .examples-header {
-  font-size: 12px;
+  font-size: 13.5px;
   font-weight: 800;
   color: #868E96;
 }
@@ -4815,13 +4825,13 @@ body {
 }
 
 .ex-ja {
-  font-size: 14px;
+  font-size: 17.5px;
   font-weight: 800;
   color: var(--dark);
 }
 
 .ex-vi {
-  font-size: 12.5px;
+  font-size: 15px;
   color: #495057;
 }
 
@@ -7029,46 +7039,54 @@ body {
 }
 
 /* Thẻ Nút Bài Học Level */
-.lesson-level-node {
-  display: flex;
-  align-items: stretch;
-  gap: 16px;
+.lesson-level-node,
+.lesson-node-card {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: stretch !important;
+  gap: 12px !important;
   background: #FFF;
   border-radius: 20px;
-  padding: 16px 20px;
+  padding: 22px 24px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
   border: 2px solid #E9ECEF;
   cursor: pointer;
-  max-width: 540px;
   width: 100%;
+  box-sizing: border-box;
+  min-height: 270px;
   transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
 }
 
-.lesson-level-node:hover {
+.lesson-level-node:hover,
+.lesson-node-card:hover {
   transform: translateY(-4px) scale(1.01);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 /* Trạng thái 1: ĐÃ QUA (COMPLETED) */
-.lesson-level-node.completed {
+.lesson-level-node.completed,
+.lesson-node-card.completed {
   border-color: #FCC419;
   background: linear-gradient(135deg, #FFFDF5 0%, #FFF9DB 100%);
   box-shadow: 0 6px 20px rgba(245, 159, 0, 0.15);
 }
 
-.lesson-level-node.completed .node-circle-badge {
+.lesson-level-node.completed .node-circle-badge,
+.lesson-node-card.completed .node-circle-badge {
   background: linear-gradient(135deg, #FCC419 0%, #F59F00 100%);
   color: #FFF;
   box-shadow: 0 4px 12px rgba(245, 159, 0, 0.35);
 }
 
 /* Trạng thái 2: ĐANG HỌC (CURRENT) */
-.lesson-level-node.current {
+.lesson-level-node.current,
+.lesson-node-card.current {
   border-color: #FF6B6B;
   background: #FFF;
   box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.2), 0 8px 24px rgba(255, 107, 107, 0.25);
-  animation: pulseCard 2s infinite ease-in-out;
+  animation: pulseCurrentCard 2.2s infinite ease-in-out;
 }
 
 @keyframes pulseCard {
@@ -7076,25 +7094,29 @@ body {
   50% { box-shadow: 0 0 0 6px rgba(255, 107, 107, 0.35), 0 12px 28px rgba(255, 107, 107, 0.35); }
 }
 
-.lesson-level-node.current .node-circle-badge {
+.lesson-level-node.current .node-circle-badge,
+.lesson-node-card.current .node-circle-badge {
   background: linear-gradient(135deg, #FF6B6B 0%, #FA5252 100%);
   color: #FFF;
   box-shadow: 0 4px 14px rgba(250, 82, 82, 0.4);
 }
 
 /* Trạng thái 3: KHÓA (LOCKED) */
-.lesson-level-node.locked {
+.lesson-level-node.locked,
+.lesson-node-card.locked {
   background: #F8F9FA;
   border-color: #DEE2E6;
   opacity: 0.72;
 }
 
-.lesson-level-node.locked:hover {
+.lesson-level-node.locked:hover,
+.lesson-node-card.locked:hover {
   border-color: #ADB5BD;
   opacity: 0.9;
 }
 
-.lesson-level-node.locked .node-circle-badge {
+.lesson-level-node.locked .node-circle-badge,
+.lesson-node-card.locked .node-circle-badge {
   background: #CED4DA;
   color: #495057;
 }
@@ -8537,17 +8559,17 @@ body {
 
 .region-title-texts h3 {
   margin: 0 0 4px 0;
-  font-size: 17.5px;
+  font-size: 21px;
   font-weight: 800;
   color: #212529;
 }
 
 .region-title-texts p {
   margin: 0;
-  font-size: 13px;
+  font-size: 15px;
   color: #495057;
   max-width: 600px;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .region-header-right {
@@ -8558,20 +8580,20 @@ body {
 }
 
 .reg-done-badge {
-  font-size: 11.5px;
+  font-size: 13.5px;
   font-weight: 800;
   color: #2B8A3E;
   background: #D3F9D8;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 12px;
 }
 
 .reg-current-badge {
-  font-size: 11.5px;
+  font-size: 13.5px;
   font-weight: 800;
   color: #D9480F;
   background: #FFE8CC;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 12px;
 }
 
@@ -8586,9 +8608,9 @@ body {
 
 .region-stage-pill {
   color: #FFF;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 7px 16px;
   border-radius: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
@@ -8610,11 +8632,13 @@ body {
 
 /* 3. LƯỚI 5 THẺ BÀI HỌC (LESSON NODES GRID) */
 .region-lessons-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 18px;
-  padding: 22px 24px;
-  background: rgba(255, 255, 255, 0.45);
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)) !important;
+  gap: 22px !important;
+  padding: 24px 26px !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
   transition: all 0.3s ease;
 }
 
@@ -8627,36 +8651,44 @@ body {
 }
 
 /* 4. TỪNG THẺ BÀI HỌC (LESSON NODE CARD) */
-.lesson-node-card {
-  border-radius: 18px;
-  background: #FFFFFF;
-  border: 2px solid #E9ECEF;
-  padding: 18px 20px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-  transition: all 0.25s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  cursor: pointer;
+.lesson-node-card,
+.lesson-level-node {
+  border-radius: 20px !important;
+  background: #FFFFFF !important;
+  border: 2px solid #E9ECEF !important;
+  padding: 22px 24px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: stretch !important;
+  position: relative !important;
+  cursor: pointer !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-height: 270px !important;
 }
 
-.lesson-node-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+.lesson-node-card:hover,
+.lesson-level-node:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1) !important;
 }
 
 /* Trạng thái 1: Hoàn thành */
-.lesson-node-card.completed {
-  border-color: #FCC419;
-  background: linear-gradient(180deg, #FFFDF5 0%, #FFFFFF 100%);
+.lesson-node-card.completed,
+.lesson-level-node.completed {
+  border-color: #FCC419 !important;
+  background: linear-gradient(180deg, #FFFDF5 0%, #FFFFFF 100%) !important;
 }
 
 /* Trạng thái 2: Đang học */
-.lesson-node-card.current {
-  border-color: #FF6B6B;
-  box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.2), 0 8px 24px rgba(255, 107, 107, 0.2);
-  animation: pulseCurrentCard 2.2s infinite ease-in-out;
+.lesson-node-card.current,
+.lesson-level-node.current {
+  border-color: #FF6B6B !important;
+  box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.2), 0 8px 24px rgba(255, 107, 107, 0.2) !important;
+  animation: pulseCurrentCard 2.2s infinite ease-in-out !important;
 }
 
 @keyframes pulseCurrentCard {
@@ -8665,108 +8697,170 @@ body {
 }
 
 /* Trạng thái 3: Đang khóa */
-.lesson-node-card.locked {
-  opacity: 0.72;
-  background: #F8F9FA;
-  border-color: #DEE2E6;
+.lesson-node-card.locked,
+.lesson-level-node.locked {
+  opacity: 0.72 !important;
+  background: #F8F9FA !important;
+  border-color: #DEE2E6 !important;
 }
 
 .node-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 10px !important;
+  width: 100% !important;
 }
 
 .node-level-badge {
-  font-size: 12px;
-  font-weight: 800;
-  padding: 4px 10px;
-  border-radius: 12px;
-  background: #E9ECEF;
-  color: #495057;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  padding: 5px 12px !important;
+  border-radius: 12px !important;
+  background: #E9ECEF !important;
+  color: #495057 !important;
+  white-space: nowrap !important;
 }
 
-.lesson-node-card.completed .node-level-badge {
-  background: #FFF3BF;
-  color: #D9480F;
+.lesson-node-card.completed .node-level-badge,
+.lesson-level-node.completed .node-level-badge {
+  background: #FFF3BF !important;
+  color: #D9480F !important;
 }
 
-.lesson-node-card.current .node-level-badge {
-  background: #FFE3E3;
-  color: #C92A2A;
+.lesson-node-card.current .node-level-badge,
+.lesson-level-node.current .node-level-badge {
+  background: #FFE3E3 !important;
+  color: #C92A2A !important;
 }
 
 .node-vocab-count-badge {
-  font-size: 12px;
-  font-weight: 700;
-  color: #868E96;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: #868E96 !important;
+  white-space: nowrap !important;
 }
 
 .node-body {
-  margin-bottom: 14px;
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+  margin: 8px 0 12px 0 !important;
+  width: 100% !important;
 }
 
+.node-topic-title,
 .node-topic-vi {
-  font-size: 15.5px;
-  font-weight: 800;
-  color: #212529;
-  margin: 0 0 4px 0;
-  line-height: 1.35;
+  font-size: 18.5px !important;
+  font-weight: 800 !important;
+  color: #212529 !important;
+  margin: 0 0 8px 0 !important;
+  line-height: 1.4 !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
 }
 
 .node-grammar-preview {
-  font-size: 12.5px;
-  color: #868E96;
-  margin: 0;
-  line-height: 1.4;
+  font-size: 14.5px !important;
+  color: #495057 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
 }
 
 /* Thanh chỉ số 3 nhiệm vụ */
 .node-missions-indicator-bar {
-  display: flex;
-  gap: 6px;
-  margin: 12px 0 16px 0;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 8px !important;
+  margin: 10px 0 16px 0 !important;
+  width: 100% !important;
 }
 
 .m-pill {
-  flex: 1;
-  text-align: center;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 4px 6px;
-  border-radius: 8px;
-  border: 1px solid transparent;
+  flex: 1 !important;
+  text-align: center !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  padding: 6px 8px !important;
+  border-radius: 10px !important;
+  border: 1px solid transparent !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  height: 34px !important;
+  box-sizing: border-box !important;
 }
 
 .m-pill.done {
-  background: #D3F9D8;
-  color: #2B8A3E;
-  border-color: #B2F2BB;
+  background: #D3F9D8 !important;
+  color: #2B8A3E !important;
+  border-color: #B2F2BB !important;
 }
 
 .m-pill.pending {
-  background: #F1F3F5;
-  color: #868E96;
-  border-color: #E9ECEF;
+  background: #F1F3F5 !important;
+  color: #868E96 !important;
+  border-color: #E9ECEF !important;
 }
 
 /* Nút bấm hành động thẻ */
 .node-footer-action {
-  margin-top: auto;
+  margin-top: auto !important;
+  width: 100% !important;
+}
+
+.btn-node-cta {
+  width: 100% !important;
+  height: 44px !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
 }
 
 .node-completed-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  width: 100% !important;
 }
 
 .node-stars-row {
-  color: #FCC419;
-  font-size: 14px;
-  letter-spacing: 2px;
+  color: #FCC419 !important;
+  font-size: 16px !important;
+  text-align: center !important;
+  margin-bottom: 2px !important;
+}
+
+.node-locked-foot {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  width: 100% !important;
+}
+
+.node-lock-hint {
+  font-size: 13px !important;
+  color: #868E96 !important;
+  text-align: center !important;
+  font-weight: 600 !important;
+}
+
+.btn-locked-cta {
+  background: #E9ECEF !important;
+  color: #868E96 !important;
+  border: none !important;
+  width: 100% !important;
+  height: 44px !important;
+  font-size: 14.5px !important;
+  font-weight: 700 !important;
+  border-radius: 12px !important;
+  cursor: not-allowed !important;
 }
 
 .btn-node-cta {
@@ -9514,7 +9608,7 @@ body {
 }
 
 .kana-char-main {
-  font-size: 26px;
+  font-size: 30px;
   font-weight: 900;
   color: #212529;
   line-height: 1.1;
@@ -9525,7 +9619,7 @@ body {
 }
 
 .kana-romaji-sub {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   color: #868E96;
   margin-top: 3px;
@@ -9979,19 +10073,19 @@ body {
 @media (max-width: 768px) {
   /* An toàn viền màn hình và tránh thanh điều hướng Safari/Chrome che nút */
   .app-container {
-    padding-left: 8px !important;
-    padding-right: 8px !important;
-    padding-bottom: 95px !important;
-    gap: 12px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    padding-bottom: calc(115px + env(safe-area-inset-bottom, 24px)) !important;
+    gap: 14px !important;
   }
 
   /* 2. THANH CHỌN CẤP ĐỘ JLPT CHIA ĐỀU 5 CỘT (20% MỖI NÚT, 100% CÂN ĐỐI) */
   .level-selector-bar {
     display: grid !important;
     grid-template-columns: repeat(5, 1fr) !important;
-    gap: 3px !important;
+    gap: 4px !important;
     width: 100% !important;
-    padding: 3px !important;
+    padding: 4px !important;
     background: #F1F3F5 !important;
     border-radius: 20px !important;
     box-sizing: border-box !important;
@@ -9999,7 +10093,7 @@ body {
 
   .level-chip {
     padding: 7px 2px !important;
-    font-size: 11.5px !important;
+    font-size: 12px !important;
     font-weight: 800 !important;
     text-align: center !important;
     justify-content: center !important;
@@ -10031,9 +10125,9 @@ body {
   }
 
   .btn-sound-toggle {
-    height: 38px !important;
+    height: 40px !important;
     padding: 0 14px !important;
-    font-size: 12.5px !important;
+    font-size: 13.5px !important;
     font-weight: 800 !important;
     border-radius: 20px !important;
     flex-shrink: 0 !important;
@@ -10054,8 +10148,8 @@ body {
 
   .user-profile-header-widget {
     width: 100% !important;
-    max-width: 215px !important;
-    height: 38px !important;
+    max-width: 220px !important;
+    height: 40px !important;
     box-sizing: border-box !important;
     display: inline-flex !important;
     align-items: center !important;
@@ -10066,16 +10160,12 @@ body {
     background: #FFFFFF !important;
     border: 1.5px solid #FFD8A8 !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
-    border-radius: 20px !important;
-    background: #FFFFFF !important;
-    border: 1.5px solid #FFD8A8 !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
   }
 
   .user-header-avatar {
-    width: 30px !important;
-    height: 30px !important;
-    font-size: 16px !important;
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 17px !important;
     flex-shrink: 0 !important;
   }
 
@@ -10084,13 +10174,13 @@ body {
     min-width: 0 !important;
     overflow: hidden !important;
     text-align: left !important;
-    line-height: 1.2 !important;
+    line-height: 1.25 !important;
   }
 
   .user-header-name {
-    font-size: 12px !important;
+    font-size: 13px !important;
     font-weight: 800 !important;
-    max-width: 85px !important;
+    max-width: 90px !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
@@ -10098,7 +10188,7 @@ body {
   }
 
   .user-header-badge {
-    font-size: 10px !important;
+    font-size: 11px !important;
     font-weight: 700 !important;
     white-space: nowrap !important;
     overflow: hidden !important;
@@ -10108,9 +10198,9 @@ body {
   }
 
   .btn-header-logout {
-    width: 28px !important;
-    height: 28px !important;
-    font-size: 13px !important;
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 14px !important;
     padding: 0 !important;
     flex-shrink: 0 !important;
     display: flex !important;
@@ -10123,16 +10213,16 @@ body {
   }
 
   .btn-auth-trigger {
-    height: 38px !important;
-    padding: 0 14px !important;
-    font-size: 12.5px !important;
+    height: 40px !important;
+    padding: 0 16px !important;
+    font-size: 13.5px !important;
     font-weight: 800 !important;
     border-radius: 20px !important;
     white-space: nowrap !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 5px !important;
+    gap: 6px !important;
   }
 
   /* 4. THANH GAMIFICATION HUD: 4 HUY HIỆU ĐỀU TẰM TẮP 25% */
@@ -10154,9 +10244,9 @@ body {
   .hud-pill {
     flex: none !important;
     width: 100% !important;
-    height: 32px !important;
+    height: 36px !important;
     padding: 0 4px !important;
-    font-size: 11px !important;
+    font-size: 11.5px !important;
     font-weight: 700 !important;
     border-radius: 10px !important;
     display: inline-flex !important;
@@ -10178,7 +10268,7 @@ body {
     display: none !important;
   }
 
-  /* 5. THANH ĐIỀU HƯỚNG TABS: ĐỒNG BỘ CHIỀU CAO 36PX TOÀN BỘ NÚT */
+  /* 5. THANH ĐIỀU HƯỚNG TABS: ĐỒNG BỘ CHIỀU CAO 40PX TOÀN BỘ NÚT */
   .main-nav-bar {
     padding: 4px 8px !important;
     top: auto !important;
@@ -10193,10 +10283,10 @@ body {
   }
 
   .nav-scroll-btn {
-    width: 32px !important;
-    height: 36px !important;
+    width: 36px !important;
+    height: 40px !important;
     border-radius: 10px !important;
-    font-size: 18px !important;
+    font-size: 20px !important;
     padding: 0 !important;
     flex-shrink: 0 !important;
     display: flex !important;
@@ -10215,10 +10305,10 @@ body {
   }
 
   .nav-tab-btn {
-    height: 36px !important;
-    padding: 0 12px !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
+    height: 40px !important;
+    padding: 0 14px !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
     border-radius: 10px !important;
     display: inline-flex !important;
     align-items: center !important;
@@ -10226,9 +10316,9 @@ body {
   }
 
   .nav-all-modes-btn {
-    height: 36px !important;
-    padding: 0 10px !important;
-    font-size: 12px !important;
+    height: 40px !important;
+    padding: 0 12px !important;
+    font-size: 13.5px !important;
     font-weight: 800 !important;
     border-radius: 10px !important;
     flex-shrink: 0 !important;
@@ -10237,18 +10327,19 @@ body {
     justify-content: center !important;
   }
 
-  /* 6. LINH VẬT ASSISTANT MOBILE: CÂN ĐỐI, ĐẦY ĐỦ, KHÔNG CẮT XÉN */
+  /* 6. LINH VẬT ASSISTANT MOBILE: CÂN ĐỐI, ĐẦY ĐỦ, KHÔNG CẮT XÉN (1:1 ASPECT RATIO) */
   .mascot-sidebar {
     width: 100% !important;
     max-width: 100% !important;
     background: #FFFFFF !important;
-    border-radius: 18px !important;
+    border-radius: 20px !important;
     border: 1.5px solid #FFE3E3 !important;
-    padding: 12px 14px !important;
+    padding: 14px 16px !important;
     margin-bottom: 12px !important;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
     position: static !important;
     box-sizing: border-box !important;
+    overflow: visible !important;
   }
 
   #mascot-container {
@@ -10263,76 +10354,108 @@ body {
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 6px !important;
+    gap: 8px !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
 
   .mascot-char-switcher {
     width: 100% !important;
+    max-width: 260px !important;
     display: flex !important;
     justify-content: center !important;
     gap: 8px !important;
-    margin: 0 0 6px 0 !important;
+    margin: 0 auto 8px auto !important;
+    background: #FFF5F5 !important;
+    padding: 4px !important;
+    border-radius: 20px !important;
+    border: 1px solid #FFD8A8 !important;
+    box-sizing: border-box !important;
   }
 
   .char-pill-btn {
-    padding: 5px 16px !important;
-    font-size: 12.5px !important;
-    font-weight: 700 !important;
+    flex: 1 !important;
+    padding: 6px 14px !important;
+    font-size: 13.5px !important;
+    font-weight: 800 !important;
     border-radius: 16px !important;
+    text-align: center !important;
   }
 
   .mascot-body-container {
     width: 100% !important;
-    height: auto !important;
+    min-height: 135px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     margin: 2px auto !important;
+    position: relative !important;
   }
 
-  .mascot-svg {
-    max-height: 125px !important;
-    width: auto !important;
+  .mascot-char-wrap {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .mascot-svg,
+  .mascot-sidebar svg {
+    width: 135px !important;
+    height: 135px !important;
+    max-width: 135px !important;
+    max-height: 135px !important;
+    aspect-ratio: 1 / 1 !important;
     margin: 0 auto !important;
     display: block !important;
+    overflow: visible !important;
   }
 
   .mascot-bubble {
     width: 100% !important;
     min-width: 0 !important;
-    min-height: 40px !important;
+    min-height: 42px !important;
     margin: 6px 0 !important;
-    padding: 8px 12px !important;
-    font-size: 12.5px !important;
-    line-height: 1.35 !important;
-    border-radius: 12px !important;
-    border: 1px solid #FF8787 !important;
+    padding: 8px 14px !important;
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    border-radius: 14px !important;
+    border: 1.5px solid #FF8787 !important;
     background: #FFF9DB !important;
     color: #D9480F !important;
-    display: flex !important;
+    display: none !important;
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
     box-sizing: border-box !important;
   }
 
+  .mascot-bubble.visible {
+    display: flex !important;
+    opacity: 1 !important;
+  }
+
   .mascot-info {
     display: block !important;
     text-align: center !important;
-    margin-top: 6px !important;
+    margin-top: 8px !important;
+    padding-top: 8px !important;
+    border-top: 1px dashed #FFE3E3 !important;
+    width: 100% !important;
   }
 
   .mascot-name {
-    font-size: 14px !important;
+    font-size: 15.5px !important;
     font-weight: 800 !important;
     color: #495057 !important;
   }
 
   .mascot-role {
-    font-size: 11.5px !important;
+    font-size: 12.5px !important;
     color: #868E96 !important;
+    margin-top: 2px !important;
   }
 
   /* 7. QUICK LESSON SELECTOR CÂN ĐỐI 2 HÀNG RÕ RÀNG */
@@ -10340,9 +10463,9 @@ body {
     display: flex !important;
     flex-direction: column !important;
     align-items: stretch !important;
-    padding: 12px 14px !important;
+    padding: 14px 16px !important;
     gap: 10px !important;
-    border-radius: 16px !important;
+    border-radius: 18px !important;
     background: #FFFFFF !important;
     border: 1.5px solid #FFD8A8 !important;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
@@ -10367,12 +10490,12 @@ body {
   }
 
   .ql-pill {
-    font-size: 11.5px !important;
+    font-size: 12.5px !important;
     font-weight: 800 !important;
     background: #E7F5FF !important;
     color: #1971C2 !important;
-    padding: 4px 10px !important;
-    border-radius: 12px !important;
+    padding: 5px 12px !important;
+    border-radius: 14px !important;
     display: inline-block !important;
   }
 
@@ -10384,12 +10507,12 @@ body {
 
   .quick-lesson-select {
     width: 100% !important;
-    height: 42px !important;
-    font-size: 13.5px !important;
+    height: 46px !important;
+    font-size: 14.5px !important;
     font-weight: 700 !important;
     border-radius: 12px !important;
     border: 1.5px solid #CED4DA !important;
-    padding: 0 12px !important;
+    padding: 0 14px !important;
     box-sizing: border-box !important;
     background: #FFFFFF !important;
   }
@@ -10399,14 +10522,14 @@ body {
     display: flex !important;
     flex-direction: column !important;
     align-items: stretch !important;
-    padding: 14px 16px !important;
-    gap: 12px !important;
-    border-radius: 16px !important;
+    padding: 16px 18px !important;
+    gap: 14px !important;
+    border-radius: 18px !important;
     width: 100% !important;
     box-sizing: border-box !important;
     background: linear-gradient(135deg, #FFFDF5 0%, #FFF9DB 100%) !important;
     border: 1.5px solid #FCC419 !important;
-    box-shadow: 0 4px 12px rgba(245, 159, 0, 0.1) !important;
+    box-shadow: 0 4px 14px rgba(245, 159, 0, 0.12) !important;
   }
 
   .banner-mission-left {
@@ -10417,21 +10540,21 @@ body {
   }
 
   .banner-mission-left strong {
-    font-size: 13.5px !important;
-    line-height: 1.35 !important;
+    font-size: 14.5px !important;
+    line-height: 1.4 !important;
     color: #D9480F !important;
   }
 
   .banner-mission-left p {
-    font-size: 12px !important;
-    margin-top: 3px !important;
+    font-size: 13px !important;
+    margin-top: 4px !important;
     color: #495057 !important;
   }
 
   .btn-finish-mission-vocab {
     width: 100% !important;
-    height: 42px !important;
-    font-size: 13.5px !important;
+    height: 46px !important;
+    font-size: 15px !important;
     font-weight: 800 !important;
     border-radius: 12px !important;
     display: flex !important;
@@ -10444,7 +10567,7 @@ body {
   .flashcard-status-filters {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 6px !important;
+    gap: 8px !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
@@ -10452,13 +10575,13 @@ body {
   .status-chip {
     flex: none !important;
     width: 100% !important;
-    height: 36px !important;
-    font-size: 11.5px !important;
-    font-weight: 700 !important;
-    padding: 0 4px !important;
+    height: 40px !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    padding: 0 6px !important;
     text-align: center !important;
     justify-content: center !important;
-    border-radius: 10px !important;
+    border-radius: 12px !important;
     box-sizing: border-box !important;
     white-space: nowrap !important;
     overflow: hidden !important;
@@ -10469,7 +10592,7 @@ body {
   .flashcard-nav-bottom {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
-    gap: 8px !important;
+    gap: 10px !important;
     width: 100% !important;
     margin-top: 16px !important;
     box-sizing: border-box !important;
@@ -10477,15 +10600,28 @@ body {
 
   .flashcard-nav-bottom .btn {
     width: 100% !important;
-    height: 42px !important;
-    padding: 0 8px !important;
-    font-size: 12.5px !important;
-    font-weight: 700 !important;
+    height: 46px !important;
+    padding: 0 10px !important;
+    font-size: 14.5px !important;
+    font-weight: 800 !important;
     border-radius: 12px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
     box-sizing: border-box !important;
+  }
+
+  /* 11. ROADMAP ACCORDION GRID ON MOBILE */
+  .region-lessons-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    padding: 16px 14px !important;
+  }
+
+  .lesson-node-card,
+  .lesson-level-node {
+    padding: 18px 20px !important;
+    min-height: auto !important;
   }
 }

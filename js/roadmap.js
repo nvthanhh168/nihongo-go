@@ -557,7 +557,7 @@ class JapaneseRoadmapModule {
                     const vocabCount = lesson.vocab?.length || 20;
 
                     return `
-                      <div class="lesson-level-node ${nodeClass}" 
+                      <div class="lesson-level-node lesson-node-card ${nodeClass}" 
                            id="lesson-node-${lNum}" 
                            data-action="open-lesson" 
                            data-lesson-num="${lNum}">
