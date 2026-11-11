@@ -826,14 +826,8 @@ class JapaneseAuthModule {
   }
 
   getUnlockedLesson() {
-    if (this.isLoggedIn()) {
-      return this.currentUser?.profile?.unlockedLesson || 1;
-    }
-    try {
-      return parseInt(localStorage.getItem('nihongo_guest_unlocked') || '1', 10);
-    } catch (e) {
-      return 1;
-    }
+    // Mở khóa toàn bộ 50 bài (N5 & N4) cho tất cả người dùng
+    return 50;
   }
 
   getCompletedLessons() {
@@ -847,37 +841,8 @@ class JapaneseAuthModule {
     }
   }
 
-  // Kiểm tra quyền truy cập bài học
+  // Kiểm tra quyền truy cập bài học (Mở khóa toàn bộ 100% không giới hạn)
   checkLessonAccess(lessonNumber) {
-    if (lessonNumber === 1) return true;
-
-    // Yêu cầu bắt buộc đối với cấp độ N4 (Bài 26 - 30):
-    if (lessonNumber >= 26) {
-      if (!this.isLoggedIn()) {
-        alert('🔒 Cấp độ Trung Cấp JLPT N4 (Bài 26 - 30) yêu cầu ĐĂNG NHẬP tài khoản học viên để bảo lưu học bạ!\nVui lòng đăng nhập hoặc tạo tài khoản miễn phí. 👩‍🏫');
-        this.openAuthModal('login');
-        return false;
-      }
-
-      const p = this.currentUser?.profile;
-      let completedN5Count = 0;
-      if (p && p.completedLessons) {
-        for (let i = 1; i <= 25; i++) {
-          if (p.completedLessons[i]?.completed) completedN5Count++;
-        }
-      }
-      if (completedN5Count < 25) {
-        alert(`🔒 Cổng N4 đang được niêm phong!\nEm cần hoàn thành đủ 25 Bài học N5 trước khi mở khóa Bài 26 nhé! Hiện tại em mới xong ${completedN5Count}/25 Bài. 👩‍🏫`);
-        return false;
-      }
-    }
-
-    const unlocked = this.getUnlockedLesson();
-    if (lessonNumber > unlocked) {
-      alert(`🔒 Bài ${lessonNumber} đang bị khóa!\nEm cần hoàn thành Bài ${unlocked} trước khi học tiếp nhé! 👩‍🏫`);
-      return false;
-    }
-
     return true;
   }
 
@@ -917,7 +882,7 @@ class JapaneseAuthModule {
     const modal = document.getElementById('lesson-selector-modal');
     if (!modal) return;
 
-    const unlocked = this.isLoggedIn() ? (this.currentUser.profile?.unlockedLesson || 1) : 1;
+    const unlocked = 50;
     const completedObj = this.isLoggedIn() ? (this.currentUser.profile?.completedLessons || {}) : {};
 
     modal.innerHTML = `
@@ -930,8 +895,8 @@ class JapaneseAuthModule {
               <h3>LỘ TRÌNH 25 BÀI MINNA NO NIHONGO N5</h3>
               <p class="lesson-header-sub">
                 ${this.isLoggedIn() 
-                  ? `Học viên: <strong>${this.currentUser.displayName}</strong> • Đang học Bài ${unlocked}/25`
-                  : 'Chế độ Khách (Mở sẵn Bài 1) • Đăng nhập để lưu tiến độ và mở khóa cả 25 bài!'}
+                  ? `Học viên: <strong>${this.currentUser.displayName}</strong> • Mở khóa toàn bộ 25 bài N5 & 25 bài N4!`
+                  : '✨ Toàn bộ 25 bài học N5 & 25 bài N4 đã được mở khóa tự do!'}
               </p>
             </div>
           </div>
@@ -941,21 +906,17 @@ class JapaneseAuthModule {
         <div class="modal-body lesson-modal-body">
           <div class="lessons-grid-container">
             ${MINNA_LESSONS_N5.map(l => {
-              const isUnlocked = l.id <= unlocked;
               const isCompleted = completedObj[l.id]?.completed;
               const stars = completedObj[l.id]?.stars || 0;
               const starStr = '⭐'.repeat(stars) || '';
-
-              let statusClass = 'locked';
-              if (isCompleted) statusClass = 'completed';
-              else if (isUnlocked) statusClass = 'active';
+              const statusClass = isCompleted ? 'completed' : 'active';
 
               return `
                 <div class="lesson-card-item ${statusClass}" onclick="window.authModule.selectLessonFromModal(${l.id})">
                   <div class="lesson-item-top">
                     <span class="lesson-number-badge">Bài ${l.id}</span>
                     <span class="lesson-status-icon">
-                      ${isCompleted ? '✅' : isUnlocked ? '📖' : '🔒'}
+                      ${isCompleted ? '✅' : '📖'}
                     </span>
                   </div>
                   <div class="lesson-item-title">${l.desc}</div>
@@ -1294,7 +1255,7 @@ class JapaneseAuthModule {
           <!-- Thông tin tên & cấp độ bài học -->
           <div class="user-header-info" onclick="window.authModule.openLessonSelector()" title="Bấm xem Lộ trình bài học Minna">
             <span class="user-header-name" title="${user.displayName}">${user.displayName}</span>
-            <span class="user-header-badge">${currentLevel} • Bài ${unlockedLesson}/${maxL} 🏆</span>
+            <span class="user-header-badge">${currentLevel} • Mở Khóa 50 Bài 🏆</span>
           </div>
 
           <!-- Nút Đăng xuất -->

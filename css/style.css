@@ -947,7 +947,9 @@ body {
   min-height: 550px;
   min-width: 0;
   width: 100%;
-  overflow-x: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: clip;
 }
 
 .app-tab-panel {
@@ -4622,7 +4624,7 @@ body {
 }
 
 /* Responsive trên mobile/tablet/laptop màn hình vừa */
-@media (max-width: 1250px) {
+@media (max-width: 1380px) {
   .kana-layout-wrapper {
     display: flex !important;
     flex-direction: column !important;
@@ -8783,10 +8785,10 @@ body {
   line-height: 1.5 !important;
 }
 
-/* Thanh chỉ số 3 nhiệm vụ */
+/* Thanh chỉ số 3 nhiệm vụ (Chia đều 3 cột 100% không bị bóp méo chữ) */
 .node-missions-indicator-bar {
-  display: flex !important;
-  flex-direction: row !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
   gap: 6px !important;
   margin: 10px 0 16px 0 !important;
   width: 100% !important;
@@ -8794,12 +8796,11 @@ body {
 }
 
 .m-pill {
-  flex: 1 1 0 !important;
-  min-width: 0 !important;
+  width: 100% !important;
   text-align: center !important;
   font-size: 12px !important;
   font-weight: 700 !important;
-  padding: 6px 4px !important;
+  padding: 6px 2px !important;
   border-radius: 10px !important;
   border: 1px solid transparent !important;
   display: inline-flex !important;
@@ -9502,7 +9503,7 @@ body {
   box-sizing: border-box;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1380px) {
   .kana-layout-wrapper {
     display: flex !important;
     flex-direction: column !important;
@@ -9997,9 +9998,17 @@ body {
   }
 
   .mascot-sidebar svg {
+    width: 120px !important;
+    height: 120px !important;
+    min-width: 120px !important;
+    min-height: 120px !important;
+    max-width: 120px !important;
     max-height: 120px !important;
-    width: auto !important;
+    aspect-ratio: 1 / 1 !important;
     display: block !important;
+    margin: 0 auto !important;
+    flex-shrink: 0 !important;
+    overflow: visible !important;
   }
 
   .mascot-info {
@@ -10437,19 +10446,31 @@ body {
 
   .mascot-svg,
   .mascot-sidebar svg {
-    width: 135px !important;
-    height: 135px !important;
-    max-width: 135px !important;
-    max-height: 135px !important;
+    width: 120px !important;
+    height: 120px !important;
+    min-width: 120px !important;
+    min-height: 120px !important;
+    max-width: 120px !important;
+    max-height: 120px !important;
     aspect-ratio: 1 / 1 !important;
     margin: 0 auto !important;
     display: block !important;
+    flex-shrink: 0 !important;
     overflow: visible !important;
   }
 
   .mascot-bubble {
     width: 100% !important;
     min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    display: none !important;
+    box-sizing: border-box !important;
+  }
+
+  .mascot-bubble.visible {
+    display: flex !important;
     min-height: 42px !important;
     margin: 6px 0 !important;
     padding: 8px 14px !important;
@@ -10460,15 +10481,9 @@ body {
     border: 1.5px solid #FF8787 !important;
     background: #FFF9DB !important;
     color: #D9480F !important;
-    display: none !important;
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
-    box-sizing: border-box !important;
-  }
-
-  .mascot-bubble.visible {
-    display: flex !important;
     opacity: 1 !important;
   }
 

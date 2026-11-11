@@ -341,21 +341,41 @@ class JapaneseApp {
   }
 
   selectLevel(level) {
-    if (level === 'n5') {
+    const lvl = level ? level.toLowerCase() : 'n5';
+    document.querySelectorAll('.level-chip').forEach(c => c.classList.remove('active'));
+
+    if (lvl === 'n5') {
       this.currentLevel = 'n5';
+      const c = document.getElementById('lvl-chip-n5');
+      if (c) c.classList.add('active');
+      if (window.soundSystem) window.soundSystem.playPop();
       if (window.mascot) {
-        window.mascot.say('Trọng tâm ôn luyện JLPT N5 đã được kích hoạt đầy đủ! 🎯', 3000);
+        window.mascot.say('Đang ở cấp độ JLPT N5 (Bài 1 - 25)! Toàn bộ bài học đã được mở khóa tự do! 🎯🌸', 3000);
+      }
+      if (window.roadmapModule) {
+        window.roadmapModule.expandedRegions[1] = true;
+        window.roadmapModule.render();
+      }
+    } else if (lvl === 'n4') {
+      this.currentLevel = 'n4';
+      const c = document.getElementById('lvl-chip-n4');
+      if (c) c.classList.add('active');
+      if (window.soundSystem) window.soundSystem.playVictory();
+      if (window.mascot) {
+        window.mascot.say('Đã chuyển sang cấp độ JLPT N4 (Bài 26 - 50)! Toàn bộ 25 bài Trung cấp đã mở khóa sẵn sàng! 🌸⛩️', 3500);
+      }
+      if (window.roadmapModule) {
+        window.roadmapModule.expandedRegions[6] = true;
+        window.roadmapModule.render();
+        const el = document.getElementById('region-section-6');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     } else {
       if (window.soundSystem) window.soundSystem.playPop();
-      if (window.authModule && !window.authModule.isLoggedIn()) {
-        window.authModule.openAuthModal('login', `⛩️ Để bước vào Cổng ${level.toUpperCase()}, em cần Đăng Nhập tài khoản học viên để lưu lại toàn bộ tiến độ N5 nhé! 🌸`);
-        return;
-      }
       if (window.mascot) {
-        window.mascot.say(`Cấp độ ${level.toUpperCase()} đang được kết nối với tài khoản ${window.authModule?.currentUser?.displayName}! Hãy thi đỗ bài thi thử N5 để nhận chứng chỉ nhé! 🏆`, 4000);
+        window.mascot.say(`Cấp độ ${lvl.toUpperCase()} đang được biên soạn theo chuẩn JEES! Em hãy học trọn vẹn 50 bài N5 & N4 nhé! 🌸`, 3500);
       }
-      alert(`📚 Cổng ${level.toUpperCase()} đã được liên kết với tài khoản học viên! Hãy hoàn thành trọn vẹn 25 bài và vượt qua Bài Thi Thử N5 để mở khóa chính thức!`);
+      alert(`📚 Cấp độ ${lvl.toUpperCase()} đang được hoàn thiện! Hiện tại toàn bộ 50 bài của N5 (Bài 1-25) và N4 (Bài 26-50) đã mở khóa 100% để bạn học tự do!`);
     }
   }
 

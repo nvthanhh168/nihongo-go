@@ -25,13 +25,13 @@
         </div>
 
         <div class="header-actions-wrap">
-          <!-- Thanh chọn cấp độ JLPT -->
+          <!-- Thanh chọn cấp độ JLPT (Mở khóa toàn bộ) -->
           <div class="level-selector-bar">
-            <button class="level-chip active" onclick="window.app.selectLevel('n5')">🎯 N5<span class="hide-mobile"> (Trọng Tâm)</span></button>
-            <button class="level-chip locked" onclick="window.app.selectLevel('n4')">🔒 N4</button>
-            <button class="level-chip locked" onclick="window.app.selectLevel('n3')">🔒 N3</button>
-            <button class="level-chip locked" onclick="window.app.selectLevel('n2')">🔒 N2</button>
-            <button class="level-chip locked" onclick="window.app.selectLevel('n1')">🔒 N1</button>
+            <button class="level-chip active" id="lvl-chip-n5" onclick="window.app.selectLevel('n5')">🎯 N5<span class="hide-mobile"> (Bài 1-25)</span></button>
+            <button class="level-chip" id="lvl-chip-n4" onclick="window.app.selectLevel('n4')">🌸 N4<span class="hide-mobile"> (Bài 26-50)</span></button>
+            <button class="level-chip" id="lvl-chip-n3" onclick="window.app.selectLevel('n3')">⛩️ N3</button>
+            <button class="level-chip" id="lvl-chip-n2" onclick="window.app.selectLevel('n2')">🏯 N2</button>
+            <button class="level-chip" id="lvl-chip-n1" onclick="window.app.selectLevel('n1')">👑 N1</button>
           </div>
 
           <div class="header-user-controls">
