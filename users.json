@@ -174,7 +174,27 @@
         "n5_l02_20",
         "n5_l09_04"
       ],
-      "wrongWords": [],
+      "wrongWords": [
+        {
+          "id": "n5_l09_19",
+          "lesson": 9,
+          "lessonId": 9,
+          "level": "N5",
+          "kanji": "全然",
+          "hanViet": "Toàn Nhiên",
+          "hiragana": "ぜんぜん",
+          "romaji": "zenzen",
+          "meaning": "hoàn toàn không",
+          "svgIllustration": "<svg viewBox=\"0 0 100 100\" class=\"vocab-card-svg\"><circle cx=\"50\" cy=\"50\" r=\"45\" fill=\"#E9ECEF\"/><circle cx=\"50\" cy=\"50\" r=\"26\" fill=\"#868E96\"/><text x=\"50\" y=\"58\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"#FFF\">0%</text></svg>",
+          "example": {
+            "ja": "英語が全然分かりません。",
+            "hira": "えいごがぜんぜんわかりません。",
+            "vi": "Tôi hoàn toàn không hiểu tiếng Anh."
+          },
+          "wrongCount": 1,
+          "lastFailedAt": "2026-11-11T14:04:20.973Z"
+        }
+      ],
       "exp": 415,
       "level": 5,
       "coins": 130,
@@ -184,6 +204,6 @@
         "tan_binh_nhap_mon"
       ]
     },
-    "updatedAt": "2026-11-11T14:02:17.510Z"
+    "updatedAt": "2026-11-12T02:06:12.230Z"
   }
 }
